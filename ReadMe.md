@@ -65,12 +65,5 @@ Using `git log` to check the push you made had been finished.
 - Git Command [cheat sheet](https://dzone.com/articles/top-20-git-commands-with-examples)
 
 ## Thank you for your reading.
-## If you have any further question, welcome to talk to owners.
-## Have a wonderful day!
- 
-
-->Create the new folder for this project
-->Open the Terminal
-->cd newfolder
-->git clone https://github.com/ApplyKCL/SNYProject.git
-->Everything should be done beyound this point, the futher update will be applied!!!
+ If you have any further question, welcome to talk to owners.
+ Have a wonderful day!
