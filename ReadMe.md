@@ -65,5 +65,5 @@ Using `git log` to check the push you made had been finished.
 - Git Command [cheat sheet](https://dzone.com/articles/top-20-git-commands-with-examples)
 
 ## Thank you for your reading.
-## If you have any further question, welcome to talk to owners.
-## Have a wonderful day!                                                                                    [ Read 76 lines (Converted from DOS format) ]
+ If you have any further question, welcome to talk to owners.
+ Have a wonderful day!
