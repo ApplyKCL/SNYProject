@@ -2,7 +2,8 @@
 import databaseinit
 import update_db
 import loadModule
-import CheckValues
+import checkvalues
+import dsp_rec
 import mysql.connector
 from datetime import datetime
 import time
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     init_db.init_tb()
     del init_db
 
-    if not CheckValues.check_emp(mycursor):
+    if not checkvalues.check_emp(mycursor):
         loadModule.load_emp(mycursor, mydb)
         loadModule.load_comp(mycursor, mydb)
         loadModule.load_prompt(mycursor, mydb)
@@ -49,6 +50,11 @@ if __name__ == '__main__':
         loadModule.load_com_table(mycursor, mydb)
     #CheckValues.check_emp(mycursor)
     choice = "0"
+    table_type = '*'
+    table_name = {"1": "employee",
+                  "2": "component",
+                  "3": "param",
+                  "4": "promopt"}
     start_time = 0
     flag = False
     flag_count = 0
@@ -82,10 +88,16 @@ if __name__ == '__main__':
         elif choice == 'D':
             update_db.delete_db(mycursor)
             break
+        elif choice == 'E':
+
+            while table_type != "#":
+                table_type = str(input("Choice the table to choice\n1. Employee\n2. Component\n3. Param\n4.promopt\nInput: "))
+                dsp_rec.dis_tb(mycursor, mydb, str(table_name[table_type]))
+
         elif choice == 'X':
             print("Exit the Program\n")
         else:
             print("Please Enter the Valid Input")
 
-    mydb.close()
+mydb.close()
 

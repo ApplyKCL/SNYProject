@@ -25,7 +25,6 @@ def add_comp(db_cursor, mydb):
     name = input("Enter the New Component Name: ")
     rq_am = input("Enter the Required Amount: ")
     update = [name, rq_am]
-    cmd_str = ""
     db_cursor.execute(cmd_str, update)
     mydb.commit()
 

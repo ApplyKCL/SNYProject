@@ -17,5 +17,5 @@ cmd_str = """
             ('Yilun Peng', {},'555555', 'Engineer', current_date())
     """
 
-cmd_str=cmd_str.format(mylist[0], mylist[1], mylist[2], mylist[3], mylist[4])
+cmd_str = cmd_str.format(mylist[0], mylist[1], mylist[2], mylist[3], mylist[4])
 print(cmd_str)
