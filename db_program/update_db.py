@@ -1,4 +1,5 @@
 import dsp_rec
+import string_function
 
 
 def add_emp(db_cursor, mydb):
@@ -7,12 +8,12 @@ def add_emp(db_cursor, mydb):
     """
     db_cursor.execute(cmd_str)
     cmd_str = """
-        insert into employee (name, password, job, entry_date) values (%s, %s, %s, current_date())
+        insert into employee (account_number, name, password, job, entry_date) values (%s, %s, %s, current_date())
     """
     name = input("Enter the New Employee Name: ")
     password = input("Enter the Password: ")
     job = input("Enter the Job: ")
-    log_data = [name, password, job]
+    log_data = [string_function.get_number_string(), name, password, job]
     db_cursor.execute(cmd_str, log_data)
     mydb.commit()
 
