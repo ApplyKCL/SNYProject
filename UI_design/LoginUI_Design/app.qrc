@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/close.svg</file>
+    <file>icon/minimize.svg</file>
+    <file>icon/plus.svg</file>
+    <file>icon/首页.ico</file>
+  </qresource>
+  <qresource prefix="img">
+    <file>image/register.jpg</file>
+    <file>image/American_Robin.jpg</file>
+    <file>image/fish.png</file>
+  </qresource>
+</RCC>
