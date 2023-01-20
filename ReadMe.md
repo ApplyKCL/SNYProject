@@ -1,4 +1,4 @@
-# ECED4900 Ultrasound Transducer Build Tracker
+# ECED4900 & ECED4901 Ultrasound Transducer Build Tracker
 
 This is the project work for the ECED4900 Course to get the respositry.
 The whole project file belongs to Shaonan Hu, Jiahao Chen, Yilun Peng and Jiawei Yang.
