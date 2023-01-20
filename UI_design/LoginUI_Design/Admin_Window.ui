@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Frame</class>
- <widget class="QFrame" name="Frame">
+ <class>Admin_WIndow</class>
+ <widget class="QFrame" name="Admin_WIndow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -905,7 +905,7 @@ padding-bottom:2px;</string>
   </layout>
  </widget>
  <resources>
-  <include location="../res/app.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 from login import *
-from Admin_window import *
+from Admin_Window import *
 
 class MyWindow(QMainWindow, Ui_Login_Window):
     def __init__(self):
@@ -28,7 +28,7 @@ class MyWindow(QMainWindow, Ui_Login_Window):
             self.dragPos = event.globalPos()
             event.accept()
         
-class Administrator_Window(QMainWindow, Ui_Administrator_window):
+class Administrator_Window(QMainWindow, Ui_Admin_WIndow):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -42,7 +42,6 @@ class Administrator_Window(QMainWindow, Ui_Administrator_window):
             self.move(self.pos() + event.globalPos() - self.dragPos)
             self.dragPos = event.globalPos()
             event.accept()
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
