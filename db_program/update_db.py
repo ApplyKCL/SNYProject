@@ -1,3 +1,6 @@
+import dsp_rec
+
+
 def add_emp(db_cursor, mydb):
     cmd_str = """
         alter table employee auto_increment = 1;

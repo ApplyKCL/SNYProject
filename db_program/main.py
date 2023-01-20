@@ -89,11 +89,9 @@ if __name__ == '__main__':
             update_db.delete_db(mycursor)
             break
         elif choice == 'E':
-
             while table_type != "#":
-                table_type = str(input("Choice the table to choice\n1. Employee\n2. Component\n3. Param\n4.promopt\nInput: "))
+                table_type = str(input("Choice the table to choice\n1. Employee\n2. Component\n3. Param\n4. Promopt\nInput: "))
                 dsp_rec.dis_tb(mycursor, mydb, str(table_name[table_type]))
-
         elif choice == 'X':
             print("Exit the Program\n")
         else:
