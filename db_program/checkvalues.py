@@ -24,3 +24,20 @@ def log_in(db_cursor):
         return True
     print("Wrong Password or Username, try again")
     return False
+
+
+def check_dep(db_cursor):
+    cmd_str = """
+    select id, name, next_comp from component;
+    """
+    db_cursor.execute(cmd_str)
+    db_result = db_cursor.fetchall()
+    count = 0
+    for result in db_result:
+        if result[2] is None:
+            print(str(result[0]) + " " + result[1] + " is the last item to build or missing dependency")
+            count += 1
+    print(str(count) + " Missing Item")
+    if count > 0:
+        return True
+    return False

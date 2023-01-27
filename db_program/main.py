@@ -69,6 +69,7 @@ if __name__ == '__main__':
     start_time = 0
     flag = False
     flag_count = 0
+    checkvalues.check_dep(mycursor)
     while choice != 'X':
         '''
             if not flag:
@@ -100,7 +101,7 @@ if __name__ == '__main__':
             break
         elif choice == 'E':
             while table_type != "#":
-                table_type = str(input("Choice the table to choice\n1. Employee\n2. Component\n#. Close\n Input: "))
+                table_type = str(input("Choice the table to display\n1. Employee\n2. Component\n#. Close\n Input: "))
                 if table_type == "#":
                     break
                 dsp_rec.dis_tb(mycursor, mydb, str(table_name[table_type]))

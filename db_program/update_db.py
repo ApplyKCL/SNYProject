@@ -1,6 +1,6 @@
 import dsp_rec
 import string_function
-
+import checkvalues
 
 def add_emp(db_cursor, mydb):
     cmd_str = """
@@ -8,7 +8,7 @@ def add_emp(db_cursor, mydb):
     """
     db_cursor.execute(cmd_str)
     cmd_str = """
-        insert into employee (account_number, name, password, job, entry_date) values (%s, %s, %s, current_date())
+        insert into employee (account_number, name, password, job, entry_date) values (%s, %s, %s, %s, current_date())
     """
     name = input("Enter the New Employee Name: ")
     password = input("Enter the Password: ")
@@ -31,6 +31,11 @@ def add_comp(db_cursor, mydb):
     update = [name, rq_am]
     db_cursor.execute(cmd_str, update)
     mydb.commit()
+    choice = ''
+    while checkvalues.check_dep(db_cursor) is True:
+        choice = input("Do you want to add dependency [Y/N] ?")
+        if choice == "N":
+            break
 
 
 def delete_db(db_cursor):
@@ -39,3 +44,4 @@ def delete_db(db_cursor):
     """
     print("Database Deleted")
     db_cursor.execute(cmd_str)
+
