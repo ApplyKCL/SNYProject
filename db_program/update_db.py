@@ -2,6 +2,7 @@ import dsp_rec
 import string_function
 import checkvalues
 
+
 def add_emp(db_cursor, mydb):
     cmd_str = """
         alter table employee auto_increment = 1;
@@ -30,8 +31,8 @@ def add_comp(db_cursor, mydb):
     rq_am = input("Enter the Required Amount: ")
     update = [name, rq_am]
     db_cursor.execute(cmd_str, update)
+    # Submit the changes of the data
     mydb.commit()
-    choice = ''
     while checkvalues.check_dep(db_cursor) is True:
         choice = input("Do you want to add dependency [Y/N] ?")
         if choice == "N":

@@ -8,13 +8,13 @@ def load_emp(db_cursor, mydb):
     db_cursor.execute(cmd_str)
     cmd_str = """
                 insert into employee (name, account_number, password, job, entry_date) values 
-                ('Boss Boss', '{}', '000000', 'Boss', current_date()),
-                ('Shaonan Hu', '{}', '111111', 'Engineer', current_date()),
-                ('Jiahao Chen', '{}', '222222', 'Engineer', current_date()),
-                ('Jiawei Yang', '{}', '333333', 'Engineer', current_date()),
-                ('Yilun Peng', '{}', '555555', 'Engineer', current_date())
+                ('Boss Boss', '123456', '000000', 'Boss', current_date()),
+                ('Shaonan Hu', '123456', '111111', 'Engineer', current_date()),
+                ('Jiahao Chen', '123456', '222222', 'Engineer', current_date()),
+                ('Jiawei Yang', '123456', '333333', 'Engineer', current_date()),
+                ('Yilun Peng', '123456', '555555', 'Engineer', current_date())
     """
-    cmd_str = string_function.fill_string(string=cmd_str)
+    # cmd_str = string_function.fill_string(string=cmd_str)
     db_cursor.execute(cmd_str)
     mydb.commit()
 

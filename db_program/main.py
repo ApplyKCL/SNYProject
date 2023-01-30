@@ -5,15 +5,18 @@ import loadModule
 import checkvalues
 import dsp_rec
 import mysql.connector
+import class_def
 from datetime import datetime
 import time
 import json
-
+import mysql_execute
+import config_table
 
 if __name__ == '__main__':
     # Check the init configuration
     # Could be changed later
-    try:
+    """
+        try:
         # Open the json file
         # dbinit.json: database name and exp time
         file = open("dbinit.json", "rt")
@@ -36,6 +39,9 @@ if __name__ == '__main__':
         json.dump(data_dirc, file)
         # Close the file
     file.close()
+    
+    """
+
     # Display the data
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))
     # database infor, will be considered to be treated as file
@@ -46,10 +52,17 @@ if __name__ == '__main__':
     )
     # mycursor the cursor of the mysql connector api func
     mycursor = mydb.cursor()
+    cmd_str = """
+        create database if not exists test_db
+    """
+    mysql_execute.execute_mysql(mycursor, mydb, cmd_str, 0)
+    mydb.database = "test_db"
+    config_table.create_table(mycursor, mydb)
+    """
     # init db to set the tables
-    init_db = databaseinit.db_init(mycursor, data_base_name)
+    init_db = databaseinit.db_init(mycursor, "SYNProject")
     init_db.init_databases()
-    mydb.database = data_base_name
+    mydb.database = "SYNProject"
     init_db.init_tb()
     del init_db
     # load the variable to
@@ -60,16 +73,23 @@ if __name__ == '__main__':
         loadModule.load_param(mycursor, mydb)
         loadModule.load_com_table(mycursor, mydb)
     #CheckValues.check_emp(mycursor)
+    """
     choice = "0"
     table_type = '*'
     table_name = {"1": "employee",
                   "2": "component",
                   "3": "param",
                   "4": "promopt"}
+    option = {
+        "A": "insert",
+        "B": "update",
+        "C": "select",
+        "D": "drop",
+        "X": "abort"
+    }
     start_time = 0
     flag = False
     flag_count = 0
-    checkvalues.check_dep(mycursor)
     while choice != 'X':
         '''
             if not flag:
@@ -84,15 +104,18 @@ if __name__ == '__main__':
             continue
         flag_count = 0
         '''
-        choice = input("Enter your Choice\nA. Add Employee\nB. Add Component\nD. Delete Database\
-           \nE. To Display Values\nX.To terminate\nInput: ")
+        choice = input("Enter your Choice\nA. Add New\nB. Change Record\nC. Check Record\
+           \nD. Delect Record\nX.To terminate\nInput: ")
         #end_time = time.time()
         #if (end_time - start_time) > login_expire_time:
         #    print("Time Expire, please Sign in again")
         #    flag = False
         #D    continue
         # Console Interface
-        if choice == 'A':
+        print(option[choice])
+
+        """
+         if choice == 'A':
             update_db.add_emp(mycursor, mydb)
         elif choice == 'B':
             update_db.add_comp(mycursor, mydb)
@@ -109,6 +132,6 @@ if __name__ == '__main__':
             print("Exit the Program\n")
         else:
             print("Please Enter the Valid Input")
-
+        """
 mydb.close()
 
