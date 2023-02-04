@@ -3,7 +3,7 @@ import mysql.connector
 from datetime import datetime
 import mysql_execute
 import config_table
-
+import  mysql_statement_gen
 if __name__ == '__main__':
     # Display the data
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))
@@ -31,15 +31,18 @@ if __name__ == '__main__':
         "A": "insert",
         "B": "update",
         "C": "select",
-        "D": "drop",
+        "D": "delete",
         "X": "abort"
     }
+
     start_time = 0
     flag = False
     flag_count = 0
     while choice != 'X':
         choice = input("Enter your Choice\nA. Add New\nB. Change Record\nC. Check Record\
-           \nD. Delect Record\nX.To terminate\nInput: ")
-        print(option[choice])
+           \nD. Delete Record\nX.To terminate\nInput: ")
+        if choice == 'X':
+            break
+        mysql_statement_gen.generate_mysql_statement(option[choice])
 mydb.close()
 

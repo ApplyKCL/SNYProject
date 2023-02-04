@@ -34,7 +34,7 @@
       "table_name": "step_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(255) not null,",
+        "name varchar(1000) not null,",
         "repeat_times int,",
         "previous_step int,",
         "next_step int,",
