@@ -2,66 +2,109 @@ import string
 import json
 
 
-class sql_table:
-    def __init__(self, table_dirc={}):
-        self.table_dirc = table_dirc
-        self.context = ""
-        self.values = []
-        self.sql_variable = ""
-        self.sql_cond = ""
-        self.counter = 0
+class databaseAPI:
+    def __init__(self, db_cursor, db_class, table):
+        self.cursor = db_cursor
+        self.databases = db_class
+        self.table_dirc = table
+        self.inst_type = ""
+        self.table_variable = []
+        self.variable_value = []
+        self.constrain_variable = []
+        self.constrain_value = []
+        self.constrain_type = []
 
-    def data_read(self):
-        values = []
-        for self.counter in range(0, self.table_dirc["elements_amount"]):
-            values.append(input("Please input " + self.table_dirc["elements_name"][self.counter] +
-                                " enter to skip "))
-            print(values, self.counter)
-            if values[self.counter] == "\n":
-                values[self.counter] = ''
-        return values
-
-    def data_listing(self):
-        choice = "Y"
-        while choice == "Y":
-            self.values.append(tuple(self.data_read()))
-            self.counter = 0
-            choice = input("If you have another record to add, enter Y")
-        print(self.values)
-
-    def data_select(self):
-        choice = "Y"
-        while choice == "Y":
-            choice = input("Pleases Enter the value that u what to display")
-            self.sql_variable.append()
-            choice = input("Do you have another value to enter")
-    def data_update(self):
-        choice = input("1. Change Specific Record\n2. Change Specific Value ?")
-        if choice == 1:
-            print("Enter the specific value")
-        elif choice == 2:
-            print("Enter the specific value")
-def generate_mysql_statement(dirc):
-    operation = {
-        "insert": "insert into {} ({}) valuse ({})",
-        "update": "update {} set {} where {} = %s",
-        "select": "select {} from {}",
-        "delete": "delete from {} where {} = %s",
-        "tables": {
-            "A": "device_table",
-            "B": "comp_table",
-            "C": "inst_table",
-            "D": "step_table",
-            "E": "param_table"
+    def executor(self, cmd_str):
+        result = {}
+        self.cursor.execute(cmd_str)
+        if self.inst_type == "select":
+            result = self.cursor.fetchall()
+        self.databases.commit()
+        execution_result = {
+            "result": result,
+            "changed": self.cursor.rowcount
         }
-    }
-    print("Please choose tables: ")
-    for nums in range(0, len(operation["tables"])):
-        print("\t" + string.ascii_uppercase[nums] + '.', operation["tables"][string.ascii_uppercase[nums]])
-    file = open("dbtable_config.json", "rt")
-    json_dirc = json.loads(file.read())
-    sql_class = sql_table(json_dirc[operation["tables"][input()]])
-    if dirc == "insert":
-        sql_class.data_listing()
-    elif dirc == "update":
-        sql_class.data_update()
+        return execution_result
+
+    def database_operation(self, instruction, operate_variable=(), variable_value=(), constrain_variable=(),
+                           constrain_value=(), constrain_type=()):
+        self.inst_type = instruction
+        self.variable_value = operate_variable
+        self.variable_value = variable_value
+        self.constrain_variable = constrain_variable
+        self.constrain_value = constrain_value
+        self.constrain_type = constrain_type
+        cmd_str = self.gen_sql_statements()
+
+    def constrain_str(self):
+        if self.constrain_type == "between":
+            constr_str = "{} between %s and %s".format(self.constrain_variable[0])
+        elif self.constrain_type == "and":
+            constr_str = "{} = %s and {} = %s".format(self.constrain_variable[0], self.constrain_variable[1])
+            self.constrain_variable.remove(self.constrain_variable[0])
+        elif self.constrain_type == "or":
+            constr_str = "{} = %s or {} = %s".format(self.constrain_variable[0], self.constrain_variable[1])
+            self.constrain_variable.remove(self.constrain_variable[0])
+        elif self.constrain_type == "not":
+            constr_str = "not {} = %s".format(self.constrain_variable[0])
+        elif self.constrain_type == "no_tp":
+            constr_str = "{} = %s".format(self.constrain_variable[0])
+        else:
+            return None
+        self.constrain_variable.remove(self.constrain_variable[0])
+        self.constrain_type.remove(self.constrain_type[0])
+        constr_str += self.constrain_str()
+        if self.constrain_variable is None:
+            return constr_str
+
+    def len_check(self):
+        if len(self.table_variable) != len(self.variable_value[0]):
+            return False
+        if len(self.constrain_variable) != len(self.constrain_value[0]):
+            return False
+        return True
+
+    def gen_sql_statements(self):
+        if self.inst_type == "insert":
+            cmd_str = self.insert()
+        elif self.inst_type == "update":
+            cmd_str = self.update()
+        elif self.inst_type == "select":
+            cmd_str = self.insert()
+        elif self.inst_type == "delete":
+            cmd_str = "delect"
+        return cmd_str
+
+    def insert(self):
+        cmd_str = "insert into {} ({}) values ({})"
+        values_field = ''
+        if not self.len_check():
+            return None
+        for nums in range(len(self.table_variable)):
+            values_field += "%s,"
+        values_field = values_field.rstrip(",")
+        variable_field = ", ".join(self.table_variable)
+        cmd_str = cmd_str.format(self.table_dirc["*"], variable_field, values_field)
+        return cmd_str
+
+    def update(self):
+        cmd_str = "update {} set {} where {}"
+        if not self.len_check():
+            return None
+        variable_field = " = %s, ".join(self.table_variable) + " = %s"
+        constrain_field = self.constrain_str()
+        cmd_str = cmd_str.format(self.table_dirc["*"], variable_field, constrain_field)
+        return cmd_str
+
+    def select(self):
+        cmd_str = "select {} from {}"
+        if not self.len_check():
+            return None
+        variable_field = ", ".join(self.table_variable)
+        if self.constrain_type is not None:
+            cmd_str = cmd_str + " where {}"
+            constrain_field = self.constrain_str()
+            cmd_str = cmd_str.format(variable_field, self.table_dirc["*"], constrain_field)
+        else:
+            cmd_str = cmd_str.format(variable_field, self.table_dirc["*"])
+        return cmd_str

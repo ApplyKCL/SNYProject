@@ -3,7 +3,7 @@ import mysql.connector
 from datetime import datetime
 import mysql_execute
 import config_table
-import  mysql_statement_gen
+import mysql_statement_gen
 if __name__ == '__main__':
     # Display the data
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))
