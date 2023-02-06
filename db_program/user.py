@@ -7,3 +7,20 @@ class User:
 
     def check_admin(self, myclass):
         return False
+
+
+class Employee(User):
+
+    def create_progess(self):
+        print("create")
+
+    def check_progress(self):
+        print("check")
+
+    def continue_progress(self):
+        print("continue")
+
+
+class Admin(Employee):
+    def add_param(self):
+        print("add parameter")
