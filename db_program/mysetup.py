@@ -1,3 +1,4 @@
+# Author Shaonan Hu
 import os
 # from barcode import EAN13
 os.system('date')

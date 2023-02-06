@@ -34,7 +34,10 @@ if __name__ == '__main__':
         "D": "delete",
         "X": "abort"
     }
-
+    table_dirc = {
+        '*': "employee"
+    }
+    myclass = mysql_statement_gen.databaseAPI(mycursor, mydb, table_dirc)
     start_time = 0
     flag = False
     flag_count = 0
@@ -43,6 +46,11 @@ if __name__ == '__main__':
            \nD. Delete Record\nX.To terminate\nInput: ")
         if choice == 'X':
             break
-        mysql_statement_gen.generate_mysql_statement(option[choice])
+        myclass.database_operation(instruction="update",
+                                   operate_variable=("name", "value"),
+                                   constrain_type=("and", "and"),
+                                   constrain_variable=("value", "value", "value", "value"),
+                                   constrain_value=("20", "20"))
+        # mysql_statement_gen.generate_mysql_statement(option[choice])
 mydb.close()
 

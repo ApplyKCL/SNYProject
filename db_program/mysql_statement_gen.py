@@ -1,6 +1,6 @@
 import string
 import json
-
+import associative_func
 
 class databaseAPI:
     def __init__(self, db_cursor, db_class, table):
@@ -8,11 +8,11 @@ class databaseAPI:
         self.databases = db_class
         self.table_dirc = table
         self.inst_type = ""
-        self.table_variable = []
-        self.variable_value = []
-        self.constrain_variable = []
-        self.constrain_value = []
-        self.constrain_type = []
+        self.table_variable = ()
+        self.variable_value = ()
+        self.constrain_variable = ()
+        self.constrain_value = ()
+        self.constrain_type = ()
 
     def executor(self, cmd_str):
         result = {}
@@ -26,35 +26,57 @@ class databaseAPI:
         }
         return execution_result
 
-    def database_operation(self, instruction, operate_variable=(), variable_value=(), constrain_variable=(),
-                           constrain_value=(), constrain_type=()):
+    def database_operation(self, instruction,
+                           operate_variable=(),
+                           variable_value=(),
+                           constrain_variable=(),
+                           constrain_value=(),
+                           constrain_type=()):
         self.inst_type = instruction
-        self.variable_value = operate_variable
+        self.table_variable = operate_variable
         self.variable_value = variable_value
         self.constrain_variable = constrain_variable
         self.constrain_value = constrain_value
         self.constrain_type = constrain_type
         cmd_str = self.gen_sql_statements()
+        self.inst_type = ""
+        self.variable_value = ()
+        self.variable_value = ()
+        self.constrain_variable = ()
+        self.constrain_value = ()
+        self.constrain_type = ()
+        print(cmd_str)
 
     def constrain_str(self):
-        if self.constrain_type == "between":
-            constr_str = "{} between %s and %s".format(self.constrain_variable[0])
-        elif self.constrain_type == "and":
-            constr_str = "{} = %s and {} = %s".format(self.constrain_variable[0], self.constrain_variable[1])
-            self.constrain_variable.remove(self.constrain_variable[0])
-        elif self.constrain_type == "or":
-            constr_str = "{} = %s or {} = %s".format(self.constrain_variable[0], self.constrain_variable[1])
-            self.constrain_variable.remove(self.constrain_variable[0])
+        if self.constrain_type == ():
+            return ""
+        if self.constrain_type[0] == "between":
+            constr_str = "{} between %s and %s ".format(self.constrain_variable[0])
+        elif self.constrain_type[0] == "and":
+            constr_str = "{} = %s and {} = %s ".format(self.constrain_variable[0],
+                                                      self.constrain_variable[1])
+            self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
+                                                                    self.constrain_variable[0])
+        elif self.constrain_type[0] == "or":
+            constr_str = "{} = %s or {} = %s ".format(self.constrain_variable[0],
+                                                      self.constrain_variable[1])
+            self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
+                                                                    self.constrain_variable[0])
         elif self.constrain_type == "not":
-            constr_str = "not {} = %s".format(self.constrain_variable[0])
-        elif self.constrain_type == "no_tp":
-            constr_str = "{} = %s".format(self.constrain_variable[0])
+            constr_str = "not {} = %s ".format(self.constrain_variable[0])
+        elif self.constrain_type[0] == "no_tp":
+            constr_str = "{} = %s ".format(self.constrain_variable[0])
         else:
             return None
-        self.constrain_variable.remove(self.constrain_variable[0])
-        self.constrain_type.remove(self.constrain_type[0])
-        constr_str += self.constrain_str()
-        if self.constrain_variable is None:
+        self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
+                                                                self.constrain_variable[0])
+        self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                            self.constrain_type[0])
+        temp = self.constrain_str()
+        if temp is None:
+            return None
+        constr_str += temp
+        if self.constrain_type == ():
             return constr_str
 
     def len_check(self):
@@ -70,7 +92,7 @@ class databaseAPI:
         elif self.inst_type == "update":
             cmd_str = self.update()
         elif self.inst_type == "select":
-            cmd_str = self.insert()
+            cmd_str = self.select()
         elif self.inst_type == "delete":
             cmd_str = "delect"
         return cmd_str
@@ -84,7 +106,9 @@ class databaseAPI:
             values_field += "%s,"
         values_field = values_field.rstrip(",")
         variable_field = ", ".join(self.table_variable)
-        cmd_str = cmd_str.format(self.table_dirc["*"], variable_field, values_field)
+        cmd_str = cmd_str.format(self.table_dirc["*"],
+                                 variable_field,
+                                 values_field)
         return cmd_str
 
     def update(self):
@@ -92,19 +116,26 @@ class databaseAPI:
         if not self.len_check():
             return None
         variable_field = " = %s, ".join(self.table_variable) + " = %s"
-        constrain_field = self.constrain_str()
-        cmd_str = cmd_str.format(self.table_dirc["*"], variable_field, constrain_field)
+        temp = self.constrain_str()
+        if temp is None:
+            return None
+        constrain_field = temp
+        cmd_str = cmd_str.format(self.table_dirc["*"],
+                                 variable_field,
+                                 constrain_field)
         return cmd_str
 
     def select(self):
         cmd_str = "select {} from {}"
-        if not self.len_check():
-            return None
+
         variable_field = ", ".join(self.table_variable)
-        if self.constrain_type is not None:
+        if self.constrain_type != ():
             cmd_str = cmd_str + " where {}"
             constrain_field = self.constrain_str()
-            cmd_str = cmd_str.format(variable_field, self.table_dirc["*"], constrain_field)
+            cmd_str = cmd_str.format(variable_field,
+                                     self.table_dirc["*"],
+                                     constrain_field)
         else:
-            cmd_str = cmd_str.format(variable_field, self.table_dirc["*"])
+            cmd_str = cmd_str.format(variable_field,
+                                     self.table_dirc["*"])
         return cmd_str

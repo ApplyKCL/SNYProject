@@ -1,3 +1,4 @@
+# Author: Shaonan Hu
 # Class that used to define the parameters
 class Parameter:
     def __init__(self, parameter_id, parameter_name, parameter_value, parameter_upper, parameter_lower):
