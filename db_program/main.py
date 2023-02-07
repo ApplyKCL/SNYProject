@@ -48,9 +48,7 @@ if __name__ == '__main__':
             break
         myclass.database_operation(instruction="update",
                                    operate_variable=("name", "value"),
-                                   constrain_type=("and", "and"),
-                                   constrain_variable=("value", "value", "value", "value"),
-                                   constrain_value=("20", "20"))
+                                   variable_value=("123", "123"))
         # mysql_statement_gen.generate_mysql_statement(option[choice])
 mydb.close()
 

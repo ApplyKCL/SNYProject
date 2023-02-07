@@ -54,7 +54,7 @@ class databaseAPI:
             constr_str = "{} between %s and %s ".format(self.constrain_variable[0])
         elif self.constrain_type[0] == "and":
             constr_str = "{} = %s and {} = %s ".format(self.constrain_variable[0],
-                                                      self.constrain_variable[1])
+                                                       self.constrain_variable[1])
             self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
                                                                     self.constrain_variable[0])
         elif self.constrain_type[0] == "or":
