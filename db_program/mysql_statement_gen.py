@@ -5,19 +5,19 @@ import associative_func
 
 # Class used to generate the SQL statement
 class databaseAPI:
-    def __init__(self, db_class, table):
+    def __init__(self, db_class: classmethod, table: str):
         self.cursor = db_class.cursor()
         self.databases = db_class
-        self.table_dirc = table
-        self.inst_type = ""
-        self.table_variable = ()
-        self.variable_value = ()
-        self.constrain_variable = ()
-        self.constrain_value = ()
-        self.constrain_type = ()
+        self.table_name = table
+        self.inst_type: str = ""
+        self.table_variable: tuple = ()
+        self.variable_value: tuple = ()
+        self.constrain_variable: tuple = ()
+        self.constrain_value: tuple = ()
+        self.constrain_type: tuple = ()
 
     # Function that used to execute the SQL
-    def executor(self, cmd_str):
+    def executor(self, cmd_str: str):
         result = {}
         self.cursor.execute(cmd_str, self.constrain_value)
         if self.inst_type == "select":
@@ -42,7 +42,7 @@ class databaseAPI:
         self.constrain_value = constrain_value
         self.constrain_type = constrain_type
         cmd_str = self.gen_sql_statements()
-        print(self.executor(cmd_str))
+        result_dirc: dir = self.executor(cmd_str)
         self.inst_type = ""
         self.variable_value = ()
         self.variable_value = ()
@@ -50,6 +50,9 @@ class databaseAPI:
         self.constrain_value = ()
         self.constrain_type = ()
         print(cmd_str)
+        if result_dirc["changed"] <= 0:
+            return False
+        return result_dirc["result"]
 
     # Set the filter but has some issues
     def constrain_str(self):
@@ -105,14 +108,16 @@ class databaseAPI:
             cmd_str = "delect"
         return cmd_str
 
+# Function that used to cascade the insert function
     def insert(self):
+        # The command string that
         cmd_str = "insert into {} ({}) values ({})"
         values_field = ''
         for nums in range(len(self.table_variable)):
             values_field += "%s,"
         values_field = values_field.rstrip(",")
         variable_field = ", ".join(self.table_variable)
-        cmd_str = cmd_str.format(self.table_dirc["*"],
+        cmd_str = cmd_str.format(self.table_name,
                                  variable_field,
                                  values_field)
         return cmd_str
@@ -123,7 +128,7 @@ class databaseAPI:
         if self.constrain_type == ():
             return None
         # need to be modified
-        cmd_str = cmd_str.format(self.table_dirc["*"],
+        cmd_str = cmd_str.format(self.table_name,
                                  variable_field)
         return cmd_str
 
@@ -136,9 +141,9 @@ class databaseAPI:
             cmd_str = cmd_str + " where {}"
             constrain_field = self.constrain_str()
             cmd_str = cmd_str.format(variable_field,
-                                     self.table_dirc["*"],
+                                     self.table_name,
                                      constrain_field)
         else:
             cmd_str = cmd_str.format(variable_field,
-                                     self.table_dirc["*"])
+                                     self.table_name)
         return cmd_str
