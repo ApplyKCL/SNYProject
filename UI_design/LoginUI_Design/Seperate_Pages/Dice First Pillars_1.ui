@@ -13,174 +13,227 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1290</width>
-     <height>730</height>
-    </rect>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/images/images/Dice First Pillars_1.png);</string>
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="text">
-    <string/>
+   <property name="topMargin">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_Data">
-   <property name="geometry">
-    <rect>
-     <x>630</x>
-     <y>150</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
+   <property name="rightMargin">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_Initials">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>210</y>
-     <width>91</width>
-     <height>22</height>
-    </rect>
+   <property name="bottomMargin">
+    <number>0</number>
    </property>
-   <property name="placeholderText">
-    <string>   Initial Here</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_Dates">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>670</y>
-     <width>101</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit{
-background-color: rgb(240, 240, 240);
-border: none;
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_28">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/WI-301610.png);</string>
+      </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>1080</x>
+         <y>650</y>
+         <width>150</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border-image: none;
 }</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_Steps">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>670</y>
-     <width>101</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit{
-background-color: rgb(240, 240, 240);
-border: none;
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice First Pillars_1.png);</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>1100</x>
+         <y>660</y>
+         <width>150</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border-image: none;
 }</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>270</y>
-     <width>681</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="placeholderText">
-    <string>Please provide detailed descriptions if you feel necessary </string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Next">
-   <property name="geometry">
-    <rect>
-     <x>1140</x>
-     <y>650</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(255, 255, 255);
-height: 35px;
-}
-QPushButton::hover{
-background-color: rgb(0, 0, 255);
-}
-QPushButton:pressed{
-padding-top:7px;
-padding-top:7px;
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice First Pillars_2.png);</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>1120</x>
+         <y>670</y>
+         <width>150</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border-image: none;
 }</string>
-   </property>
-   <property name="text">
-    <string>Next</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Previous">
-   <property name="geometry">
-    <rect>
-     <x>1030</x>
-     <y>650</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(255, 255, 255);
-height: 35px;
-}
-QPushButton::hover{
-background-color: rgb(0, 0, 255);
-}
-QPushButton:pressed{
-padding-top:7px;
-padding-top:7px;
-}</string>
-   </property>
-   <property name="text">
-    <string>Previous</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>920</x>
-     <y>650</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(255, 255, 255);
-height: 35px;
-}
-QPushButton::hover{
-background-color: rgb(0, 0, 255);
-}
-QPushButton:pressed{
-padding-top:7px;
-padding-top:7px;
-}</string>
-   </property>
-   <property name="text">
-    <string>Back</string>
-   </property>
-  </widget>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice First Pillars_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Piezo_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_5">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Piezo_2.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_6">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Piezo_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_7">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Trench Pattern_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_8">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Trench Pattern_2.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_9">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Dice Framing Trench Pattern_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_10">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill First Pillars_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_11">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill First Pillars_2.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_12">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill First Pillars_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_13">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill First Pillars_4.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_14">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill Second Pillars and Frame_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_15">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill Second Pillars and Frame_2.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_16">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill Second Pillars and Frame_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_17">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Fill Second Pillars and Frame_4.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_18">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Lap First Epoxy Fill.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_19">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Mount Piezo Wafer - 1.PNG);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_20">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Mount Piezo Wafer - 2.PNG);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_21">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Mount Piezo Wafer - 3.PNG);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_22">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Mount Subwafers.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_23">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Pre-Lap First Epoxy Fill_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_24">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Pre-Lap First Epoxy Fill_2.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_25">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Pre-Lap First Epoxy Fill_3.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_26">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Premount Clean and Measure Subwafer_1.png);</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="page_27">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/Premount Clean and Measure Subwafer_2.png);</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources>
-  <include location="D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/resource.qrc"/>
+  <include location="../resource.qrc"/>
  </resources>
  <connections/>
 </ui>
