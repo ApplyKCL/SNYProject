@@ -11,7 +11,4 @@ def check_user(account_number: str, password: str, sql_class: sqlgen.databaseAPI
                                           constrain_value=(account_number, password))
     if not result:
         return False
-    result = list(result[0])
-    if result[len(result)-1] == 1:
-        print("AD")
-    return None
+    return list(result[0])

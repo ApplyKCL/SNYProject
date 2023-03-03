@@ -4,7 +4,7 @@ from datetime import datetime
 import mysql_execute
 import config_table
 import mysql_statement_gen
-import user as u
+import user
 import check_user as chk_user
 
 if __name__ == '__main__':
@@ -38,7 +38,19 @@ if __name__ == '__main__':
     start_time = 0
     flag = False
     flag_count = 0
-    chk_user.check_user("sh258955", "123456", myclass)
+    result = chk_user.check_user("sh258955", "123456", myclass)
+    if not result:
+        print("Error In Use")
+    print(result)
+    if result[len(result) - 1] == 1:
+        admin = user.Admin(user_id=result[0],
+                           user_name=result[1],
+                           user_email=result[2],
+                           db_class=mydb)
+        admin.create_new()
+        print("admin")
+    else:
+        print("Emp")
     """
     account_number = input("Input Account Number: ")
     password = input("Input Password: ")
