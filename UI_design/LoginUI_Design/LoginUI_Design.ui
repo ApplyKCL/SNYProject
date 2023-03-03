@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>957</width>
-    <height>516</height>
+    <width>999</width>
+    <height>570</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -260,7 +260,7 @@ QPushButton:hover{
  </widget>
  <resources>
   <include location="resource.qrc"/>
-  <include location="../SNYProject/UI_design/ECED4900_UI/res.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections>
   <connection>

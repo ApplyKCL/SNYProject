@@ -1,6 +1,34 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/WI-301610.png</file>
     <file>images/Daxsonics-Logo-Padded.png</file>
+    <file>images/Dice First Pillars_1.png</file>
+    <file>images/Dice First Pillars_2.png</file>
+    <file>images/Dice First Pillars_3.png</file>
+    <file>images/Dice Framing Piezo_1.png</file>
+    <file>images/Dice Framing Piezo_2.png</file>
+    <file>images/Dice Framing Piezo_3.png</file>
+    <file>images/Dice Framing Trench Pattern_1.png</file>
+    <file>images/Dice Framing Trench Pattern_2.png</file>
+    <file>images/Dice Framing Trench Pattern_3.png</file>
+    <file>images/Fill First Pillars_1.png</file>
+    <file>images/Fill First Pillars_2.png</file>
+    <file>images/Fill First Pillars_3.png</file>
+    <file>images/Fill First Pillars_4.png</file>
+    <file>images/Fill Second Pillars and Frame_1.png</file>
+    <file>images/Fill Second Pillars and Frame_2.png</file>
+    <file>images/Fill Second Pillars and Frame_3.png</file>
+    <file>images/Fill Second Pillars and Frame_4.png</file>
+    <file>images/Lap First Epoxy Fill.png</file>
+    <file>images/Mount Piezo Wafer - 1.PNG</file>
+    <file>images/Mount Piezo Wafer - 2.PNG</file>
+    <file>images/Mount Piezo Wafer - 3.PNG</file>
+    <file>images/Mount Subwafers.png</file>
+    <file>images/Pre-Lap First Epoxy Fill_1.png</file>
+    <file>images/Pre-Lap First Epoxy Fill_2.png</file>
+    <file>images/Pre-Lap First Epoxy Fill_3.png</file>
+    <file>images/Premount Clean and Measure Subwafer_1.png</file>
+    <file>images/Premount Clean and Measure Subwafer_2.png</file>
   </qresource>
   <qresource prefix="icons">
     <file>icons/Close-256.png</file>
