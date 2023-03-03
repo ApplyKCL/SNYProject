@@ -458,4 +458,3 @@ class Ui_Admin_WIndow(object):
         self.change_user_of_phone_lineEdit.setPlaceholderText(_translate("Admin_WIndow", "Phone Number"))
         self.change_user_of_email_lineEdit.setPlaceholderText(_translate("Admin_WIndow", "Email"))
         self.change_user_of_password_lineEdit.setPlaceholderText(_translate("Admin_WIndow", "Password"))
-import app_rc

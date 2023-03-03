@@ -123,4 +123,3 @@ class Ui_User_WIndow(object):
         self.Barcode_Scan_pushButton.setText(_translate("User_WIndow", "Barcode Scan"))
         self.Countinue_pushButton.setText(_translate("User_WIndow", "Countinue "))
         self.LogOut_User_pushButton.setText(_translate("User_WIndow", "LogOut"))
-import app_rc
