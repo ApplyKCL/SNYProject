@@ -1,1 +1,134 @@
-{"name": "SYNProject", "time": "1200"}
+{
+  "db_name": "SYNProject",
+  "exp_time": "1200",
+  "tables": [
+    {
+      "table_name": "device_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255) not null,",
+        "product_id varchar(255)"
+      ]
+    },
+    {
+      "table_name": "comp_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255) not null,",
+        "component_id varchar(255),",
+        "required_amount int default 1"
+      ]
+    },
+    {
+      "table_name": "inst_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255) not null,",
+        "repeat_times int default 1,",
+        "previous_inst int,",
+        "next_inst int,",
+        "start bit default 1"
+      ]
+    },
+    {
+      "table_name": "step_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(1000) not null,",
+        "repeat_times int,",
+        "previous_step int,",
+        "next_step int,",
+        "start bit,",
+        "sub bit default 0,",
+        "sub_id int"
+      ]
+    },
+    {
+      "table_name": "param_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255) not null,",
+        "req_one varchar(255) default null,",
+        "req_two varchar(255) default null,",
+        "req_tree varchar(255) default null,",
+        "req_four varchar(255) default null,",
+        "req_five varchar(255) default null,",
+        "data bit default 0,",
+        "initial bit default 0,",
+        "sub bit default 0,",
+        "sub_id int,",
+        "value int,",
+        "upper_bound int,",
+        "lower_bound int"
+      ]
+    },
+    {
+      "table_name": "aso_step_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "device_id int,",
+        "comp_id int,",
+        "inst_id int,",
+        "step_id int,",
+        "param_id int,",
+        "constraint fk_dev_stp foreign key (device_id) references device_table(id),",
+        "constraint fk_comp_stp foreign key (comp_id) references comp_table(id),",
+        "constraint fk_inst_stp foreign key (inst_id) references inst_table(id),",
+        "constraint fk_step_stp foreign key (step_id) references step_table(id),",
+        "constraint fk_param_stp foreign key (param_id) references param_table(id)"
+      ]
+    },
+    {
+      "table_name": "employee_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255) not null,",
+        "job varchar(255),",
+        "email varchar(255),",
+        "account_number varchar(255) not null,",
+        "password varchar(255) not null,",
+        "admin_status bit"
+      ]
+    },
+    {
+      "table_name": "process_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "device_id int,",
+        "component_id int,",
+        "last_step int,",
+        "status bit,",
+        "constraint fk_dev_pro foreign key (device_id) references device_table(id),",
+        "constraint fk_comp_pro foreign key (component_id) references comp_table(id)"
+      ]
+    },
+    {
+      "table_name": "data_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "inst_id int,",
+        "step_id int,",
+        "step_repeated int,",
+        "status bit,",
+        "initial bit,",
+        "data bit,",
+        "initial_field varchar(255),",
+        "data_field int,",
+        "constraint fk_inst_pro foreign key (inst_id) references inst_table(id),",
+        "constraint fk_step_pro foreign key (step_id) references step_table(id)"
+      ]
+    },
+    {
+      "table_name": "aso_pro_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "emp_id int,",
+        "pro_id int,",
+        "data_id int,",
+        "constraint fk_emp_pro foreign key (emp_id) references employee_table(id),",
+        "constraint fk_pro_pro foreign key (pro_id) references process_table(id),",
+        "constraint fk_data_pro foreign key (data_id) references data_table(id)"
+      ]
+    }
+  ]
+}
