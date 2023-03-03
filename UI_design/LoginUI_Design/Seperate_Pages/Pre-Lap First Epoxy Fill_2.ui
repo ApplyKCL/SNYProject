@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1290</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1290</width>
+     <height>730</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/images/Pre-Lap First Epoxy Fill_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Initials">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>210</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>      Initial Here</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit_Comments">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>390</y>
+     <width>711</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Please provide detailed descriptions if you feel necessary </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Dates">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>670</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+background-color: rgb(240, 240, 240);
+border: none;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Steps">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>670</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+background-color: rgb(240, 240, 240);
+border: none;
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Next">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>660</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+height: 35px;
+}
+QPushButton::hover{
+background-color: rgb(0, 0, 255);
+}
+QPushButton:pressed{
+padding-top:7px;
+padding-top:7px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Next</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Previous">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>660</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+height: 35px;
+}
+QPushButton::hover{
+background-color: rgb(0, 0, 255);
+}
+QPushButton:pressed{
+padding-top:7px;
+padding-top:7px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Previous</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Back">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>660</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+height: 35px;
+}
+QPushButton::hover{
+background-color: rgb(0, 0, 255);
+}
+QPushButton:pressed{
+padding-top:7px;
+padding-top:7px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
