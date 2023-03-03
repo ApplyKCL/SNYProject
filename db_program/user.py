@@ -1,6 +1,6 @@
 # Author Shaonan Hu
 import mysql_statement_gen as sqlgen
-
+import config
 
 # Define User Class
 class User:
@@ -27,20 +27,26 @@ class Admin(Employee):
     def Admin_print(self):
         print("admin")
 
-    def create_new(self):
-        print(self.query_device())
 
+    def create_new(self):
+        choice = input("Product ID [ID/N]: ")
+        if choice == "N":
+        return True
+
+
+    #Create the new device
     def create_new_device(self):
-        if self.sql_class.table_name is not 'device_table':
-            self.sql_class.table_name = 'device_table'
+        self.sql_class.table_name = config.table_name[config.device_position]
         device_name = input("Enter the Device Name: ")
         product_id = input("Enter the product ID: ")
         result = self.sql_class.database_operation(instruction="insert",
-                                                   operate_variable="")
+                                                   operate_variable=("name", "product_id"),
+                                                   variable_value=(device_name, product_id))
+        return result
 
+    #Query the device with ID/No ID
     def query_device(self, product_id: str = None):
-        if self.sql_class.table_name is not 'device_table':
-            self.sql_class.table_name = 'device_table'
+        self.sql_class.table_name = config.table_name[config.device_position]
         # Function that used to query the device information
         if product_id is not None:
             constrain_type = ("no_tp",)
@@ -55,6 +61,4 @@ class Admin(Employee):
                                                    constrain_type=constrain_type,
                                                    constrain_variable=constrain_variable,
                                                    constrain_value=constrain_value)
-        if not result:
-            return False
         return result
