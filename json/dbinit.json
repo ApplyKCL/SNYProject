@@ -129,6 +129,15 @@
         "constraint fk_pro_pro foreign key (pro_id) references process_table(id),",
         "constraint fk_data_pro foreign key (data_id) references data_table(id)"
       ]
+    },
+     {
+      "table_name": "test_table",
+      "table_elements": [
+        "id int auto_increment primary key unique,",
+        "name varchar(255),",
+        "status bit,",
+        "data float"
+      ]
     }
   ]
 }
