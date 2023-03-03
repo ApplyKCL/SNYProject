@@ -20,6 +20,6 @@ def create_table(db_cursor, mydb):
             # Cascade each of the statement to the comment string
             cmd_str = cmd_str + "\t" + json_dirc["tables"][table_index]["table_elements"][statement_index] + "\n\t"
         cmd_str = cmd_str + ");\n\t"
-        mysql_execute.execute_mysql(db_cursor, mydb, cmd_str, 0)
+        mysql_execute.execute_mysql(mydb, cmd_str, 0)
         cmd_str = "\t"
 
