@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/invisible_pic.jfif</file>
     <file>images/WI-301610.png</file>
     <file>images/Daxsonics-Logo-Padded.png</file>
     <file>images/Dice First Pillars_1.png</file>
