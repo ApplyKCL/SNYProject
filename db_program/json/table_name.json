@@ -1,0 +1,14 @@
+{
+  "table_name": [
+    "device_table",
+    "comp_table",
+    "inst_table",
+    "step_table",
+    "param_table",
+    "employee_table",
+    "process_table",
+    "data_table",
+    "aso_step_table",
+    "aso_pro_table"
+  ]
+}
