@@ -5,7 +5,7 @@ import mysql_execute
 
 def create_table(db_cursor, mydb):
     # Open the JSON file
-    file = open("dbinit.json", "rt")
+    file = open("json/dbinit.json", "rt")
     # Read the JSON file content
     json_dirc = json.loads(file.read())
     # close file
