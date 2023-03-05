@@ -32,6 +32,7 @@
     <file>images/Daxsonics-Logo-Padded.png</file>
   </qresource>
   <qresource prefix="icons">
+    <file>icons/Close-256.png</file>
     <file>icons/maximize.png</file>
     <file>icons/Maximize-WF-256.png</file>
     <file>icons/minimize.png</file>
