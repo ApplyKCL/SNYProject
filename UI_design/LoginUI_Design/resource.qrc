@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/Mount_Piezo_Wafer_1.PNG</file>
+    <file>images/Mount_Piezo_Wafer_2.PNG</file>
+    <file>images/Mount_Piezo_Wafer_3.PNG</file>
     <file>images/Dice_First_Pillars_1.png</file>
     <file>images/Dice_First_Pillars_2.png</file>
     <file>images/Dice_First_Pillars_3.png</file>
