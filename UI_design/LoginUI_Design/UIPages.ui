@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>22</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -66,7 +66,7 @@
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/WI_301610.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Name">
+       <widget class="QTextEdit" name="HomePage_Name">
         <property name="geometry">
          <rect>
           <x>80</x>
@@ -86,7 +86,7 @@
 </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_3">
+       <widget class="QPushButton" name="HomePage_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -113,7 +113,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_3">
+       <widget class="QPushButton" name="HomePage_Back">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -141,7 +141,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_2">
+      <widget class="QWidget" name="Mount_Piezo_Wafer_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -151,7 +151,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_1.PNG);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments_3">
+       <widget class="QTextEdit" name="Mount_Piezo_Wafer_1_Comments_3">
         <property name="geometry">
          <rect>
           <x>330</x>
@@ -168,7 +168,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Next">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_1_Next">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -204,7 +204,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Back">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_1_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -240,7 +240,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_2">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_1_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -257,7 +257,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_4">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_1_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -274,7 +274,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data_2">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_1_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -301,7 +301,7 @@ border-image:None;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_3">
+      <widget class="QWidget" name="Mount_Piezo_Wafer_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -311,7 +311,7 @@ border-image:None;</string>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="lineEdit_Data_3">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_2_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -337,7 +337,7 @@ border-image:None;</string>
          <string>      Initial Here</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_Comments_4">
+       <widget class="QTextEdit" name="Mount_Piezo_Wafer_2_Comments">
         <property name="geometry">
          <rect>
           <x>330</x>
@@ -354,7 +354,7 @@ border-image:None;</string>
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Next_2">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_2_Next">
         <property name="geometry">
          <rect>
           <x>860</x>
@@ -390,7 +390,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Back_2">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_2_Back">
         <property name="geometry">
          <rect>
           <x>750</x>
@@ -426,7 +426,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_3">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_2_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -443,7 +443,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_5">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_2_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -461,7 +461,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_4">
+      <widget class="QWidget" name="Mount_Piezo_Wafer_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -471,7 +471,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_3.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="lineEdit_Data_4">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_3_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -497,7 +497,7 @@ border-image:None;</string>
          <string>      Initial Here</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_Comments_5">
+       <widget class="QTextEdit" name="Mount_Piezo_Wafer_3_Comments">
         <property name="geometry">
          <rect>
           <x>320</x>
@@ -514,7 +514,7 @@ border-image:None;</string>
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Next_3">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_3_Next">
         <property name="geometry">
          <rect>
           <x>860</x>
@@ -550,7 +550,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_buttom_Back_3">
+       <widget class="QPushButton" name="Mount_Piezo_Wafer_3_Back">
         <property name="geometry">
          <rect>
           <x>750</x>
@@ -586,7 +586,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_4">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_3_Steps">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -603,7 +603,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_6">
+       <widget class="QLineEdit" name="Mount_Piezo_Wafer_3_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -621,7 +621,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_5">
+      <widget class="QWidget" name="Dice_Framing_Piezo_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -631,7 +631,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Dice_Framing_Piezo_1.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments_6">
+       <widget class="QTextEdit" name="Dice_Framing_Piezo_1_Comments">
         <property name="geometry">
          <rect>
           <x>50</x>
@@ -647,7 +647,7 @@ border-image:None;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data_5">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_1_Data">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -661,7 +661,7 @@ border-image:None;
 border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Initials_2">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_1_Initial_2">
         <property name="geometry">
          <rect>
           <x>610</x>
@@ -678,7 +678,7 @@ border-image:None;</string>
          <string>    Initial Here</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_4">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_1_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -705,7 +705,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_4">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_1_Back">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -732,7 +732,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_24">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_1_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -749,7 +749,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_25">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_1_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -767,7 +767,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_6">
+      <widget class="QWidget" name="Dice_Framing_Piezo_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -777,7 +777,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Dice_Framing_Piezo_2.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments_7">
+       <widget class="QTextEdit" name="Dice_Framing_Piezo_2_Comments">
         <property name="geometry">
          <rect>
           <x>60</x>
@@ -793,7 +793,7 @@ border-image:None;
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data_6">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_2_Data">
         <property name="geometry">
          <rect>
           <x>610</x>
@@ -809,7 +809,7 @@ border-image:None;
          <string>     Initial Here</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_5">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_2_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -836,7 +836,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_5">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_2_Back">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -864,7 +864,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_5">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_2_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -881,7 +881,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_7">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_2_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -899,7 +899,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_7">
+      <widget class="QWidget" name="Dice_Framing_Piezo_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -909,7 +909,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Dice_Framing_Piezo_3.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments_8">
+       <widget class="QTextEdit" name="Dice_Framing_Piezo_3_Comments">
         <property name="geometry">
          <rect>
           <x>50</x>
@@ -925,7 +925,7 @@ border-image:None;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data_7">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_3_Data">
         <property name="geometry">
          <rect>
           <x>610</x>
@@ -941,7 +941,7 @@ border-image:None;
          <string>     Initial Here</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_6">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_3_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -968,7 +968,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_6">
+       <widget class="QPushButton" name="Dice_Framing_Piezo_3_Back">
         <property name="geometry">
          <rect>
           <x>790</x>
@@ -995,7 +995,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_6">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_3_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -1012,7 +1012,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_8">
+       <widget class="QLineEdit" name="Dice_Framing_Piezo_3_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1030,7 +1030,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_8">
+      <widget class="QWidget" name="Premount_Clean_and_Measure_Subwafer_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -1040,7 +1040,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Premount_Clean_and_Measure_Subwafer_1.png);</string>
        </property>
-       <widget class="QLineEdit" name="lineEdit_Data_8">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data0">
         <property name="geometry">
          <rect>
           <x>460</x>
@@ -1056,7 +1056,7 @@ border-image:None;
          <string>   Initial Here</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_26">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data1">
         <property name="geometry">
          <rect>
           <x>650</x>
@@ -1069,7 +1069,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_27">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data2">
         <property name="geometry">
          <rect>
           <x>590</x>
@@ -1082,7 +1082,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_28">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data3">
         <property name="geometry">
          <rect>
           <x>610</x>
@@ -1095,7 +1095,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_29">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data4">
         <property name="geometry">
          <rect>
           <x>850</x>
@@ -1108,7 +1108,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_30">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data5">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -1121,7 +1121,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_31">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data6">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -1134,7 +1134,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_32">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data7">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -1147,7 +1147,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_33">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data8">
         <property name="geometry">
          <rect>
           <x>360</x>
@@ -1160,7 +1160,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_34">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data9">
         <property name="geometry">
          <rect>
           <x>360</x>
@@ -1173,7 +1173,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_35">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data10">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -1186,7 +1186,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_36">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data11">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1199,7 +1199,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_9">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -1216,7 +1216,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates_10">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1233,7 +1233,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_7">
+       <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_1_Next">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -1260,7 +1260,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_7">
+       <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_1_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -1287,7 +1287,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_Comments_9">
+       <widget class="QTextEdit" name="Premount_Clean_and_Measure_Subwafer_1_Comments">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1304,7 +1304,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_9">
+      <widget class="QWidget" name="Premount_Clean_and_Measure_Subwafer_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -1314,7 +1314,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Premount_Clean_and_Measure_Subwafer_2.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments">
+       <widget class="QTextEdit" name="Premount_Clean_and_Measure_Subwafer_2_Comments">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1330,7 +1330,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data4">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -1343,7 +1343,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_4">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data6">
         <property name="geometry">
          <rect>
           <x>370</x>
@@ -1356,7 +1356,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data5">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1369,7 +1369,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_5">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data7">
         <property name="geometry">
          <rect>
           <x>360</x>
@@ -1382,7 +1382,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Dates">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Dates">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -1399,7 +1399,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Initial">
         <property name="geometry">
          <rect>
           <x>204</x>
@@ -1416,7 +1416,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data0">
         <property name="geometry">
          <rect>
           <x>460</x>
@@ -1432,7 +1432,7 @@ border-image:None;
          <string>   Initial Here</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_6">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data8">
         <property name="geometry">
          <rect>
           <x>590</x>
@@ -1445,7 +1445,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_7">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data9">
         <property name="geometry">
          <rect>
           <x>850</x>
@@ -1458,7 +1458,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_8">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data10">
         <property name="geometry">
          <rect>
           <x>781</x>
@@ -1471,7 +1471,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_9">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data11">
         <property name="geometry">
          <rect>
           <x>650</x>
@@ -1484,7 +1484,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_10">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data1">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -1497,7 +1497,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_11">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data2">
         <property name="geometry">
          <rect>
           <x>610</x>
@@ -1510,7 +1510,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_12">
+       <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Data3">
         <property name="geometry">
          <rect>
           <x>781</x>
@@ -1523,7 +1523,7 @@ border-image:None;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back">
+       <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_2_Back">
         <property name="geometry">
          <rect>
           <x>780</x>
@@ -1550,7 +1550,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next">
+       <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_2_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -1578,7 +1578,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_10">
+      <widget class="QWidget" name="Mount_Subwafers">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -1588,7 +1588,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Mount_Subwafers.png);</string>
        </property>
-       <widget class="QTextEdit" name="textEdit_Comments_10">
+       <widget class="QTextEdit" name="Mount_Subwafers_Data13_Comments">
         <property name="geometry">
          <rect>
           <x>580</x>
@@ -1604,7 +1604,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_37">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data1">
         <property name="geometry">
          <rect>
           <x>910</x>
@@ -1617,7 +1617,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_38">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data2_Special">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -1630,7 +1630,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_39">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data3">
         <property name="geometry">
          <rect>
           <x>720</x>
@@ -1643,7 +1643,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_40">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data4">
         <property name="geometry">
          <rect>
           <x>720</x>
@@ -1656,7 +1656,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_41">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data5_Special">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -1669,7 +1669,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_42">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data6">
         <property name="geometry">
          <rect>
           <x>910</x>
@@ -1682,7 +1682,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_43">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data7">
         <property name="geometry">
          <rect>
           <x>920</x>
@@ -1695,7 +1695,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_44">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data8">
         <property name="geometry">
          <rect>
           <x>920</x>
@@ -1708,7 +1708,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_45">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data9">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -1721,7 +1721,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_46">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data10">
         <property name="geometry">
          <rect>
           <x>560</x>
@@ -1734,7 +1734,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_47">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data11">
         <property name="geometry">
          <rect>
           <x>580</x>
@@ -1747,7 +1747,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_48">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data12">
         <property name="geometry">
          <rect>
           <x>360</x>
@@ -1760,7 +1760,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_49">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data13">
         <property name="geometry">
          <rect>
           <x>370</x>
@@ -1773,7 +1773,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_50">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data14">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1786,7 +1786,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_51">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data15">
         <property name="geometry">
          <rect>
           <x>80</x>
@@ -1799,7 +1799,7 @@ padding-top:7px;
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Next_8">
+       <widget class="QPushButton" name="Mount_Subwafers_Data13_Next">
         <property name="geometry">
          <rect>
           <x>900</x>
@@ -1826,7 +1826,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_Back_8">
+       <widget class="QPushButton" name="Mount_Subwafers_Back">
         <property name="geometry">
          <rect>
           <x>790</x>
@@ -1853,7 +1853,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_7">
+       <widget class="QLineEdit" name="Mount_Subwafers_Initial">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -1870,7 +1870,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Steps_8">
+       <widget class="QLineEdit" name="Mount_Subwafers_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1887,7 +1887,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_Data_9">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data0">
         <property name="geometry">
          <rect>
           <x>470</x>
@@ -1904,7 +1904,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_11">
+      <widget class="QWidget" name="Dice_First_Pillars_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2048,7 +2048,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_12">
+      <widget class="QWidget" name="Dice_First_Pillars_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2192,7 +2192,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_13">
+      <widget class="QWidget" name="Dice_First_Pillars_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2323,7 +2323,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_14">
+      <widget class="QWidget" name="Fill_First_Pillars_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2454,7 +2454,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_15">
+      <widget class="QWidget" name="Fill_First_Pillars_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2585,7 +2585,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_16">
+      <widget class="QWidget" name="Fill_First_Pillars_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2768,7 +2768,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_17">
+      <widget class="QWidget" name="Fill_First_Pillars_4">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -2899,7 +2899,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_18">
+      <widget class="QWidget" name="PreLap_First_Epoxy_Fill_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3043,7 +3043,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_19">
+      <widget class="QWidget" name="PreLap_First_Epoxy_Fill_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3174,7 +3174,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_20">
+      <widget class="QWidget" name="PreLap_First_Epoxy_Fill_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3305,7 +3305,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_21">
+      <widget class="QWidget" name="Lap_First_Epoxy_Fill">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3579,7 +3579,7 @@ border-image:None;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_22">
+      <widget class="QWidget" name="Dice_Framing_Trench_Pattern_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3723,7 +3723,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_23">
+      <widget class="QWidget" name="Dice_Framing_Trench_Pattern_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3867,7 +3867,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_24">
+      <widget class="QWidget" name="Dice_Framing_Trench_Pattern_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -3998,7 +3998,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_25">
+      <widget class="QWidget" name="Fill_Second_Pillars_and_Frame_1">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -4129,7 +4129,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_26">
+      <widget class="QWidget" name="Fill_Second_Pillars_and_Frame_2">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -4260,7 +4260,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_27">
+      <widget class="QWidget" name="Fill_Second_Pillars_and_Frame_3">
        <property name="maximumSize">
         <size>
          <width>1024</width>
@@ -4443,7 +4443,7 @@ padding-top:7px;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_28">
+      <widget class="QWidget" name="Fill_Second_Pillars_and_Frame_4">
        <property name="maximumSize">
         <size>
          <width>1024</width>
