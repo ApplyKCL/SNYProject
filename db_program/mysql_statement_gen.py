@@ -19,7 +19,7 @@ class databaseAPI:
     # Function that used to execute the SQL
     def executor(self, cmd_str: str):
         result = {}
-        self.cursor.execute(cmd_str, self.constrain_value)
+        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)
         if self.inst_type == "select":
             result = self.cursor.fetchall()
         self.databases.commit()
@@ -114,12 +114,13 @@ class databaseAPI:
         cmd_str = "insert into {} ({}) values ({})"
         values_field = ''
         for nums in range(len(self.table_variable)):
-            values_field += "%s,"
-        values_field = values_field.rstrip(",")
+            values_field += "%s, "
+        values_field = values_field.rstrip(", ")
         variable_field = ", ".join(self.table_variable)
         cmd_str = cmd_str.format(self.table_name,
                                  variable_field,
                                  values_field)
+        print(cmd_str)
         return cmd_str
 
     def update(self):

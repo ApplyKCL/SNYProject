@@ -48,7 +48,11 @@ if __name__ == '__main__':
                            user_name=result[1],
                            user_email=result[2],
                            db_class=mydb)
-        admin.create_new()
+        admin.register_user(user_name="Jiahao Chen",
+                            user_job="Computer Engineering",
+                            user_email="jiahao@gmail.com",
+                            account_number="jh123455",
+                            password="123456")
         print("admin")
     else:
         print("Emp")

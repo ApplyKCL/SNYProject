@@ -37,7 +37,7 @@ class Admin(Employee):
                                                    operate_variable=("name", "job", "email",
                                                                      "account_number", "password", "admin_status"),
                                                    variable_value=(user_name, user_job, user_email, account_number,
-                                                                   password, 0))
+                                                                   password, False))
         if not result:
             return False
         else:
@@ -53,7 +53,6 @@ class Admin(Employee):
             return False
         else:
             return result
-
 
     def create_new(self):
         # Query if there has the device in DB
