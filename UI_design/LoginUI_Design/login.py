@@ -14,8 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Login_Window(object):
     def setupUi(self, Login_Window):
         Login_Window.setObjectName("Login_Window")
-        Login_Window.resize(957, 516)
+        Login_Window.resize(1024, 600)
+        Login_Window.setMaximumSize(QtCore.QSize(1024, 600))
         self.centralwidget = QtWidgets.QWidget(Login_Window)
+        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 600))
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -30,7 +32,7 @@ class Ui_Login_Window(object):
         self.login_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.login_menu.setObjectName("login_menu")
         self.Titl_welcome = QtWidgets.QLabel(self.login_menu)
-        self.Titl_welcome.setGeometry(QtCore.QRect(60, 70, 178, 29))
+        self.Titl_welcome.setGeometry(QtCore.QRect(17, 70, 261, 29))
         self.Titl_welcome.setMaximumSize(QtCore.QSize(16777215, 40))
         font = QtGui.QFont()
         font.setFamily("Calibri")
@@ -88,22 +90,13 @@ class Ui_Login_Window(object):
         self.login_content.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.login_content.setFrameShadow(QtWidgets.QFrame.Raised)
         self.login_content.setObjectName("login_content")
-        self.pushButton_3 = QtWidgets.QPushButton(self.login_content)
-        self.pushButton_3.setGeometry(QtCore.QRect(599, 10, 42, 20))
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
-"    border:none;\n"
-"}\n"
-"QPushButton:hover{\n"
-"    padding-bottom:5px;\n"
-"}")
-        self.pushButton_3.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/Close-256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon)
-        self.pushButton_3.setIconSize(QtCore.QSize(20, 20))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_2 = QtWidgets.QPushButton(self.login_content)
-        self.pushButton_2.setGeometry(QtCore.QRect(550, 10, 43, 20))
+        self.layoutWidget = QtWidgets.QWidget(self.login_content)
+        self.layoutWidget.setGeometry(QtCore.QRect(610, 20, 62, 22))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.pushButton_2 = QtWidgets.QPushButton(self.layoutWidget)
         self.pushButton_2.setStyleSheet("QPushButton{\n"
 "    border:none;\n"
 "}\n"
@@ -111,11 +104,26 @@ class Ui_Login_Window(object):
 "    padding-bottom:5px;\n"
 "}")
         self.pushButton_2.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/Minus-256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_2.setIcon(icon1)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/Minus-256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_3.addWidget(self.pushButton_2)
+        self.pushButton_3 = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_3.setStyleSheet("QPushButton{\n"
+"    border:none;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    padding-bottom:5px;\n"
+"}")
+        self.pushButton_3.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/Close-256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_3.setIcon(icon1)
+        self.pushButton_3.setIconSize(QtCore.QSize(20, 20))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_3.addWidget(self.pushButton_3)
         self.horizontalLayout_2.addWidget(self.login_content)
         Login_Window.setCentralWidget(self.centralwidget)
 
@@ -131,5 +139,4 @@ class Ui_Login_Window(object):
         self.Password.setPlaceholderText(_translate("Login_Window", "Password:"))
         self.Login_Button.setText(_translate("Login_Window", "Login"))
         self.UserID.setPlaceholderText(_translate("Login_Window", "Employee ID:"))
-
 import resource_rc

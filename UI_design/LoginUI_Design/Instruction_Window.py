@@ -488,14 +488,14 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_1_Data5.setGeometry(QtCore.QRect(880, 150, 71, 22))
         self.Premount_Clean_and_Measure_Subwafer_1_Data5.setStyleSheet("border-image:None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data5.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data5")
-        self.Premount_Clean_and_Measure_Subwafer_1_Data6_CP = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Data6_CP.setGeometry(QtCore.QRect(780, 410, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data6_CP.setStyleSheet("border-image:None;")
-        self.Premount_Clean_and_Measure_Subwafer_1_Data6_CP.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data6_CP")
-        self.Premount_Clean_and_Measure_Subwafer_1_Data7_CP = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Data7_CP.setGeometry(QtCore.QRect(780, 450, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data7_CP.setStyleSheet("border-image:None;")
-        self.Premount_Clean_and_Measure_Subwafer_1_Data7_CP.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data7_CP")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data6 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
+        self.Premount_Clean_and_Measure_Subwafer_1_Data6.setGeometry(QtCore.QRect(780, 410, 71, 22))
+        self.Premount_Clean_and_Measure_Subwafer_1_Data6.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data6.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data6")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data7 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
+        self.Premount_Clean_and_Measure_Subwafer_1_Data7.setGeometry(QtCore.QRect(780, 450, 71, 22))
+        self.Premount_Clean_and_Measure_Subwafer_1_Data7.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data7.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data7")
         self.Premount_Clean_and_Measure_Subwafer_1_Data8 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data8.setGeometry(QtCore.QRect(360, 420, 61, 22))
         self.Premount_Clean_and_Measure_Subwafer_1_Data8.setStyleSheet("border-image:None;")
@@ -615,10 +615,10 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_2_Data9.setGeometry(QtCore.QRect(850, 320, 71, 22))
         self.Premount_Clean_and_Measure_Subwafer_2_Data9.setStyleSheet("border-image:None;")
         self.Premount_Clean_and_Measure_Subwafer_2_Data9.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data9")
-        self.Premount_Clean_and_Measure_Subwafer_2_Data10_CP = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_2)
-        self.Premount_Clean_and_Measure_Subwafer_2_Data10_CP.setGeometry(QtCore.QRect(781, 442, 89, 22))
-        self.Premount_Clean_and_Measure_Subwafer_2_Data10_CP.setStyleSheet("border-image:None;")
-        self.Premount_Clean_and_Measure_Subwafer_2_Data10_CP.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data10_CP")
+        self.Premount_Clean_and_Measure_Subwafer_2_Data10 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_2)
+        self.Premount_Clean_and_Measure_Subwafer_2_Data10.setGeometry(QtCore.QRect(781, 442, 89, 22))
+        self.Premount_Clean_and_Measure_Subwafer_2_Data10.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_2_Data10.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data10")
         self.Premount_Clean_and_Measure_Subwafer_2_Data11 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_2)
         self.Premount_Clean_and_Measure_Subwafer_2_Data11.setGeometry(QtCore.QRect(650, 120, 71, 22))
         self.Premount_Clean_and_Measure_Subwafer_2_Data11.setStyleSheet("border-image:None;")
@@ -631,10 +631,10 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_2_Data2.setGeometry(QtCore.QRect(610, 320, 71, 22))
         self.Premount_Clean_and_Measure_Subwafer_2_Data2.setStyleSheet("border-image:None;")
         self.Premount_Clean_and_Measure_Subwafer_2_Data2.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data2")
-        self.Premount_Clean_and_Measure_Subwafer_2_Data3_CP = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_2)
-        self.Premount_Clean_and_Measure_Subwafer_2_Data3_CP.setGeometry(QtCore.QRect(781, 407, 89, 22))
-        self.Premount_Clean_and_Measure_Subwafer_2_Data3_CP.setStyleSheet("border-image:None;")
-        self.Premount_Clean_and_Measure_Subwafer_2_Data3_CP.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data3_CP")
+        self.Premount_Clean_and_Measure_Subwafer_2_Data3 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_2)
+        self.Premount_Clean_and_Measure_Subwafer_2_Data3.setGeometry(QtCore.QRect(781, 407, 89, 22))
+        self.Premount_Clean_and_Measure_Subwafer_2_Data3.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_2_Data3.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data3")
         self.Premount_Clean_and_Measure_Subwafer_2_Back = QtWidgets.QPushButton(self.Premount_Clean_and_Measure_Subwafer_2)
         self.Premount_Clean_and_Measure_Subwafer_2_Back.setGeometry(QtCore.QRect(780, 550, 101, 29))
         self.Premount_Clean_and_Measure_Subwafer_2_Back.setStyleSheet("QPushButton{\n"
@@ -678,22 +678,22 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Data1.setGeometry(QtCore.QRect(910, 420, 71, 22))
         self.Mount_Subwafers_Data1.setStyleSheet("border-image:None;")
         self.Mount_Subwafers_Data1.setObjectName("Mount_Subwafers_Data1")
-        self.Mount_Subwafers_Data2_CN = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data2_CN.setGeometry(QtCore.QRect(820, 420, 71, 22))
-        self.Mount_Subwafers_Data2_CN.setStyleSheet("border-image:None;")
-        self.Mount_Subwafers_Data2_CN.setObjectName("Mount_Subwafers_Data2_CN")
-        self.Mount_Subwafers_Data3_CP = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data3_CP.setGeometry(QtCore.QRect(720, 420, 71, 22))
-        self.Mount_Subwafers_Data3_CP.setStyleSheet("border-image:None;")
-        self.Mount_Subwafers_Data3_CP.setObjectName("Mount_Subwafers_Data3_CP")
-        self.Mount_Subwafers_Data4_CP = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data4_CP.setGeometry(QtCore.QRect(720, 380, 71, 22))
-        self.Mount_Subwafers_Data4_CP.setStyleSheet("border-image:None;")
-        self.Mount_Subwafers_Data4_CP.setObjectName("Mount_Subwafers_Data4_CP")
-        self.Mount_Subwafers_Data5_CN = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data5_CN.setGeometry(QtCore.QRect(820, 380, 71, 22))
-        self.Mount_Subwafers_Data5_CN.setStyleSheet("border-image:None;")
-        self.Mount_Subwafers_Data5_CN.setObjectName("Mount_Subwafers_Data5_CN")
+        self.Mount_Subwafers_Data2_Special = QtWidgets.QLineEdit(self.Mount_Subwafers)
+        self.Mount_Subwafers_Data2_Special.setGeometry(QtCore.QRect(820, 420, 71, 22))
+        self.Mount_Subwafers_Data2_Special.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data2_Special.setObjectName("Mount_Subwafers_Data2_Special")
+        self.Mount_Subwafers_Data3 = QtWidgets.QLineEdit(self.Mount_Subwafers)
+        self.Mount_Subwafers_Data3.setGeometry(QtCore.QRect(720, 420, 71, 22))
+        self.Mount_Subwafers_Data3.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data3.setObjectName("Mount_Subwafers_Data3")
+        self.Mount_Subwafers_Data4 = QtWidgets.QLineEdit(self.Mount_Subwafers)
+        self.Mount_Subwafers_Data4.setGeometry(QtCore.QRect(720, 380, 71, 22))
+        self.Mount_Subwafers_Data4.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data4.setObjectName("Mount_Subwafers_Data4")
+        self.Mount_Subwafers_Data5_Special = QtWidgets.QLineEdit(self.Mount_Subwafers)
+        self.Mount_Subwafers_Data5_Special.setGeometry(QtCore.QRect(820, 380, 71, 22))
+        self.Mount_Subwafers_Data5_Special.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data5_Special.setObjectName("Mount_Subwafers_Data5_Special")
         self.Mount_Subwafers_Data6 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data6.setGeometry(QtCore.QRect(910, 380, 71, 22))
         self.Mount_Subwafers_Data6.setStyleSheet("border-image:None;")
@@ -789,21 +789,21 @@ class Ui_InstructionWindow(object):
         self.Dice_First_Pillars_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_First_Pillars_1.setStyleSheet("border-image: url(:/images/images/Dice_First_Pillars_1.png);")
         self.Dice_First_Pillars_1.setObjectName("Dice_First_Pillars_1")
-        self.textEdit_Comments_11 = QtWidgets.QTextEdit(self.Dice_First_Pillars_1)
-        self.textEdit_Comments_11.setGeometry(QtCore.QRect(40, 230, 551, 71))
-        self.textEdit_Comments_11.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_11.setObjectName("textEdit_Comments_11")
-        self.Dice_First_Pillars_1_Initials_1 = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
-        self.Dice_First_Pillars_1_Initials_1.setGeometry(QtCore.QRect(510, 170, 91, 22))
-        self.Dice_First_Pillars_1_Initials_1.setStyleSheet("border-image:None;")
-        self.Dice_First_Pillars_1_Initials_1.setObjectName("Dice_First_Pillars_1_Initials_1")
+        self.Dice_First_Pillars_1_Comments = QtWidgets.QTextEdit(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Comments.setGeometry(QtCore.QRect(40, 230, 551, 71))
+        self.Dice_First_Pillars_1_Comments.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_1_Comments.setObjectName("Dice_First_Pillars_1_Comments")
+        self.Dice_First_Pillars_1_Initial1 = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Initial1.setGeometry(QtCore.QRect(510, 170, 91, 22))
+        self.Dice_First_Pillars_1_Initial1.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_1_Initial1.setObjectName("Dice_First_Pillars_1_Initial1")
         self.Dice_First_Pillars_1_Data = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
         self.Dice_First_Pillars_1_Data.setGeometry(QtCore.QRect(500, 130, 71, 22))
         self.Dice_First_Pillars_1_Data.setStyleSheet("border-image:None;")
         self.Dice_First_Pillars_1_Data.setObjectName("Dice_First_Pillars_1_Data")
-        self.pushButton_Next_9 = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
-        self.pushButton_Next_9.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_9.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_1_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Dice_First_Pillars_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -815,10 +815,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_9.setObjectName("pushButton_Next_9")
-        self.pushButton_Back_9 = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
-        self.pushButton_Back_9.setGeometry(QtCore.QRect(790, 550, 93, 28))
-        self.pushButton_Back_9.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_1_Next.setObjectName("Dice_First_Pillars_1_Next")
+        self.Dice_First_Pillars_1_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Dice_First_Pillars_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -830,59 +830,59 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_9.setObjectName("pushButton_Back_9")
-        self.lineEdit_Steps_9 = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
-        self.lineEdit_Steps_9.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_9.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_1_Back.setObjectName("Dice_First_Pillars_1_Back")
+        self.Dice_First_Pillars_1_Initial2 = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Initial2.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Dice_First_Pillars_1_Initial2.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_9.setObjectName("lineEdit_Steps_9")
-        self.lineEdit_Steps_10 = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
-        self.lineEdit_Steps_10.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_10.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_1_Initial2.setObjectName("Dice_First_Pillars_1_Initial2")
+        self.Dice_First_Pillars_1_Dates = QtWidgets.QLineEdit(self.Dice_First_Pillars_1)
+        self.Dice_First_Pillars_1_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Dice_First_Pillars_1_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_10.setObjectName("lineEdit_Steps_10")
+        self.Dice_First_Pillars_1_Dates.setObjectName("Dice_First_Pillars_1_Dates")
         self.stackedWidget.addWidget(self.Dice_First_Pillars_1)
         self.Dice_First_Pillars_2 = QtWidgets.QWidget()
         self.Dice_First_Pillars_2.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_First_Pillars_2.setStyleSheet("border-image: url(:/images/images/Dice_First_Pillars_2.png);")
         self.Dice_First_Pillars_2.setObjectName("Dice_First_Pillars_2")
-        self.lineEdit_Data_11 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
-        self.lineEdit_Data_11.setGeometry(QtCore.QRect(500, 130, 71, 22))
-        self.lineEdit_Data_11.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_11.setObjectName("lineEdit_Data_11")
-        self.lineEdit_Initials_4 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
-        self.lineEdit_Initials_4.setGeometry(QtCore.QRect(500, 250, 91, 22))
-        self.lineEdit_Initials_4.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_4.setObjectName("lineEdit_Initials_4")
-        self.lineEdit_Steps_11 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
-        self.lineEdit_Steps_11.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_11.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_2_Data = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Data.setGeometry(QtCore.QRect(500, 130, 71, 22))
+        self.Dice_First_Pillars_2_Data.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Data.setObjectName("Dice_First_Pillars_2_Data")
+        self.Dice_First_Pillars_2_Initial1 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Initial1.setGeometry(QtCore.QRect(500, 250, 91, 22))
+        self.Dice_First_Pillars_2_Initial1.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Initial1.setObjectName("Dice_First_Pillars_2_Initial1")
+        self.Dice_First_Pillars_2_Dates = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Dice_First_Pillars_2_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_11.setObjectName("lineEdit_Steps_11")
-        self.lineEdit_Steps_12 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
-        self.lineEdit_Steps_12.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_12.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_2_Dates.setObjectName("Dice_First_Pillars_2_Dates")
+        self.Dice_First_Pillars_2_Initial2 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Initial2.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Dice_First_Pillars_2_Initial2.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_12.setObjectName("lineEdit_Steps_12")
-        self.textEdit_Comments_12 = QtWidgets.QTextEdit(self.Dice_First_Pillars_2)
-        self.textEdit_Comments_12.setGeometry(QtCore.QRect(40, 380, 551, 111))
-        self.textEdit_Comments_12.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_12.setObjectName("textEdit_Comments_12")
-        self.pushButton_Next_10 = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
-        self.pushButton_Next_10.setGeometry(QtCore.QRect(890, 550, 93, 28))
-        self.pushButton_Next_10.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_2_Initial2.setObjectName("Dice_First_Pillars_2_Initial2")
+        self.Dice_First_Pillars_2_Comments = QtWidgets.QTextEdit(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Comments.setGeometry(QtCore.QRect(40, 380, 551, 111))
+        self.Dice_First_Pillars_2_Comments.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Comments.setObjectName("Dice_First_Pillars_2_Comments")
+        self.Dice_First_Pillars_2_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Dice_First_Pillars_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -894,10 +894,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_10.setObjectName("pushButton_Next_10")
-        self.pushButton_Back_10 = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
-        self.pushButton_Back_10.setGeometry(QtCore.QRect(780, 550, 93, 28))
-        self.pushButton_Back_10.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_2_Next.setObjectName("Dice_First_Pillars_2_Next")
+        self.Dice_First_Pillars_2_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
+        self.Dice_First_Pillars_2_Back.setGeometry(QtCore.QRect(780, 550, 93, 28))
+        self.Dice_First_Pillars_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -909,39 +909,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_10.setObjectName("pushButton_Back_10")
+        self.Dice_First_Pillars_2_Back.setObjectName("Dice_First_Pillars_2_Back")
         self.stackedWidget.addWidget(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_3 = QtWidgets.QWidget()
         self.Dice_First_Pillars_3.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_First_Pillars_3.setStyleSheet("border-image: url(:/images/images/Dice_First_Pillars_3.png);")
         self.Dice_First_Pillars_3.setObjectName("Dice_First_Pillars_3")
-        self.lineEdit_Initials_5 = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
-        self.lineEdit_Initials_5.setGeometry(QtCore.QRect(500, 140, 91, 22))
-        self.lineEdit_Initials_5.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_5.setObjectName("lineEdit_Initials_5")
-        self.textEdit_Comments_13 = QtWidgets.QTextEdit(self.Dice_First_Pillars_3)
-        self.textEdit_Comments_13.setGeometry(QtCore.QRect(50, 190, 531, 71))
-        self.textEdit_Comments_13.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_13.setObjectName("textEdit_Comments_13")
-        self.lineEdit_Steps_13 = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
-        self.lineEdit_Steps_13.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_13.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_3_Initial1 = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Initial1.setGeometry(QtCore.QRect(500, 140, 91, 22))
+        self.Dice_First_Pillars_3_Initial1.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_3_Initial1.setObjectName("Dice_First_Pillars_3_Initial1")
+        self.Dice_First_Pillars_3_Comments = QtWidgets.QTextEdit(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Comments.setGeometry(QtCore.QRect(50, 190, 531, 71))
+        self.Dice_First_Pillars_3_Comments.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_3_Comments.setObjectName("Dice_First_Pillars_3_Comments")
+        self.Dice_First_Pillars_3_Initial2 = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Initial2.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Dice_First_Pillars_3_Initial2.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_13.setObjectName("lineEdit_Steps_13")
-        self.lineEdit_Steps_14 = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
-        self.lineEdit_Steps_14.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_14.setStyleSheet("QLineEdit{\n"
+        self.Dice_First_Pillars_3_Initial2.setObjectName("Dice_First_Pillars_3_Initial2")
+        self.Dice_First_Pillars_3_Dates = QtWidgets.QLineEdit(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Dice_First_Pillars_3_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_14.setObjectName("lineEdit_Steps_14")
-        self.pushButton_Next_11 = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
-        self.pushButton_Next_11.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_11.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_3_Dates.setObjectName("Dice_First_Pillars_3_Dates")
+        self.Dice_First_Pillars_3_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Dice_First_Pillars_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -953,10 +953,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_11.setObjectName("pushButton_Next_11")
-        self.pushButton_Back_11 = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
-        self.pushButton_Back_11.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_11.setStyleSheet("QPushButton{\n"
+        self.Dice_First_Pillars_3_Next.setObjectName("Dice_First_Pillars_3_Next")
+        self.Dice_First_Pillars_3_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
+        self.Dice_First_Pillars_3_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Dice_First_Pillars_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -968,39 +968,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_11.setObjectName("pushButton_Back_11")
+        self.Dice_First_Pillars_3_Back.setObjectName("Dice_First_Pillars_3_Back")
         self.stackedWidget.addWidget(self.Dice_First_Pillars_3)
         self.Fill_First_Pillars_1 = QtWidgets.QWidget()
         self.Fill_First_Pillars_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_First_Pillars_1.setStyleSheet("border-image: url(:/images/images/Fill_First_Pillars_1.png);")
         self.Fill_First_Pillars_1.setObjectName("Fill_First_Pillars_1")
-        self.lineEdit_Initials_6 = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
-        self.lineEdit_Initials_6.setGeometry(QtCore.QRect(550, 140, 91, 22))
-        self.lineEdit_Initials_6.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_6.setObjectName("lineEdit_Initials_6")
-        self.textEdit_Comments_14 = QtWidgets.QTextEdit(self.Fill_First_Pillars_1)
-        self.textEdit_Comments_14.setGeometry(QtCore.QRect(20, 220, 621, 111))
-        self.textEdit_Comments_14.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_14.setObjectName("textEdit_Comments_14")
-        self.lineEdit_Steps_15 = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
-        self.lineEdit_Steps_15.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_15.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_1_Data = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Data.setGeometry(QtCore.QRect(550, 140, 91, 22))
+        self.Fill_First_Pillars_1_Data.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_1_Data.setObjectName("Fill_First_Pillars_1_Data")
+        self.Fill_First_Pillars_1_Comments = QtWidgets.QTextEdit(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Comments.setGeometry(QtCore.QRect(20, 220, 621, 111))
+        self.Fill_First_Pillars_1_Comments.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_1_Comments.setObjectName("Fill_First_Pillars_1_Comments")
+        self.Fill_First_Pillars_1_Dates = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Fill_First_Pillars_1_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_15.setObjectName("lineEdit_Steps_15")
-        self.lineEdit_Steps_16 = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
-        self.lineEdit_Steps_16.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_16.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_1_Dates.setObjectName("Fill_First_Pillars_1_Dates")
+        self.Fill_First_Pillars_1_Initials = QtWidgets.QLineEdit(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Fill_First_Pillars_1_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_16.setObjectName("lineEdit_Steps_16")
-        self.pushButton_Next_12 = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
-        self.pushButton_Next_12.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_12.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_1_Initials.setObjectName("Fill_First_Pillars_1_Initials")
+        self.Fill_First_Pillars_1_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Fill_First_Pillars_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1012,10 +1012,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_12.setObjectName("pushButton_Next_12")
-        self.pushButton_Back_12 = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
-        self.pushButton_Back_12.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_12.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_1_Next.setObjectName("Fill_First_Pillars_1_Next")
+        self.Fill_First_Pillars_1_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
+        self.Fill_First_Pillars_1_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Fill_First_Pillars_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1027,39 +1027,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_12.setObjectName("pushButton_Back_12")
+        self.Fill_First_Pillars_1_Back.setObjectName("Fill_First_Pillars_1_Back")
         self.stackedWidget.addWidget(self.Fill_First_Pillars_1)
         self.Fill_First_Pillars_2 = QtWidgets.QWidget()
         self.Fill_First_Pillars_2.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_First_Pillars_2.setStyleSheet("border-image: url(:/images/images/Fill_First_Pillars_2.png);")
         self.Fill_First_Pillars_2.setObjectName("Fill_First_Pillars_2")
-        self.lineEdit_Initials_7 = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
-        self.lineEdit_Initials_7.setGeometry(QtCore.QRect(560, 130, 91, 22))
-        self.lineEdit_Initials_7.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_7.setObjectName("lineEdit_Initials_7")
-        self.textEdit_Comments_15 = QtWidgets.QTextEdit(self.Fill_First_Pillars_2)
-        self.textEdit_Comments_15.setGeometry(QtCore.QRect(30, 190, 621, 111))
-        self.textEdit_Comments_15.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_15.setObjectName("textEdit_Comments_15")
-        self.lineEdit_Steps_17 = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
-        self.lineEdit_Steps_17.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_17.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_2_Data = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Data.setGeometry(QtCore.QRect(560, 130, 91, 22))
+        self.Fill_First_Pillars_2_Data.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_2_Data.setObjectName("Fill_First_Pillars_2_Data")
+        self.Fill_First_Pillars_2_Comments = QtWidgets.QTextEdit(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Comments.setGeometry(QtCore.QRect(30, 190, 621, 111))
+        self.Fill_First_Pillars_2_Comments.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_2_Comments.setObjectName("Fill_First_Pillars_2_Comments")
+        self.Fill_First_Pillars_2_Dates = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Fill_First_Pillars_2_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_17.setObjectName("lineEdit_Steps_17")
-        self.lineEdit_Steps_18 = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
-        self.lineEdit_Steps_18.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_18.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_2_Dates.setObjectName("Fill_First_Pillars_2_Dates")
+        self.Fill_First_Pillars_2_Initials = QtWidgets.QLineEdit(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Fill_First_Pillars_2_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_18.setObjectName("lineEdit_Steps_18")
-        self.pushButton_Next_13 = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
-        self.pushButton_Next_13.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_13.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_2_Initials.setObjectName("Fill_First_Pillars_2_Initials")
+        self.Fill_First_Pillars_2_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Fill_First_Pillars_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1071,10 +1071,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_13.setObjectName("pushButton_Next_13")
-        self.pushButton_Back_13 = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
-        self.pushButton_Back_13.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_13.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_2_Next.setObjectName("Fill_First_Pillars_2_Next")
+        self.Fill_First_Pillars_2_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
+        self.Fill_First_Pillars_2_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Fill_First_Pillars_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1086,55 +1086,55 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_13.setObjectName("pushButton_Back_13")
+        self.Fill_First_Pillars_2_Back.setObjectName("Fill_First_Pillars_2_Back")
         self.stackedWidget.addWidget(self.Fill_First_Pillars_2)
         self.Fill_First_Pillars_3 = QtWidgets.QWidget()
         self.Fill_First_Pillars_3.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_First_Pillars_3.setStyleSheet("border-image: url(:/images/images/Fill_First_Pillars_3.png);")
         self.Fill_First_Pillars_3.setObjectName("Fill_First_Pillars_3")
-        self.lineEdit_Data_12 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Data_12.setGeometry(QtCore.QRect(560, 100, 71, 22))
-        self.lineEdit_Data_12.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_12.setObjectName("lineEdit_Data_12")
-        self.lineEdit_Data_13 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Data_13.setGeometry(QtCore.QRect(560, 130, 71, 22))
-        self.lineEdit_Data_13.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_13.setObjectName("lineEdit_Data_13")
-        self.lineEdit_Data_14 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Data_14.setGeometry(QtCore.QRect(560, 170, 71, 22))
-        self.lineEdit_Data_14.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_14.setObjectName("lineEdit_Data_14")
-        self.lineEdit_Data_15 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Data_15.setGeometry(QtCore.QRect(560, 200, 71, 22))
-        self.lineEdit_Data_15.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_15.setObjectName("lineEdit_Data_15")
-        self.lineEdit_Initials_8 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Initials_8.setGeometry(QtCore.QRect(550, 230, 91, 22))
-        self.lineEdit_Initials_8.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_8.setObjectName("lineEdit_Initials_8")
-        self.textEdit_Comments_16 = QtWidgets.QTextEdit(self.Fill_First_Pillars_3)
-        self.textEdit_Comments_16.setGeometry(QtCore.QRect(30, 280, 621, 111))
-        self.textEdit_Comments_16.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_16.setObjectName("textEdit_Comments_16")
-        self.lineEdit_Steps_19 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Steps_19.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_19.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_3_Data1 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Data1.setGeometry(QtCore.QRect(560, 100, 71, 22))
+        self.Fill_First_Pillars_3_Data1.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Data1.setObjectName("Fill_First_Pillars_3_Data1")
+        self.Fill_First_Pillars_3_Data2 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Data2.setGeometry(QtCore.QRect(560, 130, 71, 22))
+        self.Fill_First_Pillars_3_Data2.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Data2.setObjectName("Fill_First_Pillars_3_Data2")
+        self.Fill_First_Pillars_3_Data3 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Data3.setGeometry(QtCore.QRect(560, 170, 71, 22))
+        self.Fill_First_Pillars_3_Data3.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Data3.setObjectName("Fill_First_Pillars_3_Data3")
+        self.Fill_First_Pillars_3_Data4 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Data4.setGeometry(QtCore.QRect(560, 200, 71, 22))
+        self.Fill_First_Pillars_3_Data4.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Data4.setObjectName("Fill_First_Pillars_3_Data4")
+        self.Fill_First_Pillars_3_Data0 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Data0.setGeometry(QtCore.QRect(550, 230, 91, 22))
+        self.Fill_First_Pillars_3_Data0.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Data0.setObjectName("Fill_First_Pillars_3_Data0")
+        self.Fill_First_Pillars_3_Comments = QtWidgets.QTextEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Comments.setGeometry(QtCore.QRect(30, 280, 621, 111))
+        self.Fill_First_Pillars_3_Comments.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_3_Comments.setObjectName("Fill_First_Pillars_3_Comments")
+        self.Fill_First_Pillars_3_Initials = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Fill_First_Pillars_3_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_19.setObjectName("lineEdit_Steps_19")
-        self.lineEdit_Steps_20 = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
-        self.lineEdit_Steps_20.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_20.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_3_Initials.setObjectName("Fill_First_Pillars_3_Initials")
+        self.Fill_First_Pillars_3_Dates = QtWidgets.QLineEdit(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Fill_First_Pillars_3_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_20.setObjectName("lineEdit_Steps_20")
-        self.pushButton_Next_14 = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
-        self.pushButton_Next_14.setGeometry(QtCore.QRect(890, 550, 93, 28))
-        self.pushButton_Next_14.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_3_Dates.setObjectName("Fill_First_Pillars_3_Dates")
+        self.Fill_First_Pillars_3_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Fill_First_Pillars_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1146,10 +1146,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_14.setObjectName("pushButton_Next_14")
-        self.pushButton_Back_14 = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
-        self.pushButton_Back_14.setGeometry(QtCore.QRect(790, 550, 93, 28))
-        self.pushButton_Back_14.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_3_Next.setObjectName("Fill_First_Pillars_3_Next")
+        self.Fill_First_Pillars_3_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
+        self.Fill_First_Pillars_3_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Fill_First_Pillars_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1161,39 +1161,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_14.setObjectName("pushButton_Back_14")
+        self.Fill_First_Pillars_3_Back.setObjectName("Fill_First_Pillars_3_Back")
         self.stackedWidget.addWidget(self.Fill_First_Pillars_3)
         self.Fill_First_Pillars_4 = QtWidgets.QWidget()
         self.Fill_First_Pillars_4.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_First_Pillars_4.setStyleSheet("border-image: url(:/images/images/Fill_First_Pillars_4.png);")
         self.Fill_First_Pillars_4.setObjectName("Fill_First_Pillars_4")
-        self.lineEdit_Initials_9 = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
-        self.lineEdit_Initials_9.setGeometry(QtCore.QRect(550, 140, 91, 22))
-        self.lineEdit_Initials_9.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_9.setObjectName("lineEdit_Initials_9")
-        self.textEdit_Comments_17 = QtWidgets.QTextEdit(self.Fill_First_Pillars_4)
-        self.textEdit_Comments_17.setGeometry(QtCore.QRect(30, 220, 621, 111))
-        self.textEdit_Comments_17.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_17.setObjectName("textEdit_Comments_17")
-        self.lineEdit_Steps_21 = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
-        self.lineEdit_Steps_21.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_21.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_4_Data = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Data.setGeometry(QtCore.QRect(550, 140, 91, 22))
+        self.Fill_First_Pillars_4_Data.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_4_Data.setObjectName("Fill_First_Pillars_4_Data")
+        self.Fill_First_Pillars_4_Comments = QtWidgets.QTextEdit(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Comments.setGeometry(QtCore.QRect(30, 220, 621, 111))
+        self.Fill_First_Pillars_4_Comments.setStyleSheet("border-image:None;")
+        self.Fill_First_Pillars_4_Comments.setObjectName("Fill_First_Pillars_4_Comments")
+        self.Fill_First_Pillars_4_Initials = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.Fill_First_Pillars_4_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_21.setObjectName("lineEdit_Steps_21")
-        self.lineEdit_Steps_22 = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
-        self.lineEdit_Steps_22.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_22.setStyleSheet("QLineEdit{\n"
+        self.Fill_First_Pillars_4_Initials.setObjectName("Fill_First_Pillars_4_Initials")
+        self.Fill_First_Pillars_4_Dates = QtWidgets.QLineEdit(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.Fill_First_Pillars_4_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_22.setObjectName("lineEdit_Steps_22")
-        self.pushButton_Next_15 = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
-        self.pushButton_Next_15.setGeometry(QtCore.QRect(890, 550, 93, 28))
-        self.pushButton_Next_15.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_4_Dates.setObjectName("Fill_First_Pillars_4_Dates")
+        self.Fill_First_Pillars_4_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Fill_First_Pillars_4_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1205,10 +1205,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_15.setObjectName("pushButton_Next_15")
-        self.pushButton_Back_15 = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
-        self.pushButton_Back_15.setGeometry(QtCore.QRect(790, 550, 93, 28))
-        self.pushButton_Back_15.setStyleSheet("QPushButton{\n"
+        self.Fill_First_Pillars_4_Next.setObjectName("Fill_First_Pillars_4_Next")
+        self.Fill_First_Pillars_4_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
+        self.Fill_First_Pillars_4_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Fill_First_Pillars_4_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1220,43 +1220,43 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_15.setObjectName("pushButton_Back_15")
+        self.Fill_First_Pillars_4_Back.setObjectName("Fill_First_Pillars_4_Back")
         self.stackedWidget.addWidget(self.Fill_First_Pillars_4)
         self.PreLap_First_Epoxy_Fill_1 = QtWidgets.QWidget()
         self.PreLap_First_Epoxy_Fill_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.PreLap_First_Epoxy_Fill_1.setStyleSheet("border-image: url(:/images/images/Pre_Lap_First_Epoxy_Fill_1.png);")
         self.PreLap_First_Epoxy_Fill_1.setObjectName("PreLap_First_Epoxy_Fill_1")
-        self.lineEdit_Data_16 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
-        self.lineEdit_Data_16.setGeometry(QtCore.QRect(510, 110, 71, 22))
-        self.lineEdit_Data_16.setStyleSheet("border-image:None;")
-        self.lineEdit_Data_16.setObjectName("lineEdit_Data_16")
-        self.lineEdit_Initials_10 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
-        self.lineEdit_Initials_10.setGeometry(QtCore.QRect(510, 160, 91, 22))
-        self.lineEdit_Initials_10.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_10.setObjectName("lineEdit_Initials_10")
-        self.textEdit_Comments_18 = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_1)
-        self.textEdit_Comments_18.setGeometry(QtCore.QRect(40, 210, 561, 91))
-        self.textEdit_Comments_18.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_18.setObjectName("textEdit_Comments_18")
-        self.lineEdit_Steps_23 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
-        self.lineEdit_Steps_23.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_23.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_1_Data1 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Data1.setGeometry(QtCore.QRect(510, 110, 71, 22))
+        self.PreLap_First_Epoxy_Fill_1_Data1.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_1_Data1.setObjectName("PreLap_First_Epoxy_Fill_1_Data1")
+        self.PreLap_First_Epoxy_Fill_1_Data0 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Data0.setGeometry(QtCore.QRect(510, 160, 91, 22))
+        self.PreLap_First_Epoxy_Fill_1_Data0.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_1_Data0.setObjectName("PreLap_First_Epoxy_Fill_1_Data0")
+        self.PreLap_First_Epoxy_Fill_1_Comments = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Comments.setGeometry(QtCore.QRect(40, 210, 561, 91))
+        self.PreLap_First_Epoxy_Fill_1_Comments.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_1_Comments.setObjectName("PreLap_First_Epoxy_Fill_1_Comments")
+        self.PreLap_First_Epoxy_Fill_1_Initials = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.PreLap_First_Epoxy_Fill_1_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_23.setObjectName("lineEdit_Steps_23")
-        self.lineEdit_Steps_24 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
-        self.lineEdit_Steps_24.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_24.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_1_Initials.setObjectName("PreLap_First_Epoxy_Fill_1_Initials")
+        self.PreLap_First_Epoxy_Fill_1_Dates = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.PreLap_First_Epoxy_Fill_1_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_24.setObjectName("lineEdit_Steps_24")
-        self.pushButton_Next_16 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
-        self.pushButton_Next_16.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_16.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_1_Dates.setObjectName("PreLap_First_Epoxy_Fill_1_Dates")
+        self.PreLap_First_Epoxy_Fill_1_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1268,10 +1268,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_16.setObjectName("pushButton_Next_16")
-        self.pushButton_Back_16 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
-        self.pushButton_Back_16.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_16.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_1_Next.setObjectName("PreLap_First_Epoxy_Fill_1_Next")
+        self.PreLap_First_Epoxy_Fill_1_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
+        self.PreLap_First_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1283,39 +1283,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_16.setObjectName("pushButton_Back_16")
+        self.PreLap_First_Epoxy_Fill_1_Back.setObjectName("PreLap_First_Epoxy_Fill_1_Back")
         self.stackedWidget.addWidget(self.PreLap_First_Epoxy_Fill_1)
         self.PreLap_First_Epoxy_Fill_2 = QtWidgets.QWidget()
         self.PreLap_First_Epoxy_Fill_2.setMaximumSize(QtCore.QSize(1024, 600))
         self.PreLap_First_Epoxy_Fill_2.setStyleSheet("border-image: url(:/images/images/Pre_Lap_First_Epoxy_Fill_2.png);")
         self.PreLap_First_Epoxy_Fill_2.setObjectName("PreLap_First_Epoxy_Fill_2")
-        self.lineEdit_Initials_11 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
-        self.lineEdit_Initials_11.setGeometry(QtCore.QRect(520, 180, 91, 22))
-        self.lineEdit_Initials_11.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_11.setObjectName("lineEdit_Initials_11")
-        self.textEdit_Comments_19 = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_2)
-        self.textEdit_Comments_19.setGeometry(QtCore.QRect(40, 320, 561, 91))
-        self.textEdit_Comments_19.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_19.setObjectName("textEdit_Comments_19")
-        self.lineEdit_Steps_25 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
-        self.lineEdit_Steps_25.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_25.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_2_Data = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Data.setGeometry(QtCore.QRect(520, 180, 91, 22))
+        self.PreLap_First_Epoxy_Fill_2_Data.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_2_Data.setObjectName("PreLap_First_Epoxy_Fill_2_Data")
+        self.PreLap_First_Epoxy_Fill_2_Comments = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Comments.setGeometry(QtCore.QRect(40, 320, 561, 91))
+        self.PreLap_First_Epoxy_Fill_2_Comments.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_2_Comments.setObjectName("PreLap_First_Epoxy_Fill_2_Comments")
+        self.PreLap_First_Epoxy_Fill_2_Initials = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.PreLap_First_Epoxy_Fill_2_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_25.setObjectName("lineEdit_Steps_25")
-        self.lineEdit_Steps_26 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
-        self.lineEdit_Steps_26.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_26.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_2_Initials.setObjectName("PreLap_First_Epoxy_Fill_2_Initials")
+        self.PreLap_First_Epoxy_Fill_2_Dates = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.PreLap_First_Epoxy_Fill_2_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_26.setObjectName("lineEdit_Steps_26")
-        self.pushButton_Next_17 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
-        self.pushButton_Next_17.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_17.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_2_Dates.setObjectName("PreLap_First_Epoxy_Fill_2_Dates")
+        self.PreLap_First_Epoxy_Fill_2_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1327,10 +1327,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_17.setObjectName("pushButton_Next_17")
-        self.pushButton_Back_17 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
-        self.pushButton_Back_17.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_17.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_2_Next.setObjectName("PreLap_First_Epoxy_Fill_2_Next")
+        self.PreLap_First_Epoxy_Fill_2_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
+        self.PreLap_First_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1342,39 +1342,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_17.setObjectName("pushButton_Back_17")
+        self.PreLap_First_Epoxy_Fill_2_Back.setObjectName("PreLap_First_Epoxy_Fill_2_Back")
         self.stackedWidget.addWidget(self.PreLap_First_Epoxy_Fill_2)
         self.PreLap_First_Epoxy_Fill_3 = QtWidgets.QWidget()
         self.PreLap_First_Epoxy_Fill_3.setMaximumSize(QtCore.QSize(1024, 600))
         self.PreLap_First_Epoxy_Fill_3.setStyleSheet("border-image: url(:/images/images/Pre_Lap_First_Epoxy_Fill_3.png);")
         self.PreLap_First_Epoxy_Fill_3.setObjectName("PreLap_First_Epoxy_Fill_3")
-        self.lineEdit_Initials_12 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
-        self.lineEdit_Initials_12.setGeometry(QtCore.QRect(520, 120, 91, 22))
-        self.lineEdit_Initials_12.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_12.setObjectName("lineEdit_Initials_12")
-        self.textEdit_Comments_20 = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_3)
-        self.textEdit_Comments_20.setGeometry(QtCore.QRect(40, 190, 561, 71))
-        self.textEdit_Comments_20.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_20.setObjectName("textEdit_Comments_20")
-        self.lineEdit_Steps_27 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
-        self.lineEdit_Steps_27.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.lineEdit_Steps_27.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_3_Data = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Data.setGeometry(QtCore.QRect(520, 120, 91, 22))
+        self.PreLap_First_Epoxy_Fill_3_Data.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_3_Data.setObjectName("PreLap_First_Epoxy_Fill_3_Data")
+        self.PreLap_First_Epoxy_Fill_3_Comments = QtWidgets.QTextEdit(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Comments.setGeometry(QtCore.QRect(40, 190, 561, 71))
+        self.PreLap_First_Epoxy_Fill_3_Comments.setStyleSheet("border-image:None;")
+        self.PreLap_First_Epoxy_Fill_3_Comments.setObjectName("PreLap_First_Epoxy_Fill_3_Comments")
+        self.PreLap_First_Epoxy_Fill_3_Initials = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
+        self.PreLap_First_Epoxy_Fill_3_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_27.setObjectName("lineEdit_Steps_27")
-        self.lineEdit_Steps_28 = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
-        self.lineEdit_Steps_28.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.lineEdit_Steps_28.setStyleSheet("QLineEdit{\n"
+        self.PreLap_First_Epoxy_Fill_3_Initials.setObjectName("PreLap_First_Epoxy_Fill_3_Initials")
+        self.PreLap_First_Epoxy_Fill_3_Dates = QtWidgets.QLineEdit(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.PreLap_First_Epoxy_Fill_3_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Steps_28.setObjectName("lineEdit_Steps_28")
-        self.pushButton_Next_18 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
-        self.pushButton_Next_18.setGeometry(QtCore.QRect(900, 550, 93, 28))
-        self.pushButton_Next_18.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_3_Dates.setObjectName("PreLap_First_Epoxy_Fill_3_Dates")
+        self.PreLap_First_Epoxy_Fill_3_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1386,10 +1386,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_18.setObjectName("pushButton_Next_18")
-        self.pushButton_Back_18 = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
-        self.pushButton_Back_18.setGeometry(QtCore.QRect(800, 550, 93, 28))
-        self.pushButton_Back_18.setStyleSheet("QPushButton{\n"
+        self.PreLap_First_Epoxy_Fill_3_Next.setObjectName("PreLap_First_Epoxy_Fill_3_Next")
+        self.PreLap_First_Epoxy_Fill_3_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
+        self.PreLap_First_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1401,67 +1401,67 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_18.setObjectName("pushButton_Back_18")
+        self.PreLap_First_Epoxy_Fill_3_Back.setObjectName("PreLap_First_Epoxy_Fill_3_Back")
         self.stackedWidget.addWidget(self.PreLap_First_Epoxy_Fill_3)
         self.Lap_First_Epoxy_Fill = QtWidgets.QWidget()
         self.Lap_First_Epoxy_Fill.setMaximumSize(QtCore.QSize(1024, 600))
         self.Lap_First_Epoxy_Fill.setStyleSheet("border-image: url(:/images/images/Lap_First_Epoxy_Fill.png);")
         self.Lap_First_Epoxy_Fill.setObjectName("Lap_First_Epoxy_Fill")
-        self.textEdit_Comments_2 = QtWidgets.QTextEdit(self.Lap_First_Epoxy_Fill)
-        self.textEdit_Comments_2.setGeometry(QtCore.QRect(600, 390, 391, 101))
-        self.textEdit_Comments_2.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_2.setObjectName("textEdit_Comments_2")
-        self.lineEdit_Initials = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_Initials.setGeometry(QtCore.QRect(400, 140, 81, 22))
-        self.lineEdit_Initials.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials.setObjectName("lineEdit_Initials")
-        self.lineEdit_13 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_13.setGeometry(QtCore.QRect(200, 230, 51, 22))
-        self.lineEdit_13.setStyleSheet("border-image:None;")
-        self.lineEdit_13.setObjectName("lineEdit_13")
-        self.lineEdit_14 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_14.setGeometry(QtCore.QRect(380, 230, 51, 22))
-        self.lineEdit_14.setStyleSheet("border-image:None;")
-        self.lineEdit_14.setObjectName("lineEdit_14")
-        self.lineEdit_15 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_15.setGeometry(QtCore.QRect(200, 410, 51, 22))
-        self.lineEdit_15.setStyleSheet("border-image:None;")
-        self.lineEdit_15.setObjectName("lineEdit_15")
-        self.lineEdit_16 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_16.setGeometry(QtCore.QRect(370, 410, 51, 22))
-        self.lineEdit_16.setStyleSheet("border-image:None;")
-        self.lineEdit_16.setObjectName("lineEdit_16")
-        self.lineEdit_17 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_17.setGeometry(QtCore.QRect(550, 200, 61, 22))
-        self.lineEdit_17.setStyleSheet("border-image:None;")
-        self.lineEdit_17.setObjectName("lineEdit_17")
-        self.lineEdit_18 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_18.setGeometry(QtCore.QRect(530, 90, 61, 22))
-        self.lineEdit_18.setStyleSheet("border-image:None;")
-        self.lineEdit_18.setObjectName("lineEdit_18")
-        self.lineEdit_19 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_19.setGeometry(QtCore.QRect(590, 2, 61, 20))
-        self.lineEdit_19.setStyleSheet("border-image:None;")
-        self.lineEdit_19.setObjectName("lineEdit_19")
-        self.lineEdit_20 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_20.setGeometry(QtCore.QRect(771, 338, 79, 22))
-        self.lineEdit_20.setStyleSheet("border-image:None;")
-        self.lineEdit_20.setObjectName("lineEdit_20")
-        self.lineEdit_21 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_21.setGeometry(QtCore.QRect(771, 300, 79, 22))
-        self.lineEdit_21.setStyleSheet("border-image:None;")
-        self.lineEdit_21.setObjectName("lineEdit_21")
-        self.lineEdit_22 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_22.setGeometry(QtCore.QRect(890, 30, 61, 22))
-        self.lineEdit_22.setStyleSheet("border-image:None;")
-        self.lineEdit_22.setObjectName("lineEdit_22")
-        self.lineEdit_23 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_23.setGeometry(QtCore.QRect(890, 220, 61, 22))
-        self.lineEdit_23.setStyleSheet("border-image:None;")
-        self.lineEdit_23.setObjectName("lineEdit_23")
-        self.pushButton_Back_2 = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
-        self.pushButton_Back_2.setGeometry(QtCore.QRect(771, 561, 106, 29))
-        self.pushButton_Back_2.setStyleSheet("QPushButton{\n"
+        self.Lap_First_Epoxy_Fill_Comments = QtWidgets.QTextEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Comments.setGeometry(QtCore.QRect(600, 390, 391, 101))
+        self.Lap_First_Epoxy_Fill_Comments.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Comments.setObjectName("Lap_First_Epoxy_Fill_Comments")
+        self.Lap_First_Epoxy_Fill_Data0 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data0.setGeometry(QtCore.QRect(400, 140, 81, 22))
+        self.Lap_First_Epoxy_Fill_Data0.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data0.setObjectName("Lap_First_Epoxy_Fill_Data0")
+        self.Lap_First_Epoxy_Fill_Data1 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data1.setGeometry(QtCore.QRect(200, 230, 51, 22))
+        self.Lap_First_Epoxy_Fill_Data1.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data1.setObjectName("Lap_First_Epoxy_Fill_Data1")
+        self.Lap_First_Epoxy_Fill_Data2 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data2.setGeometry(QtCore.QRect(380, 230, 51, 22))
+        self.Lap_First_Epoxy_Fill_Data2.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data2.setObjectName("Lap_First_Epoxy_Fill_Data2")
+        self.Lap_First_Epoxy_Fill_Data3 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data3.setGeometry(QtCore.QRect(200, 410, 51, 22))
+        self.Lap_First_Epoxy_Fill_Data3.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data3.setObjectName("Lap_First_Epoxy_Fill_Data3")
+        self.Lap_First_Epoxy_Fill_Data4 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data4.setGeometry(QtCore.QRect(370, 410, 51, 22))
+        self.Lap_First_Epoxy_Fill_Data4.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data4.setObjectName("Lap_First_Epoxy_Fill_Data4")
+        self.Lap_First_Epoxy_Fill_Data5 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data5.setGeometry(QtCore.QRect(550, 200, 61, 22))
+        self.Lap_First_Epoxy_Fill_Data5.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data5.setObjectName("Lap_First_Epoxy_Fill_Data5")
+        self.Lap_First_Epoxy_Fill_Data6 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data6.setGeometry(QtCore.QRect(530, 90, 61, 22))
+        self.Lap_First_Epoxy_Fill_Data6.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data6.setObjectName("Lap_First_Epoxy_Fill_Data6")
+        self.Lap_First_Epoxy_Fill_Data7 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data7.setGeometry(QtCore.QRect(590, 2, 61, 20))
+        self.Lap_First_Epoxy_Fill_Data7.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data7.setObjectName("Lap_First_Epoxy_Fill_Data7")
+        self.Lap_First_Epoxy_Fill_Data_CN1 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data_CN1.setGeometry(QtCore.QRect(771, 338, 79, 22))
+        self.Lap_First_Epoxy_Fill_Data_CN1.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data_CN1.setObjectName("Lap_First_Epoxy_Fill_Data_CN1")
+        self.Lap_First_Epoxy_Fill_Data_CN2 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data_CN2.setGeometry(QtCore.QRect(771, 300, 79, 22))
+        self.Lap_First_Epoxy_Fill_Data_CN2.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data_CN2.setObjectName("Lap_First_Epoxy_Fill_Data_CN2")
+        self.Lap_First_Epoxy_Fill_Data8 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data8.setGeometry(QtCore.QRect(890, 30, 61, 22))
+        self.Lap_First_Epoxy_Fill_Data8.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data8.setObjectName("Lap_First_Epoxy_Fill_Data8")
+        self.Lap_First_Epoxy_Fill_Data9 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Data9.setGeometry(QtCore.QRect(890, 220, 61, 22))
+        self.Lap_First_Epoxy_Fill_Data9.setStyleSheet("border-image:None;")
+        self.Lap_First_Epoxy_Fill_Data9.setObjectName("Lap_First_Epoxy_Fill_Data9")
+        self.Lap_First_Epoxy_Fill_Back = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Back.setGeometry(QtCore.QRect(771, 561, 106, 29))
+        self.Lap_First_Epoxy_Fill_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1473,10 +1473,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_2.setObjectName("pushButton_Back_2")
-        self.pushButton_Next_2 = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
-        self.pushButton_Next_2.setGeometry(QtCore.QRect(884, 561, 106, 29))
-        self.pushButton_Next_2.setStyleSheet("QPushButton{\n"
+        self.Lap_First_Epoxy_Fill_Back.setObjectName("Lap_First_Epoxy_Fill_Back")
+        self.Lap_First_Epoxy_Fill_Next = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Next.setGeometry(QtCore.QRect(884, 561, 106, 29))
+        self.Lap_First_Epoxy_Fill_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1488,59 +1488,59 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_2.setObjectName("pushButton_Next_2")
-        self.lineEdit_Dates_2 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_Dates_2.setGeometry(QtCore.QRect(111, 561, 86, 18))
-        self.lineEdit_Dates_2.setStyleSheet("QLineEdit{\n"
+        self.Lap_First_Epoxy_Fill_Next.setObjectName("Lap_First_Epoxy_Fill_Next")
+        self.Lap_First_Epoxy_Fill_Dates = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Dates.setGeometry(QtCore.QRect(111, 561, 86, 18))
+        self.Lap_First_Epoxy_Fill_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_2.setObjectName("lineEdit_Dates_2")
-        self.lineEdit_Dates_3 = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
-        self.lineEdit_Dates_3.setGeometry(QtCore.QRect(204, 561, 86, 18))
-        self.lineEdit_Dates_3.setStyleSheet("QLineEdit{\n"
+        self.Lap_First_Epoxy_Fill_Dates.setObjectName("Lap_First_Epoxy_Fill_Dates")
+        self.Lap_First_Epoxy_Fill_Initials = QtWidgets.QLineEdit(self.Lap_First_Epoxy_Fill)
+        self.Lap_First_Epoxy_Fill_Initials.setGeometry(QtCore.QRect(204, 561, 86, 18))
+        self.Lap_First_Epoxy_Fill_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_3.setObjectName("lineEdit_Dates_3")
+        self.Lap_First_Epoxy_Fill_Initials.setObjectName("Lap_First_Epoxy_Fill_Initials")
         self.stackedWidget.addWidget(self.Lap_First_Epoxy_Fill)
         self.Dice_Framing_Trench_Pattern_1 = QtWidgets.QWidget()
         self.Dice_Framing_Trench_Pattern_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_Framing_Trench_Pattern_1.setStyleSheet("border-image: url(:/images/images/Dice_Framing_Trench_Pattern_1.png);")
         self.Dice_Framing_Trench_Pattern_1.setObjectName("Dice_Framing_Trench_Pattern_1")
-        self.lineEdit_52 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
-        self.lineEdit_52.setGeometry(QtCore.QRect(530, 130, 51, 22))
-        self.lineEdit_52.setStyleSheet("border-image:None;")
-        self.lineEdit_52.setObjectName("lineEdit_52")
-        self.lineEdit_Initials_13 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
-        self.lineEdit_Initials_13.setGeometry(QtCore.QRect(540, 180, 81, 22))
-        self.lineEdit_Initials_13.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_13.setObjectName("lineEdit_Initials_13")
-        self.textEdit_Comments_21 = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_1)
-        self.textEdit_Comments_21.setGeometry(QtCore.QRect(40, 230, 571, 71))
-        self.textEdit_Comments_21.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_21.setObjectName("textEdit_Comments_21")
-        self.lineEdit_Dates_11 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
-        self.lineEdit_Dates_11.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_11.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_1_Data1 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Data1.setGeometry(QtCore.QRect(530, 130, 51, 22))
+        self.Dice_Framing_Trench_Pattern_1_Data1.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_1_Data1.setObjectName("Dice_Framing_Trench_Pattern_1_Data1")
+        self.Dice_Framing_Trench_Pattern_1_Data0 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Data0.setGeometry(QtCore.QRect(540, 180, 81, 22))
+        self.Dice_Framing_Trench_Pattern_1_Data0.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_1_Data0.setObjectName("Dice_Framing_Trench_Pattern_1_Data0")
+        self.Dice_Framing_Trench_Pattern_1_Comments = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Comments.setGeometry(QtCore.QRect(40, 230, 571, 71))
+        self.Dice_Framing_Trench_Pattern_1_Comments.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_1_Comments.setObjectName("Dice_Framing_Trench_Pattern_1_Comments")
+        self.Dice_Framing_Trench_Pattern_1_Initials = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_1_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_11.setObjectName("lineEdit_Dates_11")
-        self.lineEdit_Dates_12 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
-        self.lineEdit_Dates_12.setGeometry(QtCore.QRect(110, 560, 86, 18))
-        self.lineEdit_Dates_12.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_1_Initials.setObjectName("Dice_Framing_Trench_Pattern_1_Initials")
+        self.Dice_Framing_Trench_Pattern_1_Dates = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Dates.setGeometry(QtCore.QRect(110, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_1_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_12.setObjectName("lineEdit_Dates_12")
-        self.pushButton_Next_19 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
-        self.pushButton_Next_19.setGeometry(QtCore.QRect(880, 550, 106, 29))
-        self.pushButton_Next_19.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_1_Dates.setObjectName("Dice_Framing_Trench_Pattern_1_Dates")
+        self.Dice_Framing_Trench_Pattern_1_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1552,10 +1552,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_19.setObjectName("pushButton_Next_19")
-        self.pushButton_Back_19 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
-        self.pushButton_Back_19.setGeometry(QtCore.QRect(770, 550, 106, 29))
-        self.pushButton_Back_19.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_1_Next.setObjectName("Dice_Framing_Trench_Pattern_1_Next")
+        self.Dice_Framing_Trench_Pattern_1_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
+        self.Dice_Framing_Trench_Pattern_1_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1567,43 +1567,43 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_19.setObjectName("pushButton_Back_19")
+        self.Dice_Framing_Trench_Pattern_1_Back.setObjectName("Dice_Framing_Trench_Pattern_1_Back")
         self.stackedWidget.addWidget(self.Dice_Framing_Trench_Pattern_1)
         self.Dice_Framing_Trench_Pattern_2 = QtWidgets.QWidget()
         self.Dice_Framing_Trench_Pattern_2.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_Framing_Trench_Pattern_2.setStyleSheet("border-image: url(:/images/images/Dice_Framing_Trench_Pattern_2.png);")
         self.Dice_Framing_Trench_Pattern_2.setObjectName("Dice_Framing_Trench_Pattern_2")
-        self.lineEdit_53 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
-        self.lineEdit_53.setGeometry(QtCore.QRect(530, 120, 51, 22))
-        self.lineEdit_53.setStyleSheet("border-image:None;")
-        self.lineEdit_53.setObjectName("lineEdit_53")
-        self.lineEdit_Initials_14 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
-        self.lineEdit_Initials_14.setGeometry(QtCore.QRect(540, 230, 81, 22))
-        self.lineEdit_Initials_14.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_14.setObjectName("lineEdit_Initials_14")
-        self.textEdit_Comments_22 = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_2)
-        self.textEdit_Comments_22.setGeometry(QtCore.QRect(40, 340, 571, 71))
-        self.textEdit_Comments_22.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_22.setObjectName("textEdit_Comments_22")
-        self.lineEdit_Dates_13 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
-        self.lineEdit_Dates_13.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_13.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_2_Data1 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Data1.setGeometry(QtCore.QRect(530, 120, 51, 22))
+        self.Dice_Framing_Trench_Pattern_2_Data1.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_2_Data1.setObjectName("Dice_Framing_Trench_Pattern_2_Data1")
+        self.Dice_Framing_Trench_Pattern_2_Data0 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Data0.setGeometry(QtCore.QRect(540, 230, 81, 22))
+        self.Dice_Framing_Trench_Pattern_2_Data0.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_2_Data0.setObjectName("Dice_Framing_Trench_Pattern_2_Data0")
+        self.Dice_Framing_Trench_Pattern_2_Comments = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Comments.setGeometry(QtCore.QRect(40, 340, 571, 71))
+        self.Dice_Framing_Trench_Pattern_2_Comments.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_2_Comments.setObjectName("Dice_Framing_Trench_Pattern_2_Comments")
+        self.Dice_Framing_Trench_Pattern_2_Initials = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_2_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_13.setObjectName("lineEdit_Dates_13")
-        self.lineEdit_Dates_14 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
-        self.lineEdit_Dates_14.setGeometry(QtCore.QRect(120, 560, 86, 18))
-        self.lineEdit_Dates_14.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_2_Initials.setObjectName("Dice_Framing_Trench_Pattern_2_Initials")
+        self.Dice_Framing_Trench_Pattern_2_Dates = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_2_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_14.setObjectName("lineEdit_Dates_14")
-        self.pushButton_Next_20 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
-        self.pushButton_Next_20.setGeometry(QtCore.QRect(880, 550, 106, 29))
-        self.pushButton_Next_20.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_2_Dates.setObjectName("Dice_Framing_Trench_Pattern_2_Dates")
+        self.Dice_Framing_Trench_Pattern_2_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1615,10 +1615,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_20.setObjectName("pushButton_Next_20")
-        self.pushButton_Back_20 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
-        self.pushButton_Back_20.setGeometry(QtCore.QRect(770, 550, 106, 29))
-        self.pushButton_Back_20.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_2_Next.setObjectName("Dice_Framing_Trench_Pattern_2_Next")
+        self.Dice_Framing_Trench_Pattern_2_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
+        self.Dice_Framing_Trench_Pattern_2_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1630,39 +1630,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_20.setObjectName("pushButton_Back_20")
+        self.Dice_Framing_Trench_Pattern_2_Back.setObjectName("Dice_Framing_Trench_Pattern_2_Back")
         self.stackedWidget.addWidget(self.Dice_Framing_Trench_Pattern_2)
         self.Dice_Framing_Trench_Pattern_3 = QtWidgets.QWidget()
         self.Dice_Framing_Trench_Pattern_3.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_Framing_Trench_Pattern_3.setStyleSheet("border-image: url(:/images/images/Dice_Framing_Trench_Pattern_3.png);")
         self.Dice_Framing_Trench_Pattern_3.setObjectName("Dice_Framing_Trench_Pattern_3")
-        self.lineEdit_Initials_15 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
-        self.lineEdit_Initials_15.setGeometry(QtCore.QRect(540, 150, 81, 22))
-        self.lineEdit_Initials_15.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_15.setObjectName("lineEdit_Initials_15")
-        self.textEdit_Comments_23 = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_3)
-        self.textEdit_Comments_23.setGeometry(QtCore.QRect(40, 240, 571, 71))
-        self.textEdit_Comments_23.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_23.setObjectName("textEdit_Comments_23")
-        self.lineEdit_Dates_15 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
-        self.lineEdit_Dates_15.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_15.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_3_Data = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Data.setGeometry(QtCore.QRect(540, 150, 81, 22))
+        self.Dice_Framing_Trench_Pattern_3_Data.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_3_Data.setObjectName("Dice_Framing_Trench_Pattern_3_Data")
+        self.Dice_Framing_Trench_Pattern_3_Comments = QtWidgets.QTextEdit(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Comments.setGeometry(QtCore.QRect(40, 240, 571, 71))
+        self.Dice_Framing_Trench_Pattern_3_Comments.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Trench_Pattern_3_Comments.setObjectName("Dice_Framing_Trench_Pattern_3_Comments")
+        self.Dice_Framing_Trench_Pattern_3_Initials = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_3_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_15.setObjectName("lineEdit_Dates_15")
-        self.lineEdit_Dates_16 = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
-        self.lineEdit_Dates_16.setGeometry(QtCore.QRect(120, 560, 86, 18))
-        self.lineEdit_Dates_16.setStyleSheet("QLineEdit{\n"
+        self.Dice_Framing_Trench_Pattern_3_Initials.setObjectName("Dice_Framing_Trench_Pattern_3_Initials")
+        self.Dice_Framing_Trench_Pattern_3_Dates = QtWidgets.QLineEdit(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.Dice_Framing_Trench_Pattern_3_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_16.setObjectName("lineEdit_Dates_16")
-        self.pushButton_Next_21 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
-        self.pushButton_Next_21.setGeometry(QtCore.QRect(890, 550, 106, 29))
-        self.pushButton_Next_21.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_3_Dates.setObjectName("Dice_Framing_Trench_Pattern_3_Dates")
+        self.Dice_Framing_Trench_Pattern_3_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Next.setGeometry(QtCore.QRect(890, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1674,10 +1674,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_21.setObjectName("pushButton_Next_21")
-        self.pushButton_Back_21 = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
-        self.pushButton_Back_21.setGeometry(QtCore.QRect(780, 550, 106, 29))
-        self.pushButton_Back_21.setStyleSheet("QPushButton{\n"
+        self.Dice_Framing_Trench_Pattern_3_Next.setObjectName("Dice_Framing_Trench_Pattern_3_Next")
+        self.Dice_Framing_Trench_Pattern_3_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
+        self.Dice_Framing_Trench_Pattern_3_Back.setGeometry(QtCore.QRect(780, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1689,39 +1689,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_21.setObjectName("pushButton_Back_21")
+        self.Dice_Framing_Trench_Pattern_3_Back.setObjectName("Dice_Framing_Trench_Pattern_3_Back")
         self.stackedWidget.addWidget(self.Dice_Framing_Trench_Pattern_3)
         self.Fill_Second_Pillars_and_Frame_1 = QtWidgets.QWidget()
         self.Fill_Second_Pillars_and_Frame_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_Second_Pillars_and_Frame_1.setStyleSheet("border-image: url(:/images/images/Fill_Second_Pillars_and_Frame_1.png);")
         self.Fill_Second_Pillars_and_Frame_1.setObjectName("Fill_Second_Pillars_and_Frame_1")
-        self.lineEdit_Initials_16 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
-        self.lineEdit_Initials_16.setGeometry(QtCore.QRect(630, 160, 81, 22))
-        self.lineEdit_Initials_16.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_16.setObjectName("lineEdit_Initials_16")
-        self.textEdit_Comments_24 = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_1)
-        self.textEdit_Comments_24.setGeometry(QtCore.QRect(30, 270, 681, 91))
-        self.textEdit_Comments_24.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_24.setObjectName("textEdit_Comments_24")
-        self.lineEdit_Dates_17 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
-        self.lineEdit_Dates_17.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_17.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_1_Data = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Data.setGeometry(QtCore.QRect(630, 160, 81, 22))
+        self.Fill_Second_Pillars_and_Frame_1_Data.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_1_Data.setObjectName("Fill_Second_Pillars_and_Frame_1_Data")
+        self.Fill_Second_Pillars_and_Frame_1_Comments = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Comments.setGeometry(QtCore.QRect(30, 270, 681, 91))
+        self.Fill_Second_Pillars_and_Frame_1_Comments.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_1_Comments.setObjectName("Fill_Second_Pillars_and_Frame_1_Comments")
+        self.Fill_Second_Pillars_and_Frame_1_Initials = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_1_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_17.setObjectName("lineEdit_Dates_17")
-        self.lineEdit_Dates_18 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
-        self.lineEdit_Dates_18.setGeometry(QtCore.QRect(110, 560, 86, 18))
-        self.lineEdit_Dates_18.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_1_Initials.setObjectName("Fill_Second_Pillars_and_Frame_1_Initials")
+        self.Fill_Second_Pillars_and_Frame_1_Dates = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Dates.setGeometry(QtCore.QRect(110, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_1_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_18.setObjectName("lineEdit_Dates_18")
-        self.pushButton_Next_22 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
-        self.pushButton_Next_22.setGeometry(QtCore.QRect(880, 550, 106, 29))
-        self.pushButton_Next_22.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_1_Dates.setObjectName("Fill_Second_Pillars_and_Frame_1_Dates")
+        self.Fill_Second_Pillars_and_Frame_1_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1733,10 +1733,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_22.setObjectName("pushButton_Next_22")
-        self.pushButton_Back_22 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
-        self.pushButton_Back_22.setGeometry(QtCore.QRect(770, 550, 106, 29))
-        self.pushButton_Back_22.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_1_Next.setObjectName("Fill_Second_Pillars_and_Frame_1_Next")
+        self.Fill_Second_Pillars_and_Frame_1_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
+        self.Fill_Second_Pillars_and_Frame_1_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1748,39 +1748,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_22.setObjectName("pushButton_Back_22")
+        self.Fill_Second_Pillars_and_Frame_1_Back.setObjectName("Fill_Second_Pillars_and_Frame_1_Back")
         self.stackedWidget.addWidget(self.Fill_Second_Pillars_and_Frame_1)
         self.Fill_Second_Pillars_and_Frame_2 = QtWidgets.QWidget()
         self.Fill_Second_Pillars_and_Frame_2.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_Second_Pillars_and_Frame_2.setStyleSheet("border-image: url(:/images/images/Fill_Second_Pillars_and_Frame_2.png);")
         self.Fill_Second_Pillars_and_Frame_2.setObjectName("Fill_Second_Pillars_and_Frame_2")
-        self.lineEdit_Initials_17 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
-        self.lineEdit_Initials_17.setGeometry(QtCore.QRect(630, 120, 81, 22))
-        self.lineEdit_Initials_17.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_17.setObjectName("lineEdit_Initials_17")
-        self.textEdit_Comments_25 = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_2)
-        self.textEdit_Comments_25.setGeometry(QtCore.QRect(20, 190, 691, 101))
-        self.textEdit_Comments_25.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_25.setObjectName("textEdit_Comments_25")
-        self.lineEdit_Dates_19 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
-        self.lineEdit_Dates_19.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_19.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_2_Data = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Data.setGeometry(QtCore.QRect(630, 120, 81, 22))
+        self.Fill_Second_Pillars_and_Frame_2_Data.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_2_Data.setObjectName("Fill_Second_Pillars_and_Frame_2_Data")
+        self.Fill_Second_Pillars_and_Frame_2_Comments = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Comments.setGeometry(QtCore.QRect(20, 190, 691, 101))
+        self.Fill_Second_Pillars_and_Frame_2_Comments.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_2_Comments.setObjectName("Fill_Second_Pillars_and_Frame_2_Comments")
+        self.Fill_Second_Pillars_and_Frame_2_Initials = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_2_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_19.setObjectName("lineEdit_Dates_19")
-        self.lineEdit_Dates_20 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
-        self.lineEdit_Dates_20.setGeometry(QtCore.QRect(110, 560, 86, 18))
-        self.lineEdit_Dates_20.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_2_Initials.setObjectName("Fill_Second_Pillars_and_Frame_2_Initials")
+        self.Fill_Second_Pillars_and_Frame_2_Dates = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Dates.setGeometry(QtCore.QRect(110, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_2_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_20.setObjectName("lineEdit_Dates_20")
-        self.pushButton_Next_23 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
-        self.pushButton_Next_23.setGeometry(QtCore.QRect(900, 550, 106, 29))
-        self.pushButton_Next_23.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_2_Dates.setObjectName("Fill_Second_Pillars_and_Frame_2_Dates")
+        self.Fill_Second_Pillars_and_Frame_2_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Next.setGeometry(QtCore.QRect(900, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1792,10 +1792,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_23.setObjectName("pushButton_Next_23")
-        self.pushButton_Back_23 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
-        self.pushButton_Back_23.setGeometry(QtCore.QRect(780, 550, 106, 29))
-        self.pushButton_Back_23.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_2_Next.setObjectName("Fill_Second_Pillars_and_Frame_2_Next")
+        self.Fill_Second_Pillars_and_Frame_2_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
+        self.Fill_Second_Pillars_and_Frame_2_Back.setGeometry(QtCore.QRect(780, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1807,55 +1807,55 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_23.setObjectName("pushButton_Back_23")
+        self.Fill_Second_Pillars_and_Frame_2_Back.setObjectName("Fill_Second_Pillars_and_Frame_2_Back")
         self.stackedWidget.addWidget(self.Fill_Second_Pillars_and_Frame_2)
         self.Fill_Second_Pillars_and_Frame_3 = QtWidgets.QWidget()
         self.Fill_Second_Pillars_and_Frame_3.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_Second_Pillars_and_Frame_3.setStyleSheet("border-image: url(:/images/images/Fill_Second_Pillars_and_Frame_3.png);")
         self.Fill_Second_Pillars_and_Frame_3.setObjectName("Fill_Second_Pillars_and_Frame_3")
-        self.lineEdit_54 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_54.setGeometry(QtCore.QRect(630, 100, 61, 22))
-        self.lineEdit_54.setStyleSheet("border-image:None;")
-        self.lineEdit_54.setObjectName("lineEdit_54")
-        self.lineEdit_55 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_55.setGeometry(QtCore.QRect(620, 130, 81, 22))
-        self.lineEdit_55.setStyleSheet("border-image:None;")
-        self.lineEdit_55.setObjectName("lineEdit_55")
-        self.lineEdit_56 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_56.setGeometry(QtCore.QRect(630, 160, 61, 22))
-        self.lineEdit_56.setStyleSheet("border-image:None;")
-        self.lineEdit_56.setObjectName("lineEdit_56")
-        self.lineEdit_57 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_57.setGeometry(QtCore.QRect(620, 190, 91, 22))
-        self.lineEdit_57.setStyleSheet("border-image:None;")
-        self.lineEdit_57.setObjectName("lineEdit_57")
-        self.lineEdit_Initials_18 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_Initials_18.setGeometry(QtCore.QRect(630, 220, 81, 22))
-        self.lineEdit_Initials_18.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_18.setObjectName("lineEdit_Initials_18")
-        self.textEdit_Comments_26 = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.textEdit_Comments_26.setGeometry(QtCore.QRect(30, 270, 691, 101))
-        self.textEdit_Comments_26.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_26.setObjectName("textEdit_Comments_26")
-        self.lineEdit_Dates_21 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_Dates_21.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_21.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_3_Data1 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Data1.setGeometry(QtCore.QRect(630, 100, 61, 22))
+        self.Fill_Second_Pillars_and_Frame_3_Data1.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Data1.setObjectName("Fill_Second_Pillars_and_Frame_3_Data1")
+        self.Fill_Second_Pillars_and_Frame_3_Data2 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Data2.setGeometry(QtCore.QRect(620, 130, 81, 22))
+        self.Fill_Second_Pillars_and_Frame_3_Data2.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Data2.setObjectName("Fill_Second_Pillars_and_Frame_3_Data2")
+        self.Fill_Second_Pillars_and_Frame_3_Data3 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Data3.setGeometry(QtCore.QRect(630, 160, 61, 22))
+        self.Fill_Second_Pillars_and_Frame_3_Data3.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Data3.setObjectName("Fill_Second_Pillars_and_Frame_3_Data3")
+        self.Fill_Second_Pillars_and_Frame_3_Data4 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Data4.setGeometry(QtCore.QRect(620, 190, 91, 22))
+        self.Fill_Second_Pillars_and_Frame_3_Data4.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Data4.setObjectName("Fill_Second_Pillars_and_Frame_3_Data4")
+        self.Fill_Second_Pillars_and_Frame_3_Data0 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Data0.setGeometry(QtCore.QRect(630, 220, 81, 22))
+        self.Fill_Second_Pillars_and_Frame_3_Data0.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Data0.setObjectName("Fill_Second_Pillars_and_Frame_3_Data0")
+        self.Fill_Second_Pillars_and_Frame_3_Comments = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Comments.setGeometry(QtCore.QRect(30, 270, 691, 101))
+        self.Fill_Second_Pillars_and_Frame_3_Comments.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_3_Comments.setObjectName("Fill_Second_Pillars_and_Frame_3_Comments")
+        self.Fill_Second_Pillars_and_Frame_3_Initials = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_3_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_21.setObjectName("lineEdit_Dates_21")
-        self.lineEdit_Dates_22 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
-        self.lineEdit_Dates_22.setGeometry(QtCore.QRect(120, 560, 86, 18))
-        self.lineEdit_Dates_22.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_3_Initials.setObjectName("Fill_Second_Pillars_and_Frame_3_Initials")
+        self.Fill_Second_Pillars_and_Frame_3_Dates = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_3_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_22.setObjectName("lineEdit_Dates_22")
-        self.pushButton_Next_24 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
-        self.pushButton_Next_24.setGeometry(QtCore.QRect(890, 540, 106, 29))
-        self.pushButton_Next_24.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_3_Dates.setObjectName("Fill_Second_Pillars_and_Frame_3_Dates")
+        self.Fill_Second_Pillars_and_Frame_3_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1867,10 +1867,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_24.setObjectName("pushButton_Next_24")
-        self.pushButton_Back_24 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
-        self.pushButton_Back_24.setGeometry(QtCore.QRect(770, 540, 106, 29))
-        self.pushButton_Back_24.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_3_Next.setObjectName("Fill_Second_Pillars_and_Frame_3_Next")
+        self.Fill_Second_Pillars_and_Frame_3_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
+        self.Fill_Second_Pillars_and_Frame_3_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1882,39 +1882,39 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_24.setObjectName("pushButton_Back_24")
+        self.Fill_Second_Pillars_and_Frame_3_Back.setObjectName("Fill_Second_Pillars_and_Frame_3_Back")
         self.stackedWidget.addWidget(self.Fill_Second_Pillars_and_Frame_3)
         self.Fill_Second_Pillars_and_Frame_4 = QtWidgets.QWidget()
         self.Fill_Second_Pillars_and_Frame_4.setMaximumSize(QtCore.QSize(1024, 600))
         self.Fill_Second_Pillars_and_Frame_4.setStyleSheet("border-image: url(:/images/images/Fill_Second_Pillars_and_Frame_4.png);")
         self.Fill_Second_Pillars_and_Frame_4.setObjectName("Fill_Second_Pillars_and_Frame_4")
-        self.lineEdit_Initials_19 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
-        self.lineEdit_Initials_19.setGeometry(QtCore.QRect(630, 120, 81, 22))
-        self.lineEdit_Initials_19.setStyleSheet("border-image:None;")
-        self.lineEdit_Initials_19.setObjectName("lineEdit_Initials_19")
-        self.textEdit_Comments_27 = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_4)
-        self.textEdit_Comments_27.setGeometry(QtCore.QRect(30, 180, 691, 101))
-        self.textEdit_Comments_27.setStyleSheet("border-image:None;")
-        self.textEdit_Comments_27.setObjectName("textEdit_Comments_27")
-        self.lineEdit_Dates_23 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
-        self.lineEdit_Dates_23.setGeometry(QtCore.QRect(210, 560, 86, 18))
-        self.lineEdit_Dates_23.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_4_Data = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Data.setGeometry(QtCore.QRect(630, 120, 81, 22))
+        self.Fill_Second_Pillars_and_Frame_4_Data.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_4_Data.setObjectName("Fill_Second_Pillars_and_Frame_4_Data")
+        self.Fill_Second_Pillars_and_Frame_4_Comments = QtWidgets.QTextEdit(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Comments.setGeometry(QtCore.QRect(30, 180, 691, 101))
+        self.Fill_Second_Pillars_and_Frame_4_Comments.setStyleSheet("border-image:None;")
+        self.Fill_Second_Pillars_and_Frame_4_Comments.setObjectName("Fill_Second_Pillars_and_Frame_4_Comments")
+        self.Fill_Second_Pillars_and_Frame_4_Initials = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_4_Initials.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_23.setObjectName("lineEdit_Dates_23")
-        self.lineEdit_Dates_24 = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
-        self.lineEdit_Dates_24.setGeometry(QtCore.QRect(120, 560, 86, 18))
-        self.lineEdit_Dates_24.setStyleSheet("QLineEdit{\n"
+        self.Fill_Second_Pillars_and_Frame_4_Initials.setObjectName("Fill_Second_Pillars_and_Frame_4_Initials")
+        self.Fill_Second_Pillars_and_Frame_4_Dates = QtWidgets.QLineEdit(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.Fill_Second_Pillars_and_Frame_4_Dates.setStyleSheet("QLineEdit{\n"
 "background-color: rgb(240, 240, 240);\n"
 "border: none;\n"
 "border-image:None;\n"
 "}")
-        self.lineEdit_Dates_24.setObjectName("lineEdit_Dates_24")
-        self.pushButton_Next_25 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
-        self.pushButton_Next_25.setGeometry(QtCore.QRect(890, 540, 106, 29))
-        self.pushButton_Next_25.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_4_Dates.setObjectName("Fill_Second_Pillars_and_Frame_4_Dates")
+        self.Fill_Second_Pillars_and_Frame_4_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_4_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1926,10 +1926,10 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Next_25.setObjectName("pushButton_Next_25")
-        self.pushButton_Back_25 = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
-        self.pushButton_Back_25.setGeometry(QtCore.QRect(770, 540, 106, 29))
-        self.pushButton_Back_25.setStyleSheet("QPushButton{\n"
+        self.Fill_Second_Pillars_and_Frame_4_Next.setObjectName("Fill_Second_Pillars_and_Frame_4_Next")
+        self.Fill_Second_Pillars_and_Frame_4_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
+        self.Fill_Second_Pillars_and_Frame_4_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_4_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
 "border-image:None;\n"
@@ -1941,13 +1941,13 @@ class Ui_InstructionWindow(object):
 "padding-top:7px;\n"
 "padding-top:7px;\n"
 "}")
-        self.pushButton_Back_25.setObjectName("pushButton_Back_25")
+        self.Fill_Second_Pillars_and_Frame_4_Back.setObjectName("Fill_Second_Pillars_and_Frame_4_Back")
         self.stackedWidget.addWidget(self.Fill_Second_Pillars_and_Frame_4)
         self.verticalLayout.addWidget(self.stackedWidget)
         InstructionWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(InstructionWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(9)
         QtCore.QMetaObject.connectSlotsByName(InstructionWindow)
 
     def retranslateUi(self, InstructionWindow):
@@ -1991,76 +1991,76 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Next.setText(_translate("InstructionWindow", "Next"))
         self.Mount_Subwafers_Back.setText(_translate("InstructionWindow", "Back"))
         self.Mount_Subwafers_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_11.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.Dice_First_Pillars_1_Initials_1.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.pushButton_Next_9.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_9.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_4.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_12.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_10.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_10.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_5.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_13.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_11.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_11.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_6.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_14.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_12.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_12.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_7.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_15.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_13.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_13.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_8.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_16.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_14.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_14.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_9.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_17.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_15.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_15.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_10.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_18.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_16.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_16.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_11.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_19.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_17.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_17.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_12.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
-        self.textEdit_Comments_20.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_18.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_18.setText(_translate("InstructionWindow", "Back"))
-        self.textEdit_Comments_2.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.lineEdit_Initials.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.pushButton_Back_2.setText(_translate("InstructionWindow", "Back"))
-        self.pushButton_Next_2.setText(_translate("InstructionWindow", "Next"))
-        self.lineEdit_Initials_13.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_21.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_19.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_19.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_14.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_22.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_20.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_20.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_15.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_23.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_21.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_21.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_16.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_24.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_22.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_22.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_17.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_25.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_23.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_23.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_18.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_26.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_24.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_24.setText(_translate("InstructionWindow", "Back"))
-        self.lineEdit_Initials_19.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.textEdit_Comments_27.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.pushButton_Next_25.setText(_translate("InstructionWindow", "Next"))
-        self.pushButton_Back_25.setText(_translate("InstructionWindow", "Back"))
+        self.Dice_First_Pillars_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_First_Pillars_1_Initial1.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Dice_First_Pillars_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_First_Pillars_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Dice_First_Pillars_2_Initial1.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Dice_First_Pillars_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_First_Pillars_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_First_Pillars_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Dice_First_Pillars_3_Initial1.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Dice_First_Pillars_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_First_Pillars_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_First_Pillars_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_First_Pillars_1_Data.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Fill_First_Pillars_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_First_Pillars_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_First_Pillars_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_First_Pillars_2_Data.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Fill_First_Pillars_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_First_Pillars_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_First_Pillars_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_First_Pillars_3_Data0.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Fill_First_Pillars_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_First_Pillars_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_First_Pillars_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_First_Pillars_4_Data.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Fill_First_Pillars_4_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_First_Pillars_4_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_First_Pillars_4_Back.setText(_translate("InstructionWindow", "Back"))
+        self.PreLap_First_Epoxy_Fill_1_Data0.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.PreLap_First_Epoxy_Fill_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.PreLap_First_Epoxy_Fill_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.PreLap_First_Epoxy_Fill_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.PreLap_First_Epoxy_Fill_2_Data.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.PreLap_First_Epoxy_Fill_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.PreLap_First_Epoxy_Fill_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.PreLap_First_Epoxy_Fill_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.PreLap_First_Epoxy_Fill_3_Data.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.PreLap_First_Epoxy_Fill_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.PreLap_First_Epoxy_Fill_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.PreLap_First_Epoxy_Fill_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Lap_First_Epoxy_Fill_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Lap_First_Epoxy_Fill_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Lap_First_Epoxy_Fill_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Lap_First_Epoxy_Fill_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_Framing_Trench_Pattern_1_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Dice_Framing_Trench_Pattern_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_Framing_Trench_Pattern_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_Framing_Trench_Pattern_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Dice_Framing_Trench_Pattern_2_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Dice_Framing_Trench_Pattern_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_Framing_Trench_Pattern_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_Framing_Trench_Pattern_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Dice_Framing_Trench_Pattern_3_Data.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Dice_Framing_Trench_Pattern_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Dice_Framing_Trench_Pattern_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_Framing_Trench_Pattern_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_Second_Pillars_and_Frame_1_Data.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Fill_Second_Pillars_and_Frame_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_Second_Pillars_and_Frame_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_Second_Pillars_and_Frame_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_Second_Pillars_and_Frame_2_Data.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Fill_Second_Pillars_and_Frame_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_Second_Pillars_and_Frame_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_Second_Pillars_and_Frame_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_Second_Pillars_and_Frame_3_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Fill_Second_Pillars_and_Frame_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_Second_Pillars_and_Frame_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_Second_Pillars_and_Frame_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.Fill_Second_Pillars_and_Frame_4_Data.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Fill_Second_Pillars_and_Frame_4_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.Fill_Second_Pillars_and_Frame_4_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Fill_Second_Pillars_and_Frame_4_Back.setText(_translate("InstructionWindow", "Back"))
 import resource_rc
