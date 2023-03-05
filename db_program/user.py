@@ -22,7 +22,7 @@ class Employee(User):
         self.database = db_class
         self.cursor = db_class.cursor()
         self.sql_class = sqlgen.databaseAPI(db_class=self.database, table='')
-        self.dev_class: device_class.device = None
+        self.dev_class = None
 
     def Emp_print(self):
         print("emp")

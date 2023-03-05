@@ -7,6 +7,7 @@ import mysql_statement_gen
 import user
 import check_user as chk_user
 
+
 if __name__ == '__main__':
     # Display the data
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))

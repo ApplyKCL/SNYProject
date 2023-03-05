@@ -136,7 +136,7 @@ class databaseAPI:
         cmd_str = "select {} from {}"
 
         variable_field = ", ".join(self.table_variable)
-        # if there has constrain
+        # if there has constrained
         if self.constrain_type != ():
             cmd_str = cmd_str + " where {}"
             constrain_field = self.constrain_str()

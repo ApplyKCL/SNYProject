@@ -13,13 +13,13 @@ def tuple_remove(target=(), element=""):
 def device_list_append(dev_sql_result) -> list:
     device_list = []
     for index in range(0, len(dev_sql_result)):
-        device_list.append(dc.device(dev_id=int(dev_sql_result[index][0]),
+        device_list.append(dc.Device(dev_id=int(dev_sql_result[index][0]),
                                      device_name=str(dev_sql_result[index][1]),
                                      product_id=str(dev_sql_result[index][2])))
     return device_list
 
 
-def display_dev(dev_class: dc.device):
+def display_dev(dev_class: dc.Device):
     print("""
     Device ID: {}
     Device Name: {}
