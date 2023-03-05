@@ -31,6 +31,30 @@ class Employee(User):
 # Subclass of Employee
 class Admin(Employee):
     # Create a new Instruction
+    def register_user(self, user_name, user_job, user_email, account_number, password):
+        self.sql_class.table_name = config.table_name[config.employee_position]
+        result = self.sql_class.database_operation(instruction="insert",
+                                                   operate_variable=("name", "job", "email",
+                                                                     "account_number", "password", "admin_status"),
+                                                   variable_value=(user_name, user_job, user_email, account_number,
+                                                                   password, 0))
+        if not result:
+            return False
+        else:
+            return True
+
+    def query_user(self):
+        self.sql_class.table_name = config.table_name[config.employee_position]
+        result = self.sql_class.database_operation(instruction="select",
+                                                   operate_variable=("id", "name", "job", "email",
+                                                                     "account_number", "password", "admin_status")
+                                                   )
+        if not result:
+            return False
+        else:
+            return result
+
+
     def create_new(self):
         # Query if there has the device in DB
         device = self.query_device()
@@ -90,5 +114,3 @@ class Admin(Employee):
         The Device is:
         {}
         """.format(af.display_dev(self.dev_class)))
-
-
