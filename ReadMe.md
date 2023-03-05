@@ -1,4 +1,4 @@
-# ECED4900 Ultrasound Transducer Build Tracker
+# ECED4900 & ECED4901 Ultrasound Transducer Build Tracker
 
 This is the project work for the ECED4900 Course to get the respositry.
 The whole project file belongs to Shaonan Hu, Jiahao Chen, Yilun Peng and Jiawei Yang.
@@ -65,5 +65,5 @@ Using `git log` to check the push you made had been finished.
 - Git Command [cheat sheet](https://dzone.com/articles/top-20-git-commands-with-examples)
 
 ## Thank you for your reading.
-## If you have any further question, welcome to talk to owners.
-## Have a wonderful day!                                                                                    [ Read 76 lines (Converted from DOS format) ]
+ If you have any further question, welcome to talk to owners.
+ Have a wonderful day!
