@@ -31,13 +31,40 @@ class Employee(User):
 # Subclass of Employee
 class Admin(Employee):
     # Create a new Instruction
-    def register_user(self, user_name, user_job, user_email, account_number, password):
+    def register_user(self, user_name, user_job, user_email, account_number, password, admin_status=False):
+        """
+        :param user_name: Name of User
+        :param user_job: Job Of User
+        :param user_email: Email of User | optional
+        :param account_number: Account Number, Unique
+        :param password:  May Need to be Encrypted
+        :param admin_status: Whether he is admin or not, default False (Not)
+        :return: The result of the execution, represent how many row changes in db
+        """
+        if self.check_account_number(account_number):
+            return False
         self.sql_class.table_name = config.table_name[config.employee_position]
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=("name", "job", "email",
                                                                      "account_number", "password", "admin_status"),
                                                    variable_value=(user_name, user_job, user_email, account_number,
-                                                                   password, False))
+                                                                   password, admin_status))
+        if not result:
+            return False
+        else:
+            return True
+
+    def check_account_number(self, account_number):
+        """
+        :param account_number: account number for user
+        :return: True or False for the correct output
+        """
+        self.sql_class.table_name = config.table_name[config.employee_position]
+        result = self.sql_class.database_operation(instruction="select",
+                                                   operate_variable=("name",),
+                                                   constrain_variable=("account_number",),
+                                                   constrain_type=("no_tp",),
+                                                   constrain_value=(account_number, ))
         if not result:
             return False
         else:
