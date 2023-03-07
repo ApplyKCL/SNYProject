@@ -177,7 +177,7 @@ padding-top:7px;
   </widget>
  </widget>
  <resources>
-  <include location="D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/resource.qrc"/>
+  <include location="../resource.qrc"/>
  </resources>
  <connections/>
 </ui>
