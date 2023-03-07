@@ -13,9 +13,9 @@ if __name__ == '__main__':
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))
     # database infor, will be considered to be treated as file
     mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="215046Aa."
+        host="134.190.203.113",
+        user="dslink",
+        password="dstestpass123"
     )
     # mycursor the cursor of the mysql connector api func
     mycursor = mydb.cursor()
