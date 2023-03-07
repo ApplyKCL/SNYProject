@@ -1,0 +1,140 @@
+{
+  "device_table":{
+    "elements_amount": 2,
+    "elements_name": [
+      "name",
+      "product_id"
+    ],
+    "elements_type": [
+      "prt_string",
+      "prt_string"
+    ],
+    "elements_features": [
+      "notnull",
+      "notnull"
+    ]
+  },
+  "comp_table":{
+    "elements_amount": 3,
+    "elements_name": [
+      "name",
+      "component_id",
+      "required_amount"
+    ],
+    "elements_type": [
+      "prt_string",
+      "prt_string",
+      "int"
+    ],
+    "elements_features": [
+      "notnull",
+      "notnull",
+      "na"
+    ]
+  },
+  "inst_table":{
+    "elements_amount": 5,
+    "elements_name": [
+      "name",
+      "repeat_times",
+      "previous_inst",
+      "next_inst",
+      "start"
+    ],
+    "elements_type": [
+      "prt_string",
+      "int",
+      "int",
+      "int",
+      "bit"
+    ],
+    "elements_features": [
+      "notnull",
+      "na",
+      "na",
+      "na",
+      "na"
+    ]
+  },
+  "step_table":{
+    "elements_amount": 7,
+    "elements_name": [
+      "name",
+      "repeat_times",
+      "previous_step",
+      "next_step",
+      "start",
+      "sub",
+      "sub_id"
+    ],
+    "elements_type": [
+      "prt_string",
+      "int",
+      "int",
+      "int",
+      "bit",
+      "bit",
+      "int"
+    ],
+    "elements_features": [
+      "notnull",
+      "na",
+      "na",
+      "na",
+      "na",
+      "na",
+      "na"
+    ]
+  },
+  "param_table":{
+    "elements_amount": 14,
+    "elements_name": [
+      "name",
+      "product_id",
+      "req_one",
+      "req_two",
+      "req_tree",
+      "req_four",
+      "req_five",
+      "data",
+      "initial",
+      "sub",
+      "sub_id",
+      "value",
+      "upper_bound",
+      "lower_bound"
+    ],
+    "elements_type": [
+      "prt_string",
+      "prt_string",
+      "string",
+      "string",
+      "string",
+      "string",
+      "string",
+      "bit",
+      "bit",
+      "bit",
+      "int",
+      "int",
+      "int",
+      "int"
+    ],
+    "elements_features": [
+      "notnull",
+      "notnull",
+      "series_a",
+      "series_a",
+      "series_a",
+      "series_a",
+      "series_a",
+      "na",
+      "na",
+      "na",
+      "na",
+      "na",
+      "na",
+      "na"
+    ]
+  }
+}
