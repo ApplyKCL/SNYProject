@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>41</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -625,7 +625,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/subwafer0.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Data_0">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -648,7 +648,7 @@ border-image:None;</string>
          <number>32767</number>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Back_0">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Back">
         <property name="geometry">
          <rect>
           <x>760</x>
@@ -684,7 +684,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Dates_0">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -701,7 +701,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Initals_0">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Initals">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -718,7 +718,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Next_0">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Next">
         <property name="geometry">
          <rect>
           <x>870</x>
@@ -759,7 +759,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/subwafer1.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Data_1">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -788,7 +788,7 @@ border-image:None;</string>
          <string>INITIAL HERE</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Dates_1">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -805,7 +805,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Next_1">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Next">
         <property name="geometry">
          <rect>
           <x>860</x>
@@ -841,7 +841,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Initals_1">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Initals">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -858,7 +858,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Back_1">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Back">
         <property name="geometry">
          <rect>
           <x>760</x>
@@ -894,7 +894,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QTextEdit" name="DicePiezoWaferintoSubwafers1_Sub_comments">
+       <widget class="QTextEdit" name="DicePiezoWaferintoSubwafers1_comments">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -933,7 +933,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Back_2">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Back">
         <property name="geometry">
          <rect>
           <x>750</x>
@@ -969,7 +969,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Initals_2">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Initals">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -986,7 +986,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Next_2">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Next">
         <property name="geometry">
          <rect>
           <x>850</x>
@@ -1022,7 +1022,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Data_2">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -1051,7 +1051,7 @@ border-image:None;</string>
          <string>INITIAL HERE</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Dates_2">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1073,7 +1073,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/subwafer3.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Initals_3">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Initals">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -1090,7 +1090,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Data_3">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Data">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -1119,7 +1119,7 @@ border-image:None;</string>
          <string>INITIAL HERE</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Dates_3">
+       <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -1136,7 +1136,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Back_3">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Back">
         <property name="geometry">
          <rect>
           <x>750</x>
@@ -1172,7 +1172,7 @@ padding-top:7px;
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="QTextEdit" name="DicePiezoWaferintoSubwafers3_comments_3">
+       <widget class="QTextEdit" name="DicePiezoWaferintoSubwafers3_comments">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1189,7 +1189,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Next_3">
+       <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Next">
         <property name="geometry">
          <rect>
           <x>850</x>
@@ -5314,7 +5314,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Pre-Lap Second Epoxy Fill2.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Dates_2">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -5331,7 +5331,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="pre_Lap_Second_Epoxy_Fill_2_Comments_2">
+       <widget class="QTextEdit" name="pre_Lap_Second_Epoxy_Fill_2_Comments">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -5347,7 +5347,7 @@ border-image:None;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Initials_2">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -5364,7 +5364,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_2_Next_2">
+       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_2_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -5418,7 +5418,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Data_2">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Data">
         <property name="geometry">
          <rect>
           <x>520</x>
@@ -5442,7 +5442,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/Pre-Lap Second Epoxy Fill3.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_Initials_3">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_3_Initials">
         <property name="geometry">
          <rect>
           <x>200</x>
@@ -5459,7 +5459,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_Data_3">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_3_Data">
         <property name="geometry">
          <rect>
           <x>520</x>
@@ -5475,7 +5475,7 @@ border-image:None;
          <string>INITIAL HERE</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_Back_3">
+       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_3_Back">
         <property name="geometry">
          <rect>
           <x>760</x>
@@ -5502,7 +5502,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="pre_Lap_Second_Epoxy_Fill_Comments_3">
+       <widget class="QTextEdit" name="pre_Lap_Second_Epoxy_Fill_3_Comments">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -5518,7 +5518,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_Next_3">
+       <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_3_Next">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -5545,7 +5545,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_Dates_3">
+       <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_3_Dates">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -5567,7 +5567,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/LapSecondEpoxyFill.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data1">
         <property name="geometry">
          <rect>
           <x>600</x>
@@ -5589,7 +5589,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_2">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data2">
         <property name="geometry">
          <rect>
           <x>910</x>
@@ -5611,7 +5611,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_3">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data3">
         <property name="geometry">
          <rect>
           <x>900</x>
@@ -5633,7 +5633,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_4">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data4">
         <property name="geometry">
          <rect>
           <x>570</x>
@@ -5655,7 +5655,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_5">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data5">
         <property name="geometry">
          <rect>
           <x>560</x>
@@ -5677,7 +5677,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_6">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data6">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -5699,7 +5699,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_7">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data7">
         <property name="geometry">
          <rect>
           <x>390</x>
@@ -5721,7 +5721,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_8">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data8">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -5743,7 +5743,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_9">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data9">
         <property name="geometry">
          <rect>
           <x>380</x>
@@ -5765,7 +5765,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="LapSecondEpoxyFill_Back_4">
+       <widget class="QPushButton" name="LapSecondEpoxyFill_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -5792,7 +5792,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Dates_4">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -5809,7 +5809,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Initials_4">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -5826,7 +5826,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="LapSecondEpoxyFill_Next_4">
+       <widget class="QPushButton" name="LapSecondEpoxyFill_Next">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -5853,7 +5853,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_10">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data10">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -5875,7 +5875,7 @@ border: none;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_data_11">
+       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data11">
         <property name="geometry">
          <rect>
           <x>620</x>
@@ -5929,7 +5929,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode1_Dates_1">
+       <widget class="QLineEdit" name="DepositFirstElectrode1_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -5946,7 +5946,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode1_Initials_1">
+       <widget class="QLineEdit" name="DepositFirstElectrode1_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -5963,7 +5963,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DepositFirstElectrode1_Next_1">
+       <widget class="QPushButton" name="DepositFirstElectrode1_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -5990,7 +5990,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="DepositFirstElectrode1_Comments_1">
+       <widget class="QTextEdit" name="DepositFirstElectrode1_Comments">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -6006,7 +6006,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode1_Data_1">
+       <widget class="QLineEdit" name="DepositFirstElectrode1_Data0">
         <property name="geometry">
          <rect>
           <x>690</x>
@@ -6025,7 +6025,7 @@ padding-top:7px;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode1_Data_2">
+       <widget class="QLineEdit" name="DepositFirstElectrode1_Data1">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -6044,7 +6044,7 @@ padding-top:7px;
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode1_Data_3">
+       <widget class="QLineEdit" name="DepositFirstElectrode1_Data2">
         <property name="geometry">
          <rect>
           <x>560</x>
@@ -6060,7 +6060,7 @@ padding-top:7px;
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QCheckBox" name="DepositFirstElectrode1_checkBox_2">
+       <widget class="QCheckBox" name="DepositFirstElectrode1_checkBox2">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -6081,7 +6081,7 @@ padding-top:7px;
          <string>Fail</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="DepositFirstElectrode1_checkBox">
+       <widget class="QCheckBox" name="DepositFirstElectrode1_checkBox1">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -6107,7 +6107,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/DepositFirstElectrode2.PNG);</string>
        </property>
-       <widget class="QTextEdit" name="DepositFirstElectrode2_Comments_2">
+       <widget class="QTextEdit" name="DepositFirstElectrode2_Comments">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -6144,7 +6144,7 @@ padding-top:7px;
          <string>Fail</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DepositFirstElectrode2_Back_2">
+       <widget class="QPushButton" name="DepositFirstElectrode2_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -6171,7 +6171,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DepositFirstElectrode2_Next_2">
+       <widget class="QPushButton" name="DepositFirstElectrode2_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -6198,7 +6198,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode2_Dates_2">
+       <widget class="QLineEdit" name="DepositFirstElectrode2_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6236,7 +6236,7 @@ border-image:None;
          <string>Pass</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode2_Data_6">
+       <widget class="QLineEdit" name="DepositFirstElectrode2_Data">
         <property name="geometry">
          <rect>
           <x>690</x>
@@ -6255,7 +6255,7 @@ border-image:None;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode2_Initials_2">
+       <widget class="QLineEdit" name="DepositFirstElectrode2_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -6277,7 +6277,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/DepositFirstElectrode3.PNG);</string>
        </property>
-       <widget class="QCheckBox" name="DepositFirstElectrode3_checkBox_1">
+       <widget class="QCheckBox" name="DepositFirstElectrode3_checkBox1">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -6298,7 +6298,7 @@ border-image:None;
          <string>Pass</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DepositFirstElectrode3_Next_3">
+       <widget class="QPushButton" name="DepositFirstElectrode3_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -6325,7 +6325,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode3_Data_7">
+       <widget class="QLineEdit" name="DepositFirstElectrode3_Data">
         <property name="geometry">
          <rect>
           <x>690</x>
@@ -6344,7 +6344,7 @@ padding-top:7px;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="DepositFirstElectrode3_Comments_3">
+       <widget class="QTextEdit" name="DepositFirstElectrode3_Comments">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -6360,7 +6360,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="DepositFirstElectrode3_Back_3">
+       <widget class="QPushButton" name="DepositFirstElectrode3_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -6387,7 +6387,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="DepositFirstElectrode3_checkBox_2">
+       <widget class="QCheckBox" name="DepositFirstElectrode3_checkBox2">
         <property name="geometry">
          <rect>
           <x>880</x>
@@ -6408,7 +6408,7 @@ padding-top:7px;
          <string>Fail</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode3_Dates_3">
+       <widget class="QLineEdit" name="DepositFirstElectrode3_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6425,7 +6425,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="DepositFirstElectrode3_Initials_3">
+       <widget class="QLineEdit" name="DepositFirstElectrode3_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -6447,7 +6447,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/ScratchDiceElements1.PNG);</string>
        </property>
-       <widget class="QPushButton" name="ScratchDiceElements1_NEXT_1">
+       <widget class="QPushButton" name="ScratchDiceElements1_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -6474,7 +6474,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements1_Data_1">
+       <widget class="QLineEdit" name="ScratchDiceElements1_Data">
         <property name="geometry">
          <rect>
           <x>660</x>
@@ -6493,7 +6493,7 @@ padding-top:7px;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="ScratchDiceElements1_Comments_1">
+       <widget class="QTextEdit" name="ScratchDiceElements1_Comments">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6509,7 +6509,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ScratchDiceElements1_BACK_1">
+       <widget class="QPushButton" name="ScratchDiceElements1_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -6536,7 +6536,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements1_Dates_1">
+       <widget class="QLineEdit" name="ScratchDiceElements1_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6553,7 +6553,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements1_INITIALS_1">
+       <widget class="QLineEdit" name="ScratchDiceElements1_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -6575,7 +6575,7 @@ border-image:None;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/ScratchDiceElements2.PNG);</string>
        </property>
-       <widget class="QLineEdit" name="ScratchDiceElements2_Data_2">
+       <widget class="QLineEdit" name="ScratchDiceElements2_Data0">
         <property name="geometry">
          <rect>
           <x>660</x>
@@ -6594,7 +6594,7 @@ border-image:None;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ScratchDiceElements2_BACK_2">
+       <widget class="QPushButton" name="ScratchDiceElements2_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -6621,7 +6621,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements2_Dates_2">
+       <widget class="QLineEdit" name="ScratchDiceElements2_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6638,7 +6638,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements2_INITIALS_2">
+       <widget class="QLineEdit" name="ScratchDiceElements2_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -6655,7 +6655,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="ScratchDiceElements2_Comments_2">
+       <widget class="QTextEdit" name="ScratchDiceElements2_Comments">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -6671,7 +6671,7 @@ border-image:None;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ScratchDiceElements2_NEXT_2">
+       <widget class="QPushButton" name="ScratchDiceElements2_Next">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -6698,7 +6698,7 @@ padding-top:7px;
          <string>Next</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="Scratch_data">
+       <widget class="QLineEdit" name="ScratchDiceElements2_Data1">
         <property name="geometry">
          <rect>
           <x>660</x>
@@ -6719,7 +6719,7 @@ padding-top:7px;
        <property name="styleSheet">
         <string notr="true">border-image: url(:/images/images/ScratchDiceElements3.PNG);</string>
        </property>
-       <widget class="QTextEdit" name="ScratchDiceElements3_Comments_3">
+       <widget class="QTextEdit" name="ScratchDiceElements3_Comments">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6735,7 +6735,7 @@ padding-top:7px;
          <string>Please provide detailed descriptions if you feel necessary </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements3_Data_3">
+       <widget class="QLineEdit" name="ScratchDiceElements3_Data">
         <property name="geometry">
          <rect>
           <x>660</x>
@@ -6754,7 +6754,7 @@ padding-top:7px;
          <string>INITIAL</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ScratchDiceElements3_BACK_3">
+       <widget class="QPushButton" name="ScratchDiceElements3_Back">
         <property name="geometry">
          <rect>
           <x>770</x>
@@ -6781,7 +6781,7 @@ padding-top:7px;
          <string>Back</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="ScratchDiceElements3_NEXT_3">
+       <widget class="QPushButton" name="ScratchDiceElements3_Finish">
         <property name="geometry">
          <rect>
           <x>890</x>
@@ -6805,10 +6805,10 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Next</string>
+         <string>Finish</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements3_Dates_3">
+       <widget class="QLineEdit" name="ScratchDiceElements3_Dates">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -6825,7 +6825,7 @@ border-image:None;
 }</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="ScratchDiceElements3_INITIALS_3">
+       <widget class="QLineEdit" name="ScratchDiceElements3_Initials">
         <property name="geometry">
          <rect>
           <x>210</x>

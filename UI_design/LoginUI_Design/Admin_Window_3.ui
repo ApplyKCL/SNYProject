@@ -29,13 +29,10 @@
    <string notr="true">
 QWidget#widget{
 background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.0284091 rgba(166, 222, 255), stop:0.9375 rgba(255, 255, 255, 255));
-
-border-radius: 14;
 }
 
 QGroupBox {
 border: 2px solid #999999;
-border-radius: 4px;
 margin-top: 0.5em;
 }
 QGroupBox::title {
@@ -46,6 +43,21 @@ top: 0.1em;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <property name="minimumSize">
@@ -55,6 +67,21 @@ top: 0.1em;
       </size>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <property name="spacing">
@@ -467,11 +494,26 @@ padding-bottom:2px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1226</width>
-             <height>1226</height>
+             <width>1200</width>
+             <height>1200</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame">
               <property name="minimumSize">

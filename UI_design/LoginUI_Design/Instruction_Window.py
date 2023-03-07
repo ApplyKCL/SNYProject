@@ -276,6 +276,272 @@ class Ui_InstructionWindow(object):
 "}")
         self.Mount_Piezo_Wafer_3_Dates.setObjectName("Mount_Piezo_Wafer_3_Dates")
         self.stackedWidget.addWidget(self.Mount_Piezo_Wafer_3)
+        self.DicePiezoWaferintoSubwafers0 = QtWidgets.QWidget()
+        self.DicePiezoWaferintoSubwafers0.setStyleSheet("border-image: url(:/images/images/subwafer0.PNG);")
+        self.DicePiezoWaferintoSubwafers0.setObjectName("DicePiezoWaferintoSubwafers0")
+        self.DicePiezoWaferintoSubwafers0_Data = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers0_Data.setEnabled(True)
+        self.DicePiezoWaferintoSubwafers0_Data.setGeometry(QtCore.QRect(630, 110, 51, 21))
+        self.DicePiezoWaferintoSubwafers0_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-image:None;")
+        self.DicePiezoWaferintoSubwafers0_Data.setText("")
+        self.DicePiezoWaferintoSubwafers0_Data.setMaxLength(32767)
+        self.DicePiezoWaferintoSubwafers0_Data.setObjectName("DicePiezoWaferintoSubwafers0_Data")
+        self.DicePiezoWaferintoSubwafers0_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers0_Back.setGeometry(QtCore.QRect(760, 550, 93, 28))
+        self.DicePiezoWaferintoSubwafers0_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers0_Back.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers0_Back.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers0_Back.setObjectName("DicePiezoWaferintoSubwafers0_Back")
+        self.DicePiezoWaferintoSubwafers0_Dates = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers0_Dates.setGeometry(QtCore.QRect(120, 560, 91, 22))
+        self.DicePiezoWaferintoSubwafers0_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers0_Dates.setObjectName("DicePiezoWaferintoSubwafers0_Dates")
+        self.DicePiezoWaferintoSubwafers0_Initals = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers0_Initals.setGeometry(QtCore.QRect(230, 560, 71, 22))
+        self.DicePiezoWaferintoSubwafers0_Initals.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers0_Initals.setObjectName("DicePiezoWaferintoSubwafers0_Initals")
+        self.DicePiezoWaferintoSubwafers0_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers0_Next.setGeometry(QtCore.QRect(870, 550, 93, 28))
+        self.DicePiezoWaferintoSubwafers0_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers0_Next.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers0_Next.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers0_Next.setObjectName("DicePiezoWaferintoSubwafers0_Next")
+        self.stackedWidget.addWidget(self.DicePiezoWaferintoSubwafers0)
+        self.DicePiezoWaferintoSubwafers1 = QtWidgets.QWidget()
+        self.DicePiezoWaferintoSubwafers1.setStyleSheet("border-image: url(:/images/images/subwafer1.PNG);")
+        self.DicePiezoWaferintoSubwafers1.setObjectName("DicePiezoWaferintoSubwafers1")
+        self.DicePiezoWaferintoSubwafers1_Data = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_Data.setEnabled(True)
+        self.DicePiezoWaferintoSubwafers1_Data.setGeometry(QtCore.QRect(550, 120, 111, 31))
+        self.DicePiezoWaferintoSubwafers1_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-image:None;")
+        self.DicePiezoWaferintoSubwafers1_Data.setText("")
+        self.DicePiezoWaferintoSubwafers1_Data.setMaxLength(32767)
+        self.DicePiezoWaferintoSubwafers1_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.DicePiezoWaferintoSubwafers1_Data.setObjectName("DicePiezoWaferintoSubwafers1_Data")
+        self.DicePiezoWaferintoSubwafers1_Dates = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_Dates.setGeometry(QtCore.QRect(120, 560, 91, 22))
+        self.DicePiezoWaferintoSubwafers1_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers1_Dates.setObjectName("DicePiezoWaferintoSubwafers1_Dates")
+        self.DicePiezoWaferintoSubwafers1_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_Next.setGeometry(QtCore.QRect(860, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers1_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers1_Next.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers1_Next.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers1_Next.setObjectName("DicePiezoWaferintoSubwafers1_Next")
+        self.DicePiezoWaferintoSubwafers1_Initals = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_Initals.setGeometry(QtCore.QRect(230, 560, 71, 22))
+        self.DicePiezoWaferintoSubwafers1_Initals.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers1_Initals.setObjectName("DicePiezoWaferintoSubwafers1_Initals")
+        self.DicePiezoWaferintoSubwafers1_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_Back.setGeometry(QtCore.QRect(760, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers1_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers1_Back.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers1_Back.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers1_Back.setObjectName("DicePiezoWaferintoSubwafers1_Back")
+        self.DicePiezoWaferintoSubwafers1_comments = QtWidgets.QTextEdit(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers1_comments.setGeometry(QtCore.QRect(100, 160, 551, 111))
+        self.DicePiezoWaferintoSubwafers1_comments.setStyleSheet("border-image:None;\n"
+"")
+        self.DicePiezoWaferintoSubwafers1_comments.setObjectName("DicePiezoWaferintoSubwafers1_comments")
+        self.stackedWidget.addWidget(self.DicePiezoWaferintoSubwafers1)
+        self.DicePiezoWaferintoSubwafers2 = QtWidgets.QWidget()
+        self.DicePiezoWaferintoSubwafers2.setStyleSheet("border-image: url(:/images/images/subwafer2.PNG);")
+        self.DicePiezoWaferintoSubwafers2.setObjectName("DicePiezoWaferintoSubwafers2")
+        self.DicePiezoWaferintoSubwafers2_comments = QtWidgets.QTextEdit(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_comments.setGeometry(QtCore.QRect(100, 180, 561, 91))
+        self.DicePiezoWaferintoSubwafers2_comments.setStyleSheet("border-image:None;\n"
+"")
+        self.DicePiezoWaferintoSubwafers2_comments.setObjectName("DicePiezoWaferintoSubwafers2_comments")
+        self.DicePiezoWaferintoSubwafers2_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_Back.setGeometry(QtCore.QRect(750, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers2_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers2_Back.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers2_Back.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers2_Back.setObjectName("DicePiezoWaferintoSubwafers2_Back")
+        self.DicePiezoWaferintoSubwafers2_Initals = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_Initals.setGeometry(QtCore.QRect(220, 560, 71, 22))
+        self.DicePiezoWaferintoSubwafers2_Initals.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers2_Initals.setObjectName("DicePiezoWaferintoSubwafers2_Initals")
+        self.DicePiezoWaferintoSubwafers2_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_Next.setGeometry(QtCore.QRect(850, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers2_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers2_Next.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers2_Next.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers2_Next.setObjectName("DicePiezoWaferintoSubwafers2_Next")
+        self.DicePiezoWaferintoSubwafers2_Data = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_Data.setEnabled(True)
+        self.DicePiezoWaferintoSubwafers2_Data.setGeometry(QtCore.QRect(550, 140, 111, 31))
+        self.DicePiezoWaferintoSubwafers2_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-image:None;")
+        self.DicePiezoWaferintoSubwafers2_Data.setText("")
+        self.DicePiezoWaferintoSubwafers2_Data.setMaxLength(32767)
+        self.DicePiezoWaferintoSubwafers2_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.DicePiezoWaferintoSubwafers2_Data.setObjectName("DicePiezoWaferintoSubwafers2_Data")
+        self.DicePiezoWaferintoSubwafers2_Dates = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers2_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.DicePiezoWaferintoSubwafers2_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers2_Dates.setObjectName("DicePiezoWaferintoSubwafers2_Dates")
+        self.stackedWidget.addWidget(self.DicePiezoWaferintoSubwafers2)
+        self.DicePiezoWaferintoSubwafers3 = QtWidgets.QWidget()
+        self.DicePiezoWaferintoSubwafers3.setStyleSheet("border-image: url(:/images/images/subwafer3.PNG);")
+        self.DicePiezoWaferintoSubwafers3.setObjectName("DicePiezoWaferintoSubwafers3")
+        self.DicePiezoWaferintoSubwafers3_Initals = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_Initals.setGeometry(QtCore.QRect(220, 560, 71, 22))
+        self.DicePiezoWaferintoSubwafers3_Initals.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers3_Initals.setObjectName("DicePiezoWaferintoSubwafers3_Initals")
+        self.DicePiezoWaferintoSubwafers3_Data = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_Data.setEnabled(True)
+        self.DicePiezoWaferintoSubwafers3_Data.setGeometry(QtCore.QRect(550, 130, 111, 31))
+        self.DicePiezoWaferintoSubwafers3_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
+"border-image:None;")
+        self.DicePiezoWaferintoSubwafers3_Data.setText("")
+        self.DicePiezoWaferintoSubwafers3_Data.setMaxLength(32767)
+        self.DicePiezoWaferintoSubwafers3_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.DicePiezoWaferintoSubwafers3_Data.setObjectName("DicePiezoWaferintoSubwafers3_Data")
+        self.DicePiezoWaferintoSubwafers3_Dates = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
+        self.DicePiezoWaferintoSubwafers3_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers3_Dates.setObjectName("DicePiezoWaferintoSubwafers3_Dates")
+        self.DicePiezoWaferintoSubwafers3_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_Back.setGeometry(QtCore.QRect(750, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers3_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers3_Back.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers3_Back.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers3_Back.setObjectName("DicePiezoWaferintoSubwafers3_Back")
+        self.DicePiezoWaferintoSubwafers3_comments = QtWidgets.QTextEdit(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_comments.setGeometry(QtCore.QRect(100, 170, 561, 91))
+        self.DicePiezoWaferintoSubwafers3_comments.setStyleSheet("border-image:None;\n"
+"")
+        self.DicePiezoWaferintoSubwafers3_comments.setObjectName("DicePiezoWaferintoSubwafers3_comments")
+        self.DicePiezoWaferintoSubwafers3_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers3)
+        self.DicePiezoWaferintoSubwafers3_Next.setGeometry(QtCore.QRect(850, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers3_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DicePiezoWaferintoSubwafers3_Next.setIconSize(QtCore.QSize(20, 20))
+        self.DicePiezoWaferintoSubwafers3_Next.setAutoDefault(False)
+        self.DicePiezoWaferintoSubwafers3_Next.setObjectName("DicePiezoWaferintoSubwafers3_Next")
+        self.stackedWidget.addWidget(self.DicePiezoWaferintoSubwafers3)
         self.Dice_Framing_Piezo_1 = QtWidgets.QWidget()
         self.Dice_Framing_Piezo_1.setMaximumSize(QtCore.QSize(1024, 600))
         self.Dice_Framing_Piezo_1.setStyleSheet("border-image: url(:/images/images/Dice_Framing_Piezo_1.png);")
@@ -1943,11 +2209,749 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_4_Back.setObjectName("Fill_Second_Pillars_and_Frame_4_Back")
         self.stackedWidget.addWidget(self.Fill_Second_Pillars_and_Frame_4)
+        self.pre_Lap_Second_Epoxy_Fill_1 = QtWidgets.QWidget()
+        self.pre_Lap_Second_Epoxy_Fill_1.setMaximumSize(QtCore.QSize(1024, 600))
+        self.pre_Lap_Second_Epoxy_Fill_1.setStyleSheet("border-image: url(:/images/images/Pre-Lap Second Epoxy Fill1.PNG);")
+        self.pre_Lap_Second_Epoxy_Fill_1.setObjectName("pre_Lap_Second_Epoxy_Fill_1")
+        self.pre_Lap_Second_Epoxy_Fill_1_Dates = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_1_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_1_Dates.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Dates")
+        self.pre_Lap_Second_Epoxy_Fill_1_Initials = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_1_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_1_Initials.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Initials")
+        self.pre_Lap_Second_Epoxy_Fill_1_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_1_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_1_Back.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Back")
+        self.pre_Lap_Second_Epoxy_Fill_1_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_1_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_1_Next.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Next")
+        self.pre_Lap_Second_Epoxy_Fill_1_Comments = QtWidgets.QTextEdit(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Comments.setGeometry(QtCore.QRect(40, 200, 581, 101))
+        self.pre_Lap_Second_Epoxy_Fill_1_Comments.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_1_Comments.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Comments")
+        self.pre_Lap_Second_Epoxy_Fill_1_Data = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_1_Data.setGeometry(QtCore.QRect(530, 140, 41, 22))
+        self.pre_Lap_Second_Epoxy_Fill_1_Data.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_1_Data.setPlaceholderText("")
+        self.pre_Lap_Second_Epoxy_Fill_1_Data.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Data")
+        self.stackedWidget.addWidget(self.pre_Lap_Second_Epoxy_Fill_1)
+        self.pre_Lap_Second_Epoxy_Fill_2 = QtWidgets.QWidget()
+        self.pre_Lap_Second_Epoxy_Fill_2.setStyleSheet("border-image: url(:/images/images/Pre-Lap Second Epoxy Fill2.PNG);")
+        self.pre_Lap_Second_Epoxy_Fill_2.setObjectName("pre_Lap_Second_Epoxy_Fill_2")
+        self.pre_Lap_Second_Epoxy_Fill_2_Dates = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_2_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_2_Dates.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Dates")
+        self.pre_Lap_Second_Epoxy_Fill_2_Comments = QtWidgets.QTextEdit(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Comments.setGeometry(QtCore.QRect(120, 290, 461, 51))
+        self.pre_Lap_Second_Epoxy_Fill_2_Comments.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_2_Comments.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Comments")
+        self.pre_Lap_Second_Epoxy_Fill_2_Initials = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_2_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_2_Initials.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Initials")
+        self.pre_Lap_Second_Epoxy_Fill_2_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_2_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_2_Next.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Next")
+        self.pre_Lap_Second_Epoxy_Fill_2_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_2_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_2_Back.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Back")
+        self.pre_Lap_Second_Epoxy_Fill_2_Data = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_2_Data.setGeometry(QtCore.QRect(520, 120, 111, 22))
+        self.pre_Lap_Second_Epoxy_Fill_2_Data.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_2_Data.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Data")
+        self.stackedWidget.addWidget(self.pre_Lap_Second_Epoxy_Fill_2)
+        self.pre_Lap_Second_Epoxy_Fill_3 = QtWidgets.QWidget()
+        self.pre_Lap_Second_Epoxy_Fill_3.setToolTipDuration(-1)
+        self.pre_Lap_Second_Epoxy_Fill_3.setStyleSheet("border-image: url(:/images/images/Pre-Lap Second Epoxy Fill3.PNG);")
+        self.pre_Lap_Second_Epoxy_Fill_3.setObjectName("pre_Lap_Second_Epoxy_Fill_3")
+        self.pre_Lap_Second_Epoxy_Fill_3_Initials = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Initials.setGeometry(QtCore.QRect(200, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_3_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_3_Initials.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Initials")
+        self.pre_Lap_Second_Epoxy_Fill_3_Data = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Data.setGeometry(QtCore.QRect(520, 110, 111, 22))
+        self.pre_Lap_Second_Epoxy_Fill_3_Data.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_3_Data.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Data")
+        self.pre_Lap_Second_Epoxy_Fill_3_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(760, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_3_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_3_Back.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Back")
+        self.pre_Lap_Second_Epoxy_Fill_3_Comments = QtWidgets.QTextEdit(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Comments.setGeometry(QtCore.QRect(120, 170, 501, 41))
+        self.pre_Lap_Second_Epoxy_Fill_3_Comments.setStyleSheet("border-image:None;")
+        self.pre_Lap_Second_Epoxy_Fill_3_Comments.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Comments")
+        self.pre_Lap_Second_Epoxy_Fill_3_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(880, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_3_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_3_Next.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Next")
+        self.pre_Lap_Second_Epoxy_Fill_3_Dates = QtWidgets.QLineEdit(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.pre_Lap_Second_Epoxy_Fill_3_Dates.setGeometry(QtCore.QRect(110, 560, 86, 18))
+        self.pre_Lap_Second_Epoxy_Fill_3_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.pre_Lap_Second_Epoxy_Fill_3_Dates.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Dates")
+        self.stackedWidget.addWidget(self.pre_Lap_Second_Epoxy_Fill_3)
+        self.LapSecondEpoxyFill = QtWidgets.QWidget()
+        self.LapSecondEpoxyFill.setStyleSheet("border-image: url(:/images/images/LapSecondEpoxyFill.PNG);")
+        self.LapSecondEpoxyFill.setObjectName("LapSecondEpoxyFill")
+        self.LapSecondEpoxyFill_Data1 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data1.setGeometry(QtCore.QRect(600, 100, 71, 16))
+        self.LapSecondEpoxyFill_Data1.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data1.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data1.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data1.setObjectName("LapSecondEpoxyFill_Data1")
+        self.LapSecondEpoxyFill_Data2 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data2.setGeometry(QtCore.QRect(910, 130, 71, 20))
+        self.LapSecondEpoxyFill_Data2.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data2.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data2.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data2.setObjectName("LapSecondEpoxyFill_Data2")
+        self.LapSecondEpoxyFill_Data3 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data3.setGeometry(QtCore.QRect(900, 320, 71, 16))
+        self.LapSecondEpoxyFill_Data3.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data3.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data3.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data3.setObjectName("LapSecondEpoxyFill_Data3")
+        self.LapSecondEpoxyFill_Data4 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data4.setGeometry(QtCore.QRect(570, 300, 71, 16))
+        self.LapSecondEpoxyFill_Data4.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data4.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data4.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data4.setObjectName("LapSecondEpoxyFill_Data4")
+        self.LapSecondEpoxyFill_Data5 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data5.setGeometry(QtCore.QRect(560, 190, 71, 16))
+        self.LapSecondEpoxyFill_Data5.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data5.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data5.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data5.setObjectName("LapSecondEpoxyFill_Data5")
+        self.LapSecondEpoxyFill_Data6 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data6.setGeometry(QtCore.QRect(220, 230, 45, 15))
+        self.LapSecondEpoxyFill_Data6.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data6.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data6.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data6.setObjectName("LapSecondEpoxyFill_Data6")
+        self.LapSecondEpoxyFill_Data7 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data7.setGeometry(QtCore.QRect(390, 230, 45, 15))
+        self.LapSecondEpoxyFill_Data7.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data7.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data7.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data7.setObjectName("LapSecondEpoxyFill_Data7")
+        self.LapSecondEpoxyFill_Data8 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data8.setGeometry(QtCore.QRect(230, 410, 45, 15))
+        self.LapSecondEpoxyFill_Data8.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data8.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data8.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data8.setObjectName("LapSecondEpoxyFill_Data8")
+        self.LapSecondEpoxyFill_Data9 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data9.setGeometry(QtCore.QRect(380, 410, 45, 15))
+        self.LapSecondEpoxyFill_Data9.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data9.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data9.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data9.setObjectName("LapSecondEpoxyFill_Data9")
+        self.LapSecondEpoxyFill_Back = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.LapSecondEpoxyFill_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.LapSecondEpoxyFill_Back.setObjectName("LapSecondEpoxyFill_Back")
+        self.LapSecondEpoxyFill_Dates = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.LapSecondEpoxyFill_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.LapSecondEpoxyFill_Dates.setObjectName("LapSecondEpoxyFill_Dates")
+        self.LapSecondEpoxyFill_Initials = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.LapSecondEpoxyFill_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.LapSecondEpoxyFill_Initials.setObjectName("LapSecondEpoxyFill_Initials")
+        self.LapSecondEpoxyFill_Next = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.LapSecondEpoxyFill_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.LapSecondEpoxyFill_Next.setObjectName("LapSecondEpoxyFill_Next")
+        self.LapSecondEpoxyFill_Data10 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data10.setGeometry(QtCore.QRect(620, 400, 71, 20))
+        self.LapSecondEpoxyFill_Data10.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data10.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data10.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data10.setObjectName("LapSecondEpoxyFill_Data10")
+        self.LapSecondEpoxyFill_Data11 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
+        self.LapSecondEpoxyFill_Data11.setGeometry(QtCore.QRect(620, 440, 71, 20))
+        self.LapSecondEpoxyFill_Data11.setToolTipDuration(-2)
+        self.LapSecondEpoxyFill_Data11.setStyleSheet("color: rgb(0, 0, 0);\n"
+"\n"
+"border-image: none;\n"
+"border: none;")
+        self.LapSecondEpoxyFill_Data11.setAlignment(QtCore.Qt.AlignCenter)
+        self.LapSecondEpoxyFill_Data11.setObjectName("LapSecondEpoxyFill_Data11")
+        self.stackedWidget.addWidget(self.LapSecondEpoxyFill)
+        self.DepositFirstElectrode1 = QtWidgets.QWidget()
+        self.DepositFirstElectrode1.setStyleSheet("border-image: url(:/images/images/DepositFirstElectrode1.PNG);")
+        self.DepositFirstElectrode1.setObjectName("DepositFirstElectrode1")
+        self.DepositFirstElectrode1_Back = QtWidgets.QPushButton(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode1_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode1_Back.setObjectName("DepositFirstElectrode1_Back")
+        self.DepositFirstElectrode1_Dates = QtWidgets.QLineEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.DepositFirstElectrode1_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode1_Dates.setObjectName("DepositFirstElectrode1_Dates")
+        self.DepositFirstElectrode1_Initials = QtWidgets.QLineEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.DepositFirstElectrode1_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode1_Initials.setObjectName("DepositFirstElectrode1_Initials")
+        self.DepositFirstElectrode1_Next = QtWidgets.QPushButton(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode1_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode1_Next.setObjectName("DepositFirstElectrode1_Next")
+        self.DepositFirstElectrode1_Comments = QtWidgets.QTextEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Comments.setGeometry(QtCore.QRect(140, 210, 641, 81))
+        self.DepositFirstElectrode1_Comments.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode1_Comments.setObjectName("DepositFirstElectrode1_Comments")
+        self.DepositFirstElectrode1_Data0 = QtWidgets.QLineEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Data0.setGeometry(QtCore.QRect(690, 151, 101, 21))
+        self.DepositFirstElectrode1_Data0.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode1_Data0.setAlignment(QtCore.Qt.AlignCenter)
+        self.DepositFirstElectrode1_Data0.setObjectName("DepositFirstElectrode1_Data0")
+        self.DepositFirstElectrode1_Data1 = QtWidgets.QLineEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Data1.setGeometry(QtCore.QRect(420, 150, 101, 21))
+        self.DepositFirstElectrode1_Data1.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode1_Data1.setText("")
+        self.DepositFirstElectrode1_Data1.setAlignment(QtCore.Qt.AlignCenter)
+        self.DepositFirstElectrode1_Data1.setObjectName("DepositFirstElectrode1_Data1")
+        self.DepositFirstElectrode1_Data2 = QtWidgets.QLineEdit(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_Data2.setGeometry(QtCore.QRect(560, 150, 101, 21))
+        self.DepositFirstElectrode1_Data2.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode1_Data2.setAlignment(QtCore.Qt.AlignCenter)
+        self.DepositFirstElectrode1_Data2.setObjectName("DepositFirstElectrode1_Data2")
+        self.DepositFirstElectrode1_checkBox2 = QtWidgets.QCheckBox(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_checkBox2.setGeometry(QtCore.QRect(880, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode1_checkBox2.setFont(font)
+        self.DepositFirstElectrode1_checkBox2.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode1_checkBox2.setObjectName("DepositFirstElectrode1_checkBox2")
+        self.DepositFirstElectrode1_checkBox1 = QtWidgets.QCheckBox(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode1_checkBox1.setGeometry(QtCore.QRect(820, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode1_checkBox1.setFont(font)
+        self.DepositFirstElectrode1_checkBox1.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode1_checkBox1.setObjectName("DepositFirstElectrode1_checkBox1")
+        self.stackedWidget.addWidget(self.DepositFirstElectrode1)
+        self.DepositFirstElectrode2 = QtWidgets.QWidget()
+        self.DepositFirstElectrode2.setStyleSheet("border-image: url(:/images/images/DepositFirstElectrode2.PNG);")
+        self.DepositFirstElectrode2.setObjectName("DepositFirstElectrode2")
+        self.DepositFirstElectrode2_Comments = QtWidgets.QTextEdit(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Comments.setGeometry(QtCore.QRect(130, 200, 641, 81))
+        self.DepositFirstElectrode2_Comments.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode2_Comments.setObjectName("DepositFirstElectrode2_Comments")
+        self.DepositFirstElectrode2_checkBox_1 = QtWidgets.QCheckBox(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_checkBox_1.setGeometry(QtCore.QRect(880, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode2_checkBox_1.setFont(font)
+        self.DepositFirstElectrode2_checkBox_1.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode2_checkBox_1.setObjectName("DepositFirstElectrode2_checkBox_1")
+        self.DepositFirstElectrode2_Back = QtWidgets.QPushButton(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode2_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode2_Back.setObjectName("DepositFirstElectrode2_Back")
+        self.DepositFirstElectrode2_Next = QtWidgets.QPushButton(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode2_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode2_Next.setObjectName("DepositFirstElectrode2_Next")
+        self.DepositFirstElectrode2_Dates = QtWidgets.QLineEdit(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.DepositFirstElectrode2_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode2_Dates.setObjectName("DepositFirstElectrode2_Dates")
+        self.DepositFirstElectrode2_checkBox_2 = QtWidgets.QCheckBox(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_checkBox_2.setGeometry(QtCore.QRect(820, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode2_checkBox_2.setFont(font)
+        self.DepositFirstElectrode2_checkBox_2.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode2_checkBox_2.setObjectName("DepositFirstElectrode2_checkBox_2")
+        self.DepositFirstElectrode2_Data = QtWidgets.QLineEdit(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Data.setGeometry(QtCore.QRect(690, 151, 101, 21))
+        self.DepositFirstElectrode2_Data.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode2_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.DepositFirstElectrode2_Data.setObjectName("DepositFirstElectrode2_Data")
+        self.DepositFirstElectrode2_Initials = QtWidgets.QLineEdit(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode2_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.DepositFirstElectrode2_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode2_Initials.setObjectName("DepositFirstElectrode2_Initials")
+        self.stackedWidget.addWidget(self.DepositFirstElectrode2)
+        self.DepositFirstElectrode3 = QtWidgets.QWidget()
+        self.DepositFirstElectrode3.setStyleSheet("border-image: url(:/images/images/DepositFirstElectrode3.PNG);")
+        self.DepositFirstElectrode3.setObjectName("DepositFirstElectrode3")
+        self.DepositFirstElectrode3_checkBox1 = QtWidgets.QCheckBox(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_checkBox1.setGeometry(QtCore.QRect(820, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode3_checkBox1.setFont(font)
+        self.DepositFirstElectrode3_checkBox1.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode3_checkBox1.setObjectName("DepositFirstElectrode3_checkBox1")
+        self.DepositFirstElectrode3_Next = QtWidgets.QPushButton(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode3_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode3_Next.setObjectName("DepositFirstElectrode3_Next")
+        self.DepositFirstElectrode3_Data = QtWidgets.QLineEdit(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Data.setGeometry(QtCore.QRect(690, 151, 101, 21))
+        self.DepositFirstElectrode3_Data.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode3_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.DepositFirstElectrode3_Data.setObjectName("DepositFirstElectrode3_Data")
+        self.DepositFirstElectrode3_Comments = QtWidgets.QTextEdit(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Comments.setGeometry(QtCore.QRect(130, 310, 641, 61))
+        self.DepositFirstElectrode3_Comments.setStyleSheet("border-image:None;")
+        self.DepositFirstElectrode3_Comments.setObjectName("DepositFirstElectrode3_Comments")
+        self.DepositFirstElectrode3_Back = QtWidgets.QPushButton(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode3_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.DepositFirstElectrode3_Back.setObjectName("DepositFirstElectrode3_Back")
+        self.DepositFirstElectrode3_checkBox2 = QtWidgets.QCheckBox(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_checkBox2.setGeometry(QtCore.QRect(880, 380, 61, 23))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.DepositFirstElectrode3_checkBox2.setFont(font)
+        self.DepositFirstElectrode3_checkBox2.setStyleSheet("border-image: none;")
+        self.DepositFirstElectrode3_checkBox2.setObjectName("DepositFirstElectrode3_checkBox2")
+        self.DepositFirstElectrode3_Dates = QtWidgets.QLineEdit(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.DepositFirstElectrode3_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode3_Dates.setObjectName("DepositFirstElectrode3_Dates")
+        self.DepositFirstElectrode3_Initials = QtWidgets.QLineEdit(self.DepositFirstElectrode3)
+        self.DepositFirstElectrode3_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.DepositFirstElectrode3_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.DepositFirstElectrode3_Initials.setObjectName("DepositFirstElectrode3_Initials")
+        self.stackedWidget.addWidget(self.DepositFirstElectrode3)
+        self.ScratchDiceElements1 = QtWidgets.QWidget()
+        self.ScratchDiceElements1.setStyleSheet("border-image: url(:/images/images/ScratchDiceElements1.PNG);")
+        self.ScratchDiceElements1.setObjectName("ScratchDiceElements1")
+        self.ScratchDiceElements1_Next = QtWidgets.QPushButton(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
+        self.ScratchDiceElements1_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements1_Next.setObjectName("ScratchDiceElements1_Next")
+        self.ScratchDiceElements1_Data = QtWidgets.QLineEdit(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Data.setGeometry(QtCore.QRect(660, 140, 101, 21))
+        self.ScratchDiceElements1_Data.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements1_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.ScratchDiceElements1_Data.setObjectName("ScratchDiceElements1_Data")
+        self.ScratchDiceElements1_Comments = QtWidgets.QTextEdit(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Comments.setGeometry(QtCore.QRect(120, 170, 641, 211))
+        self.ScratchDiceElements1_Comments.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements1_Comments.setObjectName("ScratchDiceElements1_Comments")
+        self.ScratchDiceElements1_Back = QtWidgets.QPushButton(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
+        self.ScratchDiceElements1_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements1_Back.setObjectName("ScratchDiceElements1_Back")
+        self.ScratchDiceElements1_Dates = QtWidgets.QLineEdit(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.ScratchDiceElements1_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements1_Dates.setObjectName("ScratchDiceElements1_Dates")
+        self.ScratchDiceElements1_Initials = QtWidgets.QLineEdit(self.ScratchDiceElements1)
+        self.ScratchDiceElements1_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.ScratchDiceElements1_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements1_Initials.setObjectName("ScratchDiceElements1_Initials")
+        self.stackedWidget.addWidget(self.ScratchDiceElements1)
+        self.ScratchDiceElements2 = QtWidgets.QWidget()
+        self.ScratchDiceElements2.setStyleSheet("border-image: url(:/images/images/ScratchDiceElements2.PNG);")
+        self.ScratchDiceElements2.setObjectName("ScratchDiceElements2")
+        self.ScratchDiceElements2_Data0 = QtWidgets.QLineEdit(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Data0.setGeometry(QtCore.QRect(660, 340, 101, 21))
+        self.ScratchDiceElements2_Data0.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements2_Data0.setAlignment(QtCore.Qt.AlignCenter)
+        self.ScratchDiceElements2_Data0.setObjectName("ScratchDiceElements2_Data0")
+        self.ScratchDiceElements2_Back = QtWidgets.QPushButton(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
+        self.ScratchDiceElements2_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements2_Back.setObjectName("ScratchDiceElements2_Back")
+        self.ScratchDiceElements2_Dates = QtWidgets.QLineEdit(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.ScratchDiceElements2_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements2_Dates.setObjectName("ScratchDiceElements2_Dates")
+        self.ScratchDiceElements2_Initials = QtWidgets.QLineEdit(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.ScratchDiceElements2_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements2_Initials.setObjectName("ScratchDiceElements2_Initials")
+        self.ScratchDiceElements2_Comments = QtWidgets.QTextEdit(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Comments.setGeometry(QtCore.QRect(110, 380, 641, 41))
+        self.ScratchDiceElements2_Comments.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements2_Comments.setObjectName("ScratchDiceElements2_Comments")
+        self.ScratchDiceElements2_Next = QtWidgets.QPushButton(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
+        self.ScratchDiceElements2_Next.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements2_Next.setObjectName("ScratchDiceElements2_Next")
+        self.ScratchDiceElements2_Data1 = QtWidgets.QLineEdit(self.ScratchDiceElements2)
+        self.ScratchDiceElements2_Data1.setGeometry(QtCore.QRect(660, 135, 61, 21))
+        self.ScratchDiceElements2_Data1.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements2_Data1.setAlignment(QtCore.Qt.AlignCenter)
+        self.ScratchDiceElements2_Data1.setObjectName("ScratchDiceElements2_Data1")
+        self.stackedWidget.addWidget(self.ScratchDiceElements2)
+        self.ScratchDiceElements3 = QtWidgets.QWidget()
+        self.ScratchDiceElements3.setStyleSheet("border-image: url(:/images/images/ScratchDiceElements3.PNG);")
+        self.ScratchDiceElements3.setObjectName("ScratchDiceElements3")
+        self.ScratchDiceElements3_Comments = QtWidgets.QTextEdit(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Comments.setGeometry(QtCore.QRect(120, 210, 641, 171))
+        self.ScratchDiceElements3_Comments.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements3_Comments.setObjectName("ScratchDiceElements3_Comments")
+        self.ScratchDiceElements3_Data = QtWidgets.QLineEdit(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Data.setGeometry(QtCore.QRect(660, 170, 101, 21))
+        self.ScratchDiceElements3_Data.setStyleSheet("border-image:None;")
+        self.ScratchDiceElements3_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.ScratchDiceElements3_Data.setObjectName("ScratchDiceElements3_Data")
+        self.ScratchDiceElements3_Back = QtWidgets.QPushButton(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
+        self.ScratchDiceElements3_Back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements3_Back.setObjectName("ScratchDiceElements3_Back")
+        self.ScratchDiceElements3_Finish = QtWidgets.QPushButton(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Finish.setGeometry(QtCore.QRect(890, 570, 106, 29))
+        self.ScratchDiceElements3_Finish.setStyleSheet("QPushButton{\n"
+"background-color: rgb(255, 255, 255);\n"
+"height: 35px;\n"
+"border-image:None;\n"
+"}\n"
+"QPushButton::hover{\n"
+"background-color: rgb(0, 0, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top:7px;\n"
+"padding-top:7px;\n"
+"}")
+        self.ScratchDiceElements3_Finish.setObjectName("ScratchDiceElements3_Finish")
+        self.ScratchDiceElements3_Dates = QtWidgets.QLineEdit(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Dates.setGeometry(QtCore.QRect(120, 560, 86, 18))
+        self.ScratchDiceElements3_Dates.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements3_Dates.setObjectName("ScratchDiceElements3_Dates")
+        self.ScratchDiceElements3_Initials = QtWidgets.QLineEdit(self.ScratchDiceElements3)
+        self.ScratchDiceElements3_Initials.setGeometry(QtCore.QRect(210, 560, 86, 18))
+        self.ScratchDiceElements3_Initials.setStyleSheet("QLineEdit{\n"
+"background-color: rgb(240, 240, 240);\n"
+"border: none;\n"
+"border-image:None;\n"
+"}")
+        self.ScratchDiceElements3_Initials.setObjectName("ScratchDiceElements3_Initials")
+        self.stackedWidget.addWidget(self.ScratchDiceElements3)
         self.verticalLayout.addWidget(self.stackedWidget)
         InstructionWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(InstructionWindow)
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(41)
         QtCore.QMetaObject.connectSlotsByName(InstructionWindow)
 
     def retranslateUi(self, InstructionWindow):
@@ -1967,6 +2971,20 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
         self.Mount_Piezo_Wafer_3_Next.setText(_translate("InstructionWindow", "Next"))
         self.Mount_Piezo_Wafer_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DicePiezoWaferintoSubwafers0_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DicePiezoWaferintoSubwafers0_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DicePiezoWaferintoSubwafers1_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL HERE"))
+        self.DicePiezoWaferintoSubwafers1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DicePiezoWaferintoSubwafers1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DicePiezoWaferintoSubwafers1_comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
+        self.DicePiezoWaferintoSubwafers2_comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
+        self.DicePiezoWaferintoSubwafers2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DicePiezoWaferintoSubwafers2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DicePiezoWaferintoSubwafers2_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL HERE"))
+        self.DicePiezoWaferintoSubwafers3_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL HERE"))
+        self.DicePiezoWaferintoSubwafers3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DicePiezoWaferintoSubwafers3_comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
+        self.DicePiezoWaferintoSubwafers3_Next.setText(_translate("InstructionWindow", "Next"))
         self.Dice_Framing_Piezo_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
         self.Dice_Framing_Piezo_1_Initial_2.setPlaceholderText(_translate("InstructionWindow", "    Initial Here"))
         self.Dice_Framing_Piezo_1_Next.setText(_translate("InstructionWindow", "Next"))
@@ -2063,4 +3081,47 @@ class Ui_InstructionWindow(object):
         self.Fill_Second_Pillars_and_Frame_4_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
         self.Fill_Second_Pillars_and_Frame_4_Next.setText(_translate("InstructionWindow", "Next"))
         self.Fill_Second_Pillars_and_Frame_4_Back.setText(_translate("InstructionWindow", "Back"))
+        self.pre_Lap_Second_Epoxy_Fill_1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.pre_Lap_Second_Epoxy_Fill_1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.pre_Lap_Second_Epoxy_Fill_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.pre_Lap_Second_Epoxy_Fill_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.pre_Lap_Second_Epoxy_Fill_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.pre_Lap_Second_Epoxy_Fill_2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.pre_Lap_Second_Epoxy_Fill_2_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL HERE"))
+        self.pre_Lap_Second_Epoxy_Fill_3_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL HERE"))
+        self.pre_Lap_Second_Epoxy_Fill_3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.pre_Lap_Second_Epoxy_Fill_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.pre_Lap_Second_Epoxy_Fill_3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.LapSecondEpoxyFill_Back.setText(_translate("InstructionWindow", "Back"))
+        self.LapSecondEpoxyFill_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DepositFirstElectrode1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DepositFirstElectrode1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DepositFirstElectrode1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.DepositFirstElectrode1_Data0.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.DepositFirstElectrode1_checkBox2.setText(_translate("InstructionWindow", "Fail"))
+        self.DepositFirstElectrode1_checkBox1.setText(_translate("InstructionWindow", "Pass"))
+        self.DepositFirstElectrode2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.DepositFirstElectrode2_checkBox_1.setText(_translate("InstructionWindow", "Fail"))
+        self.DepositFirstElectrode2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DepositFirstElectrode2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DepositFirstElectrode2_checkBox_2.setText(_translate("InstructionWindow", "Pass"))
+        self.DepositFirstElectrode2_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.DepositFirstElectrode3_checkBox1.setText(_translate("InstructionWindow", "Pass"))
+        self.DepositFirstElectrode3_Next.setText(_translate("InstructionWindow", "Next"))
+        self.DepositFirstElectrode3_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.DepositFirstElectrode3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.DepositFirstElectrode3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.DepositFirstElectrode3_checkBox2.setText(_translate("InstructionWindow", "Fail"))
+        self.ScratchDiceElements1_Next.setText(_translate("InstructionWindow", "Next"))
+        self.ScratchDiceElements1_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.ScratchDiceElements1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.ScratchDiceElements1_Back.setText(_translate("InstructionWindow", "Back"))
+        self.ScratchDiceElements2_Data0.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.ScratchDiceElements2_Back.setText(_translate("InstructionWindow", "Back"))
+        self.ScratchDiceElements2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.ScratchDiceElements2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.ScratchDiceElements3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
+        self.ScratchDiceElements3_Data.setPlaceholderText(_translate("InstructionWindow", "INITIAL"))
+        self.ScratchDiceElements3_Back.setText(_translate("InstructionWindow", "Back"))
+        self.ScratchDiceElements3_Finish.setText(_translate("InstructionWindow", "Finish"))
 import resource_rc
