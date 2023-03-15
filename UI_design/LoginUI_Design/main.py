@@ -255,22 +255,13 @@ def countdown_timer(duration):
 
 
 if __name__ == '__main__':
+    
     mydb = mysql.connector.connect(
         host="134.190.203.63",
         user="dslink",
         password="dstestpass123",
         database="test_db"
     )
-
-    # admin = Admin(user_id=result[0],
-    #                        user_name=result[1],
-    #                        user_email=result[2],
-    #                        db_class=mydb)
-    # admin.register_user(user_name="Jiahao Chen",
-    #                         user_job="Computer Engineering",
-    #                         user_email="jiahao@gmail.com",
-    #                         account_number="jh123455",
-    #                         password="123456")
     
     app = QApplication(sys.argv)
     myWindow = MyWindow()
