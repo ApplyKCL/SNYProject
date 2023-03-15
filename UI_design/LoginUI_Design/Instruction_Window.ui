@@ -137,7 +137,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -228,7 +228,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -245,7 +245,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -414,7 +414,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -431,7 +431,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -574,7 +574,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -589,9 +589,9 @@ padding-top:7px;
        <widget class="QLineEdit" name="Mount_Piezo_Wafer_3_Steps">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -672,7 +672,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -687,7 +687,7 @@ padding-top:7px;
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Dates">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>110</x>
           <y>560</y>
           <width>91</width>
           <height>22</height>
@@ -704,10 +704,10 @@ border-image:None;
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers0_Initals">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>210</x>
           <y>560</y>
-          <width>71</width>
-          <height>22</height>
+          <width>81</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -791,7 +791,7 @@ border-image:None;</string>
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Dates">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>110</x>
           <y>560</y>
           <width>91</width>
           <height>22</height>
@@ -844,9 +844,9 @@ padding-top:7px;
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers1_Initals">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -882,7 +882,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -957,7 +957,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -972,9 +972,9 @@ padding-top:7px;
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers2_Initals">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -1076,9 +1076,9 @@ border-image:None;
        <widget class="QLineEdit" name="DicePiezoWaferintoSubwafers3_Initals">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -1160,7 +1160,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
         <property name="iconSize">
          <size>
@@ -1334,7 +1334,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_Framing_Piezo_1_Dates">
@@ -1359,7 +1359,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>91</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -1466,7 +1466,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_Framing_Piezo_2_Initial">
@@ -1597,7 +1597,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_Framing_Piezo_3_Initial">
@@ -1809,7 +1809,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>71</width>
+          <width>81</width>
           <height>20</height>
          </rect>
         </property>
@@ -1889,7 +1889,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QTextEdit" name="Premount_Clean_and_Measure_Subwafer_1_Comments">
@@ -2007,10 +2007,10 @@ border-image:None;
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_2_Initial">
         <property name="geometry">
          <rect>
-          <x>204</x>
+          <x>209</x>
           <y>561</y>
-          <width>86</width>
-          <height>18</height>
+          <width>81</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -2152,7 +2152,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_2_Next">
@@ -2455,7 +2455,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Initial">
@@ -2463,7 +2463,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>91</width>
+          <width>81</width>
           <height>22</height>
          </rect>
         </property>
@@ -2615,7 +2615,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_First_Pillars_1_Initial2">
@@ -2793,7 +2793,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -2924,7 +2924,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3055,7 +3055,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3186,7 +3186,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3369,7 +3369,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3500,7 +3500,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3644,7 +3644,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3775,7 +3775,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -3906,7 +3906,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4100,7 +4100,7 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
+          <width>101</width>
           <height>29</height>
          </rect>
         </property>
@@ -4119,7 +4119,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Lap_First_Epoxy_Fill_Next">
@@ -4169,10 +4169,10 @@ border-image:None;
        <widget class="QLineEdit" name="Lap_First_Epoxy_Fill_Initials">
         <property name="geometry">
          <rect>
-          <x>204</x>
+          <x>209</x>
           <y>561</y>
-          <width>86</width>
-          <height>18</height>
+          <width>81</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4244,7 +4244,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -4324,7 +4324,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4388,7 +4388,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -4403,10 +4403,10 @@ border-image:None;
        <widget class="QLineEdit" name="Dice_Framing_Trench_Pattern_2_Dates">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>115</x>
           <y>560</y>
-          <width>86</width>
-          <height>18</height>
+          <width>81</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4468,7 +4468,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4599,7 +4599,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4665,7 +4665,7 @@ border-image:None;
        <widget class="QLineEdit" name="Fill_Second_Pillars_and_Frame_1_Dates">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>120</x>
           <y>560</y>
           <width>86</width>
           <height>18</height>
@@ -4730,7 +4730,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4796,7 +4796,7 @@ border-image:None;
        <widget class="QLineEdit" name="Fill_Second_Pillars_and_Frame_2_Dates">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>120</x>
           <y>560</y>
           <width>86</width>
           <height>18</height>
@@ -4861,7 +4861,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -4964,7 +4964,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5044,7 +5044,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -5095,7 +5095,7 @@ padding-top:7px;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5175,7 +5175,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
       </widget>
@@ -5211,7 +5211,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5247,7 +5247,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_1_Next">
@@ -5352,7 +5352,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5415,15 +5415,15 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_2_Data">
         <property name="geometry">
          <rect>
-          <x>520</x>
+          <x>530</x>
           <y>120</y>
-          <width>111</width>
+          <width>91</width>
           <height>22</height>
          </rect>
         </property>
@@ -5445,9 +5445,9 @@ padding-top:7px;
        <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_3_Initials">
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5499,7 +5499,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QTextEdit" name="pre_Lap_Second_Epoxy_Fill_3_Comments">
@@ -5548,7 +5548,7 @@ padding-top:7px;
        <widget class="QLineEdit" name="pre_Lap_Second_Epoxy_Fill_3_Dates">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>120</x>
           <y>560</y>
           <width>86</width>
           <height>18</height>
@@ -5789,7 +5789,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="LapSecondEpoxyFill_Dates">
@@ -5814,7 +5814,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -5926,7 +5926,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="DepositFirstElectrode1_Dates">
@@ -5951,7 +5951,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -6168,7 +6168,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="DepositFirstElectrode2_Next">
@@ -6260,7 +6260,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -6384,7 +6384,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QCheckBox" name="DepositFirstElectrode3_checkBox2">
@@ -6430,7 +6430,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -6533,7 +6533,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="ScratchDiceElements1_Dates">
@@ -6558,7 +6558,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -6618,7 +6618,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="ScratchDiceElements2_Dates">
@@ -6643,7 +6643,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
@@ -6778,7 +6778,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Back</string>
+         <string>Exit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="ScratchDiceElements3_Finish">
@@ -6830,7 +6830,7 @@ border-image:None;
          <rect>
           <x>210</x>
           <y>560</y>
-          <width>86</width>
+          <width>81</width>
           <height>18</height>
          </rect>
         </property>
