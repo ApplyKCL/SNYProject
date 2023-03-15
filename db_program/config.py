@@ -1,4 +1,5 @@
 import json
+
 device_position: int = 0
 comp_position: int = 1
 inst_position: int = 2

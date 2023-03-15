@@ -4,7 +4,8 @@ import device_class
 import config
 import associative_func as af
 
-
+# -> login -> database have queried if the user exist
+# -> check function -> user info
 # Define User Class
 class User:
     def __init__(self, user_id: str, user_name: str, user_email: str):
@@ -18,6 +19,9 @@ class User:
 class Employee(User):
     def __init__(self, user_id: str, user_name: str, user_email: str, db_class: classmethod):
         super().__init__(user_id, user_name, user_email)
+        """
+        db_class: database connector class
+        """
         # Employee Info
         self.database = db_class
         self.cursor = db_class.cursor()
@@ -41,9 +45,12 @@ class Admin(Employee):
         :param admin_status: Whether he is admin or not, default False (Not)
         :return: The result of the execution, represent how many row changes in db
         """
+        # Call to check if the account number is already exit
         if self.check_account_number(account_number):
             return False
+        # update the table name
         self.sql_class.table_name = config.table_name[config.employee_position]
+        # Call to gen and execute sql
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=("name", "job", "email",
                                                                      "account_number", "password", "admin_status"),
@@ -100,8 +107,7 @@ class Admin(Employee):
     # Create the new device
     def create_new_device(self):
         self.sql_class.table_name = config.table_name[config.device_position]
-        device_name = input("Enter the Device Name: ")
-        product_id = input("Enter the product ID: ")
+        [device_name, product_id] = input("Enter: \nDevice Name\tProduct ID")
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=("name", "product_id"),
                                                    variable_value=(device_name, product_id))
