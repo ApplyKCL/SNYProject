@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>41</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -90,7 +90,7 @@
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -116,8 +116,8 @@ padding-top:7px;
        <widget class="QPushButton" name="HomePage_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -171,8 +171,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Mount_Piezo_Wafer_1_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -208,7 +208,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -357,8 +357,8 @@ border-image:None;</string>
        <widget class="QPushButton" name="Mount_Piezo_Wafer_2_Next">
         <property name="geometry">
          <rect>
-          <x>860</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -393,8 +393,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Mount_Piezo_Wafer_2_Back">
         <property name="geometry">
          <rect>
-          <x>750</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -517,8 +517,8 @@ border-image:None;</string>
        <widget class="QPushButton" name="Mount_Piezo_Wafer_3_Next">
         <property name="geometry">
          <rect>
-          <x>860</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -553,8 +553,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Mount_Piezo_Wafer_3_Back">
         <property name="geometry">
          <rect>
-          <x>750</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -651,8 +651,8 @@ border-image:None;</string>
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Back">
         <property name="geometry">
          <rect>
-          <x>760</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -721,8 +721,8 @@ border-image:None;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers0_Next">
         <property name="geometry">
          <rect>
-          <x>870</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -808,7 +808,7 @@ border-image:None;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Next">
         <property name="geometry">
          <rect>
-          <x>860</x>
+          <x>890</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -861,7 +861,7 @@ border-image:None;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers1_Back">
         <property name="geometry">
          <rect>
-          <x>760</x>
+          <x>770</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -936,7 +936,7 @@ padding-top:7px;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Back">
         <property name="geometry">
          <rect>
-          <x>750</x>
+          <x>770</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -989,7 +989,7 @@ border-image:None;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers2_Next">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>890</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -1139,7 +1139,7 @@ border-image:None;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Back">
         <property name="geometry">
          <rect>
-          <x>750</x>
+          <x>770</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -1192,7 +1192,7 @@ padding-top:7px;
        <widget class="QPushButton" name="DicePiezoWaferintoSubwafers3_Next">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>890</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -1287,7 +1287,7 @@ border-image:None;</string>
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1313,8 +1313,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_Framing_Piezo_1_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1418,7 +1418,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1444,8 +1444,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_Framing_Piezo_2_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1550,7 +1550,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1576,8 +1576,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_Framing_Piezo_3_Back">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -1841,8 +1841,8 @@ border-image:None;
        <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_1_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -1869,7 +1869,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -2131,8 +2131,8 @@ border-image:None;
        <widget class="QPushButton" name="Premount_Clean_and_Measure_Subwafer_2_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -2159,7 +2159,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>101</width>
           <height>29</height>
          </rect>
@@ -2407,7 +2407,7 @@ padding-top:7px;
        <widget class="QPushButton" name="Mount_Subwafers_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
+          <x>890</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -2434,7 +2434,7 @@ padding-top:7px;
        <widget class="QPushButton" name="Mount_Subwafers_Back">
         <property name="geometry">
          <rect>
-          <x>790</x>
+          <x>770</x>
           <y>570</y>
           <width>93</width>
           <height>28</height>
@@ -2567,8 +2567,8 @@ border-image:None;
        <widget class="QPushButton" name="Dice_First_Pillars_1_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2594,8 +2594,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_First_Pillars_1_Back">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2746,7 +2746,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2772,8 +2772,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_First_Pillars_2_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2876,8 +2876,8 @@ border-image:None;
        <widget class="QPushButton" name="Dice_First_Pillars_3_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -2903,8 +2903,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_First_Pillars_3_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3007,8 +3007,8 @@ border-image:None;
        <widget class="QPushButton" name="Fill_First_Pillars_1_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3034,8 +3034,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Fill_First_Pillars_1_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3138,8 +3138,8 @@ border-image:None;
        <widget class="QPushButton" name="Fill_First_Pillars_2_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3165,8 +3165,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Fill_First_Pillars_2_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3322,7 +3322,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3348,8 +3348,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Fill_First_Pillars_3_Back">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3453,7 +3453,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3479,8 +3479,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Fill_First_Pillars_4_Back">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3596,8 +3596,8 @@ border-image:None;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_1_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3623,8 +3623,8 @@ padding-top:7px;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_1_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3727,8 +3727,8 @@ border-image:None;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_2_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3754,8 +3754,8 @@ padding-top:7px;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_2_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3858,8 +3858,8 @@ border-image:None;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_3_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -3885,8 +3885,8 @@ padding-top:7px;
        <widget class="QPushButton" name="PreLap_First_Epoxy_Fill_3_Back">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -4098,8 +4098,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Lap_First_Epoxy_Fill_Back">
         <property name="geometry">
          <rect>
-          <x>771</x>
-          <y>561</y>
+          <x>770</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4125,8 +4125,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Lap_First_Epoxy_Fill_Next">
         <property name="geometry">
          <rect>
-          <x>884</x>
-          <y>561</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4276,8 +4276,8 @@ border-image:None;
        <widget class="QPushButton" name="Dice_Framing_Trench_Pattern_1_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4304,7 +4304,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4420,8 +4420,8 @@ border-image:None;
        <widget class="QPushButton" name="Dice_Framing_Trench_Pattern_2_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4448,7 +4448,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4552,7 +4552,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>550</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4578,8 +4578,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Dice_Framing_Trench_Pattern_3_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4682,8 +4682,8 @@ border-image:None;
        <widget class="QPushButton" name="Fill_Second_Pillars_and_Frame_1_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4710,7 +4710,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4813,8 +4813,8 @@ border-image:None;
        <widget class="QPushButton" name="Fill_Second_Pillars_and_Frame_2_Next">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4840,8 +4840,8 @@ padding-top:7px;
        <widget class="QPushButton" name="Fill_Second_Pillars_and_Frame_2_Back">
         <property name="geometry">
          <rect>
-          <x>780</x>
-          <y>550</y>
+          <x>770</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -4997,7 +4997,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5024,7 +5024,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5128,7 +5128,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5155,7 +5155,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5227,7 +5227,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5254,7 +5254,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5368,7 +5368,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5395,7 +5395,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5478,8 +5478,8 @@ border-image:None;
        <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_3_Back">
         <property name="geometry">
          <rect>
-          <x>760</x>
-          <y>540</y>
+          <x>770</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5521,8 +5521,8 @@ padding-top:7px;
        <widget class="QPushButton" name="pre_Lap_Second_Epoxy_Fill_3_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>540</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5769,7 +5769,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>550</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5829,8 +5829,8 @@ border-image:None;
        <widget class="QPushButton" name="LapSecondEpoxyFill_Next">
         <property name="geometry">
          <rect>
-          <x>880</x>
-          <y>550</y>
+          <x>890</x>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5906,7 +5906,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -5967,7 +5967,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -6148,7 +6148,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -6175,7 +6175,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -6302,7 +6302,7 @@ border-image:None;
         <property name="geometry">
          <rect>
           <x>890</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>
@@ -6364,7 +6364,7 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>770</x>
-          <y>540</y>
+          <y>570</y>
           <width>106</width>
           <height>29</height>
          </rect>

@@ -124,7 +124,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.DepositFirstElectrode3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(39))
         self.ScratchDiceElements1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(40))
         self.ScratchDiceElements2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(41))
-        # self.ScratchDiceElements3_Finish.clicked.connect()
+        self.ScratchDiceElements3_Finish.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(42))
         
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
@@ -195,29 +195,29 @@ def countdown_timer(duration):
 
 
 if __name__ == '__main__':
-    sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-    from db_program.check_user import *
-    from db_program.mysql_statement_gen import *
-    from db_program.user import *
-    from db_program.config import *
-    mydb = mysql.connector.connect(
-        host="134.190.203.113",
-        user="dslink",
-        password="dstestpass123",
-        database="test_db"
-    )
-    myclass = databaseAPI(mydb, "employee_table")
-    result = check_user("sh258955", "123456", myclass)
-    print(result)
-    admin = Admin(user_id=result[0],
-                           user_name=result[1],
-                           user_email=result[2],
-                           db_class=mydb)
-    admin.register_user(user_name="Jiahao Chen",
-                            user_job="Computer Engineering",
-                            user_email="jiahao@gmail.com",
-                            account_number="jh123455",
-                            password="123456")
+    # sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+    # from db_program.check_user import *
+    # from db_program.mysql_statement_gen import *
+    # from db_program.user import *
+    # from db_program.config import *
+    # mydb = mysql.connector.connect(
+    #     host="134.190.203.113",
+    #     user="dslink",
+    #     password="dstestpass123",
+    #     database="test_db"
+    # )
+    # myclass = databaseAPI(mydb, "employee_table")
+    # result = check_user("sh258955", "123456", myclass)
+    # print(result)
+    # admin = Admin(user_id=result[0],
+    #                        user_name=result[1],
+    #                        user_email=result[2],
+    #                        db_class=mydb)
+    # admin.register_user(user_name="Jiahao Chen",
+    #                         user_job="Computer Engineering",
+    #                         user_email="jiahao@gmail.com",
+    #                         account_number="jh123455",
+    #                         password="123456")
     app = QApplication(sys.argv)
     myWindow = MyWindow()
     admin_window = Administrator_Window()

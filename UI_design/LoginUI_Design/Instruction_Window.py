@@ -42,7 +42,7 @@ class Ui_InstructionWindow(object):
 "")
         self.HomePage_Name.setObjectName("HomePage_Name")
         self.HomePage_Next = QtWidgets.QPushButton(self.HomePage)
-        self.HomePage_Next.setGeometry(QtCore.QRect(890, 550, 101, 29))
+        self.HomePage_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.HomePage_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -57,7 +57,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.HomePage_Next.setObjectName("HomePage_Next")
         self.HomePage_Back = QtWidgets.QPushButton(self.HomePage)
-        self.HomePage_Back.setGeometry(QtCore.QRect(780, 550, 101, 29))
+        self.HomePage_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.HomePage_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -82,7 +82,7 @@ class Ui_InstructionWindow(object):
 "")
         self.Mount_Piezo_Wafer_1_Comments_3.setObjectName("Mount_Piezo_Wafer_1_Comments_3")
         self.Mount_Piezo_Wafer_1_Next = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_1)
-        self.Mount_Piezo_Wafer_1_Next.setGeometry(QtCore.QRect(880, 550, 93, 28))
+        self.Mount_Piezo_Wafer_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Mount_Piezo_Wafer_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -99,7 +99,7 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_1_Next.setAutoDefault(False)
         self.Mount_Piezo_Wafer_1_Next.setObjectName("Mount_Piezo_Wafer_1_Next")
         self.Mount_Piezo_Wafer_1_Back = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_1)
-        self.Mount_Piezo_Wafer_1_Back.setGeometry(QtCore.QRect(770, 550, 93, 28))
+        self.Mount_Piezo_Wafer_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Mount_Piezo_Wafer_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -158,7 +158,7 @@ class Ui_InstructionWindow(object):
 "")
         self.Mount_Piezo_Wafer_2_Comments.setObjectName("Mount_Piezo_Wafer_2_Comments")
         self.Mount_Piezo_Wafer_2_Next = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_2)
-        self.Mount_Piezo_Wafer_2_Next.setGeometry(QtCore.QRect(860, 550, 93, 28))
+        self.Mount_Piezo_Wafer_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Mount_Piezo_Wafer_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -175,7 +175,7 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_2_Next.setAutoDefault(False)
         self.Mount_Piezo_Wafer_2_Next.setObjectName("Mount_Piezo_Wafer_2_Next")
         self.Mount_Piezo_Wafer_2_Back = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_2)
-        self.Mount_Piezo_Wafer_2_Back.setGeometry(QtCore.QRect(750, 550, 93, 28))
+        self.Mount_Piezo_Wafer_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Mount_Piezo_Wafer_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -226,7 +226,7 @@ class Ui_InstructionWindow(object):
 "")
         self.Mount_Piezo_Wafer_3_Comments.setObjectName("Mount_Piezo_Wafer_3_Comments")
         self.Mount_Piezo_Wafer_3_Next = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_3)
-        self.Mount_Piezo_Wafer_3_Next.setGeometry(QtCore.QRect(860, 550, 93, 28))
+        self.Mount_Piezo_Wafer_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Mount_Piezo_Wafer_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -243,7 +243,7 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_3_Next.setAutoDefault(False)
         self.Mount_Piezo_Wafer_3_Next.setObjectName("Mount_Piezo_Wafer_3_Next")
         self.Mount_Piezo_Wafer_3_Back = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_3)
-        self.Mount_Piezo_Wafer_3_Back.setGeometry(QtCore.QRect(750, 550, 93, 28))
+        self.Mount_Piezo_Wafer_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Mount_Piezo_Wafer_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -288,7 +288,7 @@ class Ui_InstructionWindow(object):
         self.DicePiezoWaferintoSubwafers0_Data.setMaxLength(32767)
         self.DicePiezoWaferintoSubwafers0_Data.setObjectName("DicePiezoWaferintoSubwafers0_Data")
         self.DicePiezoWaferintoSubwafers0_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers0)
-        self.DicePiezoWaferintoSubwafers0_Back.setGeometry(QtCore.QRect(760, 550, 93, 28))
+        self.DicePiezoWaferintoSubwafers0_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers0_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -321,7 +321,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DicePiezoWaferintoSubwafers0_Initals.setObjectName("DicePiezoWaferintoSubwafers0_Initals")
         self.DicePiezoWaferintoSubwafers0_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers0)
-        self.DicePiezoWaferintoSubwafers0_Next.setGeometry(QtCore.QRect(870, 550, 93, 28))
+        self.DicePiezoWaferintoSubwafers0_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers0_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -359,7 +359,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DicePiezoWaferintoSubwafers1_Dates.setObjectName("DicePiezoWaferintoSubwafers1_Dates")
         self.DicePiezoWaferintoSubwafers1_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers1)
-        self.DicePiezoWaferintoSubwafers1_Next.setGeometry(QtCore.QRect(860, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -384,7 +384,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DicePiezoWaferintoSubwafers1_Initals.setObjectName("DicePiezoWaferintoSubwafers1_Initals")
         self.DicePiezoWaferintoSubwafers1_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers1)
-        self.DicePiezoWaferintoSubwafers1_Back.setGeometry(QtCore.QRect(760, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -415,7 +415,7 @@ class Ui_InstructionWindow(object):
 "")
         self.DicePiezoWaferintoSubwafers2_comments.setObjectName("DicePiezoWaferintoSubwafers2_comments")
         self.DicePiezoWaferintoSubwafers2_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers2)
-        self.DicePiezoWaferintoSubwafers2_Back.setGeometry(QtCore.QRect(750, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -440,7 +440,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DicePiezoWaferintoSubwafers2_Initals.setObjectName("DicePiezoWaferintoSubwafers2_Initals")
         self.DicePiezoWaferintoSubwafers2_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers2)
-        self.DicePiezoWaferintoSubwafers2_Next.setGeometry(QtCore.QRect(850, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -503,7 +503,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DicePiezoWaferintoSubwafers3_Dates.setObjectName("DicePiezoWaferintoSubwafers3_Dates")
         self.DicePiezoWaferintoSubwafers3_Back = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers3)
-        self.DicePiezoWaferintoSubwafers3_Back.setGeometry(QtCore.QRect(750, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -525,7 +525,7 @@ class Ui_InstructionWindow(object):
 "")
         self.DicePiezoWaferintoSubwafers3_comments.setObjectName("DicePiezoWaferintoSubwafers3_comments")
         self.DicePiezoWaferintoSubwafers3_Next = QtWidgets.QPushButton(self.DicePiezoWaferintoSubwafers3)
-        self.DicePiezoWaferintoSubwafers3_Next.setGeometry(QtCore.QRect(850, 570, 93, 28))
+        self.DicePiezoWaferintoSubwafers3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.DicePiezoWaferintoSubwafers3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -561,7 +561,7 @@ class Ui_InstructionWindow(object):
 "border-image:None;")
         self.Dice_Framing_Piezo_1_Initial_2.setObjectName("Dice_Framing_Piezo_1_Initial_2")
         self.Dice_Framing_Piezo_1_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_1)
-        self.Dice_Framing_Piezo_1_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Dice_Framing_Piezo_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_Framing_Piezo_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -576,7 +576,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_1_Next.setObjectName("Dice_Framing_Piezo_1_Next")
         self.Dice_Framing_Piezo_1_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_1)
-        self.Dice_Framing_Piezo_1_Back.setGeometry(QtCore.QRect(780, 550, 93, 28))
+        self.Dice_Framing_Piezo_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_Framing_Piezo_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -620,7 +620,7 @@ class Ui_InstructionWindow(object):
         self.Dice_Framing_Piezo_2_Data.setStyleSheet("border-image:None;")
         self.Dice_Framing_Piezo_2_Data.setObjectName("Dice_Framing_Piezo_2_Data")
         self.Dice_Framing_Piezo_2_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_2)
-        self.Dice_Framing_Piezo_2_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Dice_Framing_Piezo_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_Framing_Piezo_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -635,7 +635,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_2_Next.setObjectName("Dice_Framing_Piezo_2_Next")
         self.Dice_Framing_Piezo_2_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_2)
-        self.Dice_Framing_Piezo_2_Back.setGeometry(QtCore.QRect(780, 550, 93, 28))
+        self.Dice_Framing_Piezo_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_Framing_Piezo_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -680,7 +680,7 @@ class Ui_InstructionWindow(object):
         self.Dice_Framing_Piezo_3_Data.setStyleSheet("border-image:None;")
         self.Dice_Framing_Piezo_3_Data.setObjectName("Dice_Framing_Piezo_3_Data")
         self.Dice_Framing_Piezo_3_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_3)
-        self.Dice_Framing_Piezo_3_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Dice_Framing_Piezo_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_Framing_Piezo_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -695,7 +695,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_3_Next.setObjectName("Dice_Framing_Piezo_3_Next")
         self.Dice_Framing_Piezo_3_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_3)
-        self.Dice_Framing_Piezo_3_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Dice_Framing_Piezo_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_Framing_Piezo_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -795,7 +795,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Premount_Clean_and_Measure_Subwafer_1_Dates.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Dates")
         self.Premount_Clean_and_Measure_Subwafer_1_Next = QtWidgets.QPushButton(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Next.setGeometry(QtCore.QRect(880, 550, 101, 29))
+        self.Premount_Clean_and_Measure_Subwafer_1_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.Premount_Clean_and_Measure_Subwafer_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -810,7 +810,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Premount_Clean_and_Measure_Subwafer_1_Next.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Next")
         self.Premount_Clean_and_Measure_Subwafer_1_Back = QtWidgets.QPushButton(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Back.setGeometry(QtCore.QRect(770, 550, 101, 29))
+        self.Premount_Clean_and_Measure_Subwafer_1_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.Premount_Clean_and_Measure_Subwafer_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -902,7 +902,7 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_2_Data3.setStyleSheet("border-image:None;")
         self.Premount_Clean_and_Measure_Subwafer_2_Data3.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Data3")
         self.Premount_Clean_and_Measure_Subwafer_2_Back = QtWidgets.QPushButton(self.Premount_Clean_and_Measure_Subwafer_2)
-        self.Premount_Clean_and_Measure_Subwafer_2_Back.setGeometry(QtCore.QRect(780, 550, 101, 29))
+        self.Premount_Clean_and_Measure_Subwafer_2_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.Premount_Clean_and_Measure_Subwafer_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -917,7 +917,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Premount_Clean_and_Measure_Subwafer_2_Back.setObjectName("Premount_Clean_and_Measure_Subwafer_2_Back")
         self.Premount_Clean_and_Measure_Subwafer_2_Next = QtWidgets.QPushButton(self.Premount_Clean_and_Measure_Subwafer_2)
-        self.Premount_Clean_and_Measure_Subwafer_2_Next.setGeometry(QtCore.QRect(890, 550, 101, 29))
+        self.Premount_Clean_and_Measure_Subwafer_2_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.Premount_Clean_and_Measure_Subwafer_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1001,7 +1001,7 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Data15.setStyleSheet("border-image:None;")
         self.Mount_Subwafers_Data15.setObjectName("Mount_Subwafers_Data15")
         self.Mount_Subwafers_Next = QtWidgets.QPushButton(self.Mount_Subwafers)
-        self.Mount_Subwafers_Next.setGeometry(QtCore.QRect(900, 570, 93, 28))
+        self.Mount_Subwafers_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Mount_Subwafers_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1016,7 +1016,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Mount_Subwafers_Next.setObjectName("Mount_Subwafers_Next")
         self.Mount_Subwafers_Back = QtWidgets.QPushButton(self.Mount_Subwafers)
-        self.Mount_Subwafers_Back.setGeometry(QtCore.QRect(790, 570, 93, 28))
+        self.Mount_Subwafers_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Mount_Subwafers_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1068,7 +1068,7 @@ class Ui_InstructionWindow(object):
         self.Dice_First_Pillars_1_Data.setStyleSheet("border-image:None;")
         self.Dice_First_Pillars_1_Data.setObjectName("Dice_First_Pillars_1_Data")
         self.Dice_First_Pillars_1_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
-        self.Dice_First_Pillars_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Dice_First_Pillars_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_First_Pillars_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1083,7 +1083,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_First_Pillars_1_Next.setObjectName("Dice_First_Pillars_1_Next")
         self.Dice_First_Pillars_1_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_1)
-        self.Dice_First_Pillars_1_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Dice_First_Pillars_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_First_Pillars_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1147,7 +1147,7 @@ class Ui_InstructionWindow(object):
         self.Dice_First_Pillars_2_Comments.setStyleSheet("border-image:None;")
         self.Dice_First_Pillars_2_Comments.setObjectName("Dice_First_Pillars_2_Comments")
         self.Dice_First_Pillars_2_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
-        self.Dice_First_Pillars_2_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Dice_First_Pillars_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_First_Pillars_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1162,7 +1162,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_First_Pillars_2_Next.setObjectName("Dice_First_Pillars_2_Next")
         self.Dice_First_Pillars_2_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
-        self.Dice_First_Pillars_2_Back.setGeometry(QtCore.QRect(780, 550, 93, 28))
+        self.Dice_First_Pillars_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_First_Pillars_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1206,7 +1206,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_First_Pillars_3_Dates.setObjectName("Dice_First_Pillars_3_Dates")
         self.Dice_First_Pillars_3_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
-        self.Dice_First_Pillars_3_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Dice_First_Pillars_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Dice_First_Pillars_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1221,7 +1221,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_First_Pillars_3_Next.setObjectName("Dice_First_Pillars_3_Next")
         self.Dice_First_Pillars_3_Back = QtWidgets.QPushButton(self.Dice_First_Pillars_3)
-        self.Dice_First_Pillars_3_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Dice_First_Pillars_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Dice_First_Pillars_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1265,7 +1265,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_1_Initials.setObjectName("Fill_First_Pillars_1_Initials")
         self.Fill_First_Pillars_1_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
-        self.Fill_First_Pillars_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Fill_First_Pillars_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Fill_First_Pillars_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1280,7 +1280,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_1_Next.setObjectName("Fill_First_Pillars_1_Next")
         self.Fill_First_Pillars_1_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_1)
-        self.Fill_First_Pillars_1_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Fill_First_Pillars_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Fill_First_Pillars_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1324,7 +1324,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_2_Initials.setObjectName("Fill_First_Pillars_2_Initials")
         self.Fill_First_Pillars_2_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
-        self.Fill_First_Pillars_2_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.Fill_First_Pillars_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Fill_First_Pillars_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1339,7 +1339,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_2_Next.setObjectName("Fill_First_Pillars_2_Next")
         self.Fill_First_Pillars_2_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_2)
-        self.Fill_First_Pillars_2_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.Fill_First_Pillars_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Fill_First_Pillars_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1399,7 +1399,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_3_Dates.setObjectName("Fill_First_Pillars_3_Dates")
         self.Fill_First_Pillars_3_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
-        self.Fill_First_Pillars_3_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Fill_First_Pillars_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Fill_First_Pillars_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1414,7 +1414,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_3_Next.setObjectName("Fill_First_Pillars_3_Next")
         self.Fill_First_Pillars_3_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_3)
-        self.Fill_First_Pillars_3_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Fill_First_Pillars_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Fill_First_Pillars_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1458,7 +1458,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_4_Dates.setObjectName("Fill_First_Pillars_4_Dates")
         self.Fill_First_Pillars_4_Next = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
-        self.Fill_First_Pillars_4_Next.setGeometry(QtCore.QRect(890, 550, 93, 28))
+        self.Fill_First_Pillars_4_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.Fill_First_Pillars_4_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1473,7 +1473,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_First_Pillars_4_Next.setObjectName("Fill_First_Pillars_4_Next")
         self.Fill_First_Pillars_4_Back = QtWidgets.QPushButton(self.Fill_First_Pillars_4)
-        self.Fill_First_Pillars_4_Back.setGeometry(QtCore.QRect(790, 550, 93, 28))
+        self.Fill_First_Pillars_4_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.Fill_First_Pillars_4_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1521,7 +1521,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_1_Dates.setObjectName("PreLap_First_Epoxy_Fill_1_Dates")
         self.PreLap_First_Epoxy_Fill_1_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
-        self.PreLap_First_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1536,7 +1536,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_1_Next.setObjectName("PreLap_First_Epoxy_Fill_1_Next")
         self.PreLap_First_Epoxy_Fill_1_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_1)
-        self.PreLap_First_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1580,7 +1580,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_2_Dates.setObjectName("PreLap_First_Epoxy_Fill_2_Dates")
         self.PreLap_First_Epoxy_Fill_2_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
-        self.PreLap_First_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1595,7 +1595,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_2_Next.setObjectName("PreLap_First_Epoxy_Fill_2_Next")
         self.PreLap_First_Epoxy_Fill_2_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_2)
-        self.PreLap_First_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1639,7 +1639,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_3_Dates.setObjectName("PreLap_First_Epoxy_Fill_3_Dates")
         self.PreLap_First_Epoxy_Fill_3_Next = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
-        self.PreLap_First_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(900, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1654,7 +1654,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.PreLap_First_Epoxy_Fill_3_Next.setObjectName("PreLap_First_Epoxy_Fill_3_Next")
         self.PreLap_First_Epoxy_Fill_3_Back = QtWidgets.QPushButton(self.PreLap_First_Epoxy_Fill_3)
-        self.PreLap_First_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(800, 550, 93, 28))
+        self.PreLap_First_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
         self.PreLap_First_Epoxy_Fill_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1726,7 +1726,7 @@ class Ui_InstructionWindow(object):
         self.Lap_First_Epoxy_Fill_Data9.setStyleSheet("border-image:None;")
         self.Lap_First_Epoxy_Fill_Data9.setObjectName("Lap_First_Epoxy_Fill_Data9")
         self.Lap_First_Epoxy_Fill_Back = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
-        self.Lap_First_Epoxy_Fill_Back.setGeometry(QtCore.QRect(771, 561, 106, 29))
+        self.Lap_First_Epoxy_Fill_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Lap_First_Epoxy_Fill_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1741,7 +1741,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Lap_First_Epoxy_Fill_Back.setObjectName("Lap_First_Epoxy_Fill_Back")
         self.Lap_First_Epoxy_Fill_Next = QtWidgets.QPushButton(self.Lap_First_Epoxy_Fill)
-        self.Lap_First_Epoxy_Fill_Next.setGeometry(QtCore.QRect(884, 561, 106, 29))
+        self.Lap_First_Epoxy_Fill_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Lap_First_Epoxy_Fill_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1805,7 +1805,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_1_Dates.setObjectName("Dice_Framing_Trench_Pattern_1_Dates")
         self.Dice_Framing_Trench_Pattern_1_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
-        self.Dice_Framing_Trench_Pattern_1_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_1_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1820,7 +1820,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_1_Next.setObjectName("Dice_Framing_Trench_Pattern_1_Next")
         self.Dice_Framing_Trench_Pattern_1_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_1)
-        self.Dice_Framing_Trench_Pattern_1_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_1_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1868,7 +1868,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_2_Dates.setObjectName("Dice_Framing_Trench_Pattern_2_Dates")
         self.Dice_Framing_Trench_Pattern_2_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
-        self.Dice_Framing_Trench_Pattern_2_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_2_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1883,7 +1883,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_2_Next.setObjectName("Dice_Framing_Trench_Pattern_2_Next")
         self.Dice_Framing_Trench_Pattern_2_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_2)
-        self.Dice_Framing_Trench_Pattern_2_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_2_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1927,7 +1927,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_3_Dates.setObjectName("Dice_Framing_Trench_Pattern_3_Dates")
         self.Dice_Framing_Trench_Pattern_3_Next = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
-        self.Dice_Framing_Trench_Pattern_3_Next.setGeometry(QtCore.QRect(890, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_3_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1942,7 +1942,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Trench_Pattern_3_Next.setObjectName("Dice_Framing_Trench_Pattern_3_Next")
         self.Dice_Framing_Trench_Pattern_3_Back = QtWidgets.QPushButton(self.Dice_Framing_Trench_Pattern_3)
-        self.Dice_Framing_Trench_Pattern_3_Back.setGeometry(QtCore.QRect(780, 550, 106, 29))
+        self.Dice_Framing_Trench_Pattern_3_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Dice_Framing_Trench_Pattern_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -1986,7 +1986,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_1_Dates.setObjectName("Fill_Second_Pillars_and_Frame_1_Dates")
         self.Fill_Second_Pillars_and_Frame_1_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
-        self.Fill_Second_Pillars_and_Frame_1_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_1_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2001,7 +2001,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_1_Next.setObjectName("Fill_Second_Pillars_and_Frame_1_Next")
         self.Fill_Second_Pillars_and_Frame_1_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_1)
-        self.Fill_Second_Pillars_and_Frame_1_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_1_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2045,7 +2045,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_2_Dates.setObjectName("Fill_Second_Pillars_and_Frame_2_Dates")
         self.Fill_Second_Pillars_and_Frame_2_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
-        self.Fill_Second_Pillars_and_Frame_2_Next.setGeometry(QtCore.QRect(900, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_2_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2060,7 +2060,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_2_Next.setObjectName("Fill_Second_Pillars_and_Frame_2_Next")
         self.Fill_Second_Pillars_and_Frame_2_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_2)
-        self.Fill_Second_Pillars_and_Frame_2_Back.setGeometry(QtCore.QRect(780, 550, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_2_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2120,7 +2120,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_3_Dates.setObjectName("Fill_Second_Pillars_and_Frame_3_Dates")
         self.Fill_Second_Pillars_and_Frame_3_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
-        self.Fill_Second_Pillars_and_Frame_3_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_3_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2135,7 +2135,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_3_Next.setObjectName("Fill_Second_Pillars_and_Frame_3_Next")
         self.Fill_Second_Pillars_and_Frame_3_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_3)
-        self.Fill_Second_Pillars_and_Frame_3_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_3_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2179,7 +2179,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_4_Dates.setObjectName("Fill_Second_Pillars_and_Frame_4_Dates")
         self.Fill_Second_Pillars_and_Frame_4_Next = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
-        self.Fill_Second_Pillars_and_Frame_4_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_4_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_4_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2194,7 +2194,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Fill_Second_Pillars_and_Frame_4_Next.setObjectName("Fill_Second_Pillars_and_Frame_4_Next")
         self.Fill_Second_Pillars_and_Frame_4_Back = QtWidgets.QPushButton(self.Fill_Second_Pillars_and_Frame_4)
-        self.Fill_Second_Pillars_and_Frame_4_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.Fill_Second_Pillars_and_Frame_4_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.Fill_Second_Pillars_and_Frame_4_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2230,7 +2230,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.pre_Lap_Second_Epoxy_Fill_1_Initials.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Initials")
         self.pre_Lap_Second_Epoxy_Fill_1_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_1)
-        self.pre_Lap_Second_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_1_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2245,7 +2245,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.pre_Lap_Second_Epoxy_Fill_1_Back.setObjectName("pre_Lap_Second_Epoxy_Fill_1_Back")
         self.pre_Lap_Second_Epoxy_Fill_1_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_1)
-        self.pre_Lap_Second_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_1_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2293,7 +2293,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.pre_Lap_Second_Epoxy_Fill_2_Initials.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Initials")
         self.pre_Lap_Second_Epoxy_Fill_2_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_2)
-        self.pre_Lap_Second_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_2_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2308,7 +2308,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.pre_Lap_Second_Epoxy_Fill_2_Next.setObjectName("pre_Lap_Second_Epoxy_Fill_2_Next")
         self.pre_Lap_Second_Epoxy_Fill_2_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_2)
-        self.pre_Lap_Second_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_2_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2344,7 +2344,7 @@ class Ui_InstructionWindow(object):
         self.pre_Lap_Second_Epoxy_Fill_3_Data.setStyleSheet("border-image:None;")
         self.pre_Lap_Second_Epoxy_Fill_3_Data.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Data")
         self.pre_Lap_Second_Epoxy_Fill_3_Back = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_3)
-        self.pre_Lap_Second_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(760, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_3_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2363,7 +2363,7 @@ class Ui_InstructionWindow(object):
         self.pre_Lap_Second_Epoxy_Fill_3_Comments.setStyleSheet("border-image:None;")
         self.pre_Lap_Second_Epoxy_Fill_3_Comments.setObjectName("pre_Lap_Second_Epoxy_Fill_3_Comments")
         self.pre_Lap_Second_Epoxy_Fill_3_Next = QtWidgets.QPushButton(self.pre_Lap_Second_Epoxy_Fill_3)
-        self.pre_Lap_Second_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(880, 540, 106, 29))
+        self.pre_Lap_Second_Epoxy_Fill_3_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.pre_Lap_Second_Epoxy_Fill_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2471,7 +2471,7 @@ class Ui_InstructionWindow(object):
         self.LapSecondEpoxyFill_Data9.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data9.setObjectName("LapSecondEpoxyFill_Data9")
         self.LapSecondEpoxyFill_Back = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Back.setGeometry(QtCore.QRect(770, 550, 106, 29))
+        self.LapSecondEpoxyFill_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.LapSecondEpoxyFill_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2502,7 +2502,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.LapSecondEpoxyFill_Initials.setObjectName("LapSecondEpoxyFill_Initials")
         self.LapSecondEpoxyFill_Next = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Next.setGeometry(QtCore.QRect(880, 550, 106, 29))
+        self.LapSecondEpoxyFill_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.LapSecondEpoxyFill_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2539,7 +2539,7 @@ class Ui_InstructionWindow(object):
         self.DepositFirstElectrode1.setStyleSheet("border-image: url(:/images/images/DepositFirstElectrode1.PNG);")
         self.DepositFirstElectrode1.setObjectName("DepositFirstElectrode1")
         self.DepositFirstElectrode1_Back = QtWidgets.QPushButton(self.DepositFirstElectrode1)
-        self.DepositFirstElectrode1_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode1_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.DepositFirstElectrode1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2570,7 +2570,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DepositFirstElectrode1_Initials.setObjectName("DepositFirstElectrode1_Initials")
         self.DepositFirstElectrode1_Next = QtWidgets.QPushButton(self.DepositFirstElectrode1)
-        self.DepositFirstElectrode1_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode1_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.DepositFirstElectrode1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2634,7 +2634,7 @@ class Ui_InstructionWindow(object):
         self.DepositFirstElectrode2_checkBox_1.setStyleSheet("border-image: none;")
         self.DepositFirstElectrode2_checkBox_1.setObjectName("DepositFirstElectrode2_checkBox_1")
         self.DepositFirstElectrode2_Back = QtWidgets.QPushButton(self.DepositFirstElectrode2)
-        self.DepositFirstElectrode2_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode2_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.DepositFirstElectrode2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2649,7 +2649,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.DepositFirstElectrode2_Back.setObjectName("DepositFirstElectrode2_Back")
         self.DepositFirstElectrode2_Next = QtWidgets.QPushButton(self.DepositFirstElectrode2)
-        self.DepositFirstElectrode2_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode2_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.DepositFirstElectrode2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2703,7 +2703,7 @@ class Ui_InstructionWindow(object):
         self.DepositFirstElectrode3_checkBox1.setStyleSheet("border-image: none;")
         self.DepositFirstElectrode3_checkBox1.setObjectName("DepositFirstElectrode3_checkBox1")
         self.DepositFirstElectrode3_Next = QtWidgets.QPushButton(self.DepositFirstElectrode3)
-        self.DepositFirstElectrode3_Next.setGeometry(QtCore.QRect(890, 540, 106, 29))
+        self.DepositFirstElectrode3_Next.setGeometry(QtCore.QRect(890, 570, 106, 29))
         self.DepositFirstElectrode3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2727,7 +2727,7 @@ class Ui_InstructionWindow(object):
         self.DepositFirstElectrode3_Comments.setStyleSheet("border-image:None;")
         self.DepositFirstElectrode3_Comments.setObjectName("DepositFirstElectrode3_Comments")
         self.DepositFirstElectrode3_Back = QtWidgets.QPushButton(self.DepositFirstElectrode3)
-        self.DepositFirstElectrode3_Back.setGeometry(QtCore.QRect(770, 540, 106, 29))
+        self.DepositFirstElectrode3_Back.setGeometry(QtCore.QRect(770, 570, 106, 29))
         self.DepositFirstElectrode3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2951,7 +2951,7 @@ class Ui_InstructionWindow(object):
         InstructionWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(InstructionWindow)
-        self.stackedWidget.setCurrentIndex(41)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(InstructionWindow)
 
     def retranslateUi(self, InstructionWindow):
