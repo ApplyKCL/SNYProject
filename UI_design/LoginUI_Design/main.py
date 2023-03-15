@@ -1,11 +1,19 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox
 import sys, time
+import mysql.connector
+
 from login import *
-# from Admin_Window_1 import *
 from Normal_user import *
 from Instruction_Window import *
 from Admin_WIndow3 import *
-import mysql.connector
+
+sys.path.append('D:/Desktop/sny/SNY/SNYProject/UI_design/LoginUI_Design/db_program')
+
+from db_program.check_user import *
+from db_program.mysql_statement_gen import *
+from db_program.user import *
+from db_program.config import *
+
 
 ### Login Main Window ###
 class MyWindow(QMainWindow, Ui_Login_Window):
@@ -15,13 +23,25 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.setupUi(self)
         self.Login_Button.clicked.connect(self.go_to_inter)
         
+        self.admin_login = False
+        
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
-        if account == "Jiahao" and password == "950321":
+        
+        myclass = databaseAPI(mydb, "employee_table")
+        result = check_user(account, password, myclass)
+        print(result)
+        
+        if result is False:
+            QMessageBox.information(self,"Error Message","Invalid User/Password")
+            
+        elif result[len(result)-1] == 1:
             dialog = MyDialog()
             dialog.setModal(True)  # 设置对话框为弹窗模式
             dialog.exec_()
+            self.admin_login = True
+            
         else:
             self.hide()
             userWindow.showFullScreen()
@@ -204,20 +224,13 @@ def countdown_timer(duration):
 
 
 if __name__ == '__main__':
-    # sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-    # from db_program.check_user import *
-    # from db_program.mysql_statement_gen import *
-    # from db_program.user import *
-    # from db_program.config import *
-    # mydb = mysql.connector.connect(
-    #     host="134.190.203.113",
-    #     user="dslink",
-    #     password="dstestpass123",
-    #     database="test_db"
-    # )
-    # myclass = databaseAPI(mydb, "employee_table")
-    # result = check_user("sh258955", "123456", myclass)
-    # print(result)
+    mydb = mysql.connector.connect(
+        host="134.190.203.63",
+        user="dslink",
+        password="dstestpass123",
+        database="test_db"
+    )
+
     # admin = Admin(user_id=result[0],
     #                        user_name=result[1],
     #                        user_email=result[2],
@@ -227,6 +240,7 @@ if __name__ == '__main__':
     #                         user_email="jiahao@gmail.com",
     #                         account_number="jh123455",
     #                         password="123456")
+    
     app = QApplication(sys.argv)
     myWindow = MyWindow()
     admin_window = Administrator_Window()
