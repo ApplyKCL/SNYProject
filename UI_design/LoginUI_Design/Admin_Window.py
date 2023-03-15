@@ -55,30 +55,30 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label = QtWidgets.QLabel(self.widget)
+        self.workflow_database_system = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.horizontalLayout_5.addWidget(self.label)
+        self.workflow_database_system.setFont(font)
+        self.workflow_database_system.setObjectName("workflow_database_system")
+        self.horizontalLayout_5.addWidget(self.workflow_database_system)
         spacerItem = QtWidgets.QSpacerItem(80, 30, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem)
-        self.lineEdit = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit.setObjectName("lineEdit")
-        self.horizontalLayout_5.addWidget(self.lineEdit)
-        self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_5.addWidget(self.pushButton)
+        self.barcode_number = QtWidgets.QLineEdit(self.widget)
+        self.barcode_number.setObjectName("barcode_number")
+        self.horizontalLayout_5.addWidget(self.barcode_number)
+        self.pushButton_enter = QtWidgets.QPushButton(self.widget)
+        self.pushButton_enter.setObjectName("pushButton_enter")
+        self.horizontalLayout_5.addWidget(self.pushButton_enter)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem1)
-        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_5.addWidget(self.pushButton_2)
-        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
+        self.pushButton_refresh_workflow = QtWidgets.QPushButton(self.widget)
+        self.pushButton_refresh_workflow.setObjectName("pushButton_refresh_workflow")
+        self.horizontalLayout_5.addWidget(self.pushButton_refresh_workflow)
+        self.pushButton_close_workflow = QtWidgets.QPushButton(self.widget)
+        self.pushButton_close_workflow.setStyleSheet("QPushButton{\n"
 "    border:none;\n"
 "    height: 35px;\n"
 "background-image:None;\n"
@@ -88,12 +88,12 @@ class Ui_Admin_Window(object):
 "    padding-bottom:5px;\n"
 "}\n"
 "")
-        self.pushButton_3.setText("")
+        self.pushButton_close_workflow.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/close_button.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_5.addWidget(self.pushButton_3)
+        self.pushButton_close_workflow.setIcon(icon)
+        self.pushButton_close_workflow.setObjectName("pushButton_close_workflow")
+        self.horizontalLayout_5.addWidget(self.pushButton_close_workflow)
         self.horizontalLayout_6.addLayout(self.horizontalLayout_5)
         self.verticalLayout_5.addLayout(self.horizontalLayout_6)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
@@ -152,15 +152,15 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.label_2 = QtWidgets.QLabel(self.widget_2)
+        self.user_database_system = QtWidgets.QLabel(self.widget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout_11.addWidget(self.label_2)
+        self.user_database_system.setFont(font)
+        self.user_database_system.setObjectName("user_database_system")
+        self.horizontalLayout_11.addWidget(self.user_database_system)
         spacerItem2 = QtWidgets.QSpacerItem(88, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_11.addItem(spacerItem2)
         self.fresh_pushButton_2 = QtWidgets.QPushButton(self.widget_2)
@@ -174,8 +174,8 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_11.addWidget(self.fresh_pushButton_2)
         spacerItem3 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_11.addItem(spacerItem3)
-        self.pushButton_4 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButton_4.setStyleSheet("QPushButton{\n"
+        self.pushButton_close_employee = QtWidgets.QPushButton(self.widget_2)
+        self.pushButton_close_employee.setStyleSheet("QPushButton{\n"
 "    border:none;\n"
 "    height: 35px;\n"
 "    background-image:None;\n"
@@ -185,10 +185,10 @@ class Ui_Admin_Window(object):
 "    padding-bottom:5px;\n"
 "}\n"
 "")
-        self.pushButton_4.setText("")
-        self.pushButton_4.setIcon(icon)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_11.addWidget(self.pushButton_4)
+        self.pushButton_close_employee.setText("")
+        self.pushButton_close_employee.setIcon(icon)
+        self.pushButton_close_employee.setObjectName("pushButton_close_employee")
+        self.horizontalLayout_11.addWidget(self.pushButton_close_employee)
         self.horizontalLayout_10.addLayout(self.horizontalLayout_11)
         self.verticalLayout_10.addLayout(self.horizontalLayout_10)
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
@@ -224,6 +224,15 @@ class Ui_Admin_Window(object):
         self.add_user_of_user_name_lineEdit_2.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
         self.add_user_of_user_name_lineEdit_2.setObjectName("add_user_of_user_name_lineEdit_2")
         self.verticalLayout_12.addWidget(self.add_user_of_user_name_lineEdit_2)
+        self.add_useraccount = QtWidgets.QLineEdit(self.groupBox_4)
+        self.add_useraccount.setMaximumSize(QtCore.QSize(120, 30))
+        self.add_useraccount.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46,82,101,200);\n"
+"color:rgba(0,0,0,240);\n"
+"padding-bottom:2px;")
+        self.add_useraccount.setObjectName("add_useraccount")
+        self.verticalLayout_12.addWidget(self.add_useraccount)
         self.add_user_of_password_lineEdit_2 = QtWidgets.QLineEdit(self.groupBox_4)
         self.add_user_of_password_lineEdit_2.setMinimumSize(QtCore.QSize(90, 30))
         self.add_user_of_password_lineEdit_2.setMaximumSize(QtCore.QSize(120, 30))
@@ -237,24 +246,24 @@ class Ui_Admin_Window(object):
 "padding-bottom:2px;")
         self.add_user_of_password_lineEdit_2.setObjectName("add_user_of_password_lineEdit_2")
         self.verticalLayout_12.addWidget(self.add_user_of_password_lineEdit_2)
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.groupBox_4)
-        self.lineEdit_6.setMaximumSize(QtCore.QSize(120, 30))
-        self.lineEdit_6.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.add_email = QtWidgets.QLineEdit(self.groupBox_4)
+        self.add_email.setMaximumSize(QtCore.QSize(120, 30))
+        self.add_email.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46,82,101,200);\n"
 "color:rgba(0,0,0,240);\n"
 "padding-bottom:2px;")
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.verticalLayout_12.addWidget(self.lineEdit_6)
-        self.lineEdit_7 = QtWidgets.QLineEdit(self.groupBox_4)
-        self.lineEdit_7.setMaximumSize(QtCore.QSize(120, 30))
-        self.lineEdit_7.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.add_email.setObjectName("add_email")
+        self.verticalLayout_12.addWidget(self.add_email)
+        self.add_job = QtWidgets.QLineEdit(self.groupBox_4)
+        self.add_job.setMaximumSize(QtCore.QSize(120, 30))
+        self.add_job.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46,82,101,200);\n"
 "color:rgba(0,0,0,240);\n"
 "padding-bottom:2px;")
-        self.lineEdit_7.setObjectName("lineEdit_7")
-        self.verticalLayout_12.addWidget(self.lineEdit_7)
+        self.add_job.setObjectName("add_job")
+        self.verticalLayout_12.addWidget(self.add_job)
         self.horizontalLayout_13.addLayout(self.verticalLayout_12)
         self.add_user_pushButton_2 = QtWidgets.QPushButton(self.groupBox_4)
         self.add_user_pushButton_2.setMinimumSize(QtCore.QSize(90, 30))
@@ -281,30 +290,30 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
         self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.lineEdit_8 = QtWidgets.QLineEdit(self.groupBox_5)
-        self.lineEdit_8.setMaximumSize(QtCore.QSize(120, 30))
+        self.delete_user_name = QtWidgets.QLineEdit(self.groupBox_5)
+        self.delete_user_name.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
         font.setPointSize(8)
-        self.lineEdit_8.setFont(font)
-        self.lineEdit_8.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.delete_user_name.setFont(font)
+        self.delete_user_name.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46,82,101,200);\n"
 "color:rgba(0,0,0,240);\n"
 "padding-bottom:2px;")
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.verticalLayout_13.addWidget(self.lineEdit_8)
-        self.lineEdit_9 = QtWidgets.QLineEdit(self.groupBox_5)
-        self.lineEdit_9.setMaximumSize(QtCore.QSize(120, 30))
+        self.delete_user_name.setObjectName("delete_user_name")
+        self.verticalLayout_13.addWidget(self.delete_user_name)
+        self.delete_password = QtWidgets.QLineEdit(self.groupBox_5)
+        self.delete_password.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
         font.setPointSize(8)
-        self.lineEdit_9.setFont(font)
-        self.lineEdit_9.setStyleSheet("background-color:rgba(0,0,0,0);\n"
+        self.delete_password.setFont(font)
+        self.delete_password.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46,82,101,200);\n"
 "color:rgba(0,0,0,240);\n"
 "padding-bottom:2px;")
-        self.lineEdit_9.setObjectName("lineEdit_9")
-        self.verticalLayout_13.addWidget(self.lineEdit_9)
+        self.delete_password.setObjectName("delete_password")
+        self.verticalLayout_13.addWidget(self.delete_password)
         self.horizontalLayout_2.addLayout(self.verticalLayout_13)
         self.delete_user_pushButton_2 = QtWidgets.QPushButton(self.groupBox_5)
         self.delete_user_pushButton_2.setMinimumSize(QtCore.QSize(90, 30))
@@ -343,25 +352,3 @@ class Ui_Admin_Window(object):
 
         self.retranslateUi(Admin_Window)
         self.stackedWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(Admin_Window)
-
-    def retranslateUi(self, Admin_Window):
-        _translate = QtCore.QCoreApplication.translate
-        Admin_Window.setWindowTitle(_translate("Admin_Window", "MainWindow"))
-        self.label.setText(_translate("Admin_Window", "Workflow Database System"))
-        self.lineEdit.setPlaceholderText(_translate("Admin_Window", "Barcode #"))
-        self.pushButton.setText(_translate("Admin_Window", "Enter"))
-        self.pushButton_2.setText(_translate("Admin_Window", "Refresh"))
-        self.label_2.setText(_translate("Admin_Window", "   User Database System"))
-        self.fresh_pushButton_2.setText(_translate("Admin_Window", "The Information of Employees"))
-        self.groupBox_4.setTitle(_translate("Admin_Window", "Add User"))
-        self.add_user_of_user_name_lineEdit_2.setPlaceholderText(_translate("Admin_Window", "User Name"))
-        self.add_user_of_password_lineEdit_2.setPlaceholderText(_translate("Admin_Window", "Password"))
-        self.lineEdit_6.setPlaceholderText(_translate("Admin_Window", "Email"))
-        self.lineEdit_7.setPlaceholderText(_translate("Admin_Window", "Phone Number"))
-        self.add_user_pushButton_2.setText(_translate("Admin_Window", "Add"))
-        self.groupBox_5.setTitle(_translate("Admin_Window", "Delete User"))
-        self.lineEdit_8.setPlaceholderText(_translate("Admin_Window", "User Name"))
-        self.lineEdit_9.setPlaceholderText(_translate("Admin_Window", "Password"))
-        self.delete_user_pushButton_2.setText(_translate("Admin_Window", "Delete"))
-import resource_rc

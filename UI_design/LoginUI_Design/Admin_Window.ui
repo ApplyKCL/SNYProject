@@ -24,7 +24,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Product_System_UI">
        <property name="styleSheet">
@@ -181,8 +181,8 @@ QPushButton:hover{
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>3026</width>
-                    <height>3026</height>
+                    <width>3022</width>
+                    <height>3022</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -668,8 +668,8 @@ padding-bottom:2px;</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>3026</width>
-                  <height>3026</height>
+                  <width>3022</width>
+                  <height>3022</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout">
@@ -711,38 +711,5 @@ padding-bottom:2px;</string>
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>clicked()</signal>
-   <receiver>Admin_Window</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>971</x>
-     <y>67</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1024</x>
-     <y>58</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>Admin_Window</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>983</x>
-     <y>45</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1014</x>
-     <y>100</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
