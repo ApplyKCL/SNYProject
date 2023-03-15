@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>18</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -3140,8 +3140,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3167,8 +3167,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3323,8 +3323,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3350,8 +3350,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3454,8 +3454,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3481,8 +3481,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3598,8 +3598,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3625,8 +3625,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3729,8 +3729,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3756,8 +3756,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3860,8 +3860,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3887,8 +3887,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>93</width>
-          <height>28</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4127,8 +4127,8 @@ padding-top:7px;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4278,8 +4278,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4422,8 +4422,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4449,8 +4449,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4580,8 +4580,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4684,8 +4684,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4711,8 +4711,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4815,8 +4815,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4842,8 +4842,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -4998,8 +4998,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5025,8 +5025,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5129,8 +5129,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5156,8 +5156,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5228,8 +5228,8 @@ border-image:None;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5255,8 +5255,8 @@ padding-top:7px;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5369,8 +5369,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5396,8 +5396,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5480,8 +5480,8 @@ border-image:None;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5523,8 +5523,8 @@ padding-top:7px;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5770,8 +5770,8 @@ border: none;</string>
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5831,8 +5831,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5907,8 +5907,8 @@ border: none;</string>
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -5968,8 +5968,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6149,8 +6149,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6176,8 +6176,8 @@ padding-top:7px;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6303,8 +6303,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6365,8 +6365,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6452,8 +6452,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6514,8 +6514,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6599,8 +6599,8 @@ border-image:None;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6676,8 +6676,8 @@ border-image:None;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6759,8 +6759,8 @@ padding-top:7px;
          <rect>
           <x>770</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -6786,8 +6786,8 @@ padding-top:7px;
          <rect>
           <x>890</x>
           <y>570</y>
-          <width>106</width>
-          <height>29</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
