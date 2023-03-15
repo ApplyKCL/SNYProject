@@ -5,7 +5,7 @@ import mysql.connector
 from login import *
 from Normal_user import *
 from Instruction_Window import *
-from Admin_WIndow3 import *
+from Admin_Window import *
 
 sys.path.append('D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/db_program')
 
@@ -36,9 +36,7 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         if result is False:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
             
-        elif result[len(result)-1] == 1:
-            dialog = MyDialog()
-            dialog.setModal(True)  # 设置对话框为弹窗模式
+        elif result[len(result)-1] == 1:  # 设置对话框为弹窗模式
             dialog.exec_()
             self.admin_login = True
             
@@ -77,20 +75,29 @@ class MyDialog(QDialog):
     def edit_employee_info(self):
         self.hide()
         myWindow.hide()
+        admin_window.stackedWidget.setCurrentWidget(admin_window.User_System_UI)
         admin_window.show()
         
     def edit_product_info(self):
         self.hide()
         myWindow.hide()
+        admin_window.stackedWidget.setCurrentWidget(admin_window.Product_System_UI)
         admin_window.show()
         
-class Administrator_Window(QMainWindow, Ui_Frame):
+class Administrator_Window(QMainWindow, Ui_Admin_Window):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
-    
+        
+        self.pushButton_4.clicked.connect(self.back_to_dialog) # type: ignore
+        self.pushButton_3.clicked.connect(self.back_to_dialog) # type: ignore
             
+    def back_to_dialog(self):
+        self.hide()
+        dialog.exec_()
+        
+     
 class User_Window(QMainWindow, Ui_User_WIndow):
     def __init__(self):
         super().__init__()
@@ -243,6 +250,8 @@ if __name__ == '__main__':
     
     app = QApplication(sys.argv)
     myWindow = MyWindow()
+    dialog = MyDialog()
+    dialog.setModal(True)
     admin_window = Administrator_Window()
     userWindow = User_Window()
     instructionWindow = Workflow_Window()
