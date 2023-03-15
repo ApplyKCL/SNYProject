@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout
 import sys, time
 from login import *
 # from Admin_Window_1 import *
@@ -19,60 +19,69 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         account = self.UserID.text()
         password = self.Password.text()
         if account == "Jiahao" and password == "950321":
-            self.hide()
-            admin_window.show()
+            dialog = MyDialog()
+            dialog.setModal(True)  # 设置对话框为弹窗模式
+            dialog.exec_()
         else:
             self.hide()
             userWindow.showFullScreen()
             pass
         
-    def mousePressEvent(self, event):                                 # +
-        self.dragPos = event.globalPos()
-        
-    def mouseMoveEvent(self, event):                                  # !!!
-        if event.buttons() == QtCore.Qt.LeftButton:
-            self.move(self.pos() + event.globalPos() - self.dragPos)
-            self.dragPos = event.globalPos()
-            event.accept()
-        
-# class Administrator_Window(QMainWindow, Ui_Admin_WIndow):
-#     def __init__(self):
-#         super().__init__()
-#         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
-#         self.setupUi(self)
-#         self.close_pushButton.clicked.connect(self.close_event)
-    
-#     def close_event(self):
-#         self.hide()
-#         myWindow.show()
-        
-#     def mousePressEvent(self, event):                                 # +
-#         self.dragPos = event.globalPos()
-        
-#     def mouseMoveEvent(self, event):                                  # !!!
-#         if event.buttons() == QtCore.Qt.LeftButton:
-#             self.move(self.pos() + event.globalPos() - self.dragPos)
-#             self.dragPos = event.globalPos()
-#             event.accept()
+            
+class MyDialog(QDialog):
+    def __init__(self):
+        super().__init__()
 
+        # 设置对话框的标题
+        self.setWindowTitle("Admin Window")
+
+        # 创建两个按钮
+        self.btn1 = QPushButton("Employee")
+        self.btn2 = QPushButton("Product")
+
+        # 给按钮添加点击事件
+        self.btn1.clicked.connect(self.edit_employee_info)
+        self.btn2.clicked.connect(self.edit_product_info)
+
+        # 创建一个水平布局，并将按钮添加到布局中
+        layout = QHBoxLayout()
+        layout.addWidget(self.btn1)
+        layout.addWidget(self.btn2)
+
+        # 将整个布局设置为对话框的主布局
+        self.setLayout(layout)
+
+        # 设置对话框的大小为512*300
+        self.resize(512, 300)
+        
+    def edit_employee_info(self):
+        self.hide()
+        myWindow.hide()
+        admin_window.show()
+        
+    def edit_product_info(self):
+        self.hide()
+        myWindow.hide()
+        admin_window.show()
+        
 class Administrator_Window(QMainWindow, Ui_Frame):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
     
-
             
 class User_Window(QMainWindow, Ui_User_WIndow):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
-        self.LogOut_User_pushButton.clicked.connect(self.close_event)
+        self.Countinue_pushButton.clicked.connect(self.workflow_event)
         
-    def close_event(self):
+    def workflow_event(self):
         self.hide()
         instructionWindow.showFullScreen()
+            
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
     def __init__(self):
