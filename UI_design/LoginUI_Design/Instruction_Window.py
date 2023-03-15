@@ -561,7 +561,7 @@ class Ui_InstructionWindow(object):
 "border-image:None;")
         self.Dice_Framing_Piezo_1_Initial_2.setObjectName("Dice_Framing_Piezo_1_Initial_2")
         self.Dice_Framing_Piezo_1_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_1)
-        self.Dice_Framing_Piezo_1_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
+        self.Dice_Framing_Piezo_1_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.Dice_Framing_Piezo_1_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -576,7 +576,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_1_Next.setObjectName("Dice_Framing_Piezo_1_Next")
         self.Dice_Framing_Piezo_1_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_1)
-        self.Dice_Framing_Piezo_1_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
+        self.Dice_Framing_Piezo_1_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.Dice_Framing_Piezo_1_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -620,7 +620,7 @@ class Ui_InstructionWindow(object):
         self.Dice_Framing_Piezo_2_Data.setStyleSheet("border-image:None;")
         self.Dice_Framing_Piezo_2_Data.setObjectName("Dice_Framing_Piezo_2_Data")
         self.Dice_Framing_Piezo_2_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_2)
-        self.Dice_Framing_Piezo_2_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
+        self.Dice_Framing_Piezo_2_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.Dice_Framing_Piezo_2_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -635,7 +635,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_2_Next.setObjectName("Dice_Framing_Piezo_2_Next")
         self.Dice_Framing_Piezo_2_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_2)
-        self.Dice_Framing_Piezo_2_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
+        self.Dice_Framing_Piezo_2_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.Dice_Framing_Piezo_2_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -680,7 +680,7 @@ class Ui_InstructionWindow(object):
         self.Dice_Framing_Piezo_3_Data.setStyleSheet("border-image:None;")
         self.Dice_Framing_Piezo_3_Data.setObjectName("Dice_Framing_Piezo_3_Data")
         self.Dice_Framing_Piezo_3_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_3)
-        self.Dice_Framing_Piezo_3_Next.setGeometry(QtCore.QRect(890, 570, 93, 28))
+        self.Dice_Framing_Piezo_3_Next.setGeometry(QtCore.QRect(890, 570, 101, 29))
         self.Dice_Framing_Piezo_3_Next.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -695,7 +695,7 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_Framing_Piezo_3_Next.setObjectName("Dice_Framing_Piezo_3_Next")
         self.Dice_Framing_Piezo_3_Back = QtWidgets.QPushButton(self.Dice_Framing_Piezo_3)
-        self.Dice_Framing_Piezo_3_Back.setGeometry(QtCore.QRect(770, 570, 93, 28))
+        self.Dice_Framing_Piezo_3_Back.setGeometry(QtCore.QRect(770, 570, 101, 29))
         self.Dice_Framing_Piezo_3_Back.setStyleSheet("QPushButton{\n"
 "background-color: rgb(255, 255, 255);\n"
 "height: 35px;\n"
@@ -2951,7 +2951,7 @@ class Ui_InstructionWindow(object):
         InstructionWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(InstructionWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(InstructionWindow)
 
     def retranslateUi(self, InstructionWindow):
