@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1504</width>
-    <height>811</height>
+    <width>1024</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -18,7 +24,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Product_System_UI">
        <property name="styleSheet">
@@ -41,6 +47,21 @@ top: 0.1em;
 }</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QWidget" name="widget" native="true">
           <property name="minimumSize">
@@ -119,6 +140,29 @@ top: 0.1em;
                  </property>
                 </widget>
                </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border:none;
+	height: 35px;
+background-image:None;
+border-color:None;
+}
+QPushButton:hover{
+	padding-bottom:5px;
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resource.qrc">
+                   <normaloff>:/icons/icons/close_button.jpg</normaloff>:/icons/icons/close_button.jpg</iconset>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
             </layout>
@@ -126,10 +170,46 @@ top: 0.1em;
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4"/>
-             </item>
-             <item>
-              <widget class="QTableWidget" name="tableWidget"/>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="QScrollArea" name="scrollArea_2">
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>3022</width>
+                    <height>3022</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_2">
+                   <item>
+                    <widget class="QFrame" name="frame_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>3000</width>
+                       <height>3000</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255,255,255);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
            </item>
@@ -235,6 +315,29 @@ top: 0.1em;
                   </size>
                  </property>
                 </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border:none;
+	height: 35px;
+	background-image:None;
+	border-color:None;
+}
+QPushButton:hover{
+	padding-bottom:5px;
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resource.qrc">
+                   <normaloff>:/icons/icons/close_button.jpg</normaloff>:/icons/icons/close_button.jpg</iconset>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -533,305 +636,44 @@ padding-bottom:2px;</string>
                  </layout>
                 </widget>
                </item>
-               <item>
-                <widget class="QGroupBox" name="groupBox_6">
-                 <property name="minimumSize">
-                  <size>
-                   <width>300</width>
-                   <height>160</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>240</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>11</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="title">
-                  <string>Edit User</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_14">
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_15">
-                      <item>
-                       <widget class="QLineEdit" name="change_user_of_id_lineEdit_2">
-                        <property name="minimumSize">
-                         <size>
-                          <width>90</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>120</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <pointsize>8</pointsize>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:2px;</string>
-                        </property>
-                        <property name="placeholderText">
-                         <string>Old User Name</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLineEdit" name="lineEdit_10">
-                        <property name="minimumSize">
-                         <size>
-                          <width>90</width>
-                          <height>0</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>120</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <pointsize>8</pointsize>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:2px;</string>
-                        </property>
-                        <property name="placeholderText">
-                         <string>Old Password</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="change_user_pushButton_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>90</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>90</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>8</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Edit</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QFormLayout" name="formLayout">
-                    <property name="labelAlignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                    <property name="formAlignment">
-                     <set>Qt::AlignHCenter|Qt::AlignTop</set>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLineEdit" name="change_user_of_user_name_lineEdit_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>90</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>130</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:1px;</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>New User name</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLineEdit" name="change_user_of_phone_lineEdit_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>115</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>130</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:2px;</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>New Phone Number</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="QLineEdit" name="change_user_of_email_lineEdit_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>90</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>130</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:2px;</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>New Email</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QLineEdit" name="change_user_of_password_lineEdit_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>120</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>130</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:2px solid rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:2px;</string>
-                      </property>
-                      <property name="placeholderText">
-                       <string>New Password</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="change_user_of_user_name_lineEdit_4">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>5</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>9</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color:rgba(0,0,0,0);
-border:none;
-border-bottom:1px dashed rgba(46,82,101,200);
-color:rgba(0,0,0,240);
-padding-bottom:1px;</string>
-                    </property>
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                    <property name="placeholderText">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
               </layout>
              </item>
              <item>
-              <widget class="QTableWidget" name="tableWidget_2">
-               <property name="minimumSize">
-                <size>
-                 <width>750</width>
-                 <height>400</height>
-                </size>
+              <widget class="QScrollArea" name="scrollArea">
+               <property name="widgetResizable">
+                <bool>true</bool>
                </property>
+               <widget class="QWidget" name="scrollAreaWidgetContents">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>3022</width>
+                  <height>3022</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QFrame" name="frame">
+                   <property name="minimumSize">
+                    <size>
+                     <width>3000</width>
+                     <height>3000</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255,255,255);</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -846,6 +688,8 @@ padding-bottom:1px;</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
