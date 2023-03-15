@@ -133,7 +133,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.DepositFirstElectrode3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(39))
         self.ScratchDiceElements1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(40))
         self.ScratchDiceElements2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(41))
-        # self.ScratchDiceElements3_Finish.clicked.connect()
+        self.ScratchDiceElements3_Finish.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(42))
         
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
