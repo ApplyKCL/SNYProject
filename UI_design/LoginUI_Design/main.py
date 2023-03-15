@@ -85,6 +85,15 @@ class MyDialog(QDialog):
         admin_window.stackedWidget.setCurrentWidget(admin_window.Product_System_UI)
         admin_window.show()
         
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, '确认', '确定要关闭窗口吗？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        # 根据用户的选择，决定是否关闭对话框
+        if reply == QMessageBox.Yes:
+            self.hide()
+            myWindow.show()
+        else:
+            event.ignore()
+        
 class Administrator_Window(QMainWindow, Ui_Admin_Window):
     def __init__(self):
         super().__init__()
