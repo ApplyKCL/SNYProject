@@ -20,7 +20,7 @@
    <string>Welcome! Normal User</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="app.qrc">
+   <iconset>
     <normaloff>:/icon/icon/首页.ico</normaloff>:/icon/icon/首页.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -45,21 +45,6 @@
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <family>楷体</family>
-              <pointsize>16</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
           <item>
            <spacer name="horizontalSpacer_2">
             <property name="orientation">
@@ -142,34 +127,6 @@
              <property name="rightMargin">
               <number>13</number>
              </property>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="Barcode_Scan_pushButton">
-               <property name="minimumSize">
-                <size>
-                 <width>90</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>130</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Times New Roman</family>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string>Barcode Scan</string>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="0">
               <widget class="QPushButton" name="Countinue_pushButton">
                <property name="minimumSize">
@@ -201,8 +158,8 @@
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QPushButton" name="LogOut_User_pushButton">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="Barcode_Scan_pushButton">
                <property name="minimumSize">
                 <size>
                  <width>90</width>
@@ -221,8 +178,11 @@
                  <pointsize>10</pointsize>
                 </font>
                </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
                <property name="text">
-                <string>LogOut</string>
+                <string>Barcode Scan</string>
                </property>
               </widget>
              </item>
@@ -230,16 +190,6 @@
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QTableWidget" name="tableWidget">
-          <property name="minimumSize">
-           <size>
-            <width>600</width>
-            <height>400</height>
-           </size>
-          </property>
-         </widget>
         </item>
        </layout>
       </item>
@@ -249,7 +199,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="app.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

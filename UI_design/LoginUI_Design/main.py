@@ -7,7 +7,7 @@ from Normal_user import *
 from Instruction_Window import *
 from Admin_WIndow3 import *
 
-sys.path.append('D:/Desktop/sny/SNY/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *

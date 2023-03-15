@@ -79,7 +79,7 @@ top: 0.1em;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
                <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="workflow_database_system">
                  <property name="font">
                   <font>
                    <family>Times New Roman</family>
@@ -107,14 +107,14 @@ top: 0.1em;
                 </spacer>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit">
+                <widget class="QLineEdit" name="barcode_number">
                  <property name="placeholderText">
                   <string>Barcode #</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="pushButton_enter">
                  <property name="text">
                   <string>Enter</string>
                  </property>
@@ -134,14 +134,14 @@ top: 0.1em;
                 </spacer>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_2">
+                <widget class="QPushButton" name="pushButton_refresh_workflow">
                  <property name="text">
                   <string>Refresh</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_3">
+                <widget class="QPushButton" name="pushButton_close_workflow">
                  <property name="styleSheet">
                   <string notr="true">QPushButton{
 	border:none;
@@ -256,7 +256,7 @@ top: 0.1em;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="user_database_system">
                  <property name="font">
                   <font>
                    <family>Times New Roman</family>
@@ -317,7 +317,7 @@ top: 0.1em;
                 </spacer>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_4">
+                <widget class="QPushButton" name="pushButton_close_employee">
                  <property name="styleSheet">
                   <string notr="true">QPushButton{
 	border:none;
@@ -424,6 +424,26 @@ padding-bottom:2px;</string>
                      </widget>
                     </item>
                     <item>
+                     <widget class="QLineEdit" name="add_useraccount">
+                      <property name="maximumSize">
+                       <size>
+                        <width>120</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgba(0,0,0,0);
+border:none;
+border-bottom:2px solid rgba(46,82,101,200);
+color:rgba(0,0,0,240);
+padding-bottom:2px;</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>User Account #</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLineEdit" name="add_user_of_password_lineEdit_2">
                       <property name="minimumSize">
                        <size>
@@ -455,7 +475,7 @@ padding-bottom:2px;</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_6">
+                     <widget class="QLineEdit" name="add_email">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
@@ -475,7 +495,7 @@ padding-bottom:2px;</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_7">
+                     <widget class="QLineEdit" name="add_job">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
@@ -490,7 +510,7 @@ color:rgba(0,0,0,240);
 padding-bottom:2px;</string>
                       </property>
                       <property name="placeholderText">
-                       <string>Phone Number</string>
+                       <string>Job Title</string>
                       </property>
                      </widget>
                     </item>
@@ -556,7 +576,7 @@ padding-bottom:2px;</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_13">
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_8">
+                     <widget class="QLineEdit" name="delete_user_name">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
@@ -581,7 +601,7 @@ padding-bottom:2px;</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_9">
+                     <widget class="QLineEdit" name="delete_password">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
