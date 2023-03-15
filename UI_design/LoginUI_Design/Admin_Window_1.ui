@@ -22,23 +22,23 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>260</y>
-     <width>93</width>
-     <height>28</height>
+     <x>600</x>
+     <y>250</y>
+     <width>100</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
-    <string>Confirm</string>
+    <string>Create</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>260</y>
+     <x>350</x>
+     <y>250</y>
      <width>200</width>
-     <height>22</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -54,10 +54,10 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>510</y>
-     <width>93</width>
-     <height>28</height>
+     <x>600</x>
+     <y>310</y>
+     <width>100</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
@@ -82,7 +82,37 @@
     <string>Work Selection</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>28</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	border:none;
+	height: 35px;
+background-image:None;
+border-color:None;
+}
+QPushButton:hover{
+	padding-bottom:5px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/icons/close_button.jpg</normaloff>:/icons/icons/close_button.jpg</iconset>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
