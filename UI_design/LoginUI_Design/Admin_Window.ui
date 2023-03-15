@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Product_System_UI">
        <property name="styleSheet">
@@ -41,6 +41,21 @@ top: 0.1em;
 }</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QWidget" name="widget" native="true">
           <property name="minimumSize">
@@ -116,6 +131,29 @@ top: 0.1em;
                 <widget class="QPushButton" name="pushButton_2">
                  <property name="text">
                   <string>Refresh</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border:none;
+	height: 35px;
+background-image:None;
+border-color:None;
+}
+QPushButton:hover{
+	padding-bottom:5px;
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resource.qrc">
+                   <normaloff>:/icons/icons/close_button.jpg</normaloff>:/icons/icons/close_button.jpg</iconset>
                  </property>
                 </widget>
                </item>
@@ -235,6 +273,29 @@ top: 0.1em;
                   </size>
                  </property>
                 </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border:none;
+	height: 35px;
+background-image:None;
+border-color:None;
+}
+QPushButton:hover{
+	padding-bottom:5px;
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resource.qrc">
+                   <normaloff>:/icons/icons/close_button.jpg</normaloff>:/icons/icons/close_button.jpg</iconset>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -846,6 +907,8 @@ padding-bottom:1px;</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
