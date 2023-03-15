@@ -7,7 +7,7 @@ from Normal_user import *
 from Instruction_Window import *
 from Admin_Window import *
 
-sys.path.append('D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('D:/Desktop/sny/SNY/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -22,7 +22,7 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
         self.Login_Button.clicked.connect(self.go_to_inter)
-        
+        self.result = None
         self.admin_login = False
         
     def go_to_inter(self):
@@ -30,13 +30,13 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         password = self.Password.text()
         
         myclass = databaseAPI(mydb, "employee_table")
-        result = check_user(account, password, myclass)
-        print(result)
+        self.result = check_user(account, password, myclass)
+        # print(result)
         
-        if result is False:
+        if self.result is False:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
             
-        elif result[len(result)-1] == 1:  # 设置对话框为弹窗模式
+        elif self.result[len(self.result)-1] == 1:  # 设置对话框为弹窗模式
             dialog.exec_()
             self.admin_login = True
             
@@ -44,6 +44,7 @@ class MyWindow(QMainWindow, Ui_Login_Window):
             self.hide()
             userWindow.showFullScreen()
             pass
+        
         
             
 class MyDialog(QDialog):
@@ -90,8 +91,31 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
         
-        self.pushButton_4.clicked.connect(self.back_to_dialog) # type: ignore
-        self.pushButton_3.clicked.connect(self.back_to_dialog) # type: ignore
+        self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
+        self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
+        self.add_user_pushButton_2.clicked.connect(self.add_user)
+
+    def add_user(self):
+        user_name_admin = self.add_user_of_user_name_lineEdit_2.text()
+        user_job_admin = self.add_job.text()
+        email_admin = self.add_email.text()
+        user_account_admin = self.add_useraccount.text()
+        password_admin = self.add_user_of_password_lineEdit_2.text()
+        
+        result_admin = myWindow.result
+        
+        admin = Admin(user_id= result_admin[0],
+                        user_name= result_admin[1],
+                        user_email= result_admin[2],
+                        db_class= mydb)
+        
+        admin.register_user(user_name= user_name_admin,
+                            user_job= user_job_admin,
+                            user_email= email_admin,
+                            account_number= user_account_admin,
+                            password= password_admin)
+        
+        print(admin)
             
     def back_to_dialog(self):
         self.hide()
