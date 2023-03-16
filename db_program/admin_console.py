@@ -57,6 +57,7 @@ if __name__ == '__main__':
     if not result:
         print("Error In Use")
     print(result)
+    #[a, b, c ...., 1]
     if result[len(result) - 1] == 1:
         # STEP 4
         admin = user.Admin(user_id=result[0],

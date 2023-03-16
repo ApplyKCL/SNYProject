@@ -4,6 +4,7 @@ import device_class
 import config
 import associative_func as af
 
+
 # -> login -> database have queried if the user exist
 # -> check function -> user info
 # Define User Class
@@ -26,7 +27,7 @@ class Employee(User):
         self.database = db_class
         self.cursor = db_class.cursor()
         self.sql_class = sqlgen.databaseAPI(db_class=self.database, table='')
-        self.dev_class = None
+        self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
 
     def Emp_print(self):
         print("emp")
@@ -71,7 +72,7 @@ class Admin(Employee):
                                                    operate_variable=("name",),
                                                    constrain_variable=("account_number",),
                                                    constrain_type=("no_tp",),
-                                                   constrain_value=(account_number, ))
+                                                   constrain_value=(account_number,))
         if not result:
             return False
         else:
@@ -89,6 +90,22 @@ class Admin(Employee):
             return result
 
     def create_new(self):
+        choice = ''
+        state_index = 0
+        while choice != '*':
+            result = self.query_table(config.table_name[state_index])
+            if not result:
+                print("Missing" + config.table_print_name[state_index])
+                choice = input("Create A new"+config.table_print_name[state_index]+"?[Y/N]")
+                if choice != "Y":
+                    return None
+                insert_result = self.insert_new_value(config.table_name[state_index])
+                if not insert_result:
+                    print("Error Adding")
+                    return None
+                continue
+            print(result)
+
         # Query if there has the device in DB
         device = self.query_device()
         # If no, create by user
@@ -104,6 +121,16 @@ class Admin(Employee):
         # choose the device
         self.choose_device(device_list)
 
+    def insert_new_value(self, table_name):
+        input_require = config.table_elements_dict[table_name].pop(0)
+        input_list = input("Input"+input_require.join("\t")).split()
+        result = self.sql_class.database_operation(instruction="insert",
+                                                   operate_variable=tuple(input_require),
+                                                   variable_value=tuple(input_list))
+        if not result:
+            return None
+        return result
+
     # Create the new device
     def create_new_device(self):
         self.sql_class.table_name = config.table_name[config.device_position]
@@ -114,6 +141,27 @@ class Admin(Employee):
         if not result:
             return False
         result = self.query_device()
+        return result
+
+    def query_table(self, table_name, read_id: int = None, db_check_colm: tuple = ("*",)):
+        if table_name not in config.table_name:
+            return None
+        if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]):
+            return None
+        self.sql_class.table_name = table_name
+        if read_id is not None:
+            constrain_type = ("no_tp",)
+            constrain_variable = ("id",)
+            constrain_value = (read_id,)
+        else:
+            constrain_type = ()
+            constrain_variable = ()
+            constrain_value = ()
+        result = self.sql_class.database_operation(instruction="select",
+                                                   operate_variable=db_check_colm,
+                                                   constrain_type=constrain_type,
+                                                   constrain_variable=constrain_variable,
+                                                   constrain_value=constrain_value)
         return result
 
     # Query the device with ID/No ID
@@ -139,10 +187,17 @@ class Admin(Employee):
         for index in range(0, len(dev_list)):
             af.display_dev(dev_list[index])
         choice: str = input("Device ID [ID/N]: ")
-        if choice is "N":
-            self.dev_class = None
-        self.dev_class = dev_list[int(choice) - 1]
+        if choice == "N":
+            return None
+        dev_choice = dev_list[int(choice) - 1]
+        self.device_class_assign(dev_choice)
         print("""
         The Device is:
         {}
-        """.format(af.display_dev(self.dev_class)))
+        """.format(af.display_dev(self.dev_choice)))
+
+    def device_class_assign(self, dev_choice: list):
+        device = device_class.Device(id=dev_choice[0],
+                                     device_name=dev_choice[1],
+                                     product_id=dev_choice[2])
+        self.dev_context.DeviceClass = device

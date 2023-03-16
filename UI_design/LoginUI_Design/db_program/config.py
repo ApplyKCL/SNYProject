@@ -9,6 +9,6 @@ process_position: int = 6
 data_position: int = 7
 aso_step_position: int = 8
 aso_pro_position: int = 9
-table_name_file = open("db_program/json/table_name.json", "r")
+table_name_file = open("db_program/json/table.json", "r")
 table_name = json.loads(table_name_file.read())["table_name"]
 print(table_name)
