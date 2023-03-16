@@ -69,7 +69,7 @@
     <string>Work Selection</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="employee_close">
    <property name="geometry">
     <rect>
      <x>960</x>

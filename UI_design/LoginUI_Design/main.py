@@ -3,7 +3,7 @@ import sys, time
 import mysql.connector
 
 from login import *
-from Normal_user import *
+from Employee_Window import *
 from Instruction_Window import *
 from Admin_Window import *
 
@@ -42,9 +42,8 @@ class MyWindow(QMainWindow, Ui_Login_Window):
             
         else:
             self.hide()
-            userWindow.showFullScreen()
+            userWindow.show()
             pass
-        
         
             
 class MyDialog(QDialog):
@@ -86,7 +85,7 @@ class MyDialog(QDialog):
         admin_window.show()
         
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, '确认', '确定要关闭窗口吗？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         # 根据用户的选择，决定是否关闭对话框
         if reply == QMessageBox.Yes:
             self.hide()
@@ -132,19 +131,22 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         dialog.exec_()
         
      
-class User_Window(QMainWindow, Ui_User_WIndow):
+class User_Window(QMainWindow, Ui_Employee):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
-        self.Countinue_pushButton.clicked.connect(self.workflow_event)
+        self.employee_continue.clicked.connect(self.workflow_event)
+        self.employee_close.clicked.connect(self.close_window)
+        
+    def close_window(self):
+        self.hide()
+        myWindow.show()
         
     def workflow_event(self):
         self.hide()
-        instructionWindow.showFullScreen()
+        instructionWindow.show()
         
-
-            
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
     def __init__(self):
@@ -246,8 +248,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
     def returnToUserWindow(self):
         self.hide()
         self.stackedWidget.setCurrentWidget(self.HomePage)
-        userWindow.showFullScreen()
-        
+        userWindow.show()   
         
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:

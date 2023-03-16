@@ -29,9 +29,9 @@ class Ui_Employee(object):
         font.setPointSize(22)
         self.employee_workstation.setFont(font)
         self.employee_workstation.setObjectName("employee_workstation")
-        self.pushButton_3 = QtWidgets.QPushButton(Employee)
-        self.pushButton_3.setGeometry(QtCore.QRect(960, 28, 20, 20))
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
+        self.employee_close = QtWidgets.QPushButton(Employee)
+        self.employee_close.setGeometry(QtCore.QRect(960, 28, 20, 20))
+        self.employee_close.setStyleSheet("QPushButton{\n"
 "    border:none;\n"
 "    height: 35px;\n"
 "background-image:None;\n"
@@ -40,11 +40,11 @@ class Ui_Employee(object):
 "QPushButton:hover{\n"
 "    padding-bottom:5px;\n"
 "}")
-        self.pushButton_3.setText("")
+        self.employee_close.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/close_button.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon)
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.employee_close.setIcon(icon)
+        self.employee_close.setObjectName("employee_close")
 
         self.retranslateUi(Employee)
         QtCore.QMetaObject.connectSlotsByName(Employee)
