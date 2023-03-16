@@ -1,5 +1,6 @@
 # Author: Shaonan Hu
 import device_class as dc
+import config
 
 
 # Function to remove elements from tuple
@@ -25,3 +26,12 @@ def display_dev(dev_class: dc.Device):
     Device Name: {}
     Device Product ID: {}
                 """.format(dev_class.id, dev_class.device_name, dev_class.product_id))
+
+
+def check_colm(db_check_colm: list, db_colm: list):
+    if len(db_check_colm) != 1 and "*" in db_check_colm:
+        return False
+    for x in db_check_colm:
+        if x not in db_colm:
+            return False
+    return True

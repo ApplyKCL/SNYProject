@@ -20,9 +20,9 @@ if __name__ == '__main__':
     # database infor, will be considered to be treated as file
     # STEP 1
     mydb = mysql.connector.connect(
-        host="134.190.203.63",
-        user="dslink",
-        password="dstestpass123"
+        host="localhost",
+        user="root",
+        password="950321"
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     flag_count = 0
     # Check the user if it is exist
     # STEP 3
-    result = chk_user.check_user("sh258955", "123456", myclass)
+    result = chk_user.check_user("ch123456", "123456", myclass)
     if not result:
         print("Error In Use")
     print(result)
@@ -64,10 +64,10 @@ if __name__ == '__main__':
                            user_name=result[1],
                            user_email=result[2],
                            db_class=mydb)
-        admin.register_user(user_name="Jiahao Chen",
-                            user_job="Computer Engineering",
-                            user_email="jiahao@gmail.com",
-                            account_number="jh123455",
+        admin.register_user(user_name="Shaonan Hu",
+                            user_job="CE",
+                            user_email="sh@sb.com",
+                            account_number="sh123456",
                             password="123456")
         print("admin")
     else:

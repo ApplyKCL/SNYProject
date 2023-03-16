@@ -26,7 +26,7 @@ Device
 \t\t\t\t-->Parameter #3
 """
 print(table_tree)
-table_file = open("json/table.json", "r")
+table_file = open("db_program/json/table.json", "r")
 table_json_content = json.loads(table_file.read())
 table_name: list = table_json_content["table_name"]
 table_elements_dict: dict = table_json_content["table_elements"]

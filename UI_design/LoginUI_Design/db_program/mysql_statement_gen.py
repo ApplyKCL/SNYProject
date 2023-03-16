@@ -6,6 +6,10 @@ import associative_func
 # Class used to generate the SQL statement
 class databaseAPI:
     def __init__(self, db_class: classmethod, table: str):
+        """
+        :param db_class: mydb, the database connector class
+        :param table:
+        """
         self.cursor = db_class.cursor()
         self.databases = db_class
         self.table_name = table
@@ -18,13 +22,19 @@ class databaseAPI:
 
     # Function that used to execute the SQL
     def executor(self, cmd_str: str):
+        """
+        :param cmd_str: SQL
+        :return:
+        """
         result = {}
-        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)
+        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value) # SQL and the value of SQL variable
         if self.inst_type == "select":
+            # get the reading of the SQL execution SELECT
             result = self.cursor.fetchall()
         self.databases.commit()
         execution_result = {
             "result": result,
+            # How many updated
             "changed": self.cursor.rowcount
         }
         return execution_result
@@ -41,7 +51,7 @@ class databaseAPI:
         self.constrain_variable = constrain_variable
         self.constrain_value = constrain_value
         self.constrain_type = constrain_type
-        cmd_str = self.gen_sql_statements()
+        cmd_str = self.gen_sql_statements() # Return a SQL
         result_dirc: dir = self.executor(cmd_str)
         self.inst_type = ""
         self.variable_value = ()

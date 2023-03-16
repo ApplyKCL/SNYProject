@@ -270,9 +270,9 @@ def countdown_timer(duration):
 if __name__ == '__main__':
     
     mydb = mysql.connector.connect(
-        host="134.190.203.63",
-        user="dslink",
-        password="dstestpass123",
+        host="localhost",
+        user="root",
+        password="950321",
         database="test_db"
     )
     
