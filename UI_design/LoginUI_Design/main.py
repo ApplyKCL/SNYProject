@@ -7,11 +7,7 @@ from Normal_user import *
 from Instruction_Window import *
 from Admin_Window import *
 
-<<<<<<< Updated upstream
 sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-=======
-sys.path.append('D:/ECED4901SYPIIFiles/SNYProject/UI_design/LoginUI_Design/db_program')
->>>>>>> Stashed changes
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -122,13 +118,14 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
                         user_email= result_admin[2],
                         db_class= mydb)
         
-        admin.register_user(user_name= user_name_admin,
-                            user_job= user_job_admin,
-                            user_email= email_admin,
-                            account_number= user_account_admin,
-                            password= password_admin)
-        
-        print(admin)
+        if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin is not None:
+            admin.register_user(user_name= user_name_admin,
+                                user_job= user_job_admin,
+                                user_email= email_admin,
+                                account_number= user_account_admin,
+                                password= password_admin)
+        else:
+            QMessageBox.information(self,"Error Message","Registration is not completed")
             
     def back_to_dialog(self):
         self.hide()
@@ -145,6 +142,8 @@ class User_Window(QMainWindow, Ui_User_WIndow):
     def workflow_event(self):
         self.hide()
         instructionWindow.showFullScreen()
+        
+
             
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
