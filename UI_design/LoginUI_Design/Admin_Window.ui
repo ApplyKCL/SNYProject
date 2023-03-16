@@ -576,7 +576,7 @@ padding-bottom:2px;</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_13">
                     <item>
-                     <widget class="QLineEdit" name="delete_user_name">
+                     <widget class="QLineEdit" name="disable_user_name">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
@@ -601,7 +601,7 @@ padding-bottom:2px;</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="delete_password">
+                     <widget class="QLineEdit" name="disable_password">
                       <property name="maximumSize">
                        <size>
                         <width>120</width>
@@ -628,7 +628,7 @@ padding-bottom:2px;</string>
                    </layout>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="delete_user_pushButton_2">
+                   <widget class="QPushButton" name="disable_user_pushButton_2">
                     <property name="minimumSize">
                      <size>
                       <width>90</width>

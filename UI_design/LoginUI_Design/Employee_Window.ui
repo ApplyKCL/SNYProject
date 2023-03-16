@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Employee</class>
+ <widget class="QWidget" name="Employee">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="employee_barcode">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -38,7 +38,7 @@
     <string>Barcode #</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="continue_pushbutton">
+  <widget class="QPushButton" name="employee_continue">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -51,7 +51,7 @@
     <string>Continue</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="employee_workstation">
    <property name="geometry">
     <rect>
      <x>410</x>
