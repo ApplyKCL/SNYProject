@@ -1,4 +1,6 @@
 import json
+import os
+
 device_position: int = 0
 comp_position: int = 1
 inst_position: int = 2
@@ -26,7 +28,7 @@ table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
 # \t\t\t\t-->Parameter #3
 # """
 # print(table_tree)
-table_file = open("json/table.json", "r")
+table_file = open(os.getcwd()+"\\json\\table.json", "r")
 table_json_content = json.loads(table_file.read())
 table_name: list = table_json_content["table_name"]
 table_elements_dict: dict = table_json_content["table_elements"]

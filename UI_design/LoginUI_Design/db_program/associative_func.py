@@ -20,6 +20,11 @@ def device_list_append(dev_sql_result) -> list:
     return device_list
 
 
+def display_row(row_list):
+    for index in range(0, len(row_list)):
+        print("#"+index+"\t".jopin(tuple(row_list[index])))
+
+
 def display_dev(dev_class: dc.Device):
     print("""
     Device ID: {}

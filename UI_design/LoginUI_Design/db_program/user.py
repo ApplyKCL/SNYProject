@@ -5,6 +5,15 @@ import config
 import associative_func as af
 
 
+def func(happy: list = None):
+    print(type(happy))
+    if type(happy) is list:
+        print(happy)
+
+func([0])
+func(0)
+func()
+func([0, 1, 2, 3, 4])
 # -> login -> database have queried if the user exist
 # -> check function -> user info
 # Define User Class
@@ -28,9 +37,6 @@ class Employee(User):
         self.cursor = db_class.cursor()
         self.sql_class = sqlgen.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
-
-    def Emp_print(self):
-        print("emp")
 
 
 # Subclass of Employee
@@ -82,8 +88,7 @@ class Admin(Employee):
         self.sql_class.table_name = config.table_name[config.employee_position]
         result = self.sql_class.database_operation(instruction="select",
                                                    operate_variable=("id", "name", "job", "email",
-                                                                     "account_number", "password", "admin_status")
-                                                   )
+                                                                     "account_number", "password", "admin_status"))
         if not result:
             return False
         else:
@@ -92,38 +97,31 @@ class Admin(Employee):
     def create_new(self):
         choice = ''
         state_index = 0
+        read_id = 0
+        context_id_list = [self.dev_context.DeviceClass.id,
+                           self.dev_context.CompClass.id,
+                           self.dev_context.InstClass.id,
+                           self.dev_context.StepClass.id,
+                           self.dev_context.ParamClass.id]
         while choice != '*':
-            result = self.query_table(config.table_name[state_index])
+            result = self.query_table(config.table_name[state_index], context_id_list,
+                                      tuple(config.table_elements_dict[config.table_name[state_index]]))
             if not result:
                 print("Missing" + config.table_print_name[state_index])
                 choice = input("Create A new"+config.table_print_name[state_index]+"?[Y/N]")
                 if choice != "Y":
                     return None
-                insert_result = self.insert_new_value(config.table_name[state_index])
+                insert_result = self.insert_new_values(config.table_name[state_index])
                 if not insert_result:
                     print("Error Adding")
                     return None
                 continue
             print(result)
 
-        # Query if there has the device in DB
-        device = self.query_device()
-        # If no, create by user
-        if not device:
-            device = self.create_new_device()
-            # Check if device create successfully
-            if not device:
-                return False
-        # list all device
-        device_list = af.device_list_append(device)
-        if not device_list:
-            return False
-        # choose the device
-        self.choose_device(device_list)
-
-    def insert_new_value(self, table_name):
-        input_require = config.table_elements_dict[table_name].pop(0)
-        input_list = input("Input"+input_require.join("\t")).split()
+    def insert_new_values(self, table_name):
+        input_require = config.table_elements_dict[table_name]
+        input_require.pop(0)
+        input_list = input("Input"+"\t".join(tuple(input_require))).split()
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=tuple(input_require),
                                                    variable_value=tuple(input_list))
@@ -143,17 +141,30 @@ class Admin(Employee):
         result = self.query_device()
         return result
 
-    def query_table(self, table_name, read_id: int = None, db_check_colm: tuple = ("*",)):
+    def query_table(self, table_name, read_id: list = None, db_check_colm: tuple = ("*",)):
         if table_name not in config.table_name:
             return None
         if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]):
             return None
         self.sql_class.table_name = table_name
-        if read_id is not None:
-            constrain_type = ("no_tp",)
-            constrain_variable = ("id",)
-            constrain_value = (read_id,)
-        else:
+        constrain_type = ("no_tp",)
+        constrain_variable = ("id",)
+        constrain_value = (read_id,)
+        if type(read_id) is list:
+            index = 1
+            constrain_type = list(constrain_type)
+            constrain_variable = list(constrain_variable)
+            constrain_value = list(read_id[0])
+            if read_id[0] is None:
+                read_id = 0
+            while read_id[index] is not None:
+                constrain_type.append("and")
+                constrain_variable.append(config.table_elements_dict["aso_step_table"][index])
+                constrain_value.append(read_id[index])
+            constrain_type = tuple(constrain_type)
+            constrain_variable = tuple(constrain_variable)
+            constrain_value = tuple(constrain_value)
+        if read_id == 0:
             constrain_type = ()
             constrain_variable = ()
             constrain_value = ()
@@ -182,6 +193,15 @@ class Admin(Employee):
                                                    constrain_variable=constrain_variable,
                                                    constrain_value=constrain_value)
         return result
+
+    def choose_row(self, table_name, row_list):
+        colm_name = config.table_print_name[table_name]
+        colm_name.pop(0)
+        print("\t".join(tuple(colm_name)))
+        af.display_row(row_list)
+        choice: int = input("Choice: ")
+        return row_list[choice]
+
 
     def choose_device(self, dev_list):
         for index in range(0, len(dev_list)):

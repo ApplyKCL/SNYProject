@@ -1,11 +1,12 @@
 # Author: Shaonan Hu
 import json
 import mysql_execute
+import os
 
 
 def create_table(db_cursor, mydb):
     # Open the JSON file
-    file = open("json/dbinit.json", "rt")
+    file = open(os.getcwd()+"\\json\\dbinit.json", "rt")
     # Read the JSON file content
     json_dirc = json.loads(file.read())
     # close file
@@ -22,4 +23,3 @@ def create_table(db_cursor, mydb):
         cmd_str = cmd_str + ");\n\t"
         mysql_execute.execute_mysql(mydb, cmd_str, 0)
         cmd_str = "\t"
-

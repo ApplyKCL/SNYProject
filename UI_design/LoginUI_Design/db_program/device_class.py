@@ -1,16 +1,20 @@
 # Author: Shaonan Hu
 # Class that used to define the parameters
 
-
 class Device:
-    def __init__(self, dev_id: int, device_name: str, product_id: str):
+    def __init__(self, dev_id: int = None,
+                 device_name: str = None,
+                 product_id: str = None):
         self.id: int = dev_id
         self.device_name: str = device_name
         self.product_id: str = product_id
 
 
 class Comp:
-    def __init__(self, comp_id: int, comp_name: str, component_id: str, required_amount: int):
+    def __init__(self, comp_id: int = None,
+                 comp_name: str = None,
+                 component_id: str = None,
+                 required_amount: int = 1):
         self.id: int = comp_id
         self.name: str = comp_name
         self.component_id: str = component_id
@@ -18,8 +22,12 @@ class Comp:
 
 
 class Inst:
-    def __init__(self, inst_id: int, inst_name: str,
-                 inst_repeat_times: int, previous_inst: int, next_inst: int, start: bool):
+    def __init__(self, inst_id: int = None,
+                 inst_name: str = None,
+                 inst_repeat_times: int = 1,
+                 previous_inst: int = 0,
+                 next_inst: int = 0,
+                 start: bool = False):
         self.id: int = inst_id
         self.name: str = inst_name
         self.repeat_times: int = inst_repeat_times
@@ -29,8 +37,9 @@ class Inst:
 
 
 class Step:
-    def __init__(self, step_id: int, step_name: str, step_repeat_times: int,
-                 previous_step: int, next_step: int, start: bool, sub: bool, sub_id: int):
+    def __init__(self, step_id: int = None, step_name: str = None, step_repeat_times: int = 1,
+                 previous_step: int = 0, next_step: int = 0, start: bool = False, sub: bool = False,
+                 sub_id: int = 0):
         self.id: int = step_id
         self.name: str = step_name
         self.repeat_times: int = step_repeat_times
@@ -42,9 +51,9 @@ class Step:
 
 
 class Param:
-    def __init__(self, param_id: int, param_name: str, data_status: bool,
-                 initial_status: bool, sub: bool, sub_id: int, value: float,
-                 upper_bound: float, lower_bound: float):
+    def __init__(self, param_id: int = None, param_name: str = None, data_status: bool = False,
+                 initial_status: bool = False, sub: bool = False, sub_id: int = 0, value: float = 0,
+                 upper_bound: float = 0, lower_bound: float = 0):
         self.id: int = param_id
         self.param_name: str = param_name
         self.data_statue: bool = data_status
@@ -57,9 +66,9 @@ class Param:
 
 
 class DeviceContext:
-    def __init__(self, context_id: int, device_class: Device = None,
-                 comp_class: Comp = None, inst_class: Inst = None,
-                 step_class: Step = None, param_class: Param = None):
+    def __init__(self, context_id: int, device_class: Device = Device(),
+                 comp_class: Comp = Comp(), inst_class: Inst = Inst(),
+                 step_class: Step = Step(), param_class: Param = Param()):
         self.id: int = context_id
         self.DeviceClass: Device = device_class
         self.CompClass: Comp = comp_class
