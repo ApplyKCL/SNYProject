@@ -57,7 +57,7 @@ if __name__ == '__main__':
     if not result:
         print("Error In Use")
     print(result)
-    #[a, b, c ...., 1]
+    # [a, b, c ...., 1]
     if result[len(result) - 1] == 1:
         # STEP 4
         admin = user.Admin(user_id=result[0],
@@ -79,5 +79,4 @@ if __name__ == '__main__':
     login_user = u.User(account_number, password)
     print(login_user.account_number, password)
     """
-
 mydb.close()

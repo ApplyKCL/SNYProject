@@ -27,7 +27,7 @@ class databaseAPI:
         :return:
         """
         result = {}
-        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value) # SQL and the value of SQL variable
+        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
         if self.inst_type == "select":
             # get the reading of the SQL execution SELECT
             result = self.cursor.fetchall()
@@ -51,7 +51,7 @@ class databaseAPI:
         self.constrain_variable = constrain_variable
         self.constrain_value = constrain_value
         self.constrain_type = constrain_type
-        cmd_str = self.gen_sql_statements() # Return a SQL
+        cmd_str = self.gen_sql_statements()  # Return a SQL
         result_dirc: dir = self.executor(cmd_str)
         self.inst_type = ""
         self.variable_value = ()
@@ -70,19 +70,20 @@ class databaseAPI:
             return ""
         if self.constrain_type[0] == "between":
             constr_str = "{} between %s and %s ".format(self.constrain_variable[0])
-        elif self.constrain_type[0] == "and":
-            constr_str = "and {} = %s ".format(self.constrain_variable[0])
-        elif self.constrain_type[0] == "or":
-            constr_str = "{} = %s or {} = %s ".format(self.constrain_variable[0],
-                                                      self.constrain_variable[1])
-            self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
-                                                                    self.constrain_variable[0])
-        elif self.constrain_type == "not":
-            constr_str = "not {} = %s ".format(self.constrain_variable[0])
         elif self.constrain_type[0] == "no_tp":
             constr_str = "{} = %s ".format(self.constrain_variable[0])
         else:
-            return None
+            if len(self.constrain_type) > 1 and self.constrain_type[1] == "(":
+                constr_str = self.constrain_type[0] + " " + self.constrain_type[1] + " " + "{} = %s"
+                self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                                    self.constrain_type[0])
+            elif len(self.constrain_type) > 1 and self.constrain_type[1] == ")":
+                constr_str = self.constrain_type[0] + " " + "{} = %s" + " " + self.constrain_type[1]
+                self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                                    self.constrain_type[0])
+            else:
+                constr_str = self.constrain_type[0] + " " + "{} = %s"
+            constr_str = constr_str.format(self.constrain_variable[0])
         self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
                                                                 self.constrain_variable[0])
         self.constrain_type = associative_func.tuple_remove(self.constrain_type,
@@ -118,7 +119,7 @@ class databaseAPI:
             cmd_str = "delect"
         return cmd_str
 
-# Function that used to cascade the insert function
+    # Function that used to cascade the insert function
     def insert(self):
         # The command string that
         cmd_str = "insert into {} ({}) values ({})"
@@ -136,11 +137,13 @@ class databaseAPI:
     def update(self):
         cmd_str = "update {} set {} where {}"
         variable_field = " = %s, ".join(self.table_variable) + " = %s"
+        # The Update have to set constrain
         if self.constrain_type == ():
             return None
-        # need to be modified
+        constrain_field = self.constrain_str()
         cmd_str = cmd_str.format(self.table_name,
-                                 variable_field)
+                                 variable_field,
+                                 constrain_field)
         return cmd_str
 
     def select(self):
