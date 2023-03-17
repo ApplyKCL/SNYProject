@@ -21,6 +21,21 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_15">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
@@ -29,7 +44,7 @@
       <widget class="QWidget" name="Product_System_UI">
        <property name="styleSheet">
         <string notr="true">QWidget#widget{
-background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.0284091 rgba(255, 252, 155), stop:0.9375 rgba(255, 255, 255, 255));
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.0284091 rgb(240, 240, 240), stop:0.9375 rgba(255, 255, 255, 255));
 
 border-radius: 14;
 }
@@ -71,6 +86,21 @@ top: 0.1em;
            </size>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <property name="spacing">
@@ -78,6 +108,9 @@ top: 0.1em;
              </property>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QLabel" name="workflow_database_system">
                  <property name="font">
@@ -169,8 +202,14 @@ QPushButton:hover{
            </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QScrollArea" name="scrollArea_2">
                  <property name="widgetResizable">
@@ -181,11 +220,26 @@ QPushButton:hover{
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>3022</width>
-                    <height>3022</height>
+                    <width>3000</width>
+                    <height>3000</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_2">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
                    <item>
                     <widget class="QFrame" name="frame_2">
                      <property name="minimumSize">
@@ -203,6 +257,26 @@ QPushButton:hover{
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_7">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QTableView" name="tableView_workflow"/>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                   </layout>
@@ -221,7 +295,7 @@ QPushButton:hover{
       <widget class="QWidget" name="User_System_UI">
        <property name="styleSheet">
         <string notr="true">QWidget#widget{
-background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.0284091 rgba(255, 252, 155), stop:0.9375 rgba(255, 255, 255, 255));
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.0284091 rgb(240, 240, 240), stop:0.9375 rgba(255, 255, 255, 255));
 
 border-radius: 14;
 }
@@ -239,6 +313,21 @@ top: 0.1em;
 }</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QWidget" name="widget_2" native="true">
           <property name="minimumSize">
@@ -248,13 +337,31 @@ top: 0.1em;
            </size>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_10">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_10">
              <property name="spacing">
-              <number>7</number>
+              <number>0</number>
              </property>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QLabel" name="user_database_system">
                  <property name="font">
@@ -345,8 +452,14 @@ QPushButton:hover{
            </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <layout class="QVBoxLayout" name="verticalLayout_11">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QGroupBox" name="groupBox_4">
                  <property name="minimumSize">
@@ -387,7 +500,7 @@ QPushButton:hover{
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_12">
                     <property name="spacing">
-                     <number>7</number>
+                     <number>0</number>
                     </property>
                     <item>
                      <widget class="QLineEdit" name="add_user_of_user_name_lineEdit_2">
@@ -566,6 +679,9 @@ padding-bottom:2px;</string>
                    <bold>false</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
                  <property name="title">
                   <string>Disable User</string>
                  </property>
@@ -575,6 +691,12 @@ padding-bottom:2px;</string>
                   </property>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <property name="spacing">
+                     <number>7</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
                     <item>
                      <widget class="QLineEdit" name="disable_user_name">
                       <property name="maximumSize">
@@ -628,30 +750,53 @@ padding-bottom:2px;</string>
                    </layout>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="disable_user_pushButton_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>90</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>90</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>8</pointsize>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Disable</string>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <item>
+                     <widget class="QPushButton" name="disable_user_pushButton_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>90</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>90</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>8</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Disable</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="enable_user_pushButton_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>90</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>90</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Enable</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </widget>
@@ -668,11 +813,26 @@ padding-bottom:2px;</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>3022</width>
-                  <height>3022</height>
+                  <width>3000</width>
+                  <height>3000</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QFrame" name="frame">
                    <property name="minimumSize">
@@ -690,6 +850,26 @@ padding-bottom:2px;</string>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QTableView" name="tableView_employee"/>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
