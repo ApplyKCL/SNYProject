@@ -22,7 +22,7 @@ if __name__ == '__main__':
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="950321"
+        password="215046Aa."
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -69,6 +69,7 @@ if __name__ == '__main__':
                             user_email="sh@sb.com",
                             account_number="sh123456",
                             password="123456")
+        print(admin.query_user())
         print("admin")
     else:
         print("Emp")

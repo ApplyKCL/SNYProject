@@ -86,9 +86,11 @@ class Admin(Employee):
 
     def query_user(self):
         self.sql_class.table_name = config.table_name[config.employee_position]
+        # query all
         result = self.sql_class.database_operation(instruction="select",
-                                                   operate_variable=("id", "name", "job", "email",
-                                                                     "account_number", "password", "admin_status"))
+                                                   operate_variable=("*", ))
+        # "id", "name", "job", "email",
+        # "account_number", "password", "admin_status"
         if not result:
             return False
         else:
@@ -116,12 +118,14 @@ class Admin(Employee):
                 if not insert_result:
                     print("Error Adding")
                     return None
+                # Update the context list
                 context_id_list[state_index] = insert_result[0]
                 self.insert_update_aso()
                 continue
             print(result)
 
     def insert_new_values(self, table_name):
+        # Insert Aso Function May Added
         input_require = config.table_elements_dict[table_name]
         input_require.pop(0)
         input_list = input("Input"+"\t".join(tuple(input_require))).split()
@@ -136,9 +140,11 @@ class Admin(Employee):
             print("Cannot Read")
             return None
         print("Updated:\n"+result)
+        # Return the Correct Result
         return result
 
     def insert_update_aso(self, types="step"):
+        # In here, should update the aso table based on the step
         pass
 
     def query_table(self, table_name, values: list = None, db_check_colm: tuple = ("*",)):
