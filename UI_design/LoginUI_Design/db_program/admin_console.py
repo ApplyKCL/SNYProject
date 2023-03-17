@@ -22,7 +22,7 @@ if __name__ == '__main__':
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="950321"
+        password="215046Aa."
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     flag_count = 0
     # Check the user if it is exist
     # STEP 3
-    result = chk_user.check_user("ch123456", "123456", myclass)
+    result = chk_user.check_user("sh258955", "123456", myclass)
     if not result:
         print("Error In Use")
     print(result)
