@@ -1,6 +1,8 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox
-from PyQt5.QtCore import QTimer, QObject
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox, QTableView
+from PyQt5.QtCore import QTimer, QObject, Qt
+from PyQt5.QtSql import QSqlTableModel
+from PyQt5.QtGui import QFont
 
 import sys
 import mysql.connector
@@ -27,14 +29,19 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.Login_Button.clicked.connect(self.go_to_inter)
         self.result = None
         self.admin_login = False
+        self.admin = None
         
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
         
-        myclass = databaseAPI(mydb, "employee_table")
+        myclass = databaseAPI(database_manager.mydb, "employee_table")
         self.result = check_user(account, password, myclass)
-        # print(result)
+        self.admin = Admin(user_id= self.result[0],
+                        user_name= self.result[1],
+                        user_email= self.result[2],
+                        db_class= database_manager.mydb)
+        # print(self.result)
         
         if self.result is False:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
@@ -101,13 +108,25 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
+        self.admin = None
         
         self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
         
         self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
         self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
-
+        self.fresh_pushButton_2.clicked.connect(self.update_table)
+        
+    def update_table(self):
+        # model = database_manager.get_table_model()
+        # self.tableView_employee.setModel(model)
+        user_info = myWindow.admin.query_user()
+        
+        print(user_info)
+        
+        self.model = TableModel(user_info)
+        self.tableView_employee.setModel(self.model)
+        
     def add_user(self):
         user_name_admin = self.add_user_of_user_name_lineEdit_2.text()
         user_job_admin = self.add_job.text()
@@ -115,15 +134,8 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         user_account_admin = self.add_useraccount.text()
         password_admin = self.add_user_of_password_lineEdit_2.text()
         
-        result_admin = myWindow.result
-        
-        admin = Admin(user_id= result_admin[0],
-                        user_name= result_admin[1],
-                        user_email= result_admin[2],
-                        db_class= mydb)
-        
         if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin is not None:
-            admin.register_user(user_name= user_name_admin,
+            myWindow.admin.register_user(user_name= user_name_admin,
                                 user_job= user_job_admin,
                                 user_email= email_admin,
                                 account_number= user_account_admin,
@@ -311,15 +323,58 @@ class MouseFilter(QObject):
         return super().eventFilter(obj, event)
     
 
+class DatabaseManager:
+    def __init__(self):
+        self.mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="950321",
+            database="test_db"
+        )
+        
+        if not self.mydb.is_connected():
+            print("Failed to connect to database.")
+            sys.exit(-1)
+            
+    # def get_table_model(self):
+    #     # Create a table model that retrieves data from a table
+    #     model = QSqlTableModel()
+    #     model.setTable('employee_table')
+    #     model.setEditStrategy(QSqlTableModel.OnFieldChange)
+    #     model.select()
+    #     return model
+    
+class TableModel(QtCore.QAbstractTableModel):
+    def __init__(self, data):
+        super(TableModel, self).__init__()
+        self._data = data
+
+    def data(self, index, role):
+        if role == Qt.DisplayRole:
+            # See below for the nested-list data structure.
+            # .row() indexes into the outer list,
+            # .column() indexes into the sub-list
+            return self._data[index.row()][index.column()]
+
+    def rowCount(self, index):
+        # The length of the outer list.
+        return len(self._data)
+
+    def columnCount(self, index):
+        # The following takes the first sub-list, and returns
+        # the length (only works if all rows are an equal length)
+        return len(self._data[0]) 
+    
+
 if __name__ == '__main__':
     
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="950321",
-        database="test_db"
-    )
-    
+    # mydb = mysql.connector.connect(
+    #     host="localhost",
+    #     user="root",
+    #     password="950321",
+    #     database="test_db"
+    # )
+    database_manager = DatabaseManager()
     app = QApplication(sys.argv)
     myWindow = MyWindow()
     dialog = MyDialog()
