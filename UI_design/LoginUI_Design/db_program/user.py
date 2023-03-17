@@ -91,10 +91,13 @@ class Admin(Employee):
                                                    operate_variable=("*", ))
         # "id", "name", "job", "email",
         # "account_number", "password", "admin_status"
+        print(result)
         if not result:
             return False
         else:
             return result
+        
+        
 
     def create_new(self):
         choice = ''
