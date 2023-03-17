@@ -1,11 +1,14 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox
-import sys, time
+from PyQt5.QtCore import QTimer, QObject
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+import sys
 import mysql.connector
 
-from login import *
-from Employee_Window import *
-from Instruction_Window import *
-from Admin_Window import *
+from login import Ui_Login_Window
+from Employee_Window import Ui_Employee
+from Instruction_Window import Ui_InstructionWindow
+from Admin_Window import Ui_Admin_Window
 
 sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
@@ -99,6 +102,8 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
         
+        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
+        
         self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
         self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
@@ -130,6 +135,10 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.hide()
         dialog.exec_()
         
+    def logout(self):
+        self.hide()
+        myWindow.show()
+        
      
 class User_Window(QMainWindow, Ui_Employee):
     def __init__(self):
@@ -138,6 +147,12 @@ class User_Window(QMainWindow, Ui_Employee):
         self.setupUi(self)
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
+        
+        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
+        
+    def logout(self):
+        self.hide()
+        myWindow.show()
         
     def close_window(self):
         self.hide()
@@ -155,6 +170,8 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.setupUi(self)
         # Initialize the HomePage
         self.stackedWidget.setCurrentWidget(self.HomePage)
+        
+        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
         
         # Move to Next Page
         self.HomePage_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
@@ -243,7 +260,10 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.ScratchDiceElements1_Back.clicked.connect(self.returnToUserWindow)
         self.ScratchDiceElements2_Back.clicked.connect(self.returnToUserWindow)
         self.ScratchDiceElements3_Back.clicked.connect(self.returnToUserWindow)
-        
+     
+    def logout(self):
+        self.hide()
+        myWindow.show()
         
     def returnToUserWindow(self):
         self.hide()
@@ -254,18 +274,42 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         if event.key() == QtCore.Qt.Key_Escape:
             self.close()
 
-# Timer for 15 minutes
-def countdown_timer(duration):
-    start_time = time.monotonic()  # 记录开始时间
-    end_time = start_time + duration  # 计算结束时间
+class InactivityTimeout:
+    def __init__(self, timeout_minutes, timeout_callback):
+        self.timeout = timeout_minutes * 60 * 1000  # Timeout in milliseconds
+        self.callback = timeout_callback
+        self.timer = QTimer()
+        self.mouse_filter = MouseFilter(self.timer)
+        
+        # Install the mouse filter as an event filter
+        app = QApplication.instance()
+        app.installEventFilter(self.mouse_filter)
 
-    while time.monotonic() < end_time:
-        remaining_time = end_time - time.monotonic()  # 计算剩余时间
-        minutes, seconds = divmod(remaining_time, 60)  # 将剩余时间转换为分钟和秒钟
-        time_string = f"{int(minutes):02d}:{int(seconds):02d}"  # 格式化时间字符串
-        print(time_string, end="\r")  # 输出时间字符串，覆盖当前行
-        time.sleep(0.1)  # 暂停一段时间，以免程序占用过多CPU资源
+        # Connect the timer timeout signal to the timeout callback
+        self.timer.timeout.connect(self.callback)
 
+        # Start the timer
+        self.timer.start(self.timeout)
+
+    def __del__(self):
+    # Remove the mouse event filter when the object is destroyed
+        app = QApplication.instance()
+        if app is not None:
+            app.removeEventFilter(self.mouse_filter)
+            
+
+class MouseFilter(QObject):
+    def __init__(self, timer):
+        super().__init__()
+        self.timer = timer
+    
+    def eventFilter(self, obj, event):
+        if event.type() == event.MouseMove:
+            self.timer.start()
+        elif event.type() == event.MouseButtonPress:
+            self.timer.start()
+        return super().eventFilter(obj, event)
+    
 
 if __name__ == '__main__':
     
