@@ -104,8 +104,9 @@ class Admin(Employee):
                            self.dev_context.StepClass.id,
                            self.dev_context.ParamClass.id]
         while choice != '*':
-            result = self.query_table(config.table_name[state_index], context_id_list,
-                                      tuple(config.table_elements_dict[config.table_name[state_index]]))
+            if context_id_list[state_index] is None or context_id_list[state_index] == 0:
+                result = self.query_table(config.table_name[state_index], context_id_list,
+                                          tuple(config.table_elements_dict[config.table_name[state_index]]))
             if not result:
                 print("Missing" + config.table_print_name[state_index])
                 choice = input("Create A new"+config.table_print_name[state_index]+"?[Y/N]")
@@ -115,6 +116,8 @@ class Admin(Employee):
                 if not insert_result:
                     print("Error Adding")
                     return None
+                context_id_list[state_index] = insert_result[0]
+                self.insert_update_aso()
                 continue
             print(result)
 
@@ -126,22 +129,19 @@ class Admin(Employee):
                                                    operate_variable=tuple(input_require),
                                                    variable_value=tuple(input_list))
         if not result:
+            print("Cannot Write")
             return None
-        return result
-
-    # Create the new device
-    def create_new_device(self):
-        self.sql_class.table_name = config.table_name[config.device_position]
-        [device_name, product_id] = input("Enter: \nDevice Name\tProduct ID")
-        result = self.sql_class.database_operation(instruction="insert",
-                                                   operate_variable=("name", "product_id"),
-                                                   variable_value=(device_name, product_id))
+        result = self.query_table(table_name, input_list)
         if not result:
-            return False
-        result = self.query_device()
+            print("Cannot Read")
+            return None
+        print("Updated:\n"+result)
         return result
 
-    def query_table(self, table_name, read_id: list = None, db_check_colm: tuple = ("*",)):
+    def insert_update_aso(self, types="step"):
+        pass
+
+    def query_table(self, table_name, values: list = None, db_check_colm: tuple = ("*",)):
         if table_name not in config.table_name:
             return None
         if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]):
@@ -149,46 +149,27 @@ class Admin(Employee):
         self.sql_class.table_name = table_name
         constrain_type = ("no_tp",)
         constrain_variable = ("id",)
-        constrain_value = (read_id,)
-        if type(read_id) is list:
+        constrain_value = (values,)
+        if type(values) is list:
             index = 1
             constrain_type = list(constrain_type)
             constrain_variable = list(constrain_variable)
-            constrain_value = list(read_id[0])
-            if read_id[0] is None:
-                read_id = 0
-            while read_id[index] is not None:
+            constrain_value = list(values[0])
+            if values[0] is None:
+                values = 0
+            while values[index] is not None:
                 constrain_type.append("and")
                 constrain_variable.append(config.table_elements_dict["aso_step_table"][index])
-                constrain_value.append(read_id[index])
+                constrain_value.append(values[index])
             constrain_type = tuple(constrain_type)
             constrain_variable = tuple(constrain_variable)
             constrain_value = tuple(constrain_value)
-        if read_id == 0:
+        if values == 0:
             constrain_type = ()
             constrain_variable = ()
             constrain_value = ()
         result = self.sql_class.database_operation(instruction="select",
                                                    operate_variable=db_check_colm,
-                                                   constrain_type=constrain_type,
-                                                   constrain_variable=constrain_variable,
-                                                   constrain_value=constrain_value)
-        return result
-
-    # Query the device with ID/No ID
-    def query_device(self, dev_id: int = None):
-        self.sql_class.table_name = config.table_name[config.device_position]
-        # Function that used to query the device information
-        if dev_id is not None:
-            constrain_type = ("no_tp",)
-            constrain_variable = ("id",)
-            constrain_value = (dev_id,)
-        else:
-            constrain_type = ()
-            constrain_variable = ()
-            constrain_value = ()
-        result = self.sql_class.database_operation(instruction="select",
-                                                   operate_variable=("id", "name", "product_id"),
                                                    constrain_type=constrain_type,
                                                    constrain_variable=constrain_variable,
                                                    constrain_value=constrain_value)
@@ -203,21 +184,3 @@ class Admin(Employee):
         return row_list[choice]
 
 
-    def choose_device(self, dev_list):
-        for index in range(0, len(dev_list)):
-            af.display_dev(dev_list[index])
-        choice: str = input("Device ID [ID/N]: ")
-        if choice == "N":
-            return None
-        dev_choice = dev_list[int(choice) - 1]
-        self.device_class_assign(dev_choice)
-        print("""
-        The Device is:
-        {}
-        """.format(af.display_dev(self.dev_choice)))
-
-    def device_class_assign(self, dev_choice: list):
-        device = device_class.Device(id=dev_choice[0],
-                                     device_name=dev_choice[1],
-                                     product_id=dev_choice[2])
-        self.dev_context.DeviceClass = device
