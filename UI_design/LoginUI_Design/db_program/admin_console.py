@@ -47,7 +47,6 @@ if __name__ == '__main__':
     # Pass the table name (Optional)
     # STEP 2
     myclass = mysql_statement_gen.databaseAPI(mydb, "employee_table")
-
     start_time = 0
     flag = False
     flag_count = 0

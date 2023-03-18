@@ -98,5 +98,93 @@
       "pro_id",
       "data_id"
     ]
+  },
+  "table_elements_name": {
+    "device_table": [
+      "ID",
+      "Name",
+      "Product ID"],
+    "comp_table": [
+      "ID",
+      "Name",
+      "Component",
+      "Require Amount"
+    ],
+    "inst_table":[
+      "ID",
+      "Name",
+      "Repeat Time",
+      "Previous Instruction",
+      "Next Instruction",
+      "Start"
+    ],
+    "step_table":[
+      "ID",
+      "Name",
+      "repeat_times",
+      "previous_step",
+      "next_step",
+      "start",
+      "sub",
+      "sub_id"
+    ],
+    "param_table": [
+      "ID",
+      "Name",
+      "product_id",
+      "req_one",
+      "req_two",
+      "req_tree",
+      "req_four",
+      "req_five",
+      "data",
+      "initial",
+      "sub",
+      "sub_id",
+      "value",
+      "upper_bound",
+      "lower_bound"
+    ],
+    "employee_table":[
+      "ID",
+      "Name",
+      "Job",
+      "Email",
+      "Account Number",
+      "Password",
+      "Admin Status"
+    ],
+    "process_table":[
+      "ID",
+      "device_id",
+      "component_id",
+      "last_step",
+      "status"
+    ],
+    "data_table": [
+      "ID",
+      "inst_id",
+      "step_id",
+      "step_repeated",
+      "status",
+      "initial",
+      "data",
+      "initial_field",
+      "data_field"
+    ],
+    "aso_step_table": [
+      "ID",
+      "device_id",
+      "comp_id",
+      "inst_id",
+      "step_id",
+      "param_id"
+    ],
+    "aso_pro_table": [
+      "ID",
+      "emp_id",
+      "pro_id",
+      "data_id"
+    ]
   }
 }

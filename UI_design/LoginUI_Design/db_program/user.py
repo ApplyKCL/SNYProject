@@ -1,19 +1,10 @@
 # Author Shaonan Hu
-import mysql_statement_gen as sqlgen
+import mysql_statement_gen as sql_generator
 import device_class
 import config
 import associative_func as af
 
 
-def func(happy: list = None):
-    print(type(happy))
-    if type(happy) is list:
-        print(happy)
-
-func([0])
-func(0)
-func()
-func([0, 1, 2, 3, 4])
 # -> login -> database have queried if the user exist
 # -> check function -> user info
 # Define User Class
@@ -35,7 +26,7 @@ class Employee(User):
         # Employee Info
         self.database = db_class
         self.cursor = db_class.cursor()
-        self.sql_class = sqlgen.databaseAPI(db_class=self.database, table='')
+        self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
 
 
@@ -96,8 +87,6 @@ class Admin(Employee):
             return False
         else:
             return result
-        
-        
 
     def create_new(self):
         choice = ''
@@ -122,7 +111,11 @@ class Admin(Employee):
                     print("Error Adding")
                     return None
                 # Update the context list
-                context_id_list[state_index] = insert_result[0]
+                context_id_list = [self.dev_context.DeviceClass.id,
+                                   self.dev_context.CompClass.id,
+                                   self.dev_context.InstClass.id,
+                                   self.dev_context.StepClass.id,
+                                   self.dev_context.ParamClass.id]
                 self.insert_update_aso()
                 continue
             print(result)
@@ -146,9 +139,30 @@ class Admin(Employee):
         # Return the Correct Result
         return result
 
+    # Update the table
     def insert_update_aso(self, types="step"):
         # In here, should update the aso table based on the step
         pass
+
+    def update_object_context(self, table_colm: list, table_name):
+        if table_name == config.table_name[config.device_position]:
+            print("1")
+        elif table_name == config.table_name[config.comp_position]:
+            print("2")
+        elif table_name == config.table_name[config.inst_position]:
+            print("2")
+        elif table_name == config.table_name[config.step_position]:
+            print("2")
+        elif table_name == config.table_name[config.param_position]:
+            print("2")
+        elif table_name == config.table_name[config.employee_position]:
+            print("2")
+        elif table_name == config.table_name[config.process_position]:
+            print("2")
+        elif table_name == config.table_name[config.device_position]:
+            print("2")
+        elif table_name == config.table_name[config.device_position]:
+            print("2")
 
     def query_table(self, table_name, values: list = None, db_check_colm: tuple = ("*",)):
         if table_name not in config.table_name:
@@ -191,5 +205,3 @@ class Admin(Employee):
         af.display_row(row_list)
         choice: int = input("Choice: ")
         return row_list[choice]
-
-
