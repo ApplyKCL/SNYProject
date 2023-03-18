@@ -7,13 +7,17 @@ import config
 import mysql_statement_gen
 import user
 import check_user as chk_user
+print("""
+-------------------------------NO!-------------------------------------
+-------------------------------BUG-------------------------------------
+-----------------------------PLEASE!-----------------------------------
+""")
 """
 UI: -> Login Page -> Account Number, Password
 account = text editor(-- text --) (account number )
 password = text editor(-- text --) (Password)
 checkuser(account, password, db_connector)
 """
-
 
 if __name__ == '__main__':
     # Display the data
