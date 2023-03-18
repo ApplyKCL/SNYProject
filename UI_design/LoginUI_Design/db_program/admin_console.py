@@ -64,10 +64,14 @@ if __name__ == '__main__':
                            user_name=result[1],
                            user_email=result[2],
                            db_class=mydb)
+        # Get the full info by add constrain and the constrain value,
+        # which is find the row with the constrain = constrain value, support multiple constrain
         result = list(admin.query_user(constrain=("id",), constrain_value=(result[0],))[0])
+        # notice to input the old value and the modified value
         old_list = tuple(result)
         result[3] = "shaonanhukcl@gmail.com"
         new_list = tuple(result)
+        # update the table
         admin.update_table(new_list, old_list, table_name=config.table_name[config.employee_position])
         admin.register_user(user_name="Shaonan Hu",
                             user_job="CE",
