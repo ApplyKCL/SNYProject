@@ -74,7 +74,7 @@ class databaseAPI:
             constr_str = "{} = %s ".format(self.constrain_variable[0])
         else:
             if len(self.constrain_type) > 1 and self.constrain_type[1] == "(":
-                constr_str = self.constrain_type[0] + " " + self.constrain_type[1] + " " + "{} = %s"
+                constr_str = self.constrain_type[0] + " " + self.constrain_type[1] + " " + "{} = %s "
                 self.constrain_type = associative_func.tuple_remove(self.constrain_type,
                                                                     self.constrain_type[0])
             elif len(self.constrain_type) > 1 and self.constrain_type[1] == ")":
@@ -82,7 +82,7 @@ class databaseAPI:
                 self.constrain_type = associative_func.tuple_remove(self.constrain_type,
                                                                     self.constrain_type[0])
             else:
-                constr_str = self.constrain_type[0] + " " + "{} = %s"
+                constr_str = self.constrain_type[0] + " " + "{} = %s "
             constr_str = constr_str.format(self.constrain_variable[0])
         self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
                                                                 self.constrain_variable[0])
@@ -131,7 +131,6 @@ class databaseAPI:
         cmd_str = cmd_str.format(self.table_name,
                                  variable_field,
                                  values_field)
-        print(cmd_str)
         return cmd_str
 
     def update(self):

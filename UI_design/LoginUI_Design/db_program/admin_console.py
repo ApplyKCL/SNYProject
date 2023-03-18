@@ -3,6 +3,7 @@ import mysql.connector
 from datetime import datetime
 import mysql_execute
 import config_table
+import config
 import mysql_statement_gen
 import user
 import check_user as chk_user
@@ -63,15 +64,18 @@ if __name__ == '__main__':
                            user_name=result[1],
                            user_email=result[2],
                            db_class=mydb)
+        result = list(admin.query_user(constrain=("id",), constrain_value=(result[0],))[0])
+        old_list = tuple(result)
+        result[3] = "shaonanhukcl@gmail.com"
+        new_list = tuple(result)
+        admin.update_table(new_list, old_list, table_name=config.table_name[config.employee_position])
         admin.register_user(user_name="Shaonan Hu",
                             user_job="CE",
                             user_email="sh@sb.com",
                             account_number="sh123456",
                             password="123456")
-        print(admin.query_user())
-        print("admin")
     else:
-        print("Emp")
+        pass
     """
     account_number = input("Input Account Number: ")
     password = input("Input Password: ")

@@ -8,7 +8,7 @@ class Device:
         self.id: int = dev_id
         self.device_name: str = device_name
         self.product_id: str = product_id
-
+        self.length = 3
 
 class Comp:
     def __init__(self, comp_id: int = None,

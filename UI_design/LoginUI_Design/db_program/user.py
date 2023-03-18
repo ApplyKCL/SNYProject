@@ -75,18 +75,50 @@ class Admin(Employee):
         else:
             return True
 
-    def query_user(self):
+    def query_user(self, constrain=(), constrain_value=(), required_value=("*", )):
         self.sql_class.table_name = config.table_name[config.employee_position]
+        if constrain != ():
+            constrain_type = ["no_tp"]
+        else:
+            constrain_type = ()
+        for index in range(0, len(constrain)-1):
+            constrain_type.append("and")
         # query all
         result = self.sql_class.database_operation(instruction="select",
-                                                   operate_variable=("*", ))
+                                                   operate_variable=required_value,
+                                                   constrain_variable=constrain,
+                                                   constrain_type=constrain_type,
+                                                   constrain_value=constrain_value)
         # "id", "name", "job", "email",
         # "account_number", "password", "admin_status"
-        print(result)
         if not result:
             return False
         else:
             return result
+
+    def update_table(self, new_vale_list: list = None, old_value_list: list = None, table_name: str = None):
+        if new_vale_list is None or table_name is None or old_value_list is None:
+            return None
+        if len(new_vale_list) != len(old_value_list):
+            return None
+        constrain = ["no_tp"]
+        for index in range(0, len(new_vale_list)-1):
+            constrain.append("and")
+        if len(constrain) != len(new_vale_list):
+            return None
+        # assume a data [1, 2, 3]
+        # constrain np and and
+        # =1 and = 2 and = 3
+        self.sql_class.table_name = table_name
+        result = self.sql_class.database_operation(instruction="update",
+                                                   operate_variable=tuple(config.table_elements_dict[table_name]),
+                                                   variable_value=tuple(new_vale_list),
+                                                   constrain_type=tuple(constrain),
+                                                   constrain_variable=tuple(config.table_elements_dict[table_name]),
+                                                   constrain_value=tuple(old_value_list))
+        if not result:
+            return None
+        return result
 
     def create_new(self):
         choice = ''

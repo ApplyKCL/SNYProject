@@ -116,34 +116,34 @@
       "Repeat Time",
       "Previous Instruction",
       "Next Instruction",
-      "Start"
+      "Start Flag"
     ],
     "step_table":[
       "ID",
       "Name",
-      "repeat_times",
-      "previous_step",
-      "next_step",
-      "start",
-      "sub",
-      "sub_id"
+      "Repeat Time",
+      "Previous Step",
+      "Next Step",
+      "Start",
+      "Sub-Step",
+      "Sub-Step ID"
     ],
     "param_table": [
       "ID",
       "Name",
-      "product_id",
-      "req_one",
-      "req_two",
-      "req_tree",
-      "req_four",
-      "req_five",
-      "data",
-      "initial",
-      "sub",
-      "sub_id",
-      "value",
-      "upper_bound",
-      "lower_bound"
+      "Product ID",
+      "Requirement #1",
+      "Requirement #2",
+      "Requirement #3",
+      "Requirement #4",
+      "Requirement #5",
+      "Data Status",
+      "Initial Status",
+      "Sub-Parameter",
+      "Sub-Parameter ID",
+      "Value",
+      "Upper Bound",
+      "Lower Bound"
     ],
     "employee_table":[
       "ID",
@@ -152,39 +152,39 @@
       "Email",
       "Account Number",
       "Password",
-      "Admin Status"
+      "Admin Status Flag"
     ],
     "process_table":[
       "ID",
-      "device_id",
-      "component_id",
-      "last_step",
-      "status"
+      "Device ID",
+      "Component ID",
+      "Last Step Flag",
+      "Status Flag"
     ],
     "data_table": [
       "ID",
-      "inst_id",
-      "step_id",
-      "step_repeated",
-      "status",
-      "initial",
-      "data",
-      "initial_field",
-      "data_field"
+      "Instruction ID",
+      "Step ID",
+      "Repeat Time",
+      "Status Flag",
+      "Initial Flag",
+      "Data Flag",
+      "Initial",
+      "Data"
     ],
     "aso_step_table": [
       "ID",
-      "device_id",
-      "comp_id",
-      "inst_id",
-      "step_id",
-      "param_id"
+      "Device ID",
+      "Component ID",
+      "Instruction ID",
+      "Step ID",
+      "Parameter ID"
     ],
     "aso_pro_table": [
       "ID",
-      "emp_id",
-      "pro_id",
-      "data_id"
+      "Employee ID",
+      "Product ID",
+      "Data ID"
     ]
   }
 }
