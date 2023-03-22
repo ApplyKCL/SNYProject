@@ -30,13 +30,14 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.result = None
         self.admin_login = False
         self.admin = None
+        self.myclass = None
         
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
         
-        myclass = databaseAPI(database_manager.mydb, "employee_table")
-        self.result = check_user(account, password, myclass)
+        self.myclass = databaseAPI(database_manager.mydb, "employee_table")
+        self.result = check_user(account, password, self.myclass)
         self.admin = Admin(user_id= self.result[0],
                         user_name= self.result[1],
                         user_email= self.result[2],
@@ -115,15 +116,20 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
         self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
-        self.fresh_pushButton_2.clicked.connect(self.update_table)
+        self.fresh_pushButton_2.clicked.connect(self.update_table)  
+        self.disable_user_pushButton_2.clicked.connect(self.disable_user)
+        
+    def disable_user(self):
+        account = self.disable_user_name.text()
+        password = self.disable_password.text()
+        result = check_user(account,password,myWindow.myclass)
+        
         
     def update_table(self):
-        # model = database_manager.get_table_model()
-        # self.tableView_employee.setModel(model)
         user_info = myWindow.admin.query_user()
-        
-        print(user_info)
-        
+        empolyee_table_title = tuple(config.table_elements_name_dict[config.table_name[config.employee_position]])
+        user_info.insert(0, empolyee_table_title)
+        user_info = [t[1:] for t in user_info]
         self.model = TableModel(user_info)
         self.tableView_employee.setModel(self.model)
         
@@ -346,7 +352,7 @@ class DatabaseManager:
     
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data):
-        super(TableModel, self).__init__()
+        super().__init__()
         self._data = data
 
     def data(self, index, role):

@@ -718,7 +718,7 @@ color:rgba(0,0,0,240);
 padding-bottom:2px;</string>
                       </property>
                       <property name="placeholderText">
-                       <string>User Name</string>
+                       <string>User Account#</string>
                       </property>
                      </widget>
                     </item>

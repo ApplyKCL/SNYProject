@@ -27,12 +27,11 @@ table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
 # \t\t\t\t-->Parameter #3
 # """
 # print(table_tree)
-table_file = open("json/table.json", "r")
+table_file = open("UI_design/LoginUI_Design/db_program/json/table.json", "r")
 table_json_content = json.loads(table_file.read())
 table_name: list = table_json_content["table_name"]
 table_elements_dict: dict = table_json_content["table_elements"]
 table_elements_name_dict: dict = table_json_content["table_elements_name"]
-print(table_elements_name_dict)
 table_elements_list: list = []
 for i in range(0, aso_pro_position):
     table_elements_list.append(table_elements_dict[table_name[i]])
