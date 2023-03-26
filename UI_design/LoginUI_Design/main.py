@@ -1,8 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox, QTableView
 from PyQt5.QtCore import QTimer, QObject, Qt
-from PyQt5.QtSql import QSqlTableModel
-from PyQt5.QtGui import QFont
 
 import sys
 import mysql.connector
@@ -12,7 +10,7 @@ from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
 
-sys.path.append('C:/Users/ch243/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -38,69 +36,68 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         
         self.myclass = databaseAPI(database_manager.mydb, "employee_table")
         self.result = check_user(account, password, self.myclass)
-        self.admin = Admin(user_id= self.result[0],
-                        user_name= self.result[1],
-                        user_email= self.result[2],
-                        db_class= database_manager.mydb)
-        # print(self.result)
         
         if self.result is False:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
-            
-        elif self.result[len(self.result)-1] == 1:  # 设置对话框为弹窗模式
-            dialog.exec_()
-            self.admin_login = True
-            
+        
         else:
-            self.hide()
-            userWindow.show()
-            pass
+            self.admin = Admin(user_id= self.result[0],
+                        user_name= self.result[1],
+                        user_email= self.result[2],
+                        db_class= database_manager.mydb)
+            
+            if self.result[len(self.result)-1] == 1:
+                dialog.exec_()
+                self.admin_login = True
+            else:
+                self.hide()
+                userWindow.showFullScreen()
         
             
 class MyDialog(QDialog):
     def __init__(self):
         super().__init__()
 
-        # 设置对话框的标题
+        # Set title of dialog
         self.setWindowTitle("Admin Window")
 
-        # 创建两个按钮
+        # build two pushbutton
         self.btn1 = QPushButton("Employee")
         self.btn2 = QPushButton("Product")
 
-        # 给按钮添加点击事件
+        # add event to two pushbutton
         self.btn1.clicked.connect(self.edit_employee_info)
         self.btn2.clicked.connect(self.edit_product_info)
 
-        # 创建一个水平布局，并将按钮添加到布局中
+        # build a horizontal layer
         layout = QHBoxLayout()
         layout.addWidget(self.btn1)
         layout.addWidget(self.btn2)
 
-        # 将整个布局设置为对话框的主布局
+        # set horizontal layer for all the window
         self.setLayout(layout)
 
-        # 设置对话框的大小为512*300
+        # set window size to 512*300
         self.resize(512, 300)
         
     def edit_employee_info(self):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.User_System_UI)
-        admin_window.show()
+        admin_window.showFullScreen()
         
     def edit_product_info(self):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.Product_System_UI)
-        admin_window.show()
+        admin_window.showFullScreen()
         
     def closeEvent(self, event):
         reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        # 根据用户的选择，决定是否关闭对话框
+        # depends on user choice to close the window or not
         if reply == QMessageBox.Yes:
             self.hide()
-            myWindow.show()
+            myWindow.showFullScreen()
         else:
             event.ignore()
         
@@ -111,18 +108,25 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.setupUi(self)
         self.admin = None
         
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
+        self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
         self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
         self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
         self.fresh_pushButton_2.clicked.connect(self.update_table)  
         self.disable_user_pushButton_2.clicked.connect(self.disable_user)
+        self.tableView_employee.setSelectionBehavior(QTableView.SelectItems)
         
     def disable_user(self):
         account = self.disable_user_name.text()
         password = self.disable_password.text()
-        result = check_user(account,password,myWindow.myclass)
+        result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(account,password))
+        # new_result = tuple(result[0][:6] + (2,)) # disable the user
+        idx, name, *rest = result[0]
+        old_result = result[0]
+        result[0] = (idx, 'New', *rest)
+        print(result[0],old_result)
+        myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
         
         
     def update_table(self):
@@ -155,7 +159,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         
     def logout(self):
         self.hide()
-        myWindow.show()
+        myWindow.showFullScreen()
         
      
 class User_Window(QMainWindow, Ui_Employee):
@@ -166,19 +170,19 @@ class User_Window(QMainWindow, Ui_Employee):
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
         
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
+        self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
     def logout(self):
         self.hide()
-        myWindow.show()
+        myWindow.showFullScreen()
         
     def close_window(self):
         self.hide()
-        myWindow.show()
+        myWindow.showFullScreen()
         
     def workflow_event(self):
         self.hide()
-        instructionWindow.show()
+        instructionWindow.showFullScreen()
         
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
@@ -189,7 +193,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         # Initialize the HomePage
         self.stackedWidget.setCurrentWidget(self.HomePage)
         
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
+        self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
         # Move to Next Page
         self.HomePage_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
@@ -281,12 +285,12 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
      
     def logout(self):
         self.hide()
-        myWindow.show()
+        myWindow.showFullScreen()
         
     def returnToUserWindow(self):
         self.hide()
         self.stackedWidget.setCurrentWidget(self.HomePage)
-        userWindow.show()   
+        userWindow.showFullScreen()   
         
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:
@@ -334,7 +338,7 @@ class DatabaseManager:
         self.mydb = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="950321",
+            password="369300Ab*",
             database="test_db"
         )
         
@@ -342,25 +346,22 @@ class DatabaseManager:
             print("Failed to connect to database.")
             sys.exit(-1)
             
-    # def get_table_model(self):
-    #     # Create a table model that retrieves data from a table
-    #     model = QSqlTableModel()
-    #     model.setTable('employee_table')
-    #     model.setEditStrategy(QSqlTableModel.OnFieldChange)
-    #     model.select()
-    #     return model
     
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data):
         super().__init__()
         self._data = data
+        
+    def get_data(self, index):
+        return self._data[index.row()][index.column()]
 
-    def data(self, index, role):
+    def data(self, index, role=Qt.DisplayRole):
         if role == Qt.DisplayRole:
             # See below for the nested-list data structure.
             # .row() indexes into the outer list,
             # .column() indexes into the sub-list
-            return self._data[index.row()][index.column()]
+            return self.get_data(index)
+        return None
 
     def rowCount(self, index):
         # The length of the outer list.
@@ -369,17 +370,42 @@ class TableModel(QtCore.QAbstractTableModel):
     def columnCount(self, index):
         # The following takes the first sub-list, and returns
         # the length (only works if all rows are an equal length)
-        return len(self._data[0]) 
+        return len(self._data[0]) if self._data else 0
     
+    def setData(self, index, value, role=Qt.EditRole):
+        if index.isValid() and role == Qt.EditRole:
+            row = index.row()
+            column = index.column()
+            data_row = list(self._data[row])
+            data_row[column] = value
+            self._data[row] = tuple(data_row)
+            print(data_row)
+            self.dataChanged.emit(index, index)
+            result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(self._data[row][3],self._data[row][4]))
+            data_row.insert(0,result[0][0])
+            new_result = tuple(data_row)
+            print(new_result)
+            myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
+            # self.update_database(row, column, value)
+            
+            return True
+        return False
+    
+    def flags(self,index):
+        return Qt.ItemIsSelectable | Qt.ItemIsEditable | Qt.ItemIsEnabled
+    
+    # def update_database(self, row, column, value):
+    #     # update Database
+    #     print(self._data[row])
+    #     print(value)
+        
+    #     # account = self._data[row][3]
+    #     # password = self._data[row][4]
+    #     result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(self._data[row][3],self._data[row][4]))
+    #     print(result)
+    #     # myWindow.admin.update_table( new_result, result[0] table_name=config.table_name[config.employee_position])
 
 if __name__ == '__main__':
-    
-    # mydb = mysql.connector.connect(
-    #     host="localhost",
-    #     user="root",
-    #     password="950321",
-    #     database="test_db"
-    # )
     database_manager = DatabaseManager()
     app = QApplication(sys.argv)
     myWindow = MyWindow()

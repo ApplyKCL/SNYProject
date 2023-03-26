@@ -43,6 +43,7 @@ class Admin(Employee):
         :param admin_status: Whether he is admin or not, default False (Not)
         :return: The result of the execution, represent how many row changes in db
         """
+        
         # Call to check if the account number is already exit
         if self.check_account_number(account_number):
             return False
