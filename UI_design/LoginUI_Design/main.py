@@ -10,7 +10,8 @@ from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
 
-sys.path.append('/home/pi/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+# sys.path.append('/home/pi/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -121,12 +122,15 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
     def disable_user(self):
         account = self.disable_user_name.text()
         password = self.disable_password.text()
-        result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(account,password))
-        # new_result = tuple(result[0][:6] + (2,)) # disable the user
-        idx, name, *rest = result[0]
-        old_result = result[0]
-        result[0] = (idx, 'New', *rest)
-        myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
+        if account and password:
+            result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(account,password))
+            # new_result = tuple(result[0][:6] + (2,)) # disable the user
+            idx, name, *rest = result[0]
+            old_result = result[0]
+            result[0] = (idx, 'New', *rest)
+            myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
+        else:
+            QMessageBox.information(self,"Error Message","Account Number or Password Missed")
         
         
     def update_table(self):
@@ -337,9 +341,16 @@ class MouseFilter(QObject):
 class DatabaseManager:
     def __init__(self):
         self.mydb = mysql.connector.connect(
-            host="134.190.203.146",
-            user="dslink",
-            password="dstestpass123",
+            # Remote Connection Configure
+            # host="134.190.203.146",
+            # user="dslink",
+            # password="dstestpass123",
+            
+            # Local Connection Configure
+            host="localhost",
+            user="root",
+            password="369300Ab*",
+            
             database="test_db"
         )
         
