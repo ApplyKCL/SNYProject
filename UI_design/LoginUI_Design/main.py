@@ -107,6 +107,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
         self.admin = None
+        self.id_list = None
         
         self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
@@ -125,13 +126,13 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         idx, name, *rest = result[0]
         old_result = result[0]
         result[0] = (idx, 'New', *rest)
-        print(result[0],old_result)
         myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
         
         
     def update_table(self):
         user_info = myWindow.admin.query_user()
         empolyee_table_title = tuple(config.table_elements_name_dict[config.table_name[config.employee_position]])
+        self.id_list = [tup[0] for tup in user_info]
         user_info.insert(0, empolyee_table_title)
         user_info = [t[1:] for t in user_info]
         self.model = TableModel(user_info)
@@ -379,12 +380,11 @@ class TableModel(QtCore.QAbstractTableModel):
             data_row = list(self._data[row])
             data_row[column] = value
             self._data[row] = tuple(data_row)
-            print(data_row)
             self.dataChanged.emit(index, index)
-            result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(self._data[row][3],self._data[row][4]))
+            result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row-1],))
             data_row.insert(0,result[0][0])
             new_result = tuple(data_row)
-            print(new_result)
+            # print(new_result)
             myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
             # self.update_database(row, column, value)
             
