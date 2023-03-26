@@ -94,7 +94,7 @@ class MyDialog(QDialog):
         admin_window.showFullScreen()
         
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         # depends on user choice to close the window or not
         if reply == QMessageBox.Yes:
             self.hide()
@@ -124,11 +124,15 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         password = self.disable_password.text()
         if account and password:
             result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(account,password))
-            # new_result = tuple(result[0][:6] + (2,)) # disable the user
-            idx, name, *rest = result[0]
-            old_result = result[0]
-            result[0] = (idx, 'New', *rest)
-            myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
+            if result is False:
+                QMessageBox.information(self,"Error Message","Account Number or Password is invalid")
+            else:
+                # new_result = tuple(result[0][:6] + (2,)) # disable the user
+                idx, name, *rest = result[0]
+                old_result = result[0]
+                result[0] = (idx, 'New', *rest)
+            
+                myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
         else:
             QMessageBox.information(self,"Error Message","Account Number or Password Missed")
         
@@ -155,6 +159,8 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
                                 user_email= email_admin,
                                 account_number= user_account_admin,
                                 password= password_admin)
+            if myWindow.admin.accout_number_status is False:
+                QMessageBox.information(self,"Error Message","Account Number is existed")
         else:
             QMessageBox.information(self,"Error Message","Registration is not completed")
             

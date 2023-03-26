@@ -28,6 +28,7 @@ class Employee(User):
         self.cursor = db_class.cursor()
         self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
+        self.accout_number_status = True
 
 
 # Subclass of Employee
@@ -46,7 +47,8 @@ class Admin(Employee):
         
         # Call to check if the account number is already exit
         if self.check_account_number(account_number):
-            return False
+            self.accout_number_status=False
+            return
         # update the table name
         self.sql_class.table_name = config.table_name[config.employee_position]
         # Call to gen and execute sql
