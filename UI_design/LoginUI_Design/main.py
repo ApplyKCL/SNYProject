@@ -10,7 +10,7 @@ from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
 
-sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/home/pi/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -337,9 +337,9 @@ class MouseFilter(QObject):
 class DatabaseManager:
     def __init__(self):
         self.mydb = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="369300Ab*",
+            host="134.190.203.146",
+            user="dslink",
+            password="dstestpass123",
             database="test_db"
         )
         
@@ -414,5 +414,5 @@ if __name__ == '__main__':
     admin_window = Administrator_Window()
     userWindow = User_Window()
     instructionWindow = Workflow_Window()
-    myWindow.show()
+    myWindow.showFullScreen()
     sys.exit(app.exec_())
