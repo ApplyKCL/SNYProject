@@ -145,7 +145,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         user_account_admin = self.add_useraccount.text()
         password_admin = self.add_user_of_password_lineEdit_2.text()
         
-        if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin is not None:
+        if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin:
             myWindow.admin.register_user(user_name= user_name_admin,
                                 user_job= user_job_admin,
                                 user_email= email_admin,
