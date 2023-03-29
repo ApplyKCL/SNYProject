@@ -9,6 +9,7 @@ from login import Ui_Login_Window
 from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
+from virtual_keyboard import *
 
 # sys.path.append('/home/pi/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
@@ -20,7 +21,55 @@ from db_program.config import *
 
 
 ### Login Main Window ###
-class MyWindow(QMainWindow, Ui_Login_Window):
+# class MyWindow(QMainWindow, Ui_Login_Window):
+#     def __init__(self):
+#         super().__init__()
+#         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+#         self.setupUi(self)
+#         self.Login_Button.clicked.connect(self.go_to_inter)
+#         self.result = None
+#         self.admin_login = False
+#         self.admin = None
+#         self.myclass = None
+        
+#     def create_line_edit_mouse_event_handler(self, line_edit):
+#         def line_edit_mouse_event_handler(event):
+#             nonlocal self, line_edit
+#             self.virtual_keyboard = VirtualKeyboard.line_edit_clicked(line_edit, self.virtual_keyboard)
+
+#         return line_edit_mouse_event_handler
+        
+#     def go_to_inter(self):
+#         self.UserID = QLineEdit(self)
+#         self.UserID.mousePressEvent = self.create_line_edit_mouse_event_handler(self.UserID)
+#         account = self.UserID.text()
+#         password = self.Password.text()
+        
+#         self.myclass = databaseAPI(database_manager.mydb, "employee_table")
+#         self.result = check_user(account, password, self.myclass)
+        
+#         if self.result is False:
+#             QMessageBox.information(self,"Error Message","Invalid User/Password")
+        
+#         else:
+#             self.admin = Admin(user_id= self.result[0],
+#                         user_name= self.result[1],
+#                         user_email= self.result[2],
+#                         db_class= database_manager.mydb)
+            
+#             if self.result[len(self.result)-1] == 1:
+#                 dialog.exec_()
+#                 self.admin_login = True
+#             else:
+#                 self.hide()
+#                 userWindow.showFullScreen()
+                
+#         self.virtual_keyboard = None
+        
+      
+
+
+class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -31,29 +80,44 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.admin = None
         self.myclass = None
         
+        self.UserID.mousePressEvent = self.create_line_edit_mouse_event_handler(self.UserID)
+        self.Password.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Password)
+
+        self.virtual_keyboard = None
+
+    def create_line_edit_mouse_event_handler(self, line_edit):
+        def line_edit_mouse_event_handler(event):
+            nonlocal self, line_edit
+            self.virtual_keyboard = self.line_edit_clicked(line_edit, self.virtual_keyboard)
+
+        return line_edit_mouse_event_handler
+
+
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
-        
+
         self.myclass = databaseAPI(database_manager.mydb, "employee_table")
         self.result = check_user(account, password, self.myclass)
-        
+
         if self.result is False:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
-        
+
         else:
             self.admin = Admin(user_id= self.result[0],
                         user_name= self.result[1],
                         user_email= self.result[2],
                         db_class= database_manager.mydb)
-            
+
             if self.result[len(self.result)-1] == 1:
                 dialog.exec_()
                 self.admin_login = True
             else:
                 self.hide()
                 userWindow.showFullScreen()
-        
+
+        self.virtual_keyboard = None
+     
             
 class MyDialog(QDialog):
     def __init__(self):
@@ -161,6 +225,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
                                 password= password_admin)
             if myWindow.admin.accout_number_status is False:
                 QMessageBox.information(self,"Error Message","Account Number is existed")
+                myWindow.admin.accout_number_status=True
         else:
             QMessageBox.information(self,"Error Message","Registration is not completed")
             
@@ -431,5 +496,5 @@ if __name__ == '__main__':
     admin_window = Administrator_Window()
     userWindow = User_Window()
     instructionWindow = Workflow_Window()
-    myWindow.showFullScreen()
+    myWindow.show()
     sys.exit(app.exec_())
