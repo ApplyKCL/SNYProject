@@ -32,6 +32,9 @@ table_json_content = json.loads(table_file.read())
 table_name: list = table_json_content["table_name"]
 table_elements_dict: dict = table_json_content["table_elements"]
 table_elements_name_dict: dict = table_json_content["table_elements_name"]
+table_exe_result = "result"
+table_exe_id = "id"
+table_exe_changed = "changed"
 print(table_elements_name_dict)
 table_elements_list: list = []
 for i in range(0, aso_pro_position):

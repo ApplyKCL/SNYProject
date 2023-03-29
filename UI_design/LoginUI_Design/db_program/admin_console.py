@@ -68,8 +68,8 @@ if __name__ == '__main__':
                            user_name=result[1],
                            user_email=result[2],
                            db_class=mydb)
-        # Get the full info by add constrain and the constrain value,
-        # which is find the row with the constrain = constrain value, support multiple constrain
+        # Get the full info by add constrain and the constraint value,
+        # which is find the row with the constraint = constrain value, support multiple constrain
         result = list(admin.query_user(constrain=("id",), constrain_value=(result[0],))[0])
         # notice to input the old value and the modified value
         old_list = tuple(result)

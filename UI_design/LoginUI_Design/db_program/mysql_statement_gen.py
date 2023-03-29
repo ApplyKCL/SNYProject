@@ -27,15 +27,20 @@ class databaseAPI:
         :return:
         """
         result = {}
-        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
+        try:
+            self.databases.start_transaction()
+            self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
+            self.databases.commit()
+        except:
+            self.databases.rollback()
         if self.inst_type == "select":
             # get the reading of the SQL execution SELECT
             result = self.cursor.fetchall()
-        self.databases.commit()
         execution_result = {
             "result": result,
             # How many updated
-            "changed": self.cursor.rowcount
+            "changed": self.cursor.rowcount,
+            "id": self.cursor.lastrowid
         }
         return execution_result
 
@@ -59,10 +64,12 @@ class databaseAPI:
         self.constrain_variable = ()
         self.constrain_value = ()
         self.constrain_type = ()
-        print(cmd_str)
+
         if result_dirc["changed"] <= 0:
-            return False
-        return result_dirc["result"]
+            return None
+        print("Result\n" + result_dirc)
+        # need to change the result
+        return result_dirc
 
     # Set the filter but has some issues
     def constrain_str(self):

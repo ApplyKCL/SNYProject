@@ -30,32 +30,32 @@ class MyWindow(QMainWindow, Ui_Login_Window):
         self.result = None
         self.admin_login = False
         self.admin = None
-        
+
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
-        
+
         myclass = databaseAPI(database_manager.mydb, "employee_table")
         self.result = check_user(account, password, myclass)
-        self.admin = Admin(user_id= self.result[0],
-                        user_name= self.result[1],
-                        user_email= self.result[2],
-                        db_class= database_manager.mydb)
+        self.admin = Admin(user_id=self.result[0],
+                           user_name=self.result[1],
+                           user_email=self.result[2],
+                           db_class=database_manager.mydb)
         # print(self.result)
-        
+
         if self.result is False:
-            QMessageBox.information(self,"Error Message","Invalid User/Password")
-            
-        elif self.result[len(self.result)-1] == 1:  # 设置对话框为弹窗模式
+            QMessageBox.information(self, "Error Message", "Invalid User/Password")
+
+        elif self.result[len(self.result) - 1] == 1:  # 设置对话框为弹窗模式
             dialog.exec_()
             self.admin_login = True
-            
+
         else:
             self.hide()
             userWindow.show()
             pass
-        
-            
+
+
 class MyDialog(QDialog):
     def __init__(self):
         super().__init__()
@@ -81,77 +81,79 @@ class MyDialog(QDialog):
 
         # 设置对话框的大小为512*300
         self.resize(512, 300)
-        
+
     def edit_employee_info(self):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.User_System_UI)
         admin_window.show()
-        
+
     def edit_product_info(self):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.Product_System_UI)
         admin_window.show()
-        
+
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？',
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         # 根据用户的选择，决定是否关闭对话框
         if reply == QMessageBox.Yes:
             self.hide()
             myWindow.show()
         else:
             event.ignore()
-        
+
+
 class Administrator_Window(QMainWindow, Ui_Admin_Window):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
         self.admin = None
-        
+
         self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-        
-        self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
-        self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
+
+        self.pushButton_close_employee.clicked.connect(self.back_to_dialog)  # type: ignore
+        self.pushButton_close_workflow.clicked.connect(self.back_to_dialog)  # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
         self.fresh_pushButton_2.clicked.connect(self.update_table)
-        
+
     def update_table(self):
         # model = database_manager.get_table_model()
         # self.tableView_employee.setModel(model)
         user_info = myWindow.admin.query_user()
-        
+
         print(user_info)
-        
+
         self.model = TableModel(user_info)
         self.tableView_employee.setModel(self.model)
-        
+
     def add_user(self):
         user_name_admin = self.add_user_of_user_name_lineEdit_2.text()
         user_job_admin = self.add_job.text()
         email_admin = self.add_email.text()
         user_account_admin = self.add_useraccount.text()
         password_admin = self.add_user_of_password_lineEdit_2.text()
-        
+
         if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin is not None:
-            myWindow.admin.register_user(user_name= user_name_admin,
-                                user_job= user_job_admin,
-                                user_email= email_admin,
-                                account_number= user_account_admin,
-                                password= password_admin)
+            myWindow.admin.register_user(user_name=user_name_admin,
+                                         user_job=user_job_admin,
+                                         user_email=email_admin,
+                                         account_number=user_account_admin,
+                                         password=password_admin)
         else:
-            QMessageBox.information(self,"Error Message","Registration is not completed")
-            
+            QMessageBox.information(self, "Error Message", "Registration is not completed")
+
     def back_to_dialog(self):
         self.hide()
         dialog.exec_()
-        
+
     def logout(self):
         self.hide()
         myWindow.show()
-        
-     
+
+
 class User_Window(QMainWindow, Ui_Employee):
     def __init__(self):
         super().__init__()
@@ -159,22 +161,22 @@ class User_Window(QMainWindow, Ui_Employee):
         self.setupUi(self)
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
-        
+
         self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-        
+
     def logout(self):
         self.hide()
         myWindow.show()
-        
+
     def close_window(self):
         self.hide()
         myWindow.show()
-        
+
     def workflow_event(self):
         self.hide()
         instructionWindow.show()
-        
-            
+
+
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
     def __init__(self):
         super().__init__()
@@ -182,9 +184,9 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.setupUi(self)
         # Initialize the HomePage
         self.stackedWidget.setCurrentWidget(self.HomePage)
-        
+
         self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-        
+
         # Move to Next Page
         self.HomePage_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.Mount_Piezo_Wafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
@@ -228,7 +230,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.ScratchDiceElements1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(40))
         self.ScratchDiceElements2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(41))
         self.ScratchDiceElements3_Finish.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(42))
-        
+
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
         self.Mount_Piezo_Wafer_1_Back.clicked.connect(self.returnToUserWindow)
@@ -272,19 +274,20 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.ScratchDiceElements1_Back.clicked.connect(self.returnToUserWindow)
         self.ScratchDiceElements2_Back.clicked.connect(self.returnToUserWindow)
         self.ScratchDiceElements3_Back.clicked.connect(self.returnToUserWindow)
-     
+
     def logout(self):
         self.hide()
         myWindow.show()
-        
+
     def returnToUserWindow(self):
         self.hide()
         self.stackedWidget.setCurrentWidget(self.HomePage)
-        userWindow.show()   
-        
+        userWindow.show()
+
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:
             self.close()
+
 
 class InactivityTimeout:
     def __init__(self, timeout_minutes, timeout_callback):
@@ -292,7 +295,7 @@ class InactivityTimeout:
         self.callback = timeout_callback
         self.timer = QTimer()
         self.mouse_filter = MouseFilter(self.timer)
-        
+
         # Install the mouse filter as an event filter
         app = QApplication.instance()
         app.installEventFilter(self.mouse_filter)
@@ -304,24 +307,24 @@ class InactivityTimeout:
         self.timer.start(self.timeout)
 
     def __del__(self):
-    # Remove the mouse event filter when the object is destroyed
+        # Remove the mouse event filter when the object is destroyed
         app = QApplication.instance()
         if app is not None:
             app.removeEventFilter(self.mouse_filter)
-            
+
 
 class MouseFilter(QObject):
     def __init__(self, timer):
         super().__init__()
         self.timer = timer
-    
+
     def eventFilter(self, obj, event):
         if event.type() == event.MouseMove:
             self.timer.start()
         elif event.type() == event.MouseButtonPress:
             self.timer.start()
         return super().eventFilter(obj, event)
-    
+
 
 class DatabaseManager:
     def __init__(self):
@@ -331,11 +334,11 @@ class DatabaseManager:
             password="950321",
             database="test_db"
         )
-        
+
         if not self.mydb.is_connected():
             print("Failed to connect to database.")
             sys.exit(-1)
-            
+
     # def get_table_model(self):
     #     # Create a table model that retrieves data from a table
     #     model = QSqlTableModel()
@@ -343,7 +346,8 @@ class DatabaseManager:
     #     model.setEditStrategy(QSqlTableModel.OnFieldChange)
     #     model.select()
     #     return model
-    
+
+
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data):
         super(TableModel, self).__init__()
@@ -363,11 +367,10 @@ class TableModel(QtCore.QAbstractTableModel):
     def columnCount(self, index):
         # The following takes the first sub-list, and returns
         # the length (only works if all rows are an equal length)
-        return len(self._data[0]) 
-    
+        return len(self._data[0])
+
 
 if __name__ == '__main__':
-    
     # mydb = mysql.connector.connect(
     #     host="localhost",
     #     user="root",
