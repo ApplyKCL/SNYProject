@@ -52,7 +52,6 @@ class Comp:
         self.elements_list.append(self.name)
         self.elements_list.append(self.component_id)
         self.elements_list.append(self.required_amount)
-        self.elements_list.append()
 
     def update_elements_list(self, table_colm):
         if len(table_colm) != self.length:

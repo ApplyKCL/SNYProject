@@ -64,6 +64,7 @@
       "email",
       "account_number",
       "password",
+      "enable_status",
       "admin_status"
     ],
     "process_table":[

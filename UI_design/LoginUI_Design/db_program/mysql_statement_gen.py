@@ -26,16 +26,21 @@ class databaseAPI:
         :param cmd_str: SQL
         :return:
         """
+        self.cursor.execute(f"alter table {self.table_name} auto_increment = 1")
+        self.databases.commit()
         result = {}
         try:
-            self.databases.start_transaction()
+            print(cmd_str)
+            print(self.variable_value + self.constrain_value)
             self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
-            self.databases.commit()
+            if self.inst_type == "select":
+                # get the reading of the SQL execution SELECT
+                result = self.cursor.fetchall()
+            else:
+                self.databases.commit()
         except:
             self.databases.rollback()
-        if self.inst_type == "select":
-            # get the reading of the SQL execution SELECT
-            result = self.cursor.fetchall()
+
         execution_result = {
             "result": result,
             # How many updated
@@ -67,7 +72,7 @@ class databaseAPI:
 
         if result_dirc["changed"] <= 0:
             return None
-        print("Result\n" + result_dirc)
+        print(result_dirc)
         # need to change the result
         return result_dirc
 

@@ -29,10 +29,72 @@ class Employee(User):
         self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
 
+    def update_object_context(self, table_colm: list, table_name):
+        if table_name == config.table_name[config.device_position]:
+            self.dev_context.DeviceClass.update_elements_list(table_colm)
+        elif table_name == config.table_name[config.comp_position]:
+            self.dev_context.CompClass.update_elements_list(table_colm)
+        elif table_name == config.table_name[config.inst_position]:
+            print("2")
+        elif table_name == config.table_name[config.step_position]:
+            print("2")
+        elif table_name == config.table_name[config.param_position]:
+            print("2")
+        elif table_name == config.table_name[config.employee_position]:
+            print("2")
+        elif table_name == config.table_name[config.process_position]:
+            print("2")
+        elif table_name == config.table_name[config.device_position]:
+            print("2")
+        elif table_name == config.table_name[config.device_position]:
+            print("2")
+
+    def read_barcode(self, barcode: str = None):
+        if barcode is None:
+            return None
+        self.sql_class.table_name = config.table_name[config.process_position]
+        pro_result = self.sql_class.database_operation(instruction="select",
+                                                       operate_variable=("*",),
+                                                       constrain_variable=("barcode",),
+                                                       constrain_type=("no_tp",),
+                                                       constrain_value=(barcode,)
+                                                       )
+        if pro_result is None:
+            return pro_result
+        self.sql_class.table_name = config.table_name[config.aso_step_position]
+        aso_step_result = self.sql_class.database_operation(instruction="select",
+                                                            operate_variable=("data_id",),
+                                                            constrain_variable=("emp_id", "pro_id"),
+                                                            constrain_type=("no_tp", "and"),
+                                                            constrain_value=(self.user_id,
+                                                                             pro_result[config.table_exe_result][0]))
+        if aso_step_result is None:
+            return aso_step_result
+        self.sql_class.table_name = config.table_name[config.data_position]
+        for index in range(0, len(aso_step_result[config.table_exe_result][0])):
+            data_result = self.sql_class.database_operation(instruction="select",
+                                                            operate_variable=("*",),
+                                                            constrain_variable=("id",),
+                                                            constrain_type=("no_tp",),
+                                                            constrain_value=(
+                                                                aso_step_result[config.table_exe_result][0][index]))
+            if data_result is None:
+                return
+            if data_result[config.table_exe_result][0][7] is None and data_result[config.table_exe_result][0][
+                8] is None:
+                self.update_object_context(config.table_name[config.data_position],
+                                           data_result[config.table_exe_result][0])
+                # Context Should be load here
+
+    def data_input(self, data):
+        if data is None:
+            return None
+
 
 # Subclass of Employee
 class Admin(Employee):
     # Create a new Instruction
+    # The adminst
     def register_user(self, user_name, user_job, user_email, account_number, password, admin_status=False):
         """
         :param user_name: Name of User
@@ -75,6 +137,7 @@ class Admin(Employee):
         else:
             return True
 
+    # Admin Only
     def query_user(self, constrain=(), constrain_value=(), required_value=("*",)):
         """
         :param constrain: Type of constrain "id"
@@ -102,6 +165,7 @@ class Admin(Employee):
         else:
             return result
 
+    # Could be used in employee if it can be used
     def update_table(self, new_vale_list: list = None, old_value_list: list = None, table_name: str = None):
         if new_vale_list is None or table_name is None or old_value_list is None:
             return None
@@ -158,13 +222,14 @@ class Admin(Employee):
             # Rather than get the entire rec, it is better to like get the rec that attach to the current state
             # The state is simply what is the data type that we are operate on.
             result = self.query_table(config.table_name[config.aso_step_position], context_id_list[state_index],
-                                      tuple(config.table_elements_dict[config.table_name[config.aso_step_position]]
-                                            [state_index]))
+                                      (config.table_elements_dict[config.table_name[config.aso_step_position]]
+                                            [state_index+1],))
+            print(result)
             # This checked if the rec is empty
             if result is None:
                 # if missing
-                print("Missing" + config.table_print_name[state_index])
-                choice = input("Create A new" + config.table_print_name[state_index] + "?[Y/N]")
+                print("Missing " + config.table_print_name[state_index])
+                choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]")
                 if choice != "Y":
                     return None
                 insert_result = self.insert_new_values(config.table_name[state_index])
@@ -174,7 +239,7 @@ class Admin(Employee):
                 context_id_list[state_index] = insert_result[config.table_exe_result][0]
                 # Update the context list
                 # Using ID is the best solution
-                self.insert_update_aso(db_context=context_id_list)
+                self.insert_update_aso(types="step", db_context=context_id_list)
                 context_id_list = [self.dev_context.DeviceClass.id,
                                    self.dev_context.CompClass.id,
                                    self.dev_context.InstClass.id,
@@ -196,7 +261,7 @@ class Admin(Employee):
             """
             choice: str = input(f"Please Input the Operation:\n"
                                 f"1. Choose {config.table_print_name[state_index]}\n"
-                                f"2. Add New {config.table_print_name[state_index+1]}\n"
+                                f"2. Add New {config.table_print_name[state_index + 1]}\n"
                                 f"3. Edit Current {config.table_print_name[state_index]}"
                                 f"*. Exit")
             if choice == '1':
@@ -209,16 +274,20 @@ class Admin(Employee):
 
     def insert_new_values(self, table_name):
         # Insert Aso Function May Added
-        input_require = config.table_elements_dict[table_name]
+        input_require = list(tuple(config.table_elements_dict[table_name]))
         input_require.pop(0)
-        input_list = input("Input" + "\t".join(tuple(input_require))).split()
+        input_list = input("\tInput\n" + "\t".join(tuple(input_require)) + "\n").split(" ")
+        print(input_list)
+        self.sql_class.table_name = table_name
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=tuple(input_require),
                                                    variable_value=tuple(input_list))
         if result is None:
             print("Cannot Write")
             return None
-        result = self.query_table(table_name, input_list)
+
+        result = self.query_table(table_name=table_name, in_cons_value=input_list, db_check_colm=input_require)
+        print(f"A: {result}")
         if result is None:
             print("Cannot Read")
             return None
@@ -246,29 +315,9 @@ class Admin(Employee):
                                                        operate_variable=operate_variable,
                                                        variable_value=tuple(db_context),
                                                        constrain_type=("no_tp",),
-                                                       constrain_variable=("id", ),
+                                                       constrain_variable=("id",),
                                                        constrain_value=self.dev_context.id)
         return result
-
-    def update_object_context(self, table_colm: list, table_name):
-        if table_name == config.table_name[config.device_position]:
-            self.dev_context.DeviceClass.update_elements_list(table_colm)
-        elif table_name == config.table_name[config.comp_position]:
-            self.dev_context.CompClass.update_elements_list(table_colm)
-        elif table_name == config.table_name[config.inst_position]:
-            print("2")
-        elif table_name == config.table_name[config.step_position]:
-            print("2")
-        elif table_name == config.table_name[config.param_position]:
-            print("2")
-        elif table_name == config.table_name[config.employee_position]:
-            print("2")
-        elif table_name == config.table_name[config.process_position]:
-            print("2")
-        elif table_name == config.table_name[config.device_position]:
-            print("2")
-        elif table_name == config.table_name[config.device_position]:
-            print("2")
 
     def query_table(self, table_name, in_cons_value: list = None, db_check_colm: tuple = ("*",)):
         """
@@ -277,9 +326,12 @@ class Admin(Employee):
         :param db_check_colm: the checked data type
         :return: list of result
         """
+        print(in_cons_value)
         if table_name not in config.table_name:
+            print("The Table Does Not Exist")
             return None
-        if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]):
+        if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]) and (
+                len(db_check_colm) != 1 and "*" in db_check_colm):
             return None
         self.sql_class.table_name = table_name
         # id is always the fist value to check
@@ -293,15 +345,14 @@ class Admin(Employee):
         if type(in_cons_value) is list:
             constrain_type = list(constrain_type)
             constrain_variable = list(constrain_variable)
-            constrain_value = list(in_cons_value[0])
+            print(constrain_value)
             # Set the Constrain
             for index in range(1, len(in_cons_value)):
                 constrain_type.append("and")
                 constrain_variable.append(config.table_elements_dict["aso_step_table"][index])
-                constrain_value.append(in_cons_value[index])
             constrain_type = tuple(constrain_type)
             constrain_variable = tuple(constrain_variable)
-            constrain_value = tuple(constrain_value)
+            print(constrain_value)
         if in_cons_value is None:
             constrain_type = ()
             constrain_variable = ()
@@ -311,6 +362,7 @@ class Admin(Employee):
                                                    constrain_type=constrain_type,
                                                    constrain_variable=constrain_variable,
                                                    constrain_value=constrain_value)
+        print(result)
         return result
 
     def choose_row(self, table_name, row_list):

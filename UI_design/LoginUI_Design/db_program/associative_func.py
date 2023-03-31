@@ -34,9 +34,7 @@ def display_dev(dev_class: dc.Device):
 
 
 def check_colm(db_check_colm: list, db_colm: list):
-    if len(db_check_colm) != 1 and "*" in db_check_colm:
+    if not set(db_check_colm).issubset(set(db_colm)):
         return False
-    for x in db_check_colm:
-        if x not in db_colm:
-            return False
+    print("True")
     return True
