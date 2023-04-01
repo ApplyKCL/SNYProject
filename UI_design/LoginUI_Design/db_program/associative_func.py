@@ -22,7 +22,9 @@ def device_list_append(dev_sql_result) -> list:
 
 def display_row(row_list):
     for index in range(0, len(row_list)):
-        print("#"+index+"\t".jopin(tuple(row_list[index])))
+        print(f"Choice #{index+1}", end="\t")
+        for colm in range(0, len(row_list[index])):
+            print(f"{row_list[index][colm]}", end="\t")
 
 
 def display_dev(dev_class: dc.Device):
@@ -33,7 +35,7 @@ def display_dev(dev_class: dc.Device):
                 """.format(dev_class.id, dev_class.device_name, dev_class.product_id))
 
 
-def check_colm(db_check_colm: list, db_colm: list):
+def check_colm(db_check_colm: tuple, db_colm: tuple):
     if not set(db_check_colm).issubset(set(db_colm)):
         return False
     print("True")

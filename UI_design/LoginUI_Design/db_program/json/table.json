@@ -27,8 +27,7 @@
       "name",
       "repeat_times",
       "previous_inst",
-      "next_inst",
-      "start"
+      "next_inst"
     ],
     "step_table":[
       "id",
@@ -36,26 +35,16 @@
       "repeat_times",
       "previous_step",
       "next_step",
-      "start",
       "sub",
       "sub_id"
     ],
     "param_table": [
       "id",
       "name",
-      "product_id",
-      "req_one",
-      "req_two",
-      "req_tree",
-      "req_four",
-      "req_five",
-      "data",
-      "initial",
+      "previous_param",
+      "next_param",
       "sub",
-      "sub_id",
-      "value",
-      "upper_bound",
-      "lower_bound"
+      "sub_id"
     ],
     "employee_table":[
       "id",
@@ -71,7 +60,6 @@
       "id",
       "device_id",
       "component_id",
-      "last_step",
       "status"
     ],
     "data_table": [
@@ -79,11 +67,7 @@
       "inst_id",
       "step_id",
       "step_repeated",
-      "status",
-      "initial",
-      "data",
-      "initial_field",
-      "data_field"
+      "value"
     ],
     "aso_step_table": [
       "id",

@@ -1,7 +1,7 @@
 import string
 import json
 import associative_func
-
+import config
 
 # Class used to generate the SQL statement
 class databaseAPI:
@@ -30,8 +30,11 @@ class databaseAPI:
         self.databases.commit()
         result = {}
         try:
-            print(cmd_str)
-            print(self.variable_value + self.constrain_value)
+            if config.debug_flag == 1:
+                print("--------------Executor Cmd Str and Variable -------------------------")
+                print(cmd_str)
+                print(self.variable_value + self.constrain_value)
+                print("---------------------------------------------------------------------")
             self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
             if self.inst_type == "select":
                 # get the reading of the SQL execution SELECT
@@ -72,7 +75,10 @@ class databaseAPI:
 
         if result_dirc["changed"] <= 0:
             return None
-        print(result_dirc)
+        if config.debug_flag == 1:
+            print("-----------------Executed Result------------------------")
+            print(result_dirc)
+            print("--------------------------------------------------------")
         # need to change the result
         return result_dirc
 

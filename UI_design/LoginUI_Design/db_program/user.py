@@ -29,25 +29,17 @@ class Employee(User):
         self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
 
-    def update_object_context(self, table_colm: list, table_name):
+    def update_step_context(self, table_colm: list, table_name):
         if table_name == config.table_name[config.device_position]:
             self.dev_context.DeviceClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.comp_position]:
             self.dev_context.CompClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.inst_position]:
-            print("2")
+            self.dev_context.InstClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.step_position]:
-            print("2")
+            self.dev_context.StepClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.param_position]:
-            print("2")
-        elif table_name == config.table_name[config.employee_position]:
-            print("2")
-        elif table_name == config.table_name[config.process_position]:
-            print("2")
-        elif table_name == config.table_name[config.device_position]:
-            print("2")
-        elif table_name == config.table_name[config.device_position]:
-            print("2")
+            self.dev_context.ParamClass.update_elements_list(table_colm)
 
     def read_barcode(self, barcode: str = None):
         if barcode is None:
@@ -82,8 +74,8 @@ class Employee(User):
                 return
             if data_result[config.table_exe_result][0][7] is None and data_result[config.table_exe_result][0][
                 8] is None:
-                self.update_object_context(config.table_name[config.data_position],
-                                           data_result[config.table_exe_result][0])
+                self.update_step_context(config.table_name[config.data_position],
+                                         data_result[config.table_exe_result][0])
                 # Context Should be load here
 
     def data_input(self, data):
@@ -198,11 +190,7 @@ class Admin(Employee):
         state_index = 0
         read_id = 0
         # Get the context id and list
-        context_id_list = [self.dev_context.DeviceClass.id,
-                           self.dev_context.CompClass.id,
-                           self.dev_context.InstClass.id,
-                           self.dev_context.StepClass.id,
-                           self.dev_context.ParamClass.id]
+        context_id_list = self.update_step_context_list()
         # While loop when the choice is *, break
         while choice != '*':
             # Check the id context to see if
@@ -218,15 +206,31 @@ class Admin(Employee):
                                           tuple(config.table_elements_dict[config.table_name[state_index]]))
             else:
             """
-            # The Rec is empty
-            # Rather than get the entire rec, it is better to like get the rec that attach to the current state
-            # The state is simply what is the data type that we are operate on.
-            result = self.query_table(config.table_name[config.aso_step_position], context_id_list[state_index],
-                                      (config.table_elements_dict[config.table_name[config.aso_step_position]]
-                                            [state_index+1],))
-            print(result)
+            # The first step is always query the device to check which device that user should be work on
+            if state_index == 0:
+                value_type = None
+                value = None
+                rtn_colm = tuple(config.table_elements_dict[config.table_name[config.device_position]])
+                table_name = config.table_name[config.device_position]
+            # else, based on the selected device to query the associate table to check if there has available
+            # component
+            else:
+                value_type = tuple(
+                    config.table_elements_dict[config.table_name[config.aso_step_position]][1:state_index+1])
+                value = tuple(context_id_list[0:state_index])
+                rtn_colm = (config.table_elements_dict[config.table_name[config.aso_step_position]][state_index + 1],)
+                table_name = config.table_name[config.aso_step_position]
+                # Should be always return serious of ID
+            result = self.query_table(table_name=table_name,
+                                      rtn_colm=rtn_colm,
+                                      value_type=value_type,
+                                      value=value)
+            if config.debug_flag == 1:
+                print(f"---Query_Table---{config.table_name[config.aso_step_position]}")
+                print(result)
+                print("---------------------------------------------------------------")
             # This checked if the rec is empty
-            if result is None:
+            if result is None or result[config.table_exe_result][0][0] is None:
                 # if missing
                 print("Missing " + config.table_print_name[state_index])
                 choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]")
@@ -236,15 +240,25 @@ class Admin(Employee):
                 if insert_result is None:
                     print("Error Adding")
                     return None
-                context_id_list[state_index] = insert_result[config.table_exe_result][0]
-                # Update the context list
-                # Using ID is the best solution
-                self.insert_update_aso(types="step", db_context=context_id_list)
-                context_id_list = [self.dev_context.DeviceClass.id,
-                                   self.dev_context.CompClass.id,
-                                   self.dev_context.InstClass.id,
-                                   self.dev_context.StepClass.id,
-                                   self.dev_context.ParamClass.id]
+                if not state_index:
+                    config.aso_step_insert_flag = True
+                else:
+                    config.aso_step_insert_flag = False
+                insert_result = self.query_table(table_name=config.table_name[state_index],
+                                                 value_type=("id",),
+                                                 value=(insert_result[config.table_exe_id],))
+                self.update_step_context(table_colm=insert_result[config.table_exe_result][0],
+                                         table_name=config.table_name[state_index])
+                print(self.dev_context.DeviceClass.id)
+                context_id_list = self.update_step_context_list()
+                print(context_id_list)
+                aso_result = self.insert_update_aso(types="step", db_context=tuple(context_id_list))
+                self.dev_context.id = aso_result[config.table_exe_id]
+                state_index += 1
+                if config.debug_flag == 1:
+                    print("---Query_Table_Context---")
+                    print(context_id_list)
+                    print("------------------------")
                 continue
                 # The Operation
                 """
@@ -264,10 +278,46 @@ class Admin(Employee):
                                 f"2. Add New {config.table_print_name[state_index + 1]}\n"
                                 f"3. Edit Current {config.table_print_name[state_index]}"
                                 f"*. Exit")
+            record_list = []
             if choice == '1':
-                selection = self.choose_row(config.table_name[state_index], result[config.table_exe_result])
+                if state_index == 0:
+                    for index in range(0, len(result[config.table_exe_result])):
+                        record_list.append(result[config.table_exe_result][index])
+                    print(record_list)
+                else:
+                    for index in range(0, len(result[config.table_exe_result])):
+                        if config.debug_flag == 1:
+                            print(f"-----------Choice: {config.table_name[state_index]}----------")
+                            print(config.table_name[state_index])
+                            print(result[config.table_exe_result][index])
+                            print("-------------------------------------------------------------")
+                        query_result = self.query_table(table_name=config.table_name[state_index],
+                                                        value_type=("id",),
+                                                        value=result[config.table_exe_result][index])
+                        if config.debug_flag == 1:
+                            print(f"-----Choice Result: {config.table_name[state_index]}----------------------------")
+                            print(query_result)
+                            print("-------------------------------------------------------------")
+                selection = self.choose_row(config.table_name[state_index], record_list)
+                if config.debug_flag == 1:
+                    print("------------------------Choice Return--------------------")
+                    print(f"---------------------{selection}------------------------")
+                    print("---------------------------------------------------------")
+                if not state_index:
+                    config.aso_step_insert_flag = True
+                else:
+                    config.aso_step_insert_flag = False
+                self.update_step_context(table_colm=selection, table_name=config.table_name[state_index])
+                print(self.dev_context.DeviceClass.id)
+                context_id_list = self.update_step_context_list()
+                print(context_id_list)
+                aso_result = self.insert_update_aso(types="step", db_context=tuple(context_id_list))
+                if aso_result is None:
+                    print("fatal: Error Update Associate Table")
+                    return None
+                state_index += 1
             elif choice == '2':
-                self.insert_new_values()
+                pass
             else:
                 print("Exit")
             print(result)
@@ -277,7 +327,6 @@ class Admin(Employee):
         input_require = list(tuple(config.table_elements_dict[table_name]))
         input_require.pop(0)
         input_list = input("\tInput\n" + "\t".join(tuple(input_require)) + "\n").split(" ")
-        print(input_list)
         self.sql_class.table_name = table_name
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=tuple(input_require),
@@ -285,13 +334,6 @@ class Admin(Employee):
         if result is None:
             print("Cannot Write")
             return None
-
-        result = self.query_table(table_name=table_name, in_cons_value=input_list, db_check_colm=input_require)
-        print(f"A: {result}")
-        if result is None:
-            print("Cannot Read")
-            return None
-        print("Updated:\n" + result)
         # Return the Correct Result
         return result
 
@@ -300,13 +342,21 @@ class Admin(Employee):
         # In here, should update the aso table based on the step
         if db_context is None:
             return None
+        # insert the step table
         if types == "step":
-            operate_variable = tuple(config.table_elements_dict[config.
-                                     table_name[config.aso_step_position]])
+            self.sql_class.table_name = config.table_name[config.aso_step_position]
+            operate_variable = list(tuple(config.table_elements_dict[config.
+                                          table_name[config.aso_step_position]]))
         elif types == "pro":
-            operate_variable = tuple(config.table_elements_dict[config.
-                                     table_name[config.aso_pro_position]])
-        if self.dev_context.DeviceClass.id is None:
+            self.sql_class.table_name = config.table_name[config.aso_pro_position]
+            operate_variable = list(tuple(config.table_elements_dict[config.
+                                          table_name[config.aso_pro_position]]))
+
+        else:
+            return None
+        operate_variable.pop(0)
+        operate_variable = tuple(operate_variable)
+        if config.aso_step_insert_flag:
             result = self.sql_class.database_operation(instruction="insert",
                                                        operate_variable=operate_variable,
                                                        variable_value=tuple(db_context))
@@ -316,61 +366,105 @@ class Admin(Employee):
                                                        variable_value=tuple(db_context),
                                                        constrain_type=("no_tp",),
                                                        constrain_variable=("id",),
-                                                       constrain_value=self.dev_context.id)
-        return result
-
-    def query_table(self, table_name, in_cons_value: list = None, db_check_colm: tuple = ("*",)):
-        """
-        :param table_name: Table Name
-        :param in_cons_value: the checked value
-        :param db_check_colm: the checked data type
-        :return: list of result
-        """
-        print(in_cons_value)
-        if table_name not in config.table_name:
-            print("The Table Does Not Exist")
-            return None
-        if not af.check_colm(list(db_check_colm), config.table_elements_dict[table_name]) and (
-                len(db_check_colm) != 1 and "*" in db_check_colm):
-            return None
-        self.sql_class.table_name = table_name
-        # id is always the fist value to check
-        constrain_type = ("no_tp",)
-        constrain_variable = ("id",)
-        constrain_value = (in_cons_value,)
-        """
-        Firstly, Formalize the value list, the return value for the id from the SQL is either a id or NULL, 0 as id is
-        sort of the forbidden since some of the APP does not accept 0, so should be start from 1 and NULL as Invalid.
-        """
-        if type(in_cons_value) is list:
-            constrain_type = list(constrain_type)
-            constrain_variable = list(constrain_variable)
-            print(constrain_value)
-            # Set the Constrain
-            for index in range(1, len(in_cons_value)):
-                constrain_type.append("and")
-                constrain_variable.append(config.table_elements_dict["aso_step_table"][index])
-            constrain_type = tuple(constrain_type)
-            constrain_variable = tuple(constrain_variable)
-            print(constrain_value)
-        if in_cons_value is None:
-            constrain_type = ()
-            constrain_variable = ()
-            constrain_value = ()
-        result = self.sql_class.database_operation(instruction="select",
-                                                   operate_variable=db_check_colm,
-                                                   constrain_type=constrain_type,
-                                                   constrain_variable=constrain_variable,
-                                                   constrain_value=constrain_value)
+                                                       constrain_value=(self.dev_context.id,))
         print(result)
         return result
 
+    def query_table(self, table_name: str = None, rtn_colm: tuple = ("*",), value_type: tuple = None,
+                    value: tuple = None):
+        if config.debug_flag == 1:
+            print("------__query_table__------")
+            print("---------__DEBUG__---------")
+            print(f"Table Name: {table_name}")
+            print(f"Return Colm: {rtn_colm}")
+            print(f"Value Type: {value_type}")
+            print(f"Value: {value}")
+            print("---------------------------")
+        # Table Name can not be empty
+        if table_name is None:
+            print("fatal: missing Table Name")
+            return None
+        # Avoid "*" in the [0] position
+        if "*" in rtn_colm and len(rtn_colm) != 1:
+            print("fatal: invalid return query")
+            return None
+        # Check if the return colm in the defined database colm
+        if not af.check_colm(db_check_colm=rtn_colm, db_colm=config.table_elements_dict[table_name]) and (
+                rtn_colm[0] != "*"):
+            print("fatal: invalid return query")
+            return None
+        # Constrain Condition that defined the type
+        cons_cond = []
+        """
+        Here will be the explain of the value_type and value
+        Both of them are initially set to be None, and there are met four conditions
+        1. value_type = None and value = None:
+        This represent to no condition/constrain been set, which means all value for 
+        this table should be displayed.
+        2. value_type = (t0, t1, t2), value = None:
+        This is set the t0 = None and t1 = None and t2 = None, and the t0, t1, t2 do
+        not have to be in the order of table colm being ordered
+        3. value_type = None, value = (v0, v1, v2):
+        This will set the c1 = v0 and c2 = v1 and c3 = v2 where c0 refer to first colm
+        which is always id, and c1 refer to the colm of table after id, this will be in
+        order of the table organized.
+        4. value_type = (c3, c4, c1), value = (v0, v1, v2):
+        This set c3 = v0 and c4 = v1 and c1 = v2, which is refer to the specific value
+        """
+        # Condition 1
+        if value_type is None and value is None:
+            value_type = ()
+            value = ()
+        # Condition 2
+        elif value_type is not None and value is None:
+            value = []
+            for index in range(0, len(value_type)):
+                value.append(None)
+            value = tuple(value)
+        # Condition 3
+        elif value_type is None and value is not None:
+            value_type = []
+            for index in range(1, len(value)):
+                value_type.append(config.table_elements_dict[table_name][index])
+            value_type = tuple(value_type)
+        # Condition 4
+        else:
+            if len(value_type) != len(value):
+                return None
+            if not af.check_colm(db_check_colm=value_type, db_colm=config.table_elements_dict[table_name]):
+                return None
+        if value_type != ():
+            cons_cond = ["no_tp"]
+            for index in range(0, len(value_type) - 1):
+                cons_cond.append("and")
+        cons_cond = tuple(cons_cond)
+        self.sql_class.table_name = table_name
+        result = self.sql_class.database_operation(instruction="select",
+                                                   operate_variable=rtn_colm,
+                                                   constrain_type=cons_cond,
+                                                   constrain_variable=value_type,
+                                                   constrain_value=value)
+        return result
+
     def choose_row(self, table_name, row_list):
-        colm_name = config.table_print_name[table_name]
-        colm_name.pop(0)
-        print("\t".join(tuple(colm_name)))
+        # Get the Colm
+        colm_name = config.table_elements_name_dict[table_name]
+        print("Choice ID:\t" + "\t".join(tuple(colm_name)))
+        print(row_list)
         af.display_row(row_list)
-        choice: int = input("Choice: ")
-        print("Select:\n")
-        af.display_row(row_list[choice])
+        choice: int = int(input("Choice: [#/0 to exit]"))
+        if choice == 0:
+            return None
+        choice = choice - 1
+        print("Select:")
+        for index in range(0, len(row_list[choice])):
+            print(f"{colm_name[index]}: {row_list[choice][index]}")
         return row_list[choice]
+
+    def update_step_context_list(self):
+        context_id_list = [self.dev_context.DeviceClass.id,
+                           self.dev_context.CompClass.id,
+                           self.dev_context.InstClass.id,
+                           self.dev_context.StepClass.id,
+                           self.dev_context.ParamClass.id]
+        return context_id_list

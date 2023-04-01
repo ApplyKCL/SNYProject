@@ -26,8 +26,7 @@
         "name varchar(255) not null,",
         "repeat_times int default 1,",
         "previous_inst int,",
-        "next_inst int,",
-        "start bit default 1"
+        "next_inst int"
       ]
     },
     {
@@ -38,7 +37,6 @@
         "repeat_times int,",
         "previous_step int,",
         "next_step int,",
-        "start bit,",
         "sub bit default 0,",
         "sub_id int"
       ]
@@ -48,18 +46,10 @@
       "table_elements": [
         "id int auto_increment primary key unique,",
         "name varchar(255) not null,",
-        "req_one varchar(255) default null,",
-        "req_two varchar(255) default null,",
-        "req_tree varchar(255) default null,",
-        "req_four varchar(255) default null,",
-        "req_five varchar(255) default null,",
-        "data bit default 0,",
-        "initial bit default 0,",
+        "previous_param int,",
+        "next_param int,",
         "sub bit default 0,",
-        "sub_id int,",
-        "value int,",
-        "upper_bound int,",
-        "lower_bound int"
+        "sub_id int"
       ]
     },
     {
@@ -98,7 +88,6 @@
         "barcode varchar(255) not null unique,",
         "device_id int,",
         "component_id int,",
-        "last_step int,",
         "status bit,",
         "constraint fk_dev_pro foreign key (device_id) references device_table(id),",
         "constraint fk_comp_pro foreign key (component_id) references comp_table(id)"
@@ -111,11 +100,7 @@
         "inst_id int,",
         "step_id int,",
         "step_repeated int,",
-        "status bit,",
-        "initial bit,",
-        "data bit,",
-        "initial_field varchar(255),",
-        "data_field int,",
+        "value varchar(255),",
         "constraint fk_inst_pro foreign key (inst_id) references inst_table(id),",
         "constraint fk_step_pro foreign key (step_id) references step_table(id)"
       ]
