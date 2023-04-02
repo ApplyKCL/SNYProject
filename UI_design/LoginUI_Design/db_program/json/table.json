@@ -35,16 +35,14 @@
       "repeat_times",
       "previous_step",
       "next_step",
-      "sub",
-      "sub_id"
+      "sub"
     ],
     "param_table": [
       "id",
       "name",
       "previous_param",
       "next_param",
-      "sub",
-      "sub_id"
+      "sub"
     ],
     "employee_table":[
       "id",

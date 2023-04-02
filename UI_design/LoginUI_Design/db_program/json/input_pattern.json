@@ -14,11 +14,11 @@
   "step_table":
   [[ "id", "name", "repeat_times"],
     ["previous_step", "next_step", "sub", "sub_id"],
-    ["PRE", "NEXT", "STATUS", "STATUSID"]],
+    ["PRE", "NEXT", "SUB"]],
   "param_table":
   [["id", "name"],
     ["previous_param", "next_param", "sub", "sub_id"],
-    ["PRE", "NEXT", "STATUS", "STATUSID"]],
+    ["PRE", "NEXT", "SUB"]],
 
   "employee_table":
   [["id", "name", "job", "email", "account_number", "password"],

@@ -216,7 +216,7 @@ class Admin(Employee):
             # component
             else:
                 value_type = tuple(
-                    config.table_elements_dict[config.table_name[config.aso_step_position]][1:state_index+1])
+                    config.table_elements_dict[config.table_name[config.aso_step_position]][1:state_index + 1])
                 value = tuple(context_id_list[0:state_index])
                 rtn_colm = (config.table_elements_dict[config.table_name[config.aso_step_position]][state_index + 1],)
                 table_name = config.table_name[config.aso_step_position]
@@ -236,7 +236,7 @@ class Admin(Employee):
                 choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]")
                 if choice != "Y":
                     return None
-                insert_result = self.insert_new_values(config.table_name[state_index])
+                insert_result = self.insert_new_values(config.table_name[state_index], state_index + 1)
                 if insert_result is None:
                     print("Error Adding")
                     return None
@@ -294,6 +294,7 @@ class Admin(Employee):
                         query_result = self.query_table(table_name=config.table_name[state_index],
                                                         value_type=("id",),
                                                         value=result[config.table_exe_result][index])
+                        record_list.append(query_result[config.table_exe_result][index])
                         if config.debug_flag == 1:
                             print(f"-----Choice Result: {config.table_name[state_index]}----------------------------")
                             print(query_result)
@@ -322,19 +323,157 @@ class Admin(Employee):
                 print("Exit")
             print(result)
 
-    def insert_new_values(self, table_name):
+    def insert_new_values(self, table_name, state_index: int = 1):
         # Insert Aso Function May Added
-        input_require = list(tuple(config.table_elements_dict[table_name]))
+        input_require = list(tuple(config.input_pattern[table_name][0]))
         input_require.pop(0)
         input_list = input("\tInput\n" + "\t".join(tuple(input_require)) + "\n").split(" ")
+        special_value_type = []
+        type_list = []
+        # Check if the input pattern has the special value
+        if config.input_pattern[table_name][1]:
+            # Update the current context
+            context_id_list = self.update_step_context_list()
+            # get the condition value
+            aso_colm = tuple(config.table_elements_dict
+                             [config.table_name[config.aso_step_position]][1:])
+            type_list = config.input_pattern[table_name][1]
+            feature_list = config.input_pattern[table_name][2]
+            # for the special types
+            for index in range(0, len(config.input_pattern[table_name][2])):
+                # If the types is pre
+                if feature_list[index] == config.previous_symbol:
+                    # query table
+                    exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                                  rtn_colm=config.table_elements_dict[config.aso_step_position][
+                                                      state_index],
+                                                  value_type=aso_colm,
+                                                  value=tuple(context_id_list))
+                    # if there is None, it is means that the start
+                    if exe_result is None:
+                        # Add 0 to the assigned position
+                        special_value_type.append(0)
+                        continue
+                    selection_list = []
+                    # Get the selection list
+                    for selection_index in range(0, len(exe_result[config.table_exe_result])):
+                        selection_database_rec = self.query_table(table_name=table_name,
+                                                                  value_type=("id",),
+                                                                  value=exe_result[config.table_exe_result]
+                                                                  [selection_index])
+                        selection_list.append(selection_database_rec[config.table_exe_result][selection_index])
+                    pre_rec = self.choose_row(table_name=table_name, row_list=selection_list)
+                    # check if the selection is valid
+                    if pre_rec is None:
+                        return None
+                    config.pre_flag = True
+                    # a b c d e f g h i
+                    # 0 1 2 3 4 0 1 2 3
+                    #         5 0 1
+                    # 0 1 2 3 4 5 6
+                    previous_offset: int = len(config.input_pattern) + index
+                    next_offset: int = previous_offset + 1
+                    # make sure the list is selection type
+                    pre_rec = list(pre_rec)
+                    # append the special value for th list
+                    special_value_type.append(pre_rec[0])
+                elif feature_list[index] == config.next_symbol:
+                    # Next == 0 will be the end
+                    if pre_rec[previous_offset] == 0:
+                        special_value_type.append(0)
+                        continue
+                    # the next record will be dispelled as next record id that dispelled at the previous record
+                    special_value_type.append(pre_rec[previous_offset])
+                    next_rec = self.query_table(table_name=table_name,
+                                                value_type=("id",),
+                                                value=(pre_rec[next_offset],))
+                    config.next_flag = True
+                elif feature_list[index] == config.status_symbol:
+                    choice: str = input(f"{config.input_pattern[2][index]} [Y/Others]: ")
+                    if choice != "Y":
+                        special_value_type.append(0)
+                        continue
+                    selection_list.append(1)
+                elif feature_list[index] == config.sub_symbol:
+                    choice: str = input(f"Is this reo a sub inst/step? [Y/Others]")
+                    if choice != "Y":
+                        special_value_type.append(0)
+                        special_value_type.append(0)
+                        continue
+                    sub_exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                                      rtn_colm=config.table_elements_dict[config.aso_step_position][
+                                                          state_index],
+                                                      value_type=aso_colm,
+                                                      value=tuple(context_id_list))
+                    if sub_exe_result is None:
+                        choice = input("There is no available upper level choice, "
+                                       "do you want to not teat it as a subset (Y) "
+                                       "or add a upper level choice (Others)? [Y/Others]")
+                        if choice != "Y":
+                            special_value_type.append(0)
+                            special_value_type.append(0)
+                            continue
+                        new = self.insert_new_values(table_name, state_index)
+                        if new is None:
+                            print("Unable to Add, Bad Operation")
+                            return None
+                        sub_exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                                          rtn_colm=config.table_elements_dict[config.aso_step_position][
+                                                              state_index],
+                                                          value_type=aso_colm,
+                                                          value=tuple(context_id_list))
+                        if sub_exe_result is None:
+                            print("Unable to Add, Bad Operation")
+                            return None
+                    for rec_index in range(0, len(exe_result[config.table_exe_result])):
+                        sub_exe_result = self.query_table(table_name=table_name,
+                                                          value_type=("id",),
+                                                          value=exe_result[config.table_exe_result]
+                                                          [selection_index])
+                        selection_list.append(sub_exe_result[config.table_exe_result][rec_index])
+                    upp_rec = self.choose_row(table_name=table_name,
+                                              row_list=selection_list)
+                    special_value_type.append(1)
+                    special_value_type.append(upp_rec[config.table_exe_result][0])
+                else:
+                    return None
         self.sql_class.table_name = table_name
         result = self.sql_class.database_operation(instruction="insert",
-                                                   operate_variable=tuple(input_require),
-                                                   variable_value=tuple(input_list))
+                                                   operate_variable=tuple(input_require) + tuple(type_list),
+                                                   variable_value=tuple(input_list) + tuple(special_value_type))
         if result is None:
             print("Cannot Write")
             return None
+        # After we finish a new record, we should re-link the table information
+        # Must update the pre and the next context info that we required
         # Return the Correct Result
+        ### Duplicate Code here
+        if config.pre_flag:
+            pre_rec[next_offset] = result[config.table_exe_id]
+            config.pre_flag = False
+            self.sql_class.table_name = table_name
+            pre_result = self.sql_class.database_operation(instruction="update",
+                                                           operate_variable=(
+                                                               [config.table_elements_dict[table_name]][next_offset],),
+                                                           variable_value=(pre_rec[next_offset],),
+                                                           constrain_type=("no_tp",),
+                                                           constrain_variable=("id",),
+                                                           constrain_value=(pre_rec[0],))
+            if pre_result is None:
+                return None
+        if config.next_flag:
+            next_rec[previous_offset] = result[config.table_exe_id]
+            config.next_flag = False
+            self.sql_class.table_name = table_name
+            next_result = self.sql_class.database_operation(instruction="update",
+                                                            operate_variable=(
+                                                                [config.table_elements_dict[table_name]][previous_offset],),
+                                                            variable_value=(pre_rec[previous_offset],),
+                                                            constrain_type=("no_tp",),
+                                                            constrain_variable=("id",),
+                                                            constrain_value=(pre_rec[0],))
+            if next_result is None:
+                return None
         return result
 
     # Update the table
