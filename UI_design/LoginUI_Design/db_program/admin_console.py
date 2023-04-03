@@ -1,4 +1,7 @@
-## Author: Shaonan Hu
+"""
+Author: Shaonan Hu
+Description: Backdoor program for the admin,
+"""
 import mysql.connector
 from datetime import datetime
 import mysql_execute
@@ -8,17 +11,23 @@ import mysql_statement_gen
 import sys
 import user
 import check_user as chk_user
-
+# No Bug Prey, just ignore it :>
 print("""
 -------------------------------NO!-------------------------------------
 -------------------------------BUG-------------------------------------
 -----------------------------PLEASE!-----------------------------------
 """)
 """
-UI: -> Login Page -> Account Number, Password
-account = text editor(-- text --) (account number )
-password = text editor(-- text --) (Password)
-checkuser(account, password, db_connector)
+This is Admin Console that could be used for the Admin, which is also a
+Backdoor function that used for test purpose or the data written purpose.
+You cannot operate the database workflow without the data loaded.
+Well, the more smart idea is to written a load module for load all of the
+test data rather than manually input it. BBBBBut, the mean to exist this
+is to give client a reference that how to writen the workflow page
+info to the database.
+In addition, it should be run once is this operated as a admin machine which
+is where the database are.
+Furthermore, the database initial file is in json\dbinit.json
 """
 
 if __name__ == '__main__':
@@ -73,5 +82,12 @@ if __name__ == '__main__':
                                user_name="Shaonan Hu",
                                user_email="abcabd",
                                db_class=mydb)
-        admin.create_new()
+        choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
+        if choice == '1':
+            reuslt = admin.create_new()
+            if reuslt is None:
+                sys.exit()
+        elif choice == '2':
+            pass
+
 mydb.close()

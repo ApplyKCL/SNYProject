@@ -37,6 +37,9 @@ def display_dev(dev_class: dc.Device):
 
 def check_colm(db_check_colm: tuple, db_colm: tuple):
     if not set(db_check_colm).issubset(set(db_colm)):
+        print(db_check_colm)
+        print(db_colm)
+        print("*")
         return False
     print("True")
     return True

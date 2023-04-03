@@ -29,7 +29,9 @@ class Employee(User):
         self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
 
-    def update_step_context(self, table_colm: list, table_name):
+    def update_step_context(self, table_colm: tuple, table_name):
+        print(table_colm)
+        print(table_name)
         if table_name == config.table_name[config.device_position]:
             self.dev_context.DeviceClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.comp_position]:
@@ -39,11 +41,15 @@ class Employee(User):
         elif table_name == config.table_name[config.step_position]:
             self.dev_context.StepClass.update_elements_list(table_colm)
         elif table_name == config.table_name[config.param_position]:
+            print("***")
             self.dev_context.ParamClass.update_elements_list(table_colm)
+            print(self.dev_context.ParamClass.id)
+            print(self.dev_context.ParamClass.next)
 
     def read_barcode(self, barcode: str = None):
         if barcode is None:
             return None
+        # read the barcode from the database to check if there has an exist barcode
         self.sql_class.table_name = config.table_name[config.process_position]
         pro_result = self.sql_class.database_operation(instruction="select",
                                                        operate_variable=("*",),
@@ -194,18 +200,14 @@ class Admin(Employee):
         # While loop when the choice is *, break
         while choice != '*':
             # Check the id context to see if
-            """
-            Three Conditions can be meet whenever create the new elements
-            1. No Available record (Either the table is empty or has record but no required , GAP for colmn should be abvoid
-            since, the query are in the order of the colm)
-            - Once the Device Choosed, the record should be implemented and get the record number from DB
-            - Every Time the Record Updated, the writen should be put, once the rec completed, the new aso rec should be
-            get
-                        if self.dev_context.DeviceClass.id is None:
-                result = self.query_table(config.table_name[state_index], context_id_list[state_index],
-                                          tuple(config.table_elements_dict[config.table_name[state_index]]))
-            else:
-            """
+            """Three Conditions can be meet whenever create the new elements 
+            1. No Available record (Either the table is empty or has record but no required , GAP for column should
+            be avoid since, the query are in the 
+            order of the colm) - Once the Device Choosed, the record should be implemented and get the record number 
+            from DB - Every Time the Record Updated, the writen should be put, once the rec completed, the new aso 
+            rec should be get if self.dev_context.DeviceClass.id is None: result = self.query_table(
+            config.table_name[state_index], context_id_list[state_index], tuple(config.table_elements_dict[
+            config.table_name[state_index]])) else:"""
             # The first step is always query the device to check which device that user should be work on
             if state_index == 0:
                 value_type = None
@@ -225,12 +227,8 @@ class Admin(Employee):
                                       rtn_colm=rtn_colm,
                                       value_type=value_type,
                                       value=value)
-            if config.debug_flag == 1:
-                print(f"---Query_Table---{config.table_name[config.aso_step_position]}")
-                print(result)
-                print("---------------------------------------------------------------")
             # This checked if the rec is empty
-            if result is None or result[config.table_exe_result][0][0] is None:
+            if (result is None or result[config.table_exe_result][0][0] is None) and state_index != 4:
                 # if missing
                 print("Missing " + config.table_print_name[state_index])
                 choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]")
@@ -240,25 +238,21 @@ class Admin(Employee):
                 if insert_result is None:
                     print("Error Adding")
                     return None
-                if not state_index:
-                    config.aso_step_insert_flag = True
-                else:
-                    config.aso_step_insert_flag = False
+                # Update the context
+                context_id_list = self.update_step_context_list()
+                context_id_list[state_index] = insert_result[config.table_exe_id]
+                print(context_id_list)
+                self.load_context_list(context_id_list)
                 insert_result = self.query_table(table_name=config.table_name[state_index],
                                                  value_type=("id",),
                                                  value=(insert_result[config.table_exe_id],))
-                self.update_step_context(table_colm=insert_result[config.table_exe_result][0],
-                                         table_name=config.table_name[state_index])
-                print(self.dev_context.DeviceClass.id)
-                context_id_list = self.update_step_context_list()
-                print(context_id_list)
-                aso_result = self.insert_update_aso(types="step", db_context=tuple(context_id_list))
-                self.dev_context.id = aso_result[config.table_exe_id]
-                state_index += 1
-                if config.debug_flag == 1:
-                    print("---Query_Table_Context---")
-                    print(context_id_list)
-                    print("------------------------")
+
+                aso_result = self.aso_update(types="step", state_index=state_index,
+                                             table_object_rec=tuple(insert_result[config.table_exe_result][0]))
+                if aso_result is None:
+                    return None
+                if state_index != 4:
+                    state_index += 1
                 continue
                 # The Operation
                 """
@@ -273,57 +267,97 @@ class Admin(Employee):
                 |->Inst
                     |->Step et al
             """
-            choice: str = input(f"Please Input the Operation:\n"
-                                f"1. Choose {config.table_print_name[state_index]}\n"
-                                f"2. Add New {config.table_print_name[state_index + 1]}\n"
-                                f"3. Edit Current {config.table_print_name[state_index]}"
-                                f"*. Exit")
+            # Maybe 3 here
+            if state_index == 4:
+                print(state_index)
+                choice: str = input(f"Please Input the Operation:\n"
+                                    f"1. File a New {config.table_print_name[state_index]}\n"
+                                    f"2. Choose Another to Edit\n"
+                                    )
+            else:
+                choice: str = input(f"Please Input the Operation:\n"
+                                    f"1. File a New {config.table_print_name[state_index]}\n"
+                                    f"2. Choose Another to Edit\n"
+                                    f"3. Choose Exist {config.table_print_name[state_index]}\n"
+                                    f"4. Edit Current {config.table_print_name[state_index]}"
+                                    f"*. Exit")
             record_list = []
-            if choice == '1':
+            if choice == '3' and state_index != config.param_position:
                 if state_index == 0:
                     for index in range(0, len(result[config.table_exe_result])):
                         record_list.append(result[config.table_exe_result][index])
                     print(record_list)
                 else:
-                    for index in range(0, len(result[config.table_exe_result])):
-                        if config.debug_flag == 1:
-                            print(f"-----------Choice: {config.table_name[state_index]}----------")
-                            print(config.table_name[state_index])
-                            print(result[config.table_exe_result][index])
-                            print("-------------------------------------------------------------")
-                        query_result = self.query_table(table_name=config.table_name[state_index],
-                                                        value_type=("id",),
-                                                        value=result[config.table_exe_result][index])
-                        record_list.append(query_result[config.table_exe_result][index])
-                        if config.debug_flag == 1:
-                            print(f"-----Choice Result: {config.table_name[state_index]}----------------------------")
-                            print(query_result)
-                            print("-------------------------------------------------------------")
+                    record_list = self.query_multiple_rec(table_name=config.table_name[state_index],
+                                                          query_list=result[config.table_exe_result],
+                                                          query_list_variable_type=("id",))
                 selection = self.choose_row(config.table_name[state_index], record_list)
-                if config.debug_flag == 1:
-                    print("------------------------Choice Return--------------------")
-                    print(f"---------------------{selection}------------------------")
-                    print("---------------------------------------------------------")
-                if not state_index:
-                    config.aso_step_insert_flag = True
-                else:
-                    config.aso_step_insert_flag = False
-                self.update_step_context(table_colm=selection, table_name=config.table_name[state_index])
-                print(self.dev_context.DeviceClass.id)
-                context_id_list = self.update_step_context_list()
-                print(context_id_list)
-                aso_result = self.insert_update_aso(types="step", db_context=tuple(context_id_list))
+                aso_result = self.aso_update(types="step", state_index=state_index, table_object_rec=tuple(selection))
                 if aso_result is None:
                     print("fatal: Error Update Associate Table")
                     return None
-                state_index += 1
+                if state_index != 4:
+                    state_index += 1
+            # When the choice is one, Parameter is always empty
+            elif choice == '1':
+                file_result = self.insert_new_values(table_name=config.table_name[state_index],
+                                                     table_offset=state_index + 1)
+                if file_result is None:
+                    print("Wrong Insert")
+                    continue
+                new_rec = self.query_table(table_name=config.table_name[state_index],
+                                           value_type=("id",),
+                                           value=(file_result[config.table_exe_id],))
+                if new_rec is None:
+                    print("No Rec")
+                    continue
+                # The zero represent that there is always should be the first rec
+                # Well, there is a fetchone() for the mysql.connector API, can be used conditionally
+                aso_result = self.aso_update(types="step", state_index=state_index,
+                                             table_object_rec=tuple(new_rec[config.table_exe_result][0]))
+                if aso_result is None:
+                    return None
+                # Whenever a successful
+                if state_index == 4:
+                    self.dev_context.ParamClass.id = None
+                    self.dev_context.id = None
+                    context_id_list = self.update_step_context_list()
             elif choice == '2':
+                for choice_index in range(0, state_index):
+                    print(f"#{choice_index}\t{config.table_name}")
+                state_index: int = int(input("Please Input Which you want to edit: "))
+            elif choice == '3' and state_index != config.param_position:
                 pass
-            else:
+            elif choice == '4' and state_index != config.param_position:
+                pass
+            elif choice == '*':
                 print("Exit")
+            else:
+                print("Invalid Operation")
             print(result)
 
-    def insert_new_values(self, table_name, state_index: int = 1):
+    def aso_update(self, types="step", state_index: int = 0, table_object_rec: tuple = None):
+        if not state_index or self.dev_context.id is None:
+            # True for insert the value
+            config.aso_step_insert_flag = True
+        else:
+            # False to update -- Should be only happened when there has the exit record
+            config.aso_step_insert_flag = False
+        self.update_step_context(table_colm=table_object_rec, table_name=config.table_name[state_index])
+        aso_result = self.insert_update_aso(types=types)
+        config.aso_step_insert_flag = False
+
+        if aso_result is None:
+            print("fatal: Error Update Associate Table")
+            return None
+        return aso_result
+
+    def insert_new_values(self, table_name, table_offset: int = 1):
+        """
+        :param table_name:  Table Name
+        :param table_offset: table offset is where the id of the foreign key occupy for the current elements
+        :return: The insert result should be a dict type data that contains the id
+        """
         # Insert Aso Function May Added
         input_require = list(tuple(config.input_pattern[table_name][0]))
         input_require.pop(0)
@@ -340,13 +374,17 @@ class Admin(Employee):
             type_list = config.input_pattern[table_name][1]
             feature_list = config.input_pattern[table_name][2]
             # for the special types
+            pre_rec = []
             for index in range(0, len(config.input_pattern[table_name][2])):
                 # If the types is pre
                 if feature_list[index] == config.previous_symbol:
+                    previous_offset: int = len(config.input_pattern) + index
+                    next_offset: int = previous_offset + 1
                     # query table
                     exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
-                                                  rtn_colm=config.table_elements_dict[config.aso_step_position][
-                                                      state_index],
+                                                  rtn_colm=(config.table_elements_dict
+                                                  [config.table_name[config.aso_step_position]][
+                                                      table_offset],),
                                                   value_type=aso_colm,
                                                   value=tuple(context_id_list))
                     # if there is None, it is means that the start
@@ -354,31 +392,24 @@ class Admin(Employee):
                         # Add 0 to the assigned position
                         special_value_type.append(0)
                         continue
-                    selection_list = []
                     # Get the selection list
-                    for selection_index in range(0, len(exe_result[config.table_exe_result])):
-                        selection_database_rec = self.query_table(table_name=table_name,
-                                                                  value_type=("id",),
-                                                                  value=exe_result[config.table_exe_result]
-                                                                  [selection_index])
-                        selection_list.append(selection_database_rec[config.table_exe_result][selection_index])
+                    selection_list = self.query_multiple_rec(table_name=table_name,
+                                                             query_list=exe_result[config.table_exe_result])
                     pre_rec = self.choose_row(table_name=table_name, row_list=selection_list)
                     # check if the selection is valid
                     if pre_rec is None:
                         return None
                     config.pre_flag = True
-                    # a b c d e f g h i
-                    # 0 1 2 3 4 0 1 2 3
-                    #         5 0 1
-                    # 0 1 2 3 4 5 6
-                    previous_offset: int = len(config.input_pattern) + index
-                    next_offset: int = previous_offset + 1
                     # make sure the list is selection type
                     pre_rec = list(pre_rec)
                     # append the special value for th list
                     special_value_type.append(pre_rec[0])
                 elif feature_list[index] == config.next_symbol:
                     # Next == 0 will be the end
+                    print(pre_rec)
+                    if not pre_rec:
+                        special_value_type.append(0)
+                        continue
                     if pre_rec[previous_offset] == 0:
                         special_value_type.append(0)
                         continue
@@ -401,8 +432,9 @@ class Admin(Employee):
                         special_value_type.append(0)
                         continue
                     sub_exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
-                                                      rtn_colm=config.table_elements_dict[config.aso_step_position][
-                                                          state_index],
+                                                      rtn_colm=config.table_elements_dict
+                                                      [config.table_name[config.aso_step_position]][
+                                                          table_offset],
                                                       value_type=aso_colm,
                                                       value=tuple(context_id_list))
                     if sub_exe_result is None:
@@ -413,30 +445,28 @@ class Admin(Employee):
                             special_value_type.append(0)
                             special_value_type.append(0)
                             continue
-                        new = self.insert_new_values(table_name, state_index)
+                        new = self.insert_new_values(table_name, table_offset)
                         if new is None:
                             print("Unable to Add, Bad Operation")
                             return None
                         sub_exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
-                                                          rtn_colm=config.table_elements_dict[config.aso_step_position][
-                                                              state_index],
+                                                          rtn_colm=config.table_elements_dict
+                                                          [config.table_name[config.aso_step_position]][
+                                                              table_offset],
                                                           value_type=aso_colm,
                                                           value=tuple(context_id_list))
                         if sub_exe_result is None:
                             print("Unable to Add, Bad Operation")
                             return None
-                    for rec_index in range(0, len(exe_result[config.table_exe_result])):
-                        sub_exe_result = self.query_table(table_name=table_name,
-                                                          value_type=("id",),
-                                                          value=exe_result[config.table_exe_result]
-                                                          [selection_index])
-                        selection_list.append(sub_exe_result[config.table_exe_result][rec_index])
+                    selection_list = self.query_multiple_rec(table_name=table_name,
+                                                             query_list=exe_result[config.table_exe_result])
                     upp_rec = self.choose_row(table_name=table_name,
                                               row_list=selection_list)
                     special_value_type.append(1)
                     special_value_type.append(upp_rec[config.table_exe_result][0])
                 else:
                     return None
+        # insert the new added value
         self.sql_class.table_name = table_name
         result = self.sql_class.database_operation(instruction="insert",
                                                    operate_variable=tuple(input_require) + tuple(type_list),
@@ -447,9 +477,11 @@ class Admin(Employee):
         # After we finish a new record, we should re-link the table information
         # Must update the pre and the next context info that we required
         # Return the Correct Result
-        ### Duplicate Code here
+        # Notice: Duplicate Code here
         if config.pre_flag:
+            # update the previous record
             pre_rec[next_offset] = result[config.table_exe_id]
+            # Disable the previous flag to indicate that the previous record has already updated
             config.pre_flag = False
             self.sql_class.table_name = table_name
             pre_result = self.sql_class.database_operation(instruction="update",
@@ -461,13 +493,17 @@ class Admin(Employee):
                                                            constrain_value=(pre_rec[0],))
             if pre_result is None:
                 return None
+
+        # if the record is the next flag
         if config.next_flag:
+            # update the next record
             next_rec[previous_offset] = result[config.table_exe_id]
             config.next_flag = False
             self.sql_class.table_name = table_name
             next_result = self.sql_class.database_operation(instruction="update",
                                                             operate_variable=(
-                                                                [config.table_elements_dict[table_name]][previous_offset],),
+                                                                [config.table_elements_dict[table_name]][
+                                                                    previous_offset],),
                                                             variable_value=(pre_rec[previous_offset],),
                                                             constrain_type=("no_tp",),
                                                             constrain_variable=("id",),
@@ -476,11 +512,23 @@ class Admin(Employee):
                 return None
         return result
 
-    # Update the table
-    def insert_update_aso(self, types="step", db_context=None):
-        # In here, should update the aso table based on the step
-        if db_context is None:
+    def query_multiple_rec(self, table_name: str = None, query_return: tuple = ("*",), query_list: list = None,
+                           query_list_variable_type: tuple = ("id",)):
+        if table_name is None or query_list is None:
             return None
+        record_list = []
+        for index in range(0, len(query_list)):
+            query_result = self.query_table(table_name=table_name,
+                                            rtn_colm=query_return,
+                                            value_type=query_list_variable_type,
+                                            value=query_list[index])
+            record_list.append(query_result[config.table_exe_result][index])
+        return record_list
+
+    # Update the table
+    def insert_update_aso(self, types="step"):
+        # In here, should update the aso table based on the step
+        db_context = self.update_step_context_list()
         # insert the step table
         if types == "step":
             self.sql_class.table_name = config.table_name[config.aso_step_position]
@@ -499,6 +547,7 @@ class Admin(Employee):
             result = self.sql_class.database_operation(instruction="insert",
                                                        operate_variable=operate_variable,
                                                        variable_value=tuple(db_context))
+            self.dev_context.id = result[config.table_exe_id]
         else:
             result = self.sql_class.database_operation(instruction="update",
                                                        operate_variable=operate_variable,
@@ -607,3 +656,10 @@ class Admin(Employee):
                            self.dev_context.StepClass.id,
                            self.dev_context.ParamClass.id]
         return context_id_list
+
+    def load_context_list(self, context_id_list):
+        self.dev_context.DeviceClass.id = context_id_list[0]
+        self.dev_context.CompClass.id = context_id_list[1]
+        self.dev_context.InstClass.id = context_id_list[2]
+        self.dev_context.StepClass.id = context_id_list[3]
+        self.dev_context.ParamClass.id = context_id_list[4]

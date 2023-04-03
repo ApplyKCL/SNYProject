@@ -69,13 +69,82 @@ class Inst:
                  inst_repeat_times: int = 1,
                  previous_inst: int = 0,
                  next_inst: int = 0,
-                 start: bool = False):
+                 ):
         self.id: int = inst_id
         self.name: str = inst_name
         self.repeat_times: int = inst_repeat_times
         self.previous: int = previous_inst
         self.next: int = next_inst
-        self.start: bool = start
+        self.length = 5
+        self.elements_list = []
+        self.list_elements()
+
+    def list_elements(self):
+        self.elements_list = []
+        self.elements_list.append(self.id)
+        self.elements_list.append(self.name)
+        self.elements_list.append(self.repeat_times)
+        self.elements_list.append(self.previous)
+        self.elements_list.append(self.next)
+
+    def update_elements_list(self, table_colm):
+        if len(table_colm) != self.length:
+            return None
+        self.id = table_colm[0]
+        self.name = table_colm[1]
+        self.repeat_times = table_colm[2]
+        self.previous = table_colm[3]
+        self.next = table_colm[4]
+        self.list_elements()
+
+
+class Step:
+    def __init__(self, step_id: int = None, step_name: str = None, step_repeat_times: int = 1,
+                 previous_step: int = 0, next_step: int = 0, sub: bool = False,
+                 sub_id: int = 0):
+        self.id: int = step_id
+        self.name: str = step_name
+        self.repeat_times: int = step_repeat_times
+        self.previous: int = previous_step
+        self.next: int = next_step
+        self.sub: bool = sub
+        self.sub_id: int = sub_id
+        self.length = 7
+        self.elements_list = []
+        self.list_elements()
+
+    def list_elements(self):
+        self.elements_list = []
+        self.elements_list.append(self.id)
+        self.elements_list.append(self.name)
+        self.elements_list.append(self.repeat_times)
+        self.elements_list.append(self.previous)
+        self.elements_list.append(self.next)
+        self.elements_list.append(self.sub)
+        self.elements_list.append(self.sub_id)
+
+    def update_elements_list(self, table_colm):
+        if len(table_colm) != self.length:
+            return None
+        self.id = table_colm[0]
+        self.name = table_colm[1]
+        self.repeat_times = table_colm[2]
+        self.previous = table_colm[3]
+        self.next = table_colm[4]
+        self.sub = table_colm[5]
+        self.sub_id = table_colm[6]
+        self.list_elements()
+
+
+class Param:
+    def __init__(self, param_id: int = None, param_name: str = None, previous_param: int = 0,
+                 next_param: int = 0, sub: bool = False, sub_id: int = 0):
+        self.id: int = param_id
+        self.param_name: str = param_name
+        self.previous: int = previous_param
+        self.next: int = next_param
+        self.sub: bool = sub
+        self.sub_id: int = sub_id
         self.length = 6
         self.elements_list = []
         self.list_elements()
@@ -83,106 +152,22 @@ class Inst:
     def list_elements(self):
         self.elements_list = []
         self.elements_list.append(self.id)
-        self.elements_list.append(self.name)
-        self.elements_list.append(self.repeat_times)
-        self.elements_list.append(self.previous)
-        self.elements_list.append(self.next)
-        self.elements_list.append(self.start)
-
-    def update_elements_list(self, table_colm):
-        if len(table_colm) != self.length:
-            return None
-        self.id = table_colm[0]
-        self.name = table_colm[1]
-        self.repeat_times = table_colm[2]
-        self.previous = table_colm[3]
-        self.next = table_colm[4]
-        self.start = table_colm[5]
-        self.list_elements()
-
-
-class Step:
-    def __init__(self, step_id: int = None, step_name: str = None, step_repeat_times: int = 1,
-                 previous_step: int = 0, next_step: int = 0, start: bool = False, sub: bool = False,
-                 sub_id: int = 0):
-        self.id: int = step_id
-        self.name: str = step_name
-        self.repeat_times: int = step_repeat_times
-        self.previous: int = previous_step
-        self.next: int = next_step
-        self.start: bool = start
-        self.sub: bool = sub
-        self.sub_id: int = sub_id
-        self.length = 8
-        self.elements_list = []
-        self.list_elements()
-
-    def list_elements(self):
-        self.elements_list = []
-        self.elements_list.append(self.id)
-        self.elements_list.append(self.name)
-        self.elements_list.append(self.repeat_times)
-        self.elements_list.append(self.previous)
-        self.elements_list.append(self.next)
-        self.elements_list.append(self.start)
-        self.elements_list.append(self.sub)
-        self.elements_list.append(self.sub_id)
-
-    def update_elements_list(self, table_colm):
-        if len(table_colm) != self.length:
-            return None
-        self.id = table_colm[0]
-        self.name = table_colm[1]
-        self.repeat_times = table_colm[2]
-        self.previous = table_colm[3]
-        self.next = table_colm[4]
-        self.start = table_colm[5]
-        self.sub = table_colm[6]
-        self.sub_id = table_colm[7]
-        self.list_elements()
-
-
-class Param:
-    def __init__(self, param_id: int = None, param_name: str = None, data_status: bool = False,
-                 initial_status: bool = False, sub: bool = False, sub_id: int = 0, value: float = 0,
-                 upper_bound: float = 0, lower_bound: float = 0):
-        self.id: int = param_id
-        self.param_name: str = param_name
-        self.data_statue: bool = data_status
-        self.initial_status: bool = initial_status
-        self.sub: bool = sub
-        self.sub_id: int = sub_id
-        self.value: float = value
-        self.upper_bound: float = upper_bound
-        self.lower_bound: float = lower_bound
-        self.length = 9
-        self.elements_list = []
-        self.list_elements()
-
-    def list_elements(self):
-        self.elements_list = []
-        self.elements_list.append(self.id)
         self.elements_list.append(self.param_name)
-        self.elements_list.append(self.data_statue)
-        self.elements_list.append(self.initial_status)
+        self.elements_list.append(self.previous)
+        self.elements_list.append(self.next)
         self.elements_list.append(self.sub)
         self.elements_list.append(self.sub_id)
-        self.elements_list.append(self.value)
-        self.elements_list.append(self.upper_bound)
-        self.elements_list.append(self.lower_bound)
+
 
     def update_elements_list(self, table_colm):
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
         self.param_name = table_colm[1]
-        self.data_statue = table_colm[2]
-        self.initial_status = table_colm[3]
+        self.previous = table_colm[2]
+        self.next = table_colm[3]
         self.sub = table_colm[4]
         self.sub_id = table_colm[5]
-        self.value = table_colm[6]
-        self.upper_bound = table_colm[7]
-        self.lower_bound = table_colm[8]
         self.list_elements()
 
 
@@ -222,21 +207,23 @@ class DeviceContext:
 
 
 class Process:
-    def __init__(self, process_id: int = None, device_class: Device = Device(),
+    def __init__(self, process_id: int = None, barcode: str = None, device_class: Device = Device(),
                  comp_class: Comp = Comp(), last_step: int = None,
                  status: bool = 0):
         self.id: int = process_id
+        self.barcode: str = barcode
         self.DeviceClass: Device = device_class
         self.CompClass: Comp = comp_class
         self.LastStep: int = last_step
         self.status: bool = status
-        self.length = 5
+        self.length = 6
         self.elements_list = []
         self.list_elements()
 
     def list_elements(self):
         self.elements_list = []
         self.elements_list.append(self.id)
+        self.elements_list.append(self.barcode)
         self.elements_list.append(self.DeviceClass)
         self.elements_list.append(self.CompClass)
         self.elements_list.append(self.LastStep)
@@ -246,27 +233,23 @@ class Process:
         if len(table_colm) != self.length:
             return None
         self.id = self.table_colm[0]
-        self.DeviceClass = table_colm[1]
-        self.CompClass = table_colm[2]
-        self.LastStep = table_colm[3]
-        self.status = table_colm[4]
+        self.barcode = self.table_colm[1]
+        self.DeviceClass = table_colm[2]
+        self.CompClass = table_colm[3]
+        self.LastStep = table_colm[4]
+        self.status = table_colm[5]
         self.list_elements()
 
 
 class Data:
     def __init__(self, data_id: int, inst_class: Inst = None, step_class: Step = None,
-                 step_repeated: int = None, status: bool = 0, initial_status: bool = 0,
-                 data_status: bool = 0, initial: str = None, data: str = None):
+                 step_repeated: int = None, data: str = None):
         self.id = data_id,
         self.InstClass: Inst = inst_class
         self.StepClass: Step = step_class
         self.StepRepeat: int = step_repeated
-        self.Status: bool = status
-        self.InitialStatus: bool = initial_status
-        self.DataStatus: bool = data_status
-        self.Initial: str = initial
-        self.DataIn: str = data
-        self.length = 9
+        self.Data: str = data
+        self.length = 5
         self.elements_list = []
         self.list_elements()
 
@@ -276,11 +259,7 @@ class Data:
         self.elements_list.append(self.InstClass)
         self.elements_list.append(self.StepClass)
         self.elements_list.append(self.StepRepeat)
-        self.elements_list.append(self.Status)
-        self.elements_list.append(self.InitialStatus)
-        self.elements_list.append(self.DataStatus)
-        self.elements_list.append(self.Initial)
-        self.elements_list.append(self.DataIn)
+        self.elements_list.append(self.Data)
 
     def update_elements_list(self, table_colm):
         if len(table_colm) != self.length:
@@ -289,11 +268,7 @@ class Data:
         self.InstClass = table_colm[1]
         self.StepClass = table_colm[2]
         self.StepRepeat = table_colm[3]
-        self.Status = table_colm[4]
-        self.InitialStatus = table_colm[5]
-        self.DataStatus = table_colm[6]
-        self.Initial = table_colm[7]
-        self.DataIn = table_colm[8]
+        self.Data = table_colm[4]
         self.list_elements()
 
 

@@ -28,6 +28,7 @@ table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
 # print(table_tree)
 debug_flag = 1
 aso_step_insert_flag: bool = True
+param_step_insert_flag: bool = False
 table_file = open("json/table.json", "r")
 input_pattern_file = open("json/input_pattern.json", "r")
 input_pattern = json.loads(input_pattern_file.read())
