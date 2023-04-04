@@ -1,6 +1,7 @@
 import string
 import json
 import associative_func
+import config
 
 
 # Class used to generate the SQL statement
@@ -26,16 +27,31 @@ class databaseAPI:
         :param cmd_str: SQL
         :return:
         """
-        result = {}
-        self.cursor.execute(cmd_str, self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
-        if self.inst_type == "select":
-            # get the reading of the SQL execution SELECT
-            result = self.cursor.fetchall()
+        self.cursor.execute(f"alter table {self.table_name} auto_increment = 1")
         self.databases.commit()
+        result = {}
+        try:
+            if config.debug_flag == 1:
+                print("--------------Executor Cmd Str and Variable -------------------------")
+                print(cmd_str)
+                print(self.variable_value + self.constrain_value)
+                print("---------------------------------------------------------------------")
+            self.cursor.execute(cmd_str,
+                                self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
+            if self.inst_type == "select":
+                # get the reading of the SQL execution SELECT
+                result = self.cursor.fetchall()
+                print(result)
+            else:
+                self.databases.commit()
+        except:
+            self.databases.rollback()
+        print(result)
         execution_result = {
             "result": result,
             # How many updated
-            "changed": self.cursor.rowcount
+            "changed": self.cursor.rowcount,
+            "id": self.cursor.lastrowid
         }
         return execution_result
 
@@ -59,41 +75,51 @@ class databaseAPI:
         self.constrain_variable = ()
         self.constrain_value = ()
         self.constrain_type = ()
-        print(cmd_str)
+        print(result_dirc)
         if result_dirc["changed"] <= 0:
-            return False
-        return result_dirc["result"]
+            return None
+        if config.debug_flag == 1:
+            print("-----------------Executed Result------------------------")
+            print(result_dirc)
+            print("--------------------------------------------------------")
+        # need to change the result
+        return result_dirc
 
     # Set the filter but has some issues
     def constrain_str(self):
         if self.constrain_type == ():
             return ""
-        if self.constrain_type[0] == "between":
-            constr_str = "{} between %s and %s ".format(self.constrain_variable[0])
-        elif self.constrain_type[0] == "no_tp":
-            constr_str = "{} = %s ".format(self.constrain_variable[0])
-        else:
-            if len(self.constrain_type) > 1 and self.constrain_type[1] == "(":
-                constr_str = self.constrain_type[0] + " " + self.constrain_type[1] + " " + "{} = %s "
-                self.constrain_type = associative_func.tuple_remove(self.constrain_type,
-                                                                    self.constrain_type[0])
-            elif len(self.constrain_type) > 1 and self.constrain_type[1] == ")":
-                constr_str = self.constrain_type[0] + " " + "{} = %s" + " " + self.constrain_type[1]
-                self.constrain_type = associative_func.tuple_remove(self.constrain_type,
-                                                                    self.constrain_type[0])
+        rtn = ""
+        state_index = 0
+        sign = "="
+        while self.constrain_type != ():
+            if self.constrain_value[state_index] is None:
+                sign = "is"
             else:
-                constr_str = self.constrain_type[0] + " " + "{} = %s "
+                sign = "="
+            if self.constrain_type[0] == "between":
+                constr_str = "{} between %s and %s "
+            elif self.constrain_type[0] == "no_tp":
+                constr_str = "{} " + sign + " %s "
+            else:
+                if len(self.constrain_type) > 1 and self.constrain_type[1] == "(":
+                    constr_str = self.constrain_type[0] + " " + self.constrain_type[1] + " " + "{} " + sign + " %s "
+                    self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                                        self.constrain_type[0])
+                elif len(self.constrain_type) > 1 and self.constrain_type[1] == ")":
+                    constr_str = self.constrain_type[0] + " " + "{} " + sign + " %s " + " " + self.constrain_type[1]
+                    self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                                        self.constrain_type[0])
+                else:
+                    constr_str = self.constrain_type[0] + " " + "{} " + sign + " %s "
             constr_str = constr_str.format(self.constrain_variable[0])
-        self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
-                                                                self.constrain_variable[0])
-        self.constrain_type = associative_func.tuple_remove(self.constrain_type,
-                                                            self.constrain_type[0])
-        temp = self.constrain_str()
-        if temp is None:
-            return None
-        constr_str += temp
-        if self.constrain_type == ():
-            return constr_str
+            self.constrain_variable = associative_func.tuple_remove(self.constrain_variable,
+                                                                    self.constrain_variable[0])
+            self.constrain_type = associative_func.tuple_remove(self.constrain_type,
+                                                                self.constrain_type[0])
+            state_index += 1
+            rtn += constr_str
+        return rtn
 
     # varify if the function has the proper variable to use
     def len_check(self):

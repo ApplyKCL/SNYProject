@@ -1,5 +1,4 @@
 import json
-import os
 device_position: int = 0
 comp_position: int = 1
 inst_position: int = 2
@@ -27,12 +26,38 @@ table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
 # \t\t\t\t-->Parameter #3
 # """
 # print(table_tree)
+<<<<<<< HEAD
 table_file = open("UI_design/LoginUI_Design/db_program/json/table.json", "r")
+=======
+debug_flag = 1
+aso_step_insert_flag: bool = True
+param_step_insert_flag: bool = False
+table_file = open("json/table.json", "r")
+input_pattern_file = open("json/input_pattern.json", "r")
+input_pattern = json.loads(input_pattern_file.read())
+previous_symbol = "PRE"
+next_symbol = "NEXT"
+status_symbol = "STATUS"
+sub_symbol = "SUB"
+pre_flag: bool = False
+next_flag: bool = False
+sub_flag: bool = False
+>>>>>>> shaonan
 table_json_content = json.loads(table_file.read())
 table_name: list = table_json_content["table_name"]
 table_elements_dict: dict = table_json_content["table_elements"]
 table_elements_name_dict: dict = table_json_content["table_elements_name"]
+<<<<<<< HEAD
+=======
+table_exe_result = "result"
+table_exe_id = "id"
+table_exe_changed = "changed"
+login_flag: bool = True
+print(table_elements_name_dict)
+>>>>>>> shaonan
 table_elements_list: list = []
 for i in range(0, aso_pro_position):
     table_elements_list.append(table_elements_dict[table_name[i]])
 
+table_file.close()
+input_pattern_file.close()

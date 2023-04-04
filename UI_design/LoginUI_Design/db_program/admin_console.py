@@ -1,22 +1,33 @@
-## Author: Shaonan Hu
+"""
+Author: Shaonan Hu
+Description: Backdoor program for the admin,
+"""
 import mysql.connector
 from datetime import datetime
 import mysql_execute
 import config_table
 import config
 import mysql_statement_gen
+import sys
 import user
 import check_user as chk_user
+# No Bug Prey, just ignore it :>
 print("""
 -------------------------------NO!-------------------------------------
 -------------------------------BUG-------------------------------------
 -----------------------------PLEASE!-----------------------------------
 """)
 """
-UI: -> Login Page -> Account Number, Password
-account = text editor(-- text --) (account number )
-password = text editor(-- text --) (Password)
-checkuser(account, password, db_connector)
+This is Admin Console that could be used for the Admin, which is also a
+Backdoor function that used for test purpose or the data written purpose.
+You cannot operate the database workflow without the data loaded.
+Well, the more smart idea is to written a load module for load all of the
+test data rather than manually input it. BBBBBut, the mean to exist this
+is to give client a reference that how to writen the workflow page
+info to the database.
+In addition, it should be run once is this operated as a admin machine which
+is where the database are.
+Furthermore, the database initial file is in json\dbinit.json
 """
 
 if __name__ == '__main__':
@@ -33,61 +44,53 @@ if __name__ == '__main__':
     # mycursor the cursor of the mysql connector api func
     mycursor = mydb.cursor()
     cmd_str = """
-        create database if not exists test_db
+        create database if not exists DaxsonicsBuildTrackDB
     """
     mysql_execute.execute_mysql(mydb, cmd_str, 0)
-    mydb.database = "test_db"
+    mydb.database = "DaxsonicsBuildTrackDB"
     config_table.create_table(mycursor, mydb)
-    choice = "0"
-    table_type = '*'
-    table_name = {"1": "employee",
-                  "2": "component",
-                  "3": "param",
-                  "4": "promopt"}
-    table_dirc = {
-        '*': "employee_table"
-    }
-    # pass the database class into the function
-    # Pass the database connector class to the databaseAPI class to create the database API class
-    # Pass the table name (Optional)
-    # STEP 2
-    myclass = mysql_statement_gen.databaseAPI(mydb, "employee_table")
-    start_time = 0
-    flag = False
-    flag_count = 0
-    # Check the user if it is exist
-    # STEP 3
-    result = chk_user.check_user("sh258955", "123456", myclass)
-    if not result:
-        print("Error In Use")
-    print(result)
-    # [a, b, c ...., 1]
-    if result[len(result) - 1] == 1:
-        # STEP 4
-        admin = user.Admin(user_id=result[0],
-                           user_name=result[1],
-                           user_email=result[2],
-                           db_class=mydb)
-        # Get the full info by add constrain and the constrain value,
-        # which is find the row with the constrain = constrain value, support multiple constrain
-        result = list(admin.query_user(constrain=("id",), constrain_value=(result[0],))[0])
-        # notice to input the old value and the modified value
-        old_list = tuple(result)
-        result[3] = "shaonanhukcl@gmail.com"
-        new_list = tuple(result)
-        # update the table
-        admin.update_table(new_list, old_list, table_name=config.table_name[config.employee_position])
-        admin.register_user(user_name="Shaonan Hu",
-                            user_job="CE",
-                            user_email="sh@sb.com",
-                            account_number="sh123456",
-                            password="123456")
-    else:
-        pass
-    """
-    account_number = input("Input Account Number: ")
-    password = input("Input Password: ")
-    login_user = u.User(account_number, password)
-    print(login_user.account_number, password)
-    """
+    # Start the transaction for solve the violation of the data
+    mydb.start_transaction()
+    choice: str = "#"
+    if chk_user.query_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
+                                                                      table=config.table_name[
+                                                                          config.employee_position])) is None:
+        admin_create_choice = input("First Use the System. Register Admin ? [Y/other exit]: ")
+        if admin_create_choice != "Y":
+            print("System Terminate")
+            sys.exit()
+        register_result = chk_user.register_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
+                                                                                            table=config.table_name[
+                                                                                                config.employee_position]))
+        if register_result is None:
+            sys.exit()
+
+    while choice != "*":
+        if not config.login_flag:
+            user_chk_result = chk_user.admin_console_check_user(mydb)
+            if user_chk_result is None and not config.login_flag:
+                continue
+            elif user_chk_result is None and config.login_flag:
+                sys.exit()
+            admin = user.Admin(user_id=user_chk_result[0],
+                               user_name=user_chk_result[1],
+                               user_email=user_chk_result[3],
+                               db_class=mydb)
+            config.login_flag = 1
+        else:
+            admin = user.Admin(user_id=1,
+                               user_name="Shaonan Hu",
+                               user_email="abcabd",
+                               db_class=mydb)
+        choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
+        if choice == '1':
+            create_result = admin.create_new()
+            if create_result is None:
+                sys.exit()
+        elif choice == '2':
+            barcode = "123456"
+            barcode_read = admin.read_barcode(barcode=barcode)
+            if barcode_read == "NEW":
+                admin.create_new_process(barcode=barcode)
+
 mydb.close()

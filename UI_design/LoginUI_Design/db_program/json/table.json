@@ -14,48 +14,33 @@
   "table_elements": {
     "device_table": [
       "id",
-      "name",
-      "product_id"],
+      "device",
+      "device_SN"],
     "comp_table": [
       "id",
-      "name",
-      "component_id",
+      "component",
+      "component_SN",
       "required_amount"
     ],
     "inst_table":[
       "id",
-      "name",
+      "instruction",
       "repeat_times",
       "previous_inst",
-      "next_inst",
-      "start"
+      "next_inst"
     ],
     "step_table":[
       "id",
-      "name",
+      "step",
       "repeat_times",
       "previous_step",
-      "next_step",
-      "start",
-      "sub",
-      "sub_id"
+      "next_step"
     ],
     "param_table": [
       "id",
-      "name",
-      "product_id",
-      "req_one",
-      "req_two",
-      "req_tree",
-      "req_four",
-      "req_five",
-      "data",
-      "initial",
-      "sub",
-      "sub_id",
-      "value",
-      "upper_bound",
-      "lower_bound"
+      "parameter",
+      "previous_param",
+      "next_param"
     ],
     "employee_table":[
       "id",
@@ -64,25 +49,23 @@
       "email",
       "account_number",
       "password",
+      "enable_status",
       "admin_status"
     ],
     "process_table":[
       "id",
       "device_id",
       "component_id",
-      "last_step",
+      "barcode",
       "status"
     ],
     "data_table": [
       "id",
       "inst_id",
       "step_id",
+      "param_id",
       "step_repeated",
-      "status",
-      "initial",
-      "data",
-      "initial_field",
-      "data_field"
+      "value"
     ],
     "aso_step_table": [
       "id",
@@ -102,75 +85,59 @@
   "table_elements_name": {
     "device_table": [
       "ID",
-      "Name",
-      "Product ID"],
+      "Device Name",
+      "Device SN"],
     "comp_table": [
       "ID",
-      "Name",
-      "Component",
+      "Component Name",
+      "Component SN",
       "Require Amount"
     ],
     "inst_table":[
       "ID",
-      "Name",
-      "Repeat Time",
+      "Instruction",
+      "Repeat Times",
       "Previous Instruction",
-      "Next Instruction",
-      "Start Flag"
+      "Next Instruction"
     ],
     "step_table":[
       "ID",
-      "Name",
+      "Step Description",
       "Repeat Time",
       "Previous Step",
-      "Next Step",
-      "Start",
-      "Sub-Step",
-      "Sub-Step ID"
+      "Next Step"
     ],
     "param_table": [
       "ID",
-      "Name",
-      "Product ID",
-      "Requirement #1",
-      "Requirement #2",
-      "Requirement #3",
-      "Requirement #4",
-      "Requirement #5",
-      "Data Status",
-      "Initial Status",
-      "Sub-Parameter",
-      "Sub-Parameter ID",
-      "Value",
-      "Upper Bound",
-      "Lower Bound"
+      "Parameter",
+      "Previous Parameters",
+      "Next Parameters",
+      "Value"
     ],
     "employee_table":[
       "ID",
-      "Name",
+      "Employee Name",
       "Job",
       "Email",
       "Account Number",
       "Password",
-      "Admin Status Flag"
+      "Admin",
+      "Enable"
     ],
     "process_table":[
       "ID",
       "Device ID",
       "Component ID",
-      "Last Step Flag",
-      "Status Flag"
+      "Barcode",
+      "Status"
     ],
     "data_table": [
       "ID",
       "Instruction ID",
       "Step ID",
-      "Repeat Time",
-      "Status Flag",
-      "Initial Flag",
-      "Data Flag",
-      "Initial",
-      "Data"
+      "Parameter ID",
+      "Step Repeated",
+      "Value"
     ],
     "aso_step_table": [
       "ID",
