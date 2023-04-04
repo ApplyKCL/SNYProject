@@ -26,6 +26,11 @@ table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
 # \t\t\t\t-->Parameter #3
 # """
 # print(table_tree)
+step_device_offset = 1
+step_comp_offset = 2
+step_inst_offset = 3
+step_step_offset = 4
+step_param_offset = 5
 debug_flag = 1
 aso_step_insert_flag: bool = True
 param_step_insert_flag: bool = False

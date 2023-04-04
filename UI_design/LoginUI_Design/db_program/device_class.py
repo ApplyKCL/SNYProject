@@ -217,8 +217,8 @@ class Process:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.DeviceClass = table_colm[1]
-        self.CompClass = table_colm[2]
+        self.DeviceClass.id = table_colm[1]
+        self.CompClass.id = table_colm[2]
         self.barcode = table_colm[3]
         self.status = table_colm[4]
         self.list_elements()
@@ -226,7 +226,7 @@ class Process:
 
 class Data:
     def __init__(self, data_id: int = None, inst_class: Inst = Inst(), step_class: Step = Step(), param_class: Param = Param(),
-                 step_repeated: int = None, data: str = None):
+                 step_repeated: int = 0, data: str = None):
         self.id = data_id,
         self.InstClass: Inst = inst_class
         self.StepClass: Step = step_class
@@ -250,9 +250,9 @@ class Data:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.InstClass = table_colm[1]
-        self.StepClass = table_colm[2]
-        self.ParamClass = table_colm[3]
+        self.InstClass.id = table_colm[1]
+        self.StepClass.id = table_colm[2]
+        self.ParamClass.id = table_colm[3]
         self.StepRepeat = table_colm[4]
         self.Data = table_colm[5]
         self.list_elements()
@@ -277,6 +277,6 @@ class ProcessContext:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.ProcessClass = table_colm[1]
-        self.DataClass = table_colm[2]
+        self.ProcessClass.id = table_colm[1]
+        self.DataClass.id = table_colm[2]
         self.list_elements()
