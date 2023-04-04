@@ -38,7 +38,7 @@ if __name__ == '__main__':
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="369300Ab*"
+        password="215046Aa."
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -88,9 +88,12 @@ if __name__ == '__main__':
             if create_result is None:
                 sys.exit()
         elif choice == '2':
+            # Check if the barcode exist
             barcode = "123456"
+            # If not, return "NEW"
             barcode_read = admin.read_barcode(barcode=barcode)
             if barcode_read == "NEW":
-                admin.create_new_process(barcode=barcode)
+                rec = admin.create_new_process(barcode=barcode)
+                print(rec)
 
 mydb.close()
