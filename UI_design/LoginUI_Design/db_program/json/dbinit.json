@@ -6,16 +6,16 @@
       "table_name": "device_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(255) not null,",
-        "product_id varchar(255)"
+        "device varchar(255) not null,",
+        "device_SN varchar(255)"
       ]
     },
     {
       "table_name": "comp_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(255) not null,",
-        "component_id varchar(255),",
+        "component varchar(255) not null,",
+        "component_SN varchar(255),",
         "required_amount int default 1"
       ]
     },
@@ -23,7 +23,7 @@
       "table_name": "inst_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(255) not null,",
+        "instruction varchar(255) not null,",
         "repeat_times int default 1,",
         "previous_inst int,",
         "next_inst int"
@@ -33,23 +33,19 @@
       "table_name": "step_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(1000) not null,",
+        "step varchar(1000) not null,",
         "repeat_times int,",
         "previous_step int,",
-        "next_step int,",
-        "sub bit default 0,",
-        "sub_id int default 0"
+        "next_step int"
       ]
     },
     {
       "table_name": "param_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "name varchar(255) not null,",
+        "parameter varchar(255) not null,",
         "previous_param int,",
-        "next_param int,",
-        "sub bit default 0,",
-        "sub_id int default 0"
+        "next_param int"
       ]
     },
     {
@@ -85,9 +81,9 @@
       "table_name": "process_table",
       "table_elements": [
         "id int auto_increment primary key unique,",
-        "barcode varchar(255) not null unique,",
         "device_id int,",
         "component_id int,",
+        "barcode varchar(255) not null unique,",
         "status bit,",
         "constraint fk_dev_pro foreign key (device_id) references device_table(id),",
         "constraint fk_comp_pro foreign key (component_id) references comp_table(id)"
@@ -99,10 +95,12 @@
         "id int auto_increment primary key unique,",
         "inst_id int,",
         "step_id int,",
+        "param_id int,",
         "step_repeated int,",
         "value varchar(255),",
         "constraint fk_inst_pro foreign key (inst_id) references inst_table(id),",
-        "constraint fk_step_pro foreign key (step_id) references step_table(id)"
+        "constraint fk_step_pro foreign key (step_id) references step_table(id),",
+        "constraint fk_param_pro foreign key (param_id) references param_table(id)"
       ]
     },
     {

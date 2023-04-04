@@ -1,35 +1,35 @@
 {
   "device_table":
-  [["id", "name", "product_id"],
+  [["id", "device", "device_SN"],
     [],
     []],
   "comp_table":
-  [["id", "name", "component_id", "required_amount"],
+  [["id", "component", "component_SN", "required_amount"],
     [],
     []],
   "inst_table":
-  [["id", "name", "repeat_times"],
+  [["id", "instruction", "repeat_times"],
     ["previous_inst", "next_inst"],
     ["PRE", "NEXT"]],
   "step_table":
-  [[ "id", "name", "repeat_times"],
-    ["previous_step", "next_step", "sub", "sub_id"],
-    ["PRE", "NEXT", "SUB"]],
+  [[ "id", "step", "repeat_times"],
+    ["previous_step", "next_step"],
+    ["PRE", "NEXT"]],
   "param_table":
-  [["id", "name"],
-    ["previous_param", "next_param", "sub", "sub_id"],
-    ["PRE", "NEXT", "SUB"]],
+  [["id", "parameter"],
+    ["previous_param", "next_param"],
+    ["PRE", "NEXT"]],
 
   "employee_table":
   [["id", "name", "job", "email", "account_number", "password"],
     ["enable_status", "admin_status"],
     ["STATUS", "STATUS"]],
   "process_table":
-  [["id", "device_id", "component_id"],
+  [["id", "device_id", "component_id", "barcode"],
     ["status"],
     ["STATUS"]],
   "data_table":
-  [["id", "inst_id", "step_id", "step_repeated", "value"],
+  [["id", "inst_id", "step_id", "param_id", "step_repeated", "value"],
     [],
     []],
   "aso_step_table":

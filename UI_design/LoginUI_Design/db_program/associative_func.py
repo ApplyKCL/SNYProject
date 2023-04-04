@@ -22,9 +22,10 @@ def device_list_append(dev_sql_result) -> list:
 
 def display_row(row_list):
     for index in range(0, len(row_list)):
-        print(f"Choice #{index+1}", end="\t")
+        print(f"Choice #{index + 1}", end="\t")
         for colm in range(0, len(row_list[index])):
             print(f"{row_list[index][colm]}", end="\t")
+        print("\n")
 
 
 def display_dev(dev_class: dc.Device):
@@ -43,3 +44,27 @@ def check_colm(db_check_colm: tuple, db_colm: tuple):
         return False
     print("True")
     return True
+
+
+def choose_row(table_name, row_list):
+    # Get the Colm
+    colm_name = config.table_elements_name_dict[table_name]
+    print("Choice ID:\t" + "\t".join(tuple(colm_name)))
+    print(row_list)
+    display_row(row_list)
+    choice: int = int(input("Choice: [#/0 to exit]"))
+    if choice == 0:
+        return None
+    choice = choice - 1
+    print("Select:")
+    for index in range(0, len(row_list[choice])):
+        print(f"{colm_name[index]}: {row_list[choice][index]}\n")
+    return row_list[choice]
+
+
+def remove_repeat_tuple(input_rec: list = None):
+    if input_rec is None:
+        return None
+    removed_list = set(input_rec)
+    removed_list = [x for x in removed_list if x != (None,)]
+    return removed_list

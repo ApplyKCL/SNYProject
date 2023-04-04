@@ -84,10 +84,13 @@ if __name__ == '__main__':
                                db_class=mydb)
         choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
         if choice == '1':
-            reuslt = admin.create_new()
-            if reuslt is None:
+            create_result = admin.create_new()
+            if create_result is None:
                 sys.exit()
         elif choice == '2':
-            pass
+            barcode = "123456"
+            barcode_read = admin.read_barcode(barcode=barcode)
+            if barcode_read == "NEW":
+                admin.create_new_process(barcode=barcode)
 
 mydb.close()
