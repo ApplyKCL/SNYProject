@@ -32,10 +32,12 @@ step_inst_offset = 3
 step_step_offset = 4
 step_param_offset = 5
 debug_flag = 1
+
+table_file = open("UI_design/LoginUI_Design/db_program/json/table.json", "r")
 aso_step_insert_flag: bool = True
 param_step_insert_flag: bool = False
-table_file = open("json/table.json", "r")
-input_pattern_file = open("json/input_pattern.json", "r")
+# table_file = open("json/table.json", "r")
+input_pattern_file = open("UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
 input_pattern = json.loads(input_pattern_file.read())
 previous_symbol = "PRE"
 next_symbol = "NEXT"

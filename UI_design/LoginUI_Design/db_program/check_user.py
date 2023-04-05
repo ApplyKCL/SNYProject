@@ -32,8 +32,10 @@ def check_user(account_number: str, password: str, sql_class: sqlgen.databaseAPI
                                           constrain_type=("no_tp", "and"),
                                           constrain_variable=("account_number", "password"),
                                           constrain_value=(account_number, password))
-    if not result:
+    if not result or result[config.table_exe_result] == [] or result[config.table_exe_changed]<= 0:
+        # print(f'Account Number or Password is not correct')
         return None
+    # print(f'Welcome {result[config.table_exe_result][0][1]}')
     return list(result[config.table_exe_result][0])
 
 

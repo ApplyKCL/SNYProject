@@ -121,8 +121,8 @@
       "Email",
       "Account Number",
       "Password",
-      "Admin",
-      "Enable"
+      "Enable",
+      "Admin"
     ],
     "process_table":[
       "ID",

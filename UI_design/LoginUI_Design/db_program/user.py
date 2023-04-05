@@ -409,6 +409,7 @@ class Admin(Employee):
         :return:
         """
         self.sql_class.table_name = config.table_name[config.employee_position]
+        # print(f'query_user: {constrain}, {constrain_value}, {required_value}')
         if constrain != ():
             constrain_type = ["no_tp"]
         else:
@@ -416,17 +417,20 @@ class Admin(Employee):
         for index in range(0, len(constrain) - 1):
             constrain_type.append("and")
         # query all
+        # print(f'value is good')
         result = self.sql_class.database_operation(instruction="select",
                                                    operate_variable=required_value,
                                                    constrain_variable=constrain,
                                                    constrain_type=constrain_type,
                                                    constrain_value=constrain_value)
+        
+        # print(f'query_user_login: {result}')
         # "id", "name", "job", "email",
         # "account_number", "password", "admin_status"
-        if not result:
+        if not result or result[config.table_exe_result] == [] or result[config.table_exe_changed]<= 0:
             return False
         else:
-            return result
+            return result[config.table_exe_result]
 
     # This is the Function that used to create the procedure
     def create_new(self):

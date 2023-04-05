@@ -19,56 +19,6 @@ from db_program.mysql_statement_gen import *
 from db_program.user import *
 from db_program.config import *
 
-
-### Login Main Window ###
-# class MyWindow(QMainWindow, Ui_Login_Window):
-#     def __init__(self):
-#         super().__init__()
-#         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
-#         self.setupUi(self)
-#         self.Login_Button.clicked.connect(self.go_to_inter)
-#         self.result = None
-#         self.admin_login = False
-#         self.admin = None
-#         self.myclass = None
-        
-#     def create_line_edit_mouse_event_handler(self, line_edit):
-#         def line_edit_mouse_event_handler(event):
-#             nonlocal self, line_edit
-#             self.virtual_keyboard = VirtualKeyboard.line_edit_clicked(line_edit, self.virtual_keyboard)
-
-#         return line_edit_mouse_event_handler
-        
-#     def go_to_inter(self):
-#         self.UserID = QLineEdit(self)
-#         self.UserID.mousePressEvent = self.create_line_edit_mouse_event_handler(self.UserID)
-#         account = self.UserID.text()
-#         password = self.Password.text()
-        
-#         self.myclass = databaseAPI(database_manager.mydb, "employee_table")
-#         self.result = check_user(account, password, self.myclass)
-        
-#         if self.result is False:
-#             QMessageBox.information(self,"Error Message","Invalid User/Password")
-        
-#         else:
-#             self.admin = Admin(user_id= self.result[0],
-#                         user_name= self.result[1],
-#                         user_email= self.result[2],
-#                         db_class= database_manager.mydb)
-            
-#             if self.result[len(self.result)-1] == 1:
-#                 dialog.exec_()
-#                 self.admin_login = True
-#             else:
-#                 self.hide()
-#                 userWindow.showFullScreen()
-                
-#         self.virtual_keyboard = None
-        
-      
-
-
 class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
     def __init__(self):
         super().__init__()
@@ -78,14 +28,13 @@ class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
         self.result = None
         self.admin_login = False
         self.admin = None
-<<<<<<< HEAD
-        self.myclass = None
         
         self.UserID.mousePressEvent = self.create_line_edit_mouse_event_handler(self.UserID)
         self.Password.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Password)
 
         self.virtual_keyboard = None
 
+    
     def create_line_edit_mouse_event_handler(self, line_edit):
         def line_edit_mouse_event_handler(event):
             nonlocal self, line_edit
@@ -93,20 +42,19 @@ class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
 
         return line_edit_mouse_event_handler
 
-=======
->>>>>>> shaonan
-
+    
     def go_to_inter(self):
         account = self.UserID.text()
         password = self.Password.text()
 
-<<<<<<< HEAD
         self.myclass = databaseAPI(database_manager.mydb, "employee_table")
         self.result = check_user(account, password, self.myclass)
+        # print(f'result check: {self.result[-2]}')
 
-        if self.result is False:
+        if self.result is None:
             QMessageBox.information(self,"Error Message","Invalid User/Password")
-
+        elif self.result[-2] == False:
+            QMessageBox.information(self,"Error Message","User not activated")    
         else:
             self.admin = Admin(user_id= self.result[0],
                         user_name= self.result[1],
@@ -123,29 +71,6 @@ class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
         self.virtual_keyboard = None
      
             
-=======
-        myclass = databaseAPI(database_manager.mydb, "employee_table")
-        self.result = check_user(account, password, myclass)
-        self.admin = Admin(user_id=self.result[0],
-                           user_name=self.result[1],
-                           user_email=self.result[2],
-                           db_class=database_manager.mydb)
-        # print(self.result)
-
-        if self.result is False:
-            QMessageBox.information(self, "Error Message", "Invalid User/Password")
-
-        elif self.result[len(self.result) - 1] == 1:  # 设置对话框为弹窗模式
-            dialog.exec_()
-            self.admin_login = True
-
-        else:
-            self.hide()
-            userWindow.show()
-            pass
-
-
->>>>>>> shaonan
 class MyDialog(QDialog):
     def __init__(self):
         super().__init__()
@@ -176,31 +101,17 @@ class MyDialog(QDialog):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.User_System_UI)
-<<<<<<< HEAD
         admin_window.showFullScreen()
         
-=======
-        admin_window.show()
-
->>>>>>> shaonan
     def edit_product_info(self):
         self.hide()
         myWindow.hide()
         admin_window.stackedWidget.setCurrentWidget(admin_window.Product_System_UI)
-<<<<<<< HEAD
         admin_window.showFullScreen()
         
     def closeEvent(self, event):
         reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         # depends on user choice to close the window or not
-=======
-        admin_window.show()
-
-    def closeEvent(self, event):
-        reply = QMessageBox.question(self, 'Confirmation', 'Do you confirm to close window？',
-                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        # 根据用户的选择，决定是否关闭对话框
->>>>>>> shaonan
         if reply == QMessageBox.Yes:
             self.hide()
             myWindow.showFullScreen()
@@ -213,18 +124,35 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
-        self.admin = None
-<<<<<<< HEAD
         self.id_list = None
         
         self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
+        # Employee System
         self.pushButton_close_employee.clicked.connect(self.back_to_dialog) # type: ignore
         self.pushButton_close_workflow.clicked.connect(self.back_to_dialog) # type: ignore
         self.add_user_pushButton_2.clicked.connect(self.add_user)
         self.fresh_pushButton_2.clicked.connect(self.update_table)  
         self.disable_user_pushButton_2.clicked.connect(self.disable_user)
+        self.enable_user_pushButton_2.clicked.connect(self.enable_user)
         self.tableView_employee.setSelectionBehavior(QTableView.SelectItems)
+        
+        # Product System
+        
+        
+    def enable_user(self):
+        account = self.disable_user_name.text()
+        password = self.disable_password.text()
+        if account and password:
+            result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(account,password))
+            if result is False:
+                QMessageBox.information(self,"Error Message","Account Number or Password is invalid")
+            else:
+                old_result = result[0]
+                new_result = old_result[:6] + (True,) + old_result[7:]
+                myWindow.admin.update_table(new_result, old_result, table_name=config.table_name[config.employee_position])
+        else:
+            QMessageBox.information(self,"Error Message","Account Number or Password Missed")
         
     def disable_user(self):
         account = self.disable_user_name.text()
@@ -234,38 +162,19 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
             if result is False:
                 QMessageBox.information(self,"Error Message","Account Number or Password is invalid")
             else:
-                # new_result = tuple(result[0][:6] + (2,)) # disable the user
-                idx, name, *rest = result[0]
                 old_result = result[0]
-                result[0] = (idx, 'New', *rest)
-            
-                myWindow.admin.update_table(result[0], old_result, table_name=config.table_name[config.employee_position])
+                new_result = old_result[:6] + (False,) + old_result[7:]
+                myWindow.admin.update_table(new_result, old_result, table_name=config.table_name[config.employee_position])
         else:
             QMessageBox.information(self,"Error Message","Account Number or Password Missed")
         
         
-=======
-
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-
-        self.pushButton_close_employee.clicked.connect(self.back_to_dialog)  # type: ignore
-        self.pushButton_close_workflow.clicked.connect(self.back_to_dialog)  # type: ignore
-        self.add_user_pushButton_2.clicked.connect(self.add_user)
-        self.fresh_pushButton_2.clicked.connect(self.update_table)
-
->>>>>>> shaonan
     def update_table(self):
         user_info = myWindow.admin.query_user()
-<<<<<<< HEAD
         empolyee_table_title = tuple(config.table_elements_name_dict[config.table_name[config.employee_position]])
         self.id_list = [tup[0] for tup in user_info]
         user_info.insert(0, empolyee_table_title)
         user_info = [t[1:] for t in user_info]
-=======
-
-        print(user_info)
-
->>>>>>> shaonan
         self.model = TableModel(user_info)
         self.tableView_employee.setModel(self.model)
 
@@ -275,7 +184,6 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
         email_admin = self.add_email.text()
         user_account_admin = self.add_useraccount.text()
         password_admin = self.add_user_of_password_lineEdit_2.text()
-<<<<<<< HEAD
         
         if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin:
             myWindow.admin.register_user(user_name= user_name_admin,
@@ -286,15 +194,6 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
             if myWindow.admin.accout_number_status is False:
                 QMessageBox.information(self,"Error Message","Account Number is existed")
                 myWindow.admin.accout_number_status=True
-=======
-
-        if user_name_admin and user_job_admin and email_admin and user_account_admin and password_admin is not None:
-            myWindow.admin.register_user(user_name=user_name_admin,
-                                         user_job=user_job_admin,
-                                         user_email=email_admin,
-                                         account_number=user_account_admin,
-                                         password=password_admin)
->>>>>>> shaonan
         else:
             QMessageBox.information(self, "Error Message", "Registration is not completed")
 
@@ -304,23 +203,17 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window):
 
     def logout(self):
         self.hide()
-<<<<<<< HEAD
         myWindow.showFullScreen()
         
      
-=======
-        myWindow.show()
-
-
->>>>>>> shaonan
 class User_Window(QMainWindow, Ui_Employee):
     def __init__(self):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
+        self.barcode = self.employee_barcode.text()
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
-<<<<<<< HEAD
         
         self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
@@ -333,28 +226,16 @@ class User_Window(QMainWindow, Ui_Employee):
         myWindow.showFullScreen()
         
     def workflow_event(self):
-        self.hide()
-        instructionWindow.showFullScreen()
+        barcode_result = myWindow.admin.read_barcode(barcode=self.barcode)
+        if barcode_result=="NEW":
+            self.hide()
+            instructionWindow.showFullScreen()
+        else: 
+            self.hide()
+            instructionWindow.stackedWidget.setCurrentWidget(lambda: instructionWindow.stackedWidget.setCurrentIndex(barcode_result))
+            instructionWindow.showFullScreen()
         
             
-=======
-
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-
-    def logout(self):
-        self.hide()
-        myWindow.show()
-
-    def close_window(self):
-        self.hide()
-        myWindow.show()
-
-    def workflow_event(self):
-        self.hide()
-        instructionWindow.show()
-
-
->>>>>>> shaonan
 class Workflow_Window(QMainWindow, Ui_InstructionWindow):
     def __init__(self):
         super().__init__()
@@ -362,106 +243,32 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.setupUi(self)
         # Initialize the HomePage
         self.stackedWidget.setCurrentWidget(self.HomePage)
-<<<<<<< HEAD
         
         self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
-=======
-
-        self.inactivity_timeout = InactivityTimeout(0.1, self.logout)
-
->>>>>>> shaonan
         # Move to Next Page
         self.HomePage_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.Mount_Piezo_Wafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.Mount_Piezo_Wafer_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
-        self.Mount_Piezo_Wafer_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
-        self.DicePiezoWaferintoSubwafers0_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(5))
-        self.DicePiezoWaferintoSubwafers1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(6))
-        self.DicePiezoWaferintoSubwafers2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
-        self.DicePiezoWaferintoSubwafers3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(8))
-        self.Dice_Framing_Piezo_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(9))
-        self.Dice_Framing_Piezo_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(10))
-        self.Dice_Framing_Piezo_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(11))
-        self.Premount_Clean_and_Measure_Subwafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(12))
-        self.Premount_Clean_and_Measure_Subwafer_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(13))
-        self.Mount_Subwafers_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(14))
-        self.Dice_First_Pillars_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(15))
-        self.Dice_First_Pillars_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(16))
-        self.Dice_First_Pillars_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(17))
-        self.Fill_First_Pillars_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(18))
-        self.Fill_First_Pillars_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(19))
-        self.Fill_First_Pillars_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(20))
-        self.Fill_First_Pillars_4_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(21))
-        self.PreLap_First_Epoxy_Fill_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(22))
-        self.PreLap_First_Epoxy_Fill_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(23))
-        self.PreLap_First_Epoxy_Fill_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(24))
-        self.Lap_First_Epoxy_Fill_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(25))
-        self.Dice_Framing_Trench_Pattern_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(26))
-        self.Dice_Framing_Trench_Pattern_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(27))
-        self.Dice_Framing_Trench_Pattern_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(28))
-        self.Fill_Second_Pillars_and_Frame_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(29))
-        self.Fill_Second_Pillars_and_Frame_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(30))
-        self.Fill_Second_Pillars_and_Frame_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(31))
-        self.Fill_Second_Pillars_and_Frame_4_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(32))
-        self.pre_Lap_Second_Epoxy_Fill_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(33))
-        self.pre_Lap_Second_Epoxy_Fill_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(34))
-        self.pre_Lap_Second_Epoxy_Fill_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(35))
-        self.LapSecondEpoxyFill_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(36))
-        self.DepositFirstElectrode1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(37))
-        self.DepositFirstElectrode2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(38))
-        self.DepositFirstElectrode3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(39))
-        self.ScratchDiceElements1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(40))
-        self.ScratchDiceElements2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(41))
-        self.ScratchDiceElements3_Finish.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(42))
+        self.DicePiezoWaferintoSubwafers1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
+        self.Dice_Framing_Piezo_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
+        self.Premount_Clean_and_Measure_Subwafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(5))
+        self.Mount_Subwafers_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(6))
+        self.Dice_First_Pillars_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
+        self.LapSecondEpoxyFill_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
 
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
         self.Mount_Piezo_Wafer_1_Back.clicked.connect(self.returnToUserWindow)
-        self.Mount_Piezo_Wafer_2_Back.clicked.connect(self.returnToUserWindow)
-        self.Mount_Piezo_Wafer_3_Back.clicked.connect(self.returnToUserWindow)
-        self.DicePiezoWaferintoSubwafers0_Back.clicked.connect(self.returnToUserWindow)
         self.DicePiezoWaferintoSubwafers1_Back.clicked.connect(self.returnToUserWindow)
-        self.DicePiezoWaferintoSubwafers2_Back.clicked.connect(self.returnToUserWindow)
-        self.DicePiezoWaferintoSubwafers3_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_Framing_Piezo_1_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_Framing_Piezo_2_Back.clicked.connect(self.returnToUserWindow)
         self.Dice_Framing_Piezo_3_Back.clicked.connect(self.returnToUserWindow)
         self.Premount_Clean_and_Measure_Subwafer_1_Back.clicked.connect(self.returnToUserWindow)
-        self.Premount_Clean_and_Measure_Subwafer_2_Back.clicked.connect(self.returnToUserWindow)
         self.Mount_Subwafers_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_First_Pillars_1_Back.clicked.connect(self.returnToUserWindow)
         self.Dice_First_Pillars_2_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_First_Pillars_3_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_First_Pillars_1_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_First_Pillars_2_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_First_Pillars_3_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_First_Pillars_4_Back.clicked.connect(self.returnToUserWindow)
-        self.PreLap_First_Epoxy_Fill_1_Back.clicked.connect(self.returnToUserWindow)
-        self.PreLap_First_Epoxy_Fill_2_Back.clicked.connect(self.returnToUserWindow)
-        self.PreLap_First_Epoxy_Fill_3_Back.clicked.connect(self.returnToUserWindow)
-        self.Lap_First_Epoxy_Fill_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_First_Pillars_1_Back.clicked.connect(self.returnToUserWindow)
         self.Dice_First_Pillars_2_Back.clicked.connect(self.returnToUserWindow)
-        self.Dice_First_Pillars_3_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_Second_Pillars_and_Frame_1_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_Second_Pillars_and_Frame_2_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_Second_Pillars_and_Frame_3_Back.clicked.connect(self.returnToUserWindow)
-        self.Fill_Second_Pillars_and_Frame_4_Back.clicked.connect(self.returnToUserWindow)
-        self.pre_Lap_Second_Epoxy_Fill_1_Back.clicked.connect(self.returnToUserWindow)
-        self.pre_Lap_Second_Epoxy_Fill_2_Back.clicked.connect(self.returnToUserWindow)
-        self.pre_Lap_Second_Epoxy_Fill_3_Back.clicked.connect(self.returnToUserWindow)
         self.LapSecondEpoxyFill_Back.clicked.connect(self.returnToUserWindow)
-        self.DepositFirstElectrode1_Back.clicked.connect(self.returnToUserWindow)
-        self.DepositFirstElectrode2_Back.clicked.connect(self.returnToUserWindow)
-        self.DepositFirstElectrode3_Back.clicked.connect(self.returnToUserWindow)
-        self.ScratchDiceElements1_Back.clicked.connect(self.returnToUserWindow)
-        self.ScratchDiceElements2_Back.clicked.connect(self.returnToUserWindow)
-        self.ScratchDiceElements3_Back.clicked.connect(self.returnToUserWindow)
 
     def logout(self):
         self.hide()
-<<<<<<< HEAD
         myWindow.showFullScreen()
         
     def returnToUserWindow(self):
@@ -469,15 +276,6 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow):
         self.stackedWidget.setCurrentWidget(self.HomePage)
         userWindow.showFullScreen()   
         
-=======
-        myWindow.show()
-
-    def returnToUserWindow(self):
-        self.hide()
-        self.stackedWidget.setCurrentWidget(self.HomePage)
-        userWindow.show()
-
->>>>>>> shaonan
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape:
             self.close()
@@ -533,27 +331,14 @@ class DatabaseManager:
             user="root",
             password="369300Ab*",
             
-            database="test_db"
+            database="DaxsonicsBuildTrackDB"
         )
 
         if not self.mydb.is_connected():
             print("Failed to connect to database.")
             sys.exit(-1)
-<<<<<<< HEAD
             
     
-=======
-
-    # def get_table_model(self):
-    #     # Create a table model that retrieves data from a table
-    #     model = QSqlTableModel()
-    #     model.setTable('employee_table')
-    #     model.setEditStrategy(QSqlTableModel.OnFieldChange)
-    #     model.select()
-    #     return model
-
-
->>>>>>> shaonan
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data):
         super().__init__()
@@ -577,7 +362,6 @@ class TableModel(QtCore.QAbstractTableModel):
     def columnCount(self, index):
         # The following takes the first sub-list, and returns
         # the length (only works if all rows are an equal length)
-<<<<<<< HEAD
         return len(self._data[0]) if self._data else 0
     
     def setData(self, index, value, role=Qt.EditRole):
@@ -591,9 +375,7 @@ class TableModel(QtCore.QAbstractTableModel):
             result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row-1],))
             data_row.insert(0,result[0][0])
             new_result = tuple(data_row)
-            # print(new_result)
             myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
-            # self.update_database(row, column, value)
             
             return True
         return False
@@ -601,30 +383,8 @@ class TableModel(QtCore.QAbstractTableModel):
     def flags(self,index):
         return Qt.ItemIsSelectable | Qt.ItemIsEditable | Qt.ItemIsEnabled
     
-    # def update_database(self, row, column, value):
-    #     # update Database
-    #     print(self._data[row])
-    #     print(value)
-        
-    #     # account = self._data[row][3]
-    #     # password = self._data[row][4]
-    #     result = myWindow.admin.query_user(constrain=("account_number", "password"), constrain_value=(self._data[row][3],self._data[row][4]))
-    #     print(result)
-    #     # myWindow.admin.update_table( new_result, result[0] table_name=config.table_name[config.employee_position])
 
 if __name__ == '__main__':
-=======
-        return len(self._data[0])
-
-
-if __name__ == '__main__':
-    # mydb = mysql.connector.connect(
-    #     host="localhost",
-    #     user="root",
-    #     password="950321",
-    #     database="test_db"
-    # )
->>>>>>> shaonan
     database_manager = DatabaseManager()
     app = QApplication(sys.argv)
     myWindow = MyWindow()
@@ -633,5 +393,5 @@ if __name__ == '__main__':
     admin_window = Administrator_Window()
     userWindow = User_Window()
     instructionWindow = Workflow_Window()
-    myWindow.show()
+    myWindow.showFullScreen()
     sys.exit(app.exec_())
