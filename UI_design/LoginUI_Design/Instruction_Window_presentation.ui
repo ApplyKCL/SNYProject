@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -162,7 +162,7 @@ padding-top:7px;
         </property>
         <property name="styleSheet">
          <string notr="true">border-image:None;
-</string>
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary</string>
@@ -287,8 +287,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="text">
          <string/>
@@ -296,8 +296,11 @@ border-image:None;</string>
         <property name="maxLength">
          <number>32767</number>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
         <property name="placeholderText">
-         <string>      Initial Here</string>
+         <string>Initial Here</string>
         </property>
        </widget>
       </widget>
@@ -312,14 +315,14 @@ border-image:None;</string>
         <property name="geometry">
          <rect>
           <x>550</x>
-          <y>130</y>
+          <y>120</y>
           <width>111</width>
           <height>21</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="text">
          <string/>
@@ -451,7 +454,7 @@ padding-top:7px;
         </property>
         <property name="styleSheet">
          <string notr="true">border-image:None;
-</string>
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary</string>
@@ -478,7 +481,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary </string>
@@ -494,10 +498,17 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
         </property>
         <property name="placeholderText">
-         <string>     Initial Here</string>
+         <string>Initial Here</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Dice_Framing_Piezo_3_Next">
@@ -609,10 +620,14 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="placeholderText">
-         <string>  Initial Here</string>
+         <string>Initial Here</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data1">
@@ -625,7 +640,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data2">
@@ -638,7 +654,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data3">
@@ -651,7 +668,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data4">
@@ -664,7 +682,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data5">
@@ -677,7 +696,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data6">
@@ -690,7 +710,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data7">
@@ -703,33 +724,36 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data8">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>370</x>
           <y>420</y>
-          <width>61</width>
+          <width>51</width>
           <height>22</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data9">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>380</x>
           <y>480</y>
-          <width>61</width>
+          <width>51</width>
           <height>22</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data10">
@@ -742,7 +766,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Data11">
@@ -755,7 +780,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Premount_Clean_and_Measure_Subwafer_1_Initial">
@@ -856,7 +882,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary </string>
@@ -883,7 +910,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary </string>
@@ -977,20 +1005,22 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data8">
         <property name="geometry">
          <rect>
           <x>920</x>
-          <y>60</y>
+          <y>50</y>
           <width>71</width>
           <height>22</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data9">
@@ -1003,33 +1033,36 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data10">
         <property name="geometry">
          <rect>
           <x>560</x>
-          <y>120</y>
+          <y>110</y>
           <width>71</width>
           <height>22</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data11">
         <property name="geometry">
          <rect>
           <x>580</x>
-          <y>230</y>
+          <y>220</y>
           <width>71</width>
           <height>22</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data12">
@@ -1042,7 +1075,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data13">
@@ -1055,7 +1089,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data14">
@@ -1068,7 +1103,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Mount_Subwafers_Data15">
@@ -1081,7 +1117,8 @@ padding-top:7px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Mount_Subwafers_Next">
@@ -1182,10 +1219,14 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="placeholderText">
-         <string>  Initial Here</string>
+         <string>Initial Here</string>
         </property>
        </widget>
       </widget>
@@ -1209,7 +1250,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_First_Pillars_2_Initial1">
@@ -1222,10 +1264,14 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="placeholderText">
-         <string>   Initial Here</string>
+         <string>Initial Here</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="Dice_First_Pillars_2_Dates">
@@ -1272,7 +1318,8 @@ border-image:None;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image:None;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="placeholderText">
          <string>Please provide detailed descriptions if you feel necessary </string>
@@ -1341,19 +1388,17 @@ padding-top:7px;
         <property name="geometry">
          <rect>
           <x>600</x>
-          <y>100</y>
+          <y>96</y>
           <width>71</width>
-          <height>16</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="toolTipDuration">
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1372,10 +1417,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1384,20 +1427,18 @@ border: none;</string>
        <widget class="QLineEdit" name="LapSecondEpoxyFill_Data3">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>320</y>
+          <x>910</x>
+          <y>316</y>
           <width>71</width>
-          <height>16</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="toolTipDuration">
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1409,17 +1450,15 @@ border: none;</string>
           <x>570</x>
           <y>300</y>
           <width>71</width>
-          <height>16</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="toolTipDuration">
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1428,20 +1467,18 @@ border: none;</string>
        <widget class="QLineEdit" name="LapSecondEpoxyFill_Data5">
         <property name="geometry">
          <rect>
-          <x>560</x>
-          <y>190</y>
+          <x>550</x>
+          <y>196</y>
           <width>71</width>
-          <height>16</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="toolTipDuration">
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1460,10 +1497,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1472,7 +1507,7 @@ border: none;</string>
        <widget class="QLineEdit" name="LapSecondEpoxyFill_Data7">
         <property name="geometry">
          <rect>
-          <x>390</x>
+          <x>400</x>
           <y>230</y>
           <width>45</width>
           <height>15</height>
@@ -1482,10 +1517,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1504,10 +1537,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1516,7 +1547,7 @@ border: none;</string>
        <widget class="QLineEdit" name="LapSecondEpoxyFill_Data9">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>390</x>
           <y>410</y>
           <width>45</width>
           <height>15</height>
@@ -1526,10 +1557,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1636,10 +1665,8 @@ padding-top:7px;
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1658,10 +1685,8 @@ border: none;</string>
          <number>-2</number>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-
-border-image: none;
-border: none;</string>
+         <string notr="true">border-image:None;
+border: None;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

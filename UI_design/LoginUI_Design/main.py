@@ -5,7 +5,7 @@ from PyQt5.QtCore import QTimer, QObject, Qt
 import sys
 import mysql.connector
 
-from login import Ui_Login_Window
+from Login_Window import Ui_Login_Window
 from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
@@ -230,7 +230,7 @@ class User_Window(QMainWindow, Ui_Employee):
         if barcode_result=="NEW":
             self.hide()
             instructionWindow.showFullScreen()
-        else: 
+        else:
             self.hide()
             instructionWindow.stackedWidget.setCurrentWidget(lambda: instructionWindow.stackedWidget.setCurrentIndex(barcode_result))
             instructionWindow.showFullScreen()

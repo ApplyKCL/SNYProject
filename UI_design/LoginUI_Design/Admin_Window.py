@@ -62,7 +62,7 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.workflow_database_system = QtWidgets.QLabel(self.widget)
         font = QtGui.QFont()
-        font.setFamily("Times New Roman")
+        font.setFamily(".AppleSystemUIFont")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
@@ -111,7 +111,7 @@ class Ui_Admin_Window(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 3000, 3000))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(-1003, 0, 3000, 3000))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -175,7 +175,7 @@ class Ui_Admin_Window(object):
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.user_database_system = QtWidgets.QLabel(self.widget_2)
         font = QtGui.QFont()
-        font.setFamily("Times New Roman")
+        font.setFamily(".AppleSystemUIFont")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
@@ -187,7 +187,7 @@ class Ui_Admin_Window(object):
         self.fresh_pushButton_2 = QtWidgets.QPushButton(self.widget_2)
         self.fresh_pushButton_2.setMinimumSize(QtCore.QSize(130, 45))
         font = QtGui.QFont()
-        font.setPointSize(11)
+        font.setPointSize(13)
         font.setBold(True)
         font.setWeight(75)
         self.fresh_pushButton_2.setFont(font)
@@ -237,7 +237,7 @@ class Ui_Admin_Window(object):
         self.add_user_of_user_name_lineEdit_2.setMinimumSize(QtCore.QSize(90, 30))
         self.add_user_of_user_name_lineEdit_2.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         self.add_user_of_user_name_lineEdit_2.setFont(font)
         self.add_user_of_user_name_lineEdit_2.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
@@ -260,7 +260,7 @@ class Ui_Admin_Window(object):
         self.add_user_of_password_lineEdit_2.setMinimumSize(QtCore.QSize(90, 30))
         self.add_user_of_password_lineEdit_2.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         self.add_user_of_password_lineEdit_2.setFont(font)
         self.add_user_of_password_lineEdit_2.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
@@ -292,7 +292,7 @@ class Ui_Admin_Window(object):
         self.add_user_pushButton_2.setMinimumSize(QtCore.QSize(90, 30))
         self.add_user_pushButton_2.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         font.setBold(False)
         font.setWeight(50)
         self.add_user_pushButton_2.setFont(font)
@@ -319,7 +319,7 @@ class Ui_Admin_Window(object):
         self.disable_user_name = QtWidgets.QLineEdit(self.groupBox_5)
         self.disable_user_name.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         self.disable_user_name.setFont(font)
         self.disable_user_name.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
@@ -331,7 +331,7 @@ class Ui_Admin_Window(object):
         self.disable_password = QtWidgets.QLineEdit(self.groupBox_5)
         self.disable_password.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         self.disable_password.setFont(font)
         self.disable_password.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "border:none;\n"
@@ -347,7 +347,7 @@ class Ui_Admin_Window(object):
         self.disable_user_pushButton_2.setMinimumSize(QtCore.QSize(90, 30))
         self.disable_user_pushButton_2.setMaximumSize(QtCore.QSize(90, 30))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(13)
         font.setBold(False)
         font.setWeight(50)
         self.disable_user_pushButton_2.setFont(font)
@@ -414,7 +414,7 @@ class Ui_Admin_Window(object):
         self.add_job.setPlaceholderText(_translate("Admin_Window", "Job Title"))
         self.add_user_pushButton_2.setText(_translate("Admin_Window", "Add"))
         self.groupBox_5.setTitle(_translate("Admin_Window", "Disable User"))
-        self.disable_user_name.setPlaceholderText(_translate("Admin_Window", "User Name"))
+        self.disable_user_name.setPlaceholderText(_translate("Admin_Window", "User Account#"))
         self.disable_password.setPlaceholderText(_translate("Admin_Window", "Password"))
         self.disable_user_pushButton_2.setText(_translate("Admin_Window", "Disable"))
         self.enable_user_pushButton_2.setText(_translate("Admin_Window", "Enable"))
