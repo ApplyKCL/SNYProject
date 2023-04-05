@@ -50,7 +50,6 @@ if __name__ == '__main__':
     mydb.database = "DaxsonicsBuildTrackDB"
     config_table.create_table(mycursor, mydb)
     # Start the transaction for solve the violation of the data
-    mydb.start_transaction()
     choice: str = "#"
     if chk_user.query_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
                                                                       table=config.table_name[
@@ -92,6 +91,7 @@ if __name__ == '__main__':
             barcode = "123456"
             # If not, return "NEW"
             barcode_read = admin.read_barcode(barcode=barcode)
+            admin.input_data("SH")
             if barcode_read == "NEW":
                 rec = admin.create_new_process(barcode=barcode)
                 print(rec)

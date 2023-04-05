@@ -19,20 +19,17 @@
     "comp_table": [
       "id",
       "component",
-      "component_SN",
-      "required_amount"
+      "component_SN"
     ],
     "inst_table":[
       "id",
       "instruction",
-      "repeat_times",
       "previous_inst",
       "next_inst"
     ],
     "step_table":[
       "id",
       "step",
-      "repeat_times",
       "previous_step",
       "next_step"
     ],
@@ -64,8 +61,10 @@
       "inst_id",
       "step_id",
       "param_id",
-      "step_repeated",
-      "value"
+      "value",
+      "comment",
+      "initial",
+      "finish_date"
     ],
     "aso_step_table": [
       "id",
@@ -90,20 +89,17 @@
     "comp_table": [
       "ID",
       "Component Name",
-      "Component SN",
-      "Require Amount"
+      "Component SN"
     ],
     "inst_table":[
       "ID",
       "Instruction",
-      "Repeat Times",
       "Previous Instruction",
       "Next Instruction"
     ],
     "step_table":[
       "ID",
       "Step Description",
-      "Repeat Time",
       "Previous Step",
       "Next Step"
     ],
@@ -111,8 +107,7 @@
       "ID",
       "Parameter",
       "Previous Parameters",
-      "Next Parameters",
-      "Value"
+      "Next Parameters"
     ],
     "employee_table":[
       "ID",
@@ -121,8 +116,8 @@
       "Email",
       "Account Number",
       "Password",
-      "Admin",
-      "Enable"
+      "Enable",
+      "Admin"
     ],
     "process_table":[
       "ID",
@@ -136,8 +131,9 @@
       "Instruction ID",
       "Step ID",
       "Parameter ID",
-      "Step Repeated",
-      "Value"
+      "Value",
+      "Comment",
+      "Initial"
     ],
     "aso_step_table": [
       "ID",

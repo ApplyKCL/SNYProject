@@ -31,18 +31,24 @@ class databaseAPI:
         self.databases.commit()
         result = {}
         try:
+            self.cursor.execute("set session transaction isolation level read committed")
             if config.debug_flag == 1:
                 print("--------------Executor Cmd Str and Variable -------------------------")
                 print(cmd_str)
                 print(self.variable_value + self.constrain_value)
                 print("---------------------------------------------------------------------")
-            self.cursor.execute(cmd_str,
-                                self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
+
             if self.inst_type == "select":
+                # Use FOR UPDATE to lock only the rows that match the condition
+                self.cursor.execute(cmd_str + " for update",
+                                    self.variable_value + self.constrain_value)  # SQL and the value of SQL variable
                 # get the reading of the SQL execution SELECT
                 result = self.cursor.fetchall()
                 print(result)
             else:
+                self.databases.start_transaction()
+                self.cursor.execute(cmd_str,
+                                    self.variable_value + self.constrain_value)
                 self.databases.commit()
         except:
             self.databases.rollback()
@@ -53,6 +59,10 @@ class databaseAPI:
             "changed": self.cursor.rowcount,
             "id": self.cursor.lastrowid
         }
+        try:
+            self.databases.commit()
+        except:
+            print("Close the Transaction")
         return execution_result
 
     def database_operation(self, instruction,

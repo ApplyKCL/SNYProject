@@ -15,8 +15,7 @@
       "table_elements": [
         "id int auto_increment primary key unique,",
         "component varchar(255) not null,",
-        "component_SN varchar(255),",
-        "required_amount int default 1"
+        "component_SN varchar(255)"
       ]
     },
     {
@@ -24,7 +23,6 @@
       "table_elements": [
         "id int auto_increment primary key unique,",
         "instruction varchar(255) not null,",
-        "repeat_times int default 1,",
         "previous_inst int,",
         "next_inst int"
       ]
@@ -34,7 +32,6 @@
       "table_elements": [
         "id int auto_increment primary key unique,",
         "step varchar(1000) not null,",
-        "repeat_times int,",
         "previous_step int,",
         "next_step int"
       ]
@@ -96,8 +93,10 @@
         "inst_id int,",
         "step_id int,",
         "param_id int,",
-        "step_repeated int,",
         "value varchar(255),",
+        "comment varchar(1000),",
+        "initial varchar(255),",
+        "finish_date date,",
         "constraint fk_inst_pro foreign key (inst_id) references inst_table(id),",
         "constraint fk_step_pro foreign key (step_id) references step_table(id),",
         "constraint fk_param_pro foreign key (param_id) references param_table(id)"

@@ -4,10 +4,10 @@
 class Device:
     def __init__(self, dev_id: int = None,
                  device_name: str = None,
-                 product_id: str = None):
+                 device_SN: str = None):
         self.id: int = dev_id
         self.device_name: str = device_name
-        self.product_id: str = product_id
+        self.device_SN: str = device_SN
         self.length = 3
         self.elements_list = []
         self.list_elements()
@@ -16,7 +16,7 @@ class Device:
         self.elements_list = []
         self.elements_list.append(self.id)
         self.elements_list.append(self.device_name)
-        self.elements_list.append(self.product_id)
+        self.elements_list.append(self.device_SN)
 
     def update_elements_list(self, table_colm):
         """
@@ -28,7 +28,7 @@ class Device:
             return None
         self.id = table_colm[0]
         self.device_name = table_colm[1]
-        self.product_id = table_colm[2]
+        self.device_SN = table_colm[2]
         # Function Call to list the variables
         self.list_elements()
 
@@ -36,12 +36,39 @@ class Device:
 class Comp:
     def __init__(self, comp_id: int = None,
                  comp_name: str = None,
-                 component_id: str = None,
-                 required_amount: int = 1):
+                 component_id: str = None,):
         self.id: int = comp_id
-        self.name: str = comp_name
-        self.component_id: str = component_id
-        self.required_amount: int = required_amount
+        self.comp_name: str = comp_name
+        self.component_SN: str = component_id
+        self.length = 3
+        self.elements_list = []
+        self.list_elements()
+
+    def list_elements(self):
+        self.elements_list = []
+        self.elements_list.append(self.id)
+        self.elements_list.append(self.comp_name)
+        self.elements_list.append(self.component_SN)
+
+    def update_elements_list(self, table_colm):
+        if len(table_colm) != self.length:
+            return None
+        self.id = table_colm[0]
+        self.comp_name = table_colm[1]
+        self.component_SN = table_colm[2]
+        self.list_elements()
+
+
+class Inst:
+    def __init__(self, inst_id: int = None,
+                 instruction: str = None,
+                 previous_inst: int = 0,
+                 next_inst: int = 0,
+                 ):
+        self.id: int = inst_id
+        self.instruction: str = instruction
+        self.previous: int = previous_inst
+        self.next: int = next_inst
         self.length = 4
         self.elements_list = []
         self.list_elements()
@@ -49,41 +76,7 @@ class Comp:
     def list_elements(self):
         self.elements_list = []
         self.elements_list.append(self.id)
-        self.elements_list.append(self.name)
-        self.elements_list.append(self.component_id)
-        self.elements_list.append(self.required_amount)
-
-    def update_elements_list(self, table_colm):
-        if len(table_colm) != self.length:
-            return None
-        self.id = table_colm[0]
-        self.name = table_colm[1]
-        self.component_id = table_colm[2]
-        self.required_amount = table_colm[3]
-        self.list_elements()
-
-
-class Inst:
-    def __init__(self, inst_id: int = None,
-                 inst_name: str = None,
-                 inst_repeat_times: int = 1,
-                 previous_inst: int = 0,
-                 next_inst: int = 0,
-                 ):
-        self.id: int = inst_id
-        self.name: str = inst_name
-        self.repeat_times: int = inst_repeat_times
-        self.previous: int = previous_inst
-        self.next: int = next_inst
-        self.length = 5
-        self.elements_list = []
-        self.list_elements()
-
-    def list_elements(self):
-        self.elements_list = []
-        self.elements_list.append(self.id)
-        self.elements_list.append(self.name)
-        self.elements_list.append(self.repeat_times)
+        self.elements_list.append(self.instruction)
         self.elements_list.append(self.previous)
         self.elements_list.append(self.next)
 
@@ -91,30 +84,27 @@ class Inst:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.name = table_colm[1]
-        self.repeat_times = table_colm[2]
-        self.previous = table_colm[3]
-        self.next = table_colm[4]
+        self.instruction = table_colm[1]
+        self.previous = table_colm[2]
+        self.next = table_colm[3]
         self.list_elements()
 
 
 class Step:
-    def __init__(self, step_id: int = None, step_name: str = None, step_repeat_times: int = 1,
+    def __init__(self, step_id: int = None, step: str = None,
                  previous_step: int = 0, next_step: int = 0):
         self.id: int = step_id
-        self.name: str = step_name
-        self.repeat_times: int = step_repeat_times
+        self.step: str = step
         self.previous: int = previous_step
         self.next: int = next_step
-        self.length = 5
+        self.length = 4
         self.elements_list = []
         self.list_elements()
 
     def list_elements(self):
         self.elements_list = []
         self.elements_list.append(self.id)
-        self.elements_list.append(self.name)
-        self.elements_list.append(self.repeat_times)
+        self.elements_list.append(self.step)
         self.elements_list.append(self.previous)
         self.elements_list.append(self.next)
 
@@ -122,10 +112,9 @@ class Step:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.name = table_colm[1]
-        self.repeat_times = table_colm[2]
-        self.previous = table_colm[3]
-        self.next = table_colm[4]
+        self.step = table_colm[1]
+        self.previous = table_colm[2]
+        self.next = table_colm[3]
         self.list_elements()
 
 
@@ -197,9 +186,9 @@ class Process:
                  comp_class: Comp = Comp(),
                  status: bool = 0):
         self.id: int = process_id
-        self.barcode: str = barcode
         self.DeviceClass: Device = device_class
         self.CompClass: Comp = comp_class
+        self.barcode: str = barcode
         self.status: bool = status
         self.length = 5
         self.elements_list = []
@@ -225,15 +214,17 @@ class Process:
 
 
 class Data:
-    def __init__(self, data_id: int = None, inst_class: Inst = Inst(), step_class: Step = Step(), param_class: Param = Param(),
-                 step_repeated: int = 0, data: str = None):
+    def __init__(self, data_id: int = None, inst_class: Inst = Inst(), step_class: Step = Step(),
+                 param_class: Param = Param(), data: str = None, comment: str = None, initial: str = None):
         self.id = data_id,
         self.InstClass: Inst = inst_class
         self.StepClass: Step = step_class
         self.ParamClass: Param = param_class
-        self.StepRepeat: int = step_repeated
-        self.Data: str = data
-        self.length = 6
+        self.data: str = data
+        self.comment: str = comment
+        self.initial: str = initial
+        self.finish_date = "current_date()"
+        self.length = 7
         self.elements_list = []
         self.list_elements()
 
@@ -243,8 +234,10 @@ class Data:
         self.elements_list.append(self.InstClass.id)
         self.elements_list.append(self.StepClass.id)
         self.elements_list.append(self.ParamClass.id)
-        self.elements_list.append(self.StepRepeat)
-        self.elements_list.append(self.Data)
+        self.elements_list.append(self.data)
+        self.elements_list.append(self.comment)
+        self.elements_list.append(self.initial)
+        self.elements_list.append(self.finish_date)
 
     def update_elements_list(self, table_colm):
         if len(table_colm) != self.length:
@@ -253,23 +246,28 @@ class Data:
         self.InstClass.id = table_colm[1]
         self.StepClass.id = table_colm[2]
         self.ParamClass.id = table_colm[3]
-        self.StepRepeat = table_colm[4]
-        self.Data = table_colm[5]
+        self.data = table_colm[4]
+        self.comment = table_colm[5]
+        self.initial = table_colm[6]
+        self.finish_date = "current_date()"
         self.list_elements()
 
 
 class ProcessContext:
-    def __init__(self, context_id: int = None, process_class: Process = Process(), data_class: Data = Data()):
+    def __init__(self, context_id: int = None, user_id: int = None, process_class: Process = Process(),
+                 data_class: Data = Data()):
         self.id: int = context_id
+        self.user_id = user_id
         self.ProcessClass: Process = process_class
         self.DataClass: Data = data_class
-        self.length = 3
+        self.length = 4
         self.elements_list = []
         self.list_elements()
 
     def list_elements(self):
         self.elements_list = []
         self.elements_list.append(self.id)
+        self.elements_list.append(self.user_id)
         self.elements_list.append(self.ProcessClass.id)
         self.elements_list.append(self.DataClass.id)
 
@@ -277,6 +275,7 @@ class ProcessContext:
         if len(table_colm) != self.length:
             return None
         self.id = table_colm[0]
-        self.ProcessClass.id = table_colm[1]
-        self.DataClass.id = table_colm[2]
+        self.user_id = table_colm[1]
+        self.ProcessClass.id = table_colm[2]
+        self.DataClass.id = table_colm[3]
         self.list_elements()

@@ -2,7 +2,6 @@
 import device_class as dc
 import config
 
-
 # Function to remove elements from tuple
 def tuple_remove(target=(), element=""):
     y = list(target)
@@ -16,7 +15,7 @@ def device_list_append(dev_sql_result) -> list:
     for index in range(0, len(dev_sql_result)):
         device_list.append(dc.Device(dev_id=int(dev_sql_result[index][0]),
                                      device_name=str(dev_sql_result[index][1]),
-                                     product_id=str(dev_sql_result[index][2])))
+                                     device_SN=str(dev_sql_result[index][2])))
     return device_list
 
 
@@ -33,7 +32,7 @@ def display_dev(dev_class: dc.Device):
     Device ID: {}
     Device Name: {}
     Device Product ID: {}
-                """.format(dev_class.id, dev_class.device_name, dev_class.product_id))
+                """.format(dev_class.id, dev_class.device_name, dev_class.device_SN))
 
 
 def check_colm(db_check_colm: tuple, db_colm: tuple):
@@ -65,6 +64,8 @@ def choose_row(table_name, row_list):
 def remove_repeat_tuple(input_rec: list = None):
     if input_rec is None:
         return None
-    removed_list = set(input_rec)
-    removed_list = [x for x in removed_list if x != (None,)]
-    return removed_list
+    unique_list = []
+    for tup in input_rec:
+        if tup not in unique_list and tup != (None, ):
+            unique_list.append(tup)
+    return unique_list

@@ -28,11 +28,12 @@ class Employee(User):
         self.sql_class = sql_generator.databaseAPI(db_class=self.database, table='')
         self.dev_context: device_class.DeviceContext = device_class.DeviceContext(context_id=0)
         self.accout_number_status = True
-        self.process_context: device_class.ProcessContext = device_class.ProcessContext()
+        self.process_context: device_class.ProcessContext = device_class.ProcessContext(user_id=self.user_id)
 
     def read_barcode(self, barcode: str = None):
         if barcode is None:
             return None
+        data_result = []
         # read the barcode from the database to check if there has an exist barcode
         self.sql_class.table_name = config.table_name[config.process_position]
         pro_result = self.sql_class.database_operation(instruction="select",
@@ -44,7 +45,6 @@ class Employee(User):
         # This means that there is no exist barcode in the system
         if pro_result is None:
             return "NEW"
-
         self.update_process_context(table_name=config.table_name[config.device_position],
                                     context_id=pro_result[config.table_exe_result][0][1])
         self.update_process_context(table_name=config.table_name[config.comp_position],
@@ -52,23 +52,34 @@ class Employee(User):
         self.update_process_context(table_name=config.table_name[config.process_position],
                                     context_id=pro_result[config.table_exe_result][0][0])
         self.sql_class.table_name = config.table_name[config.aso_pro_position]
-        aso_step_result = self.sql_class.database_operation(instruction="select",
-                                                            operate_variable=("data_id",),
-                                                            constrain_variable=("emp_id", "pro_id"),
-                                                            constrain_type=("no_tp", "and"),
-                                                            constrain_value=(self.user_id,
-                                                                             pro_result[config.table_exe_result][0][0]))
-        if aso_step_result is None:
-            return aso_step_result
-        self.sql_class.table_name = config.table_name[config.data_position]
-        for index in range(0, len(aso_step_result[config.table_exe_result][0])):
+        aso_pro_result = self.sql_class.database_operation(instruction="select",
+                                                           operate_variable=("id", "data_id",),
+                                                           constrain_variable=("emp_id", "pro_id"),
+                                                           constrain_type=("no_tp", "and"),
+                                                           constrain_value=(self.user_id,
+                                                                            pro_result[config.table_exe_result][0][0]))
+        if aso_pro_result is None:
+            return aso_pro_result
+
+        for index in range(0, len(aso_pro_result[config.table_exe_result][0])):
+            self.sql_class.table_name = config.table_name[config.data_position]
             data_result = self.sql_class.database_operation(instruction="select",
                                                             operate_variable=("*",),
                                                             constrain_variable=("id", "value"),
                                                             constrain_type=("no_tp", "and"),
                                                             constrain_value=(
-                                                                aso_step_result[config.table_exe_result][0][index],
+                                                                aso_pro_result[config.table_exe_result][index][1],
                                                                 None))
+            if not data_result[config.table_exe_result] \
+                    or data_result is None \
+                    or data_result[config.table_exe_changed] <= 0:
+                continue
+            if data_result[config.table_exe_result][0][len(data_result[config.table_exe_result][0]) - 1] is None:
+                self.update_process_context(table_name=config.table_name[config.aso_pro_position],
+                                            context_id=aso_pro_result[config.table_exe_result][index][0])
+                break
+        if data_result is None or data_result == [] or data_result[config.table_exe_changed] <= 0:
+            return None
         self.update_process_context(table_name=config.table_name[config.inst_position],
                                     context_id=data_result[config.table_exe_result][0][1])
         self.update_process_context(table_name=config.table_name[config.step_position],
@@ -78,6 +89,20 @@ class Employee(User):
         self.update_process_context(table_name=config.table_name[config.data_position],
                                     context_id=data_result[config.table_exe_result][0][0])
         print(data_result)
+        print(self.process_context.elements_list)
+
+    def input_data(self, data: str = None):
+        self.process_context.DataClass.data = data
+        self.process_context.DataClass.list_elements()
+        self.sql_class.table_name = config.table_name[config.data_position]
+        self.sql_class.database_operation(instruction="update",
+                                          operate_variable=(config.table_elements_dict
+                                                            [config.table_name[config.data_position]][-1],),
+                                          variable_value=(self.process_context.DataClass.elements_list[-1],),
+                                          constrain_type=("no_tp", ),
+                                          constrain_value=(self.process_context.DataClass.elements_list[0],),
+                                          constrain_variable=(config.table_elements_dict
+                                                              [config.table_name[config.data_position]][0],))
 
     # The device id and the component id is actually reserved for the future design since in the future, the system
     # is possible to support the multiple device and multiple component belong to the specific component
@@ -158,7 +183,7 @@ class Employee(User):
                                             value=(query_list[index][0],))
             print(f"Previous:{query_result[config.table_exe_result][0][1]}")
             if query_result is None:
-                print("fatal: NO existance query")
+                print("fatal: NO existence query")
                 return None
             if query_result[config.table_exe_result][0][1] == 0:
                 self.update_process_context(table_name=config.table_name[table_offset],
@@ -355,8 +380,7 @@ class Admin(Employee):
     def register_user(self, user_name, user_job, user_email, account_number, password,
                       enable_status=True, admin_status=False):
         """
-        :param enable_status:
-        :param enaable_status:
+        :param enable_status: User is deleted or not
         :param user_name: Name of User
         :param user_job: Job Of User
         :param user_email: Email of User | optional
@@ -618,7 +642,7 @@ class Admin(Employee):
         # Insert Aso Function May Added
         input_require = list(tuple(config.input_pattern[table_name][0]))
         input_require.pop(0)
-        input_list = input("\tInput\n" + "\t".join(tuple(input_require)) + "\n").split(" ")
+        input_list = input("\tInput\n" + "\t".join(tuple(input_require)) + "\n").split(",")
         pre_rec = []
         next_offset = 0
         previous_offset = 0

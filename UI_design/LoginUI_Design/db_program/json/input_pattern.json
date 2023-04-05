@@ -4,15 +4,15 @@
     [],
     []],
   "comp_table":
-  [["id", "component", "component_SN", "required_amount"],
+  [["id", "component", "component_SN"],
     [],
     []],
   "inst_table":
-  [["id", "instruction", "repeat_times"],
+  [["id", "instruction"],
     ["previous_inst", "next_inst"],
     ["PRE", "NEXT"]],
   "step_table":
-  [[ "id", "step", "repeat_times"],
+  [[ "id", "step"],
     ["previous_step", "next_step"],
     ["PRE", "NEXT"]],
   "param_table":
@@ -29,7 +29,7 @@
     ["status"],
     ["STATUS"]],
   "data_table":
-  [["id", "inst_id", "step_id", "param_id", "step_repeated", "value"],
+  [["id", "inst_id", "step_id", "param_id", "value", "comment", "initial"],
     [],
     []],
   "aso_step_table":
