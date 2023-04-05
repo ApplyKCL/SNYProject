@@ -115,7 +115,7 @@ top: 0.1em;
                 <widget class="QLabel" name="workflow_database_system">
                  <property name="font">
                   <font>
-                   <family>Times New Roman</family>
+                   <family>.AppleSystemUIFont</family>
                    <pointsize>16</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -218,7 +218,7 @@ QPushButton:hover{
                  <widget class="QWidget" name="scrollAreaWidgetContents_2">
                   <property name="geometry">
                    <rect>
-                    <x>0</x>
+                    <x>-1003</x>
                     <y>0</y>
                     <width>3000</width>
                     <height>3000</height>
@@ -366,7 +366,7 @@ top: 0.1em;
                 <widget class="QLabel" name="user_database_system">
                  <property name="font">
                   <font>
-                   <family>Times New Roman</family>
+                   <family>.AppleSystemUIFont</family>
                    <pointsize>16</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
@@ -400,7 +400,7 @@ top: 0.1em;
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>11</pointsize>
+                   <pointsize>13</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -518,7 +518,7 @@ QPushButton:hover{
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>8</pointsize>
+                        <pointsize>13</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -572,7 +572,7 @@ padding-bottom:2px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>8</pointsize>
+                        <pointsize>13</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -645,7 +645,7 @@ padding-bottom:2px;</string>
                     </property>
                     <property name="font">
                      <font>
-                      <pointsize>8</pointsize>
+                      <pointsize>13</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
@@ -707,7 +707,7 @@ padding-bottom:2px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>8</pointsize>
+                        <pointsize>13</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -732,7 +732,7 @@ padding-bottom:2px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>8</pointsize>
+                        <pointsize>13</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -767,7 +767,7 @@ padding-bottom:2px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>8</pointsize>
+                        <pointsize>13</pointsize>
                         <weight>50</weight>
                         <bold>false</bold>
                        </font>
