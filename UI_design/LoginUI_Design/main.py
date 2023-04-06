@@ -224,7 +224,6 @@ class User_Window(QMainWindow, Ui_Employee):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
-        self.barcode = self.employee_barcode.text()
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
         
@@ -239,14 +238,19 @@ class User_Window(QMainWindow, Ui_Employee):
         myWindow.showFullScreen()
         
     def workflow_event(self):
-        barcode_result = myWindow.admin.read_barcode(barcode=self.barcode)
-        if barcode_result=="NEW":
-            self.hide()
-            instructionWindow.showFullScreen()
+        self.barcode = self.employee_barcode.text()
+        print(f'barcode: {self.barcode}')
+        if self.barcode is None or self.barcode == '':
+            QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
-            self.hide()
-            instructionWindow.stackedWidget.setCurrentWidget(lambda: instructionWindow.stackedWidget.setCurrentIndex(barcode_result))
-            instructionWindow.showFullScreen()
+            barcode_result = myWindow.admin.read_barcode(barcode=self.barcode)
+            if barcode_result=="NEW":
+                self.hide()
+                instructionWindow.showFullScreen()
+            else:
+                self.hide()
+                instructionWindow.stackedWidget.setCurrentWidget(lambda: instructionWindow.stackedWidget.setCurrentIndex(barcode_result))
+                instructionWindow.showFullScreen()
         
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
@@ -280,17 +284,17 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.LapSecondEpoxyFill_Back.clicked.connect(self.returnToUserWindow)
         
         # Virtual Keyboard
-        self.HomePage_Name.mousePressEvent = self.create_line_edit_mouse_event_handler(self.HomePage_Name)
+        self.HomePage_Name.mousePressEvent = self.create_text_edit_mouse_event_handler(self.HomePage_Name)
         self.Mount_Piezo_Wafer_1_Data.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Piezo_Wafer_1_Data)
-        self.Mount_Piezo_Wafer_1_Comments_3.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Piezo_Wafer_1_Comments_3)
+        self.Mount_Piezo_Wafer_1_Comments_3.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Mount_Piezo_Wafer_1_Comments_3)
         self.Mount_Piezo_Wafer_1_Initial.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Piezo_Wafer_1_Initial)
         self.Mount_Piezo_Wafer_1_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Piezo_Wafer_1_Dates)
         self.DicePiezoWaferintoSubwafers1_Data.mousePressEvent = self.create_line_edit_mouse_event_handler(self.DicePiezoWaferintoSubwafers1_Data)
-        self.DicePiezoWaferintoSubwafers1_comments.mousePressEvent = self.create_line_edit_mouse_event_handler(self.DicePiezoWaferintoSubwafers1_comments)
+        self.DicePiezoWaferintoSubwafers1_comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.DicePiezoWaferintoSubwafers1_comments)
         self.DicePiezoWaferintoSubwafers1_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.DicePiezoWaferintoSubwafers1_Dates)
         self.DicePiezoWaferintoSubwafers1_Initals.mousePressEvent = self.create_line_edit_mouse_event_handler(self.DicePiezoWaferintoSubwafers1_Initals)
         self.Dice_Framing_Piezo_3_Data.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_Framing_Piezo_3_Data)
-        self.Dice_Framing_Piezo_3_Comments.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_Framing_Piezo_3_Comments)
+        self.Dice_Framing_Piezo_3_Comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Dice_Framing_Piezo_3_Comments)
         self.Dice_Framing_Piezo_3_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_Framing_Piezo_3_Dates)
         self.Dice_Framing_Piezo_3_Initial.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_Framing_Piezo_3_Initial)
         self.Premount_Clean_and_Measure_Subwafer_1_Data0.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Data0)
@@ -305,7 +309,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Premount_Clean_and_Measure_Subwafer_1_Data9.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Data9)
         self.Premount_Clean_and_Measure_Subwafer_1_Data10.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Data10)
         self.Premount_Clean_and_Measure_Subwafer_1_Data11.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Data11)
-        self.Premount_Clean_and_Measure_Subwafer_1_Comments.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Comments)
+        self.Premount_Clean_and_Measure_Subwafer_1_Comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Comments)
         self.Premount_Clean_and_Measure_Subwafer_1_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Dates)
         self.Premount_Clean_and_Measure_Subwafer_1_Initial.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Initial)
         self.Mount_Subwafers_Data0.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data0) 
@@ -324,13 +328,13 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Mount_Subwafers_Data13.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data13)
         self.Mount_Subwafers_Data14.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data14)
         self.Mount_Subwafers_Data15.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data15)
-        self.Mount_Subwafers_Comments.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Comments)
+        self.Mount_Subwafers_Comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Mount_Subwafers_Comments)
         self.Mount_Subwafers_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Dates)
         self.Mount_Subwafers_Initial.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Initial)
         self.Dice_First_Pillars_2_Data.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Data)
         self.Dice_First_Pillars_2_Initial1.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Initial1)
         self.Dice_First_Pillars_2_Initial2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Initial2)
-        self.Dice_First_Pillars_2_Comments.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Comments)
+        self.Dice_First_Pillars_2_Comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Dice_First_Pillars_2_Comments)
         self.Dice_First_Pillars_2_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Dates)
         self.LapSecondEpoxyFill_Data1.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data1)
         self.LapSecondEpoxyFill_Data2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data2)
@@ -351,6 +355,13 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
             nonlocal self, line_edit
             self.virtual_keyboard = self.line_edit_clicked(line_edit, self.virtual_keyboard)
         return line_edit_mouse_event_handler
+    
+    def create_text_edit_mouse_event_handler(self, text_edit):
+        def text_edit_mouse_event_handler(event):
+            nonlocal self, text_edit
+            self.virtual_keyboard = self.text_edit_clicked(text_edit, self.virtual_keyboard)
+        return text_edit_mouse_event_handler
+
 
     def logout(self):
         self.hide()

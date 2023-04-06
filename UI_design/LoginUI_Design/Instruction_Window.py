@@ -79,7 +79,7 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_1_Comments_3 = QtWidgets.QTextEdit(self.Mount_Piezo_Wafer_1)
         self.Mount_Piezo_Wafer_1_Comments_3.setGeometry(QtCore.QRect(330, 160, 551, 141))
         self.Mount_Piezo_Wafer_1_Comments_3.setStyleSheet("border-image:None;\n"
-"")
+"border: None;")
         self.Mount_Piezo_Wafer_1_Comments_3.setObjectName("Mount_Piezo_Wafer_1_Comments_3")
         self.Mount_Piezo_Wafer_1_Next = QtWidgets.QPushButton(self.Mount_Piezo_Wafer_1)
         self.Mount_Piezo_Wafer_1_Next.setGeometry(QtCore.QRect(890, 570, 100, 30))
@@ -134,10 +134,11 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_1_Data = QtWidgets.QLineEdit(self.Mount_Piezo_Wafer_1)
         self.Mount_Piezo_Wafer_1_Data.setEnabled(True)
         self.Mount_Piezo_Wafer_1_Data.setGeometry(QtCore.QRect(700, 110, 113, 22))
-        self.Mount_Piezo_Wafer_1_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
-"border-image:None;")
+        self.Mount_Piezo_Wafer_1_Data.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Piezo_Wafer_1_Data.setText("")
         self.Mount_Piezo_Wafer_1_Data.setMaxLength(32767)
+        self.Mount_Piezo_Wafer_1_Data.setAlignment(QtCore.Qt.AlignCenter)
         self.Mount_Piezo_Wafer_1_Data.setObjectName("Mount_Piezo_Wafer_1_Data")
         self.stackedWidget.addWidget(self.Mount_Piezo_Wafer_1)
         self.DicePiezoWaferintoSubwafers1 = QtWidgets.QWidget()
@@ -145,9 +146,9 @@ class Ui_InstructionWindow(object):
         self.DicePiezoWaferintoSubwafers1.setObjectName("DicePiezoWaferintoSubwafers1")
         self.DicePiezoWaferintoSubwafers1_Data = QtWidgets.QLineEdit(self.DicePiezoWaferintoSubwafers1)
         self.DicePiezoWaferintoSubwafers1_Data.setEnabled(True)
-        self.DicePiezoWaferintoSubwafers1_Data.setGeometry(QtCore.QRect(550, 130, 111, 21))
-        self.DicePiezoWaferintoSubwafers1_Data.setStyleSheet("color: rgb(0, 0, 0);\n"
-"border-image:None;")
+        self.DicePiezoWaferintoSubwafers1_Data.setGeometry(QtCore.QRect(550, 120, 111, 21))
+        self.DicePiezoWaferintoSubwafers1_Data.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.DicePiezoWaferintoSubwafers1_Data.setText("")
         self.DicePiezoWaferintoSubwafers1_Data.setMaxLength(32767)
         self.DicePiezoWaferintoSubwafers1_Data.setAlignment(QtCore.Qt.AlignCenter)
@@ -205,7 +206,7 @@ class Ui_InstructionWindow(object):
         self.DicePiezoWaferintoSubwafers1_comments = QtWidgets.QTextEdit(self.DicePiezoWaferintoSubwafers1)
         self.DicePiezoWaferintoSubwafers1_comments.setGeometry(QtCore.QRect(100, 160, 551, 111))
         self.DicePiezoWaferintoSubwafers1_comments.setStyleSheet("border-image:None;\n"
-"")
+"border: None;")
         self.DicePiezoWaferintoSubwafers1_comments.setObjectName("DicePiezoWaferintoSubwafers1_comments")
         self.stackedWidget.addWidget(self.DicePiezoWaferintoSubwafers1)
         self.Dice_Framing_Piezo_3 = QtWidgets.QWidget()
@@ -214,11 +215,15 @@ class Ui_InstructionWindow(object):
         self.Dice_Framing_Piezo_3.setObjectName("Dice_Framing_Piezo_3")
         self.Dice_Framing_Piezo_3_Comments = QtWidgets.QTextEdit(self.Dice_Framing_Piezo_3)
         self.Dice_Framing_Piezo_3_Comments.setGeometry(QtCore.QRect(50, 320, 641, 111))
-        self.Dice_Framing_Piezo_3_Comments.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Piezo_3_Comments.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Dice_Framing_Piezo_3_Comments.setObjectName("Dice_Framing_Piezo_3_Comments")
         self.Dice_Framing_Piezo_3_Data = QtWidgets.QLineEdit(self.Dice_Framing_Piezo_3)
         self.Dice_Framing_Piezo_3_Data.setGeometry(QtCore.QRect(610, 180, 101, 22))
-        self.Dice_Framing_Piezo_3_Data.setStyleSheet("border-image:None;")
+        self.Dice_Framing_Piezo_3_Data.setStyleSheet("border-image:None;\n"
+"border: None;")
+        self.Dice_Framing_Piezo_3_Data.setAlignment(QtCore.Qt.AlignCenter)
+        self.Dice_Framing_Piezo_3_Data.setReadOnly(False)
         self.Dice_Framing_Piezo_3_Data.setObjectName("Dice_Framing_Piezo_3_Data")
         self.Dice_Framing_Piezo_3_Next = QtWidgets.QPushButton(self.Dice_Framing_Piezo_3)
         self.Dice_Framing_Piezo_3_Next.setGeometry(QtCore.QRect(890, 570, 100, 30))
@@ -273,51 +278,64 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_1.setObjectName("Premount_Clean_and_Measure_Subwafer_1")
         self.Premount_Clean_and_Measure_Subwafer_1_Data0 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data0.setGeometry(QtCore.QRect(460, 170, 81, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data0.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data0.setStyleSheet("border-image:None;\n"
+"border: None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data0.setAlignment(QtCore.Qt.AlignCenter)
         self.Premount_Clean_and_Measure_Subwafer_1_Data0.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data0")
         self.Premount_Clean_and_Measure_Subwafer_1_Data1 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data1.setGeometry(QtCore.QRect(650, 110, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data1.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data1.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data1.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data1")
         self.Premount_Clean_and_Measure_Subwafer_1_Data2 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data2.setGeometry(QtCore.QRect(590, 220, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data2.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data2.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data2.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data2")
         self.Premount_Clean_and_Measure_Subwafer_1_Data3 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data3.setGeometry(QtCore.QRect(610, 320, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data3.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data3.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data3.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data3")
         self.Premount_Clean_and_Measure_Subwafer_1_Data4 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data4.setGeometry(QtCore.QRect(850, 320, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data4.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data4.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data4.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data4")
         self.Premount_Clean_and_Measure_Subwafer_1_Data5 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data5.setGeometry(QtCore.QRect(880, 150, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data5.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data5.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data5.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data5")
         self.Premount_Clean_and_Measure_Subwafer_1_Data6 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data6.setGeometry(QtCore.QRect(780, 410, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data6.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data6.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data6.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data6")
         self.Premount_Clean_and_Measure_Subwafer_1_Data7 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data7.setGeometry(QtCore.QRect(780, 450, 71, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data7.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data7.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data7.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data7")
         self.Premount_Clean_and_Measure_Subwafer_1_Data8 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Data8.setGeometry(QtCore.QRect(360, 420, 61, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data8.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data8.setGeometry(QtCore.QRect(370, 420, 51, 22))
+        self.Premount_Clean_and_Measure_Subwafer_1_Data8.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data8.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data8")
         self.Premount_Clean_and_Measure_Subwafer_1_Data9 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
-        self.Premount_Clean_and_Measure_Subwafer_1_Data9.setGeometry(QtCore.QRect(360, 480, 61, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data9.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data9.setGeometry(QtCore.QRect(380, 480, 51, 22))
+        self.Premount_Clean_and_Measure_Subwafer_1_Data9.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data9.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data9")
         self.Premount_Clean_and_Measure_Subwafer_1_Data10 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data10.setGeometry(QtCore.QRect(90, 440, 61, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data10.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data10.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data10.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data10")
         self.Premount_Clean_and_Measure_Subwafer_1_Data11 = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Data11.setGeometry(QtCore.QRect(110, 500, 61, 22))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data11.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Data11.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Data11.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Data11")
         self.Premount_Clean_and_Measure_Subwafer_1_Initial = QtWidgets.QLineEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Initial.setGeometry(QtCore.QRect(210, 560, 81, 22))
@@ -367,7 +385,8 @@ class Ui_InstructionWindow(object):
         self.Premount_Clean_and_Measure_Subwafer_1_Back.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Back")
         self.Premount_Clean_and_Measure_Subwafer_1_Comments = QtWidgets.QTextEdit(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Premount_Clean_and_Measure_Subwafer_1_Comments.setGeometry(QtCore.QRect(20, 280, 521, 101))
-        self.Premount_Clean_and_Measure_Subwafer_1_Comments.setStyleSheet("border-image:None;")
+        self.Premount_Clean_and_Measure_Subwafer_1_Comments.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Premount_Clean_and_Measure_Subwafer_1_Comments.setObjectName("Premount_Clean_and_Measure_Subwafer_1_Comments")
         self.stackedWidget.addWidget(self.Premount_Clean_and_Measure_Subwafer_1)
         self.Mount_Subwafers = QtWidgets.QWidget()
@@ -376,7 +395,8 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers.setObjectName("Mount_Subwafers")
         self.Mount_Subwafers_Comments = QtWidgets.QTextEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Comments.setGeometry(QtCore.QRect(580, 480, 411, 81))
-        self.Mount_Subwafers_Comments.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Comments.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Comments.setObjectName("Mount_Subwafers_Comments")
         self.Mount_Subwafers_Data1 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data1.setGeometry(QtCore.QRect(910, 420, 71, 22))
@@ -404,39 +424,48 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Data6.setObjectName("Mount_Subwafers_Data6")
         self.Mount_Subwafers_Data7 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data7.setGeometry(QtCore.QRect(920, 240, 71, 22))
-        self.Mount_Subwafers_Data7.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data7.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data7.setObjectName("Mount_Subwafers_Data7")
         self.Mount_Subwafers_Data8 = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data8.setGeometry(QtCore.QRect(920, 60, 71, 22))
-        self.Mount_Subwafers_Data8.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data8.setGeometry(QtCore.QRect(920, 50, 71, 22))
+        self.Mount_Subwafers_Data8.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data8.setObjectName("Mount_Subwafers_Data8")
         self.Mount_Subwafers_Data9 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data9.setGeometry(QtCore.QRect(620, 20, 71, 22))
-        self.Mount_Subwafers_Data9.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data9.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data9.setObjectName("Mount_Subwafers_Data9")
         self.Mount_Subwafers_Data10 = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data10.setGeometry(QtCore.QRect(560, 120, 71, 22))
-        self.Mount_Subwafers_Data10.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data10.setGeometry(QtCore.QRect(560, 110, 71, 22))
+        self.Mount_Subwafers_Data10.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data10.setObjectName("Mount_Subwafers_Data10")
         self.Mount_Subwafers_Data11 = QtWidgets.QLineEdit(self.Mount_Subwafers)
-        self.Mount_Subwafers_Data11.setGeometry(QtCore.QRect(580, 230, 71, 22))
-        self.Mount_Subwafers_Data11.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data11.setGeometry(QtCore.QRect(580, 220, 71, 22))
+        self.Mount_Subwafers_Data11.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data11.setObjectName("Mount_Subwafers_Data11")
         self.Mount_Subwafers_Data12 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data12.setGeometry(QtCore.QRect(360, 420, 61, 22))
-        self.Mount_Subwafers_Data12.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data12.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data12.setObjectName("Mount_Subwafers_Data12")
         self.Mount_Subwafers_Data13 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data13.setGeometry(QtCore.QRect(370, 480, 61, 22))
-        self.Mount_Subwafers_Data13.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data13.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data13.setObjectName("Mount_Subwafers_Data13")
         self.Mount_Subwafers_Data14 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data14.setGeometry(QtCore.QRect(100, 500, 71, 22))
-        self.Mount_Subwafers_Data14.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data14.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data14.setObjectName("Mount_Subwafers_Data14")
         self.Mount_Subwafers_Data15 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data15.setGeometry(QtCore.QRect(80, 440, 71, 22))
-        self.Mount_Subwafers_Data15.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data15.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Mount_Subwafers_Data15.setObjectName("Mount_Subwafers_Data15")
         self.Mount_Subwafers_Next = QtWidgets.QPushButton(self.Mount_Subwafers)
         self.Mount_Subwafers_Next.setGeometry(QtCore.QRect(890, 570, 100, 30))
@@ -486,7 +515,9 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Dates.setObjectName("Mount_Subwafers_Dates")
         self.Mount_Subwafers_Data0 = QtWidgets.QLineEdit(self.Mount_Subwafers)
         self.Mount_Subwafers_Data0.setGeometry(QtCore.QRect(470, 240, 81, 22))
-        self.Mount_Subwafers_Data0.setStyleSheet("border-image:None;")
+        self.Mount_Subwafers_Data0.setStyleSheet("border-image:None;\n"
+"border: None;")
+        self.Mount_Subwafers_Data0.setAlignment(QtCore.Qt.AlignCenter)
         self.Mount_Subwafers_Data0.setObjectName("Mount_Subwafers_Data0")
         self.stackedWidget.addWidget(self.Mount_Subwafers)
         self.Dice_First_Pillars_2 = QtWidgets.QWidget()
@@ -495,11 +526,14 @@ class Ui_InstructionWindow(object):
         self.Dice_First_Pillars_2.setObjectName("Dice_First_Pillars_2")
         self.Dice_First_Pillars_2_Data = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_2_Data.setGeometry(QtCore.QRect(500, 130, 71, 22))
-        self.Dice_First_Pillars_2_Data.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Data.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Dice_First_Pillars_2_Data.setObjectName("Dice_First_Pillars_2_Data")
         self.Dice_First_Pillars_2_Initial1 = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_2_Initial1.setGeometry(QtCore.QRect(500, 250, 91, 22))
-        self.Dice_First_Pillars_2_Initial1.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Initial1.setStyleSheet("border-image:None;\n"
+"border: None;")
+        self.Dice_First_Pillars_2_Initial1.setAlignment(QtCore.Qt.AlignCenter)
         self.Dice_First_Pillars_2_Initial1.setObjectName("Dice_First_Pillars_2_Initial1")
         self.Dice_First_Pillars_2_Dates = QtWidgets.QLineEdit(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_2_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
@@ -519,7 +553,8 @@ class Ui_InstructionWindow(object):
         self.Dice_First_Pillars_2_Initial2.setObjectName("Dice_First_Pillars_2_Initial2")
         self.Dice_First_Pillars_2_Comments = QtWidgets.QTextEdit(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_2_Comments.setGeometry(QtCore.QRect(40, 380, 551, 111))
-        self.Dice_First_Pillars_2_Comments.setStyleSheet("border-image:None;")
+        self.Dice_First_Pillars_2_Comments.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.Dice_First_Pillars_2_Comments.setObjectName("Dice_First_Pillars_2_Comments")
         self.Dice_First_Pillars_2_Next = QtWidgets.QPushButton(self.Dice_First_Pillars_2)
         self.Dice_First_Pillars_2_Next.setGeometry(QtCore.QRect(890, 570, 100, 30))
@@ -556,84 +591,66 @@ class Ui_InstructionWindow(object):
         self.LapSecondEpoxyFill.setStyleSheet("border-image: url(:/images/images/LapSecondEpoxyFill.PNG);")
         self.LapSecondEpoxyFill.setObjectName("LapSecondEpoxyFill")
         self.LapSecondEpoxyFill_Data1 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data1.setGeometry(QtCore.QRect(600, 100, 71, 16))
+        self.LapSecondEpoxyFill_Data1.setGeometry(QtCore.QRect(600, 96, 71, 20))
         self.LapSecondEpoxyFill_Data1.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data1.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data1.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data1.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data1.setObjectName("LapSecondEpoxyFill_Data1")
         self.LapSecondEpoxyFill_Data2 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
         self.LapSecondEpoxyFill_Data2.setGeometry(QtCore.QRect(910, 130, 71, 20))
         self.LapSecondEpoxyFill_Data2.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data2.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data2.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data2.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data2.setObjectName("LapSecondEpoxyFill_Data2")
         self.LapSecondEpoxyFill_Data3 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data3.setGeometry(QtCore.QRect(900, 320, 71, 16))
+        self.LapSecondEpoxyFill_Data3.setGeometry(QtCore.QRect(910, 316, 71, 20))
         self.LapSecondEpoxyFill_Data3.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data3.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data3.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data3.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data3.setObjectName("LapSecondEpoxyFill_Data3")
         self.LapSecondEpoxyFill_Data4 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data4.setGeometry(QtCore.QRect(570, 300, 71, 16))
+        self.LapSecondEpoxyFill_Data4.setGeometry(QtCore.QRect(570, 300, 71, 20))
         self.LapSecondEpoxyFill_Data4.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data4.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data4.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data4.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data4.setObjectName("LapSecondEpoxyFill_Data4")
         self.LapSecondEpoxyFill_Data5 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data5.setGeometry(QtCore.QRect(560, 190, 71, 16))
+        self.LapSecondEpoxyFill_Data5.setGeometry(QtCore.QRect(550, 196, 71, 20))
         self.LapSecondEpoxyFill_Data5.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data5.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data5.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data5.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data5.setObjectName("LapSecondEpoxyFill_Data5")
         self.LapSecondEpoxyFill_Data6 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
         self.LapSecondEpoxyFill_Data6.setGeometry(QtCore.QRect(220, 230, 45, 15))
         self.LapSecondEpoxyFill_Data6.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data6.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data6.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data6.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data6.setObjectName("LapSecondEpoxyFill_Data6")
         self.LapSecondEpoxyFill_Data7 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data7.setGeometry(QtCore.QRect(390, 230, 45, 15))
+        self.LapSecondEpoxyFill_Data7.setGeometry(QtCore.QRect(400, 230, 45, 15))
         self.LapSecondEpoxyFill_Data7.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data7.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data7.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data7.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data7.setObjectName("LapSecondEpoxyFill_Data7")
         self.LapSecondEpoxyFill_Data8 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
         self.LapSecondEpoxyFill_Data8.setGeometry(QtCore.QRect(230, 410, 45, 15))
         self.LapSecondEpoxyFill_Data8.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data8.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data8.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data8.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data8.setObjectName("LapSecondEpoxyFill_Data8")
         self.LapSecondEpoxyFill_Data9 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data9.setGeometry(QtCore.QRect(380, 410, 45, 15))
+        self.LapSecondEpoxyFill_Data9.setGeometry(QtCore.QRect(390, 410, 45, 15))
         self.LapSecondEpoxyFill_Data9.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data9.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data9.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data9.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data9.setObjectName("LapSecondEpoxyFill_Data9")
         self.LapSecondEpoxyFill_Back = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
@@ -685,19 +702,15 @@ class Ui_InstructionWindow(object):
         self.LapSecondEpoxyFill_Data10 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
         self.LapSecondEpoxyFill_Data10.setGeometry(QtCore.QRect(620, 400, 71, 20))
         self.LapSecondEpoxyFill_Data10.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data10.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data10.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data10.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data10.setObjectName("LapSecondEpoxyFill_Data10")
         self.LapSecondEpoxyFill_Data11 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
         self.LapSecondEpoxyFill_Data11.setGeometry(QtCore.QRect(620, 440, 71, 20))
         self.LapSecondEpoxyFill_Data11.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data11.setStyleSheet("color: rgb(0, 0, 0);\n"
-"\n"
-"border-image: none;\n"
-"border: none;")
+        self.LapSecondEpoxyFill_Data11.setStyleSheet("border-image:None;\n"
+"border: None;")
         self.LapSecondEpoxyFill_Data11.setAlignment(QtCore.Qt.AlignCenter)
         self.LapSecondEpoxyFill_Data11.setObjectName("LapSecondEpoxyFill_Data11")
         self.stackedWidget.addWidget(self.LapSecondEpoxyFill)
@@ -716,24 +729,24 @@ class Ui_InstructionWindow(object):
         self.Mount_Piezo_Wafer_1_Comments_3.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
         self.Mount_Piezo_Wafer_1_Next.setText(_translate("InstructionWindow", "Next"))
         self.Mount_Piezo_Wafer_1_Back.setText(_translate("InstructionWindow", "Exit"))
-        self.Mount_Piezo_Wafer_1_Data.setPlaceholderText(_translate("InstructionWindow", "      Initial Here"))
+        self.Mount_Piezo_Wafer_1_Data.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.DicePiezoWaferintoSubwafers1_Data.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.DicePiezoWaferintoSubwafers1_Next.setText(_translate("InstructionWindow", "Next"))
         self.DicePiezoWaferintoSubwafers1_Back.setText(_translate("InstructionWindow", "Exit"))
         self.DicePiezoWaferintoSubwafers1_comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary"))
         self.Dice_Framing_Piezo_3_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.Dice_Framing_Piezo_3_Data.setPlaceholderText(_translate("InstructionWindow", "     Initial Here"))
+        self.Dice_Framing_Piezo_3_Data.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.Dice_Framing_Piezo_3_Next.setText(_translate("InstructionWindow", "Next"))
         self.Dice_Framing_Piezo_3_Back.setText(_translate("InstructionWindow", "Exit"))
-        self.Premount_Clean_and_Measure_Subwafer_1_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
+        self.Premount_Clean_and_Measure_Subwafer_1_Data0.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.Premount_Clean_and_Measure_Subwafer_1_Next.setText(_translate("InstructionWindow", "Next"))
         self.Premount_Clean_and_Measure_Subwafer_1_Back.setText(_translate("InstructionWindow", "Exit"))
         self.Premount_Clean_and_Measure_Subwafer_1_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
         self.Mount_Subwafers_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
         self.Mount_Subwafers_Next.setText(_translate("InstructionWindow", "Next"))
         self.Mount_Subwafers_Back.setText(_translate("InstructionWindow", "Exit"))
-        self.Mount_Subwafers_Data0.setPlaceholderText(_translate("InstructionWindow", "  Initial Here"))
-        self.Dice_First_Pillars_2_Initial1.setPlaceholderText(_translate("InstructionWindow", "   Initial Here"))
+        self.Mount_Subwafers_Data0.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
+        self.Dice_First_Pillars_2_Initial1.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.Dice_First_Pillars_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
         self.Dice_First_Pillars_2_Next.setText(_translate("InstructionWindow", "Next"))
         self.Dice_First_Pillars_2_Back.setText(_translate("InstructionWindow", "Exit"))

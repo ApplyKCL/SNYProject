@@ -15,6 +15,9 @@ class VirtualKeyboard(QDialog):
 
     def set_focused_line_edit(self, line_edit):
         self.focused_line_edit = line_edit
+        
+    def set_focused_widget(self, widget):
+        self.focused_widget = widget
 
     def initUI(self):
         self.layout = QVBoxLayout(self)
@@ -101,6 +104,18 @@ class VirtualKeyboard(QDialog):
             virtual_keyboard = VirtualKeyboard()
             virtual_keyboard.set_focused_line_edit(line_edit)
             virtual_keyboard.keyPressed.connect(line_edit.insert)
+            virtual_keyboard.move(self.pos().x() + 300, self.pos().y())
+            virtual_keyboard.show()
+        else:
+            virtual_keyboard.close()
+            virtual_keyboard = None
+        return virtual_keyboard
+    
+    def text_edit_clicked(self, text_edit, virtual_keyboard):
+        if not virtual_keyboard:
+            virtual_keyboard = VirtualKeyboard()
+            virtual_keyboard.set_focused_widget(text_edit)
+            virtual_keyboard.keyPressed.connect(text_edit.insertPlainText)
             virtual_keyboard.move(self.pos().x() + 300, self.pos().y())
             virtual_keyboard.show()
         else:
