@@ -38,7 +38,7 @@ if __name__ == '__main__':
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="369300Ab*"
+        password="215046Aa."
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -47,17 +47,20 @@ if __name__ == '__main__':
         create database if not exists DaxsonicsBuildTrackDB
     """
     mysql_execute.execute_mysql(mydb, cmd_str, 0)
+    # Database Name
     mydb.database = "DaxsonicsBuildTrackDB"
     config_table.create_table(mycursor, mydb)
-    # Start the transaction for solve the violation of the data
     choice: str = "#"
+    # Check if the admin exist or not
     if chk_user.query_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
                                                                       table=config.table_name[
                                                                           config.employee_position])) is None:
+        # Not to register the admin
         admin_create_choice = input("First Use the System. Register Admin ? [Y/other exit]: ")
         if admin_create_choice != "Y":
             print("System Terminate")
             sys.exit()
+        # Check if the admin is exist or not
         register_result = chk_user.register_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
                                                                                             table=config.table_name[
                                                                                                 config.employee_position]))
@@ -65,35 +68,42 @@ if __name__ == '__main__':
             sys.exit()
 
     while choice != "*":
+        # if user is not login
         if not config.login_flag:
+            # Check the user login
             user_chk_result = chk_user.admin_console_check_user(mydb)
+            # Change the login status if the user login
             if user_chk_result is None and not config.login_flag:
                 continue
             elif user_chk_result is None and config.login_flag:
                 sys.exit()
+            # Create the admin the status
             admin = user.Admin(user_id=user_chk_result[0],
                                user_name=user_chk_result[1],
                                user_email=user_chk_result[3],
                                db_class=mydb)
             config.login_flag = 1
         else:
-            admin = user.Admin(user_id=1,
+            # Testing Purpose to avoid the repeatedly login
+            admin = user.Admin(user_id=4,
                                user_name="Shaonan Hu",
-                               user_email="abcabd",
+                               user_email="Do not Care",
                                db_class=mydb)
         choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
+        # Choice 1 to create a new procedure
         if choice == '1':
             create_result = admin.create_new()
             if create_result is None:
+                # Close the system
                 sys.exit()
         elif choice == '2':
             # Check if the barcode exist
             barcode = "123456"
             # If not, return "NEW"
             barcode_read = admin.read_barcode(barcode=barcode)
-            admin.input_data("SH")
+            print(barcode_read)
             if barcode_read == "NEW":
+                # Try to create the new process
                 rec = admin.create_new_process(barcode=barcode)
                 print(rec)
-
 mydb.close()

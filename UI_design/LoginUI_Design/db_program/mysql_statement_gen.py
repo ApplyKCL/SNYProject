@@ -25,19 +25,24 @@ class databaseAPI:
     def executor(self, cmd_str: str):
         """
         :param cmd_str: SQL
-        :return:
+        :return: dirct of the result
+                - Execution Result
+                - Changed Number
+                - New ID
         """
+        # Reset the auto_increment to avoid the auto i
         self.cursor.execute(f"alter table {self.table_name} auto_increment = 1")
         self.databases.commit()
         result = {}
         try:
+            # Set the read committed to avoid the deadlocks
             self.cursor.execute("set session transaction isolation level read committed")
+            # Debug Information
             if config.debug_flag == 1:
                 print("--------------Executor Cmd Str and Variable -------------------------")
                 print(cmd_str)
                 print(self.variable_value + self.constrain_value)
                 print("---------------------------------------------------------------------")
-
             if self.inst_type == "select":
                 # Use FOR UPDATE to lock only the rows that match the condition
                 self.cursor.execute(cmd_str + " for update",
@@ -46,20 +51,27 @@ class databaseAPI:
                 result = self.cursor.fetchall()
                 print(result)
             else:
+                # Start the transaction
                 self.databases.start_transaction()
+                # execute the command
                 self.cursor.execute(cmd_str,
                                     self.variable_value + self.constrain_value)
+                # submission
                 self.databases.commit()
         except:
             self.databases.rollback()
         print(result)
+        # return the result
         execution_result = {
+            # Execution result
             "result": result,
             # How many updated
             "changed": self.cursor.rowcount,
+            # New ID
             "id": self.cursor.lastrowid
         }
         try:
+            # Submission, but also used to make sure the transaction been closed
             self.databases.commit()
         except:
             print("Close the Transaction")

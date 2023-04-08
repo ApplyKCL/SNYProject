@@ -51,58 +51,218 @@ class Employee(User):
                                     context_id=pro_result[config.table_exe_result][0][2])
         self.update_process_context(table_name=config.table_name[config.process_position],
                                     context_id=pro_result[config.table_exe_result][0][0])
-        self.sql_class.table_name = config.table_name[config.aso_pro_position]
-        aso_pro_result = self.sql_class.database_operation(instruction="select",
-                                                           operate_variable=("id", "data_id",),
-                                                           constrain_variable=("emp_id", "pro_id"),
-                                                           constrain_type=("no_tp", "and"),
-                                                           constrain_value=(self.user_id,
-                                                                            pro_result[config.table_exe_result][0][0]))
+        # Get all of the data_id that related with the process and the user ID
+        aso_pro_result = self.query_table(table_name=config.table_name[config.aso_pro_position],
+                                          rtn_colm=("id", "data_id"),
+                                          value_type=("emp_id", "pro_id"),
+                                          value=(self.user_id,
+                                                 pro_result[config.table_exe_result][0][0]))
+        # Make sure there is no error in this query
         if aso_pro_result is None:
-            return aso_pro_result
-
-        for index in range(0, len(aso_pro_result[config.table_exe_result][0])):
+            aso_pro_result = self.query_table(table_name=config.table_name[config.aso_pro_position],
+                                              rtn_colm=("id", "data_id"),
+                                              value_type=("pro_id", ),
+                                              value=(pro_result[config.table_exe_result][0][0], ))
+            return self.allocate_workflow_data(value_list=aso_pro_result[config.table_exe_result])
+        offset = 0
+        # Check which is the latest step and the latest data or where this ID occupied
+        for index in range(0, len(aso_pro_result[config.table_exe_result])):
             self.sql_class.table_name = config.table_name[config.data_position]
             data_result = self.sql_class.database_operation(instruction="select",
                                                             operate_variable=("*",),
-                                                            constrain_variable=("id", "value"),
-                                                            constrain_type=("no_tp", "and"),
+                                                            constrain_variable=("id",),
+                                                            constrain_type=("no_tp",),
                                                             constrain_value=(
-                                                                aso_pro_result[config.table_exe_result][index][1],
-                                                                None))
+                                                                aso_pro_result[config.table_exe_result][index][1],))
             if not data_result[config.table_exe_result] \
                     or data_result is None \
                     or data_result[config.table_exe_changed] <= 0:
                 continue
-            if data_result[config.table_exe_result][0][len(data_result[config.table_exe_result][0]) - 1] is None:
-                self.update_process_context(table_name=config.table_name[config.aso_pro_position],
-                                            context_id=aso_pro_result[config.table_exe_result][index][0])
+            offset = index
+            # if the data is non, load
+            if data_result[config.table_exe_result][0][config.data_value_offset] is None:
                 break
+        self.update_process_context(table_name=config.table_name[config.aso_pro_position],
+                                    context_id=aso_pro_result[config.table_exe_result][offset][0])
         if data_result is None or data_result == [] or data_result[config.table_exe_changed] <= 0:
             return None
         self.update_process_context(table_name=config.table_name[config.inst_position],
                                     context_id=data_result[config.table_exe_result][0][1])
         self.update_process_context(table_name=config.table_name[config.step_position],
                                     context_id=data_result[config.table_exe_result][0][2])
-        self.update_process_context(table_name=config.table_name[config.param_position],
-                                    context_id=data_result[config.table_exe_result][0][3])
-        self.update_process_context(table_name=config.table_name[config.data_position],
-                                    context_id=data_result[config.table_exe_result][0][0])
-        print(data_result)
-        print(self.process_context.elements_list)
+        data_list = []
+        data_obj = device_class.Data()
+        for query_index in range(0, len(aso_pro_result[config.table_exe_result])):
+            exe_result = self.query_table(table_name=config.table_name[config.data_position],
+                                          value_type=("step_id", "id"),
+                                          value=(self.process_context.DataClass.StepClass.id,
+                                                 aso_pro_result[config.table_exe_result][query_index][1]))
 
-    def input_data(self, data: str = None):
-        self.process_context.DataClass.data = data
-        self.process_context.DataClass.list_elements()
-        self.sql_class.table_name = config.table_name[config.data_position]
-        self.sql_class.database_operation(instruction="update",
-                                          operate_variable=(config.table_elements_dict
-                                                            [config.table_name[config.data_position]][-1],),
-                                          variable_value=(self.process_context.DataClass.elements_list[-1],),
-                                          constrain_type=("no_tp", ),
-                                          constrain_value=(self.process_context.DataClass.elements_list[0],),
-                                          constrain_variable=(config.table_elements_dict
-                                                              [config.table_name[config.data_position]][0],))
+            if exe_result is not None:
+                data_obj.update_elements_list(exe_result[config.table_exe_result][0][:-1])
+                data_list.append(data_obj)
+        return [self.get_page_number(), data_list]
+
+    def get_latest_inst_steps(self, id_list: list = None):
+        data_list = self.query_multiple_rec(table_name=config.table_name[config.data_position],
+                                            query_return=("inst_id", "step_id"),
+                                            query_list=id_list)
+        inst_list = [(inst[0],) for inst in data_list]
+        latest_inst = self.find_last_first_rec(value_rec_id=inst_list, offset=config.inst_position)[0][0]
+        step_list = [(step[1],) for step in data_list if latest_inst == step[0]]
+        latest_step = self.find_last_first_rec(value_rec_id=step_list, offset=config.step_position)[0][0]
+        return [latest_inst, latest_step]
+
+    def find_last_first_rec(self, value_rec_id: list = None, offset: int = config.inst_position,
+                            pre_next: str = "next"):
+        if offset == config.step_position:
+            rtn_colm = "_step"
+        elif offset == config.param_position:
+            rtn_colm = "_param"
+        else:
+            rtn_colm = "_inst"
+        rtn_colm = pre_next + rtn_colm
+        value_query = self.query_table(table_name=config.table_name[offset],
+                                       rtn_colm=(rtn_colm,),
+                                       value_type=("id",),
+                                       value=value_rec_id[0])
+        if value_query[config.table_exe_result][0][0] == 0 or len(value_rec_id) == 1:
+            return [value_rec_id[0]]
+        if value_query[config.table_exe_result][0] in value_rec_id:
+            value_rec_id.pop(0)
+            index = value_rec_id.index(value_query[config.table_exe_result][0])
+            value_rec_id = [value_query[config.table_exe_result][0]] + value_rec_id[:index] + value_rec_id[index + 1:]
+            return self.find_last_first_rec(value_rec_id=value_rec_id, offset=offset)
+        return [value_rec_id[0]]
+
+    def allocate_workflow_data(self, value_list: list = None):
+        data_id_list = value_list
+        data_id_list = [(data_id[1],) for data_id in data_id_list]
+        latest_list = self.get_latest_inst_steps(id_list=data_id_list)
+        next_step = self.query_table(table_name=config.table_name[config.step_position],
+                                     rtn_colm=("next_step",),
+                                     value_type=("id",),
+                                     value=(latest_list[1],))
+        next_step_id = next_step[config.table_exe_result][0][0]
+        if next_step[config.table_exe_result][0][0] == 0:
+            next_inst = self.query_table(table_name=config.table_name[config.inst_position],
+                                         rtn_colm=("next_inst",),
+                                         value_type=("id",),
+                                         value=(latest_list[0],))
+            if next_inst[config.table_exe_result][0][0] == 0:
+                return None
+            available_step = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                              rtn_colm=("step_id",),
+                                              value_type=("inst_id",),
+                                              value=(next_inst[config.table_exe_result][0][0],))
+            self.update_process_context(table_name=config.table_name[config.inst_position],
+                                        context_id=next_inst[config.table_exe_result][0][0])
+            first_step_rec = self.find_last_first_rec(value_rec_id=available_step[config.table_exe_result],
+                                                      offset=config.step_position,
+                                                      pre_next="previous")[0][0]
+            next_step_id = first_step_rec
+        self.update_process_context(table_name=config.table_name[config.step_position],
+                                    context_id=next_step_id)
+        return self.workflow_data_distribute()
+
+    def workflow_data_distribute(self):
+        param_rec = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                     rtn_colm=("param_id",),
+                                     value_type=("step_id",),
+                                     value=(self.process_context.DataClass.StepClass.id,))
+        data_object_list = self.workflow_data_insert(param_list=param_rec[config.table_exe_result])
+        if data_object_list is None:
+            return None
+        return [self.get_page_number(), data_object_list]
+
+    def data_insert(self):
+        insert_result = self.insert_value(table_name=config.table_name[config.data_position],
+                                          operate_variable=("inst_id", "step_id", "param_id"),
+                                          value=(self.process_context.DataClass.InstClass.id,
+                                                 self.process_context.DataClass.StepClass.id,
+                                                 self.process_context.DataClass.ParamClass.id))
+        return insert_result
+
+    def process_aso(self):
+        insert_result = self.insert_value(table_name=config.table_name[config.aso_pro_position],
+                                          operate_variable=("emp_id", "pro_id", "data_id"),
+                                          value=(self.user_id,
+                                                 self.process_context.ProcessClass.id,
+                                                 self.process_context.DataClass.id))
+        return insert_result
+
+    def workflow_data_insert(self, param_list: list = None):
+        if param_list is None:
+            return None
+        data_object_list = []
+        for param_id in param_list:
+            self.update_process_context(table_name=config.table_name[config.param_position],
+                                        context_id=param_id[0])
+            data_insert_result = self.data_insert()
+            if data_insert_result is None:
+                return None
+            self.update_process_context(table_name=config.table_name[config.data_position],
+                                        context_id=data_insert_result[config.table_exe_id])
+            process_aso_insert_result = self.process_aso()
+            if process_aso_insert_result is None:
+                return None
+            data_object_list.append(self.process_context.DataClass)
+        return data_object_list
+
+    def get_page_number(self):
+        page_number = str(self.process_context.ProcessClass.DeviceClass.id) + \
+                      str(self.process_context.ProcessClass.CompClass.id) + \
+                      str(self.process_context.DataClass.InstClass.id) + \
+                      str(self.process_context.DataClass.StepClass.id)
+        return page_number
+
+    def input_data(self, data_list: list = None):
+        if data_list is None:
+            return None
+        for data in data_list:
+            self.sql_class.table_name = config.table_name[config.data_position]
+            update_result = self.sql_class.database_operation(instruction="update",
+                                                              operate_variable=tuple(config.table_elements_dict[
+                                                                                         config.table_name[
+                                                                                             config.data_position]][
+                                                                                     1:]),
+                                                              variable_value=tuple(data[1:]),
+                                                              constrain_type=("no_tp",),
+                                                              constrain_variable=("id",),
+                                                              constrain_value=(data[0],))
+            if update_result is None:
+                return False
+        return True
+
+    # Function used to go to next step
+    def next_step(self):
+        next_step = self.query_table(table_name=config.table_name[config.step_position],
+                                     rtn_colm=("next_step",),
+                                     value_type=("id",),
+                                     value=(self.process_context.DataClass.StepClass.id,))
+        if next_step is None:
+            return None
+        next_step_id = next_step[config.table_exe_result][0][0]
+        if next_step[config.table_exe_result][0][0] == 0:
+            next_inst = self.query_table(table_name=config.table_name[config.inst_position],
+                                         rtn_colm=("next_inst",),
+                                         value_type=("id",),
+                                         value=(self.process_context.DataClass.InstClass.id,))
+            if next_inst[config.table_exe_result][0][0] == 0:
+                return None
+            self.update_process_context(table_name=config.table_name[config.inst_position],
+                                        context_id=next_inst[config.table_exe_result][0][0])
+            next_step = self.query_table(table_name=config.table_name[config.step_position],
+                                         rtn_colm=("next_step",),
+                                         value_type=("id",),
+                                         value=(self.process_context.DataClass.StepClass.id,))
+            first_step_rec_id = self.find_last_first_rec(value_rec_id=next_step[config.table_exe_result],
+                                                         offset=config.step_position,
+                                                         pre_next="previous")[0][0]
+            next_step_id = first_step_rec_id
+        self.update_process_context(table_name=config.table_name[config.step_position],
+                                    context_id=next_step_id)
+        return [self.get_page_number(), self.workflow_data_distribute()]
 
     # The device id and the component id is actually reserved for the future design since in the future, the system
     # is possible to support the multiple device and multiple component belong to the specific component
@@ -188,7 +348,7 @@ class Employee(User):
             if query_result[config.table_exe_result][0][1] == 0:
                 self.update_process_context(table_name=config.table_name[table_offset],
                                             context_id=query_result[config.table_exe_result][0][0])
-                print(f"id{query_result[config.table_exe_result][0][0]}")
+                print(f"id {query_result[config.table_exe_result][0][0]}")
                 return query_result[config.table_exe_result][0][0]
 
     def init_data(self, device_id: int = None, comp_id: int = None):
@@ -216,12 +376,8 @@ class Employee(User):
             check_value.append(new_id)
             table_offset += 1
             variable_offset += 1
-        insert_result = self.insert_value(table_name=config.table_name[config.data_position],
-                                          operate_variable=tuple(config.table_elements_dict[config.
-                                                                 table_name[config.data_position]][1:]),
-                                          value=tuple(self.process_context.DataClass.
-                                                      elements_list[1:]))
-        return insert_result
+
+        return self.workflow_data_distribute()
 
     def create_new_process(self, barcode: str = None, device_id: int = 1, comp_id: int = 1):
         if barcode is None:
@@ -235,23 +391,14 @@ class Employee(User):
             return None
         # When we have the new process in the process table, the next thing should be done is to initial the data
         # First we should get the step
+        self.update_process_context(table_name=config.table_name[config.process_position],
+                                    context_id=init_proces[config.table_exe_id])
         insert_data = self.init_data(device_id=device_id,
                                      comp_id=comp_id)
         if insert_data is None:
             return None
-        print(insert_data)
-        print(init_proces)
-        self.update_process_context(table_name=config.table_name[config.process_position],
-                                    context_id=init_proces[config.table_exe_id])
-        self.update_process_context(table_name=config.table_name[config.data_position],
-                                    context_id=insert_data[config.table_exe_id])
-        self.process_context.list_elements()
-        init_process_context = self.insert_value(table_name=config.table_name[config.aso_pro_position],
-                                                 operate_variable=tuple(config.table_elements_dict[
-                                                                            config.table_name[config.aso_pro_position]][
-                                                                        1:]),
-                                                 value=(self.user_id,) + tuple(self.process_context.elements_list[1:]))
-        return init_process_context
+
+        return [self.get_page_number(), insert_data]
 
     # Could be used in employee if it can be used
     def update_table(self, new_vale_list: list = None, old_value_list: list = None, table_name: str = None):
@@ -281,20 +428,29 @@ class Employee(User):
                            query_list_variable_type: tuple = ("id",)):
         if table_name is None or query_list is None:
             return None
-        print("**Query List**")
-        print(query_list)
-        record_list = []
-        for index in range(0, len(query_list)):
-            if query_list[index][0] is None:
-                return None
-            query_result = self.query_table(table_name=table_name,
-                                            rtn_colm=query_return,
-                                            value_type=query_list_variable_type,
-                                            value=query_list[index])
-            print(index)
-            record_list.append(query_result[config.table_exe_result][0])
-            print(record_list)
+        record_list = [
+            self.query_table(table_name=table_name, rtn_colm=query_return, value_type=query_list_variable_type,
+                             value=query)[config.table_exe_result][0] for query in query_list]
         return record_list
+
+    # def query_multiple_rec(self, table_name: str = None, query_return: tuple = ("*",), query_list: list = None,
+    #                        query_list_variable_type: tuple = ("id",)):
+    #     if table_name is None or query_list is None:
+    #         return None
+    #     print("**Query List**")
+    #     print(query_list)
+    #     record_list = []
+    #     for index in range(0, len(query_list)):
+    #         if query_list[index][0] is None:
+    #             return None
+    #         query_result = self.query_table(table_name=table_name,
+    #                                         rtn_colm=query_return,
+    #                                         value_type=query_list_variable_type,
+    #                                         value=query_list[index])
+    #         print(index)
+    #         record_list.append(query_result[config.table_exe_result][0])
+    #         print(record_list)
+    #     return record_list
 
     def query_table(self, table_name: str = None, rtn_colm: tuple = ("*",), value_type: tuple = None,
                     value: tuple = None):
@@ -447,11 +603,11 @@ class Admin(Employee):
                                                    constrain_variable=constrain,
                                                    constrain_type=constrain_type,
                                                    constrain_value=constrain_value)
-        
+
         # print(f'query_user_login: {result}')
         # "id", "name", "job", "email",
         # "account_number", "password", "admin_status"
-        if not result or result[config.table_exe_result] == [] or result[config.table_exe_changed]<= 0:
+        if not result or result[config.table_exe_result] == [] or result[config.table_exe_changed] <= 0:
             return False
         else:
             return result[config.table_exe_result]

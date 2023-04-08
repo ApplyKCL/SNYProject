@@ -1,5 +1,6 @@
 # Author: Shaonan Hu
 # Class that used to define the parameters
+from datetime import date
 
 class Device:
     def __init__(self, dev_id: int = None,
@@ -223,7 +224,7 @@ class Data:
         self.data: str = data
         self.comment: str = comment
         self.initial: str = initial
-        self.finish_date = "current_date()"
+        self.finish_date = date.today()
         self.length = 7
         self.elements_list = []
         self.list_elements()
@@ -240,7 +241,7 @@ class Data:
         self.elements_list.append(self.finish_date)
 
     def update_elements_list(self, table_colm):
-        if len(table_colm) != self.length:
+        if len(table_colm) != self.length + 1:
             return None
         self.id = table_colm[0]
         self.InstClass.id = table_colm[1]
@@ -249,7 +250,7 @@ class Data:
         self.data = table_colm[4]
         self.comment = table_colm[5]
         self.initial = table_colm[6]
-        self.finish_date = "current_date()"
+        self.finish_date = date.today()
         self.list_elements()
 
 
