@@ -210,9 +210,9 @@ class Employee(User):
         return data_object_list
 
     def get_page_number(self):
-        page_number = str(self.process_context.ProcessClass.DeviceClass.id) + \
-                      str(self.process_context.ProcessClass.CompClass.id) + \
-                      str(self.process_context.DataClass.InstClass.id) + \
+        page_number = str(self.process_context.ProcessClass.DeviceClass.id) + ":" + \
+                      str(self.process_context.ProcessClass.CompClass.id) + ":" +\
+                      str(self.process_context.DataClass.InstClass.id) + ":" + \
                       str(self.process_context.DataClass.StepClass.id)
         return page_number
 

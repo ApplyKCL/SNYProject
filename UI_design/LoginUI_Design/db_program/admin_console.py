@@ -85,7 +85,7 @@ if __name__ == '__main__':
             config.login_flag = 1
         else:
             # Testing Purpose to avoid the repeatedly login
-            admin = user.Admin(user_id=4,
+            admin = user.Admin(user_id=5,
                                user_name="Shaonan Hu",
                                user_email="Do not Care",
                                db_class=mydb)
