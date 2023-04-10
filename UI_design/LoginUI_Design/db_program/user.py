@@ -33,6 +33,8 @@ class Employee(User):
     def read_barcode(self, barcode: str = None):
         if barcode is None:
             return None
+        if barcode == "Next":
+            return self.next_step()
         data_result = []
         # read the barcode from the database to check if there has an exist barcode
         self.sql_class.table_name = config.table_name[config.process_position]

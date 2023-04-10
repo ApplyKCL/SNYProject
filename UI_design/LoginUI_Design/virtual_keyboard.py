@@ -7,7 +7,10 @@ class VirtualKeyboard(QDialog):
     keyPressed = pyqtSignal(str)
 
     def __init__(self, parent=None):
-        super(VirtualKeyboard, self).__init__(parent, Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # super(VirtualKeyboard, self).__init__(parent, Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # super().__init__(parent=parent, flags=Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        super().__init__(parent, Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+
         self.initUI()
         self.focused_line_edit = None
         self.setMouseTracking(True)
