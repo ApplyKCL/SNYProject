@@ -1,5 +1,5 @@
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox, QTableView
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QPushButton, QHBoxLayout, QMessageBox, QTableView, QTextEdit
 from PyQt5.QtCore import QTimer, QObject, Qt
 
 import sys
@@ -18,6 +18,7 @@ from db_program.check_user import *
 from db_program.mysql_statement_gen import *
 from db_program.user import *
 from db_program.config import *
+from db_program.device_class import *
 
 class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
     def __init__(self):
@@ -132,8 +133,10 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.add_user_pushButton_2.clicked.connect(self.add_user)
         self.fresh_pushButton_2.clicked.connect(self.update_table)  
         self.disable_user_pushButton_2.clicked.connect(self.disable_user)
+        
         self.enable_user_pushButton_2.clicked.connect(self.enable_user)
         self.tableView_employee.setSelectionBehavior(QTableView.SelectItems)
+        # self.tableView_employee.clicked.connect(TableModel.handle_cell_click)
         
         # Product System
         
@@ -239,17 +242,22 @@ class User_Window(QMainWindow, Ui_Employee):
         
     def workflow_event(self):
         self.barcode = self.employee_barcode.text()
-        print(f'barcode: {self.barcode}')
         if self.barcode is None or self.barcode == '':
             QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
+<<<<<<< HEAD
             barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
+=======
+            barcode_result = myWindow.admin.read_barcode(barcode=self.barcode)
+            self.barcode = 'Next'
+>>>>>>> 9c8a23c407a34a8527e25c02a312a92623fdbe6e
             if barcode_result=="NEW":
                 self.hide()
                 instructionWindow.showFullScreen()
             else:
+                page_number = int(barcode_result[0][2])
                 self.hide()
-                instructionWindow.stackedWidget.setCurrentWidget(lambda: instructionWindow.stackedWidget.setCurrentIndex(barcode_result))
+                instructionWindow.stackedWidget.setCurrentIndex(page_number)
                 instructionWindow.showFullScreen()
         
             
@@ -265,13 +273,13 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         
         # Move to Next Page
         self.HomePage_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-        self.Mount_Piezo_Wafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.DicePiezoWaferintoSubwafers1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
-        self.Dice_Framing_Piezo_3_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
-        self.Premount_Clean_and_Measure_Subwafer_1_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(5))
-        self.Mount_Subwafers_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(6))
-        self.Dice_First_Pillars_2_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
-        self.LapSecondEpoxyFill_Next.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
+        self.Mount_Piezo_Wafer_1_Next.clicked.connect(self.store_data_to_next_page_MPW)
+        self.DicePiezoWaferintoSubwafers1_Next.clicked.connect(self.store_data_to_next_page_DPWIS)
+        self.Dice_Framing_Piezo_3_Next.clicked.connect(self.store_data_to_next_page_DFP)
+        self.Premount_Clean_and_Measure_Subwafer_1_Next.clicked.connect(self.store_data_to_next_page_PCMS)
+        self.Mount_Subwafers_Next.clicked.connect(self.store_data_to_next_page_MSW)
+        self.Dice_First_Pillars_2_Next.clicked.connect(self.store_data_to_next_page_DFPR)
+        self.LapSecondEpoxyFill_Next.clicked.connect(self.store_data_to_next_page_LSEF)
 
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
@@ -314,10 +322,10 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Premount_Clean_and_Measure_Subwafer_1_Initial.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Premount_Clean_and_Measure_Subwafer_1_Initial)
         self.Mount_Subwafers_Data0.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data0) 
         self.Mount_Subwafers_Data1.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data1)
-        self.Mount_Subwafers_Data2_Special.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data2_Special)
+        self.Mount_Subwafers_Data2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data2)
         self.Mount_Subwafers_Data3.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data3)
         self.Mount_Subwafers_Data4.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data4)
-        self.Mount_Subwafers_Data5_Special.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data5_Special)
+        self.Mount_Subwafers_Data5.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data5)
         self.Mount_Subwafers_Data6.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data6)
         self.Mount_Subwafers_Data7.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data7)
         self.Mount_Subwafers_Data8.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Mount_Subwafers_Data8)
@@ -349,6 +357,104 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.LapSecondEpoxyFill_Initials.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Initials)
         
         self.virtual_keyboard = None
+        
+    def store_data_to_next_page_MPW(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        data[i]= barcode_result[1][i].list_elements()
+        data[i][4] = self.Mount_Piezo_Wafer_1_Data.text()
+        data[i][5] = self.Mount_Piezo_Wafer_1_Comments_3.toPlainText()
+        data[i][6] = self.Mount_Piezo_Wafer_1_Initial.text()
+        self.stackedWidget.setCurrentIndex(2)
+        myWindow.admin.input_data(data)
+                
+    def store_data_to_next_page_DPWIS(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        data[0]= barcode_result[1][0].list_elements()
+        data[0][5] = self.DicePiezoWaferintoSubwafers1_comments.toPlainText()
+        data[0][6] = self.DicePiezoWaferintoSubwafers1_Initals.text()
+        data[0][4] = self.DicePiezoWaferintoSubwafers1_Data.text()
+        self.stackedWidget.setCurrentIndex(3)
+        myWindow.admin.input_data(data)
+    
+    def store_data_to_next_page_DFP(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        data[i]= barcode_result[1][i].list_elements()
+        data[i][4] = self.Dice_Framing_Piezo_3_Data.text()
+        data[i][5] = self.Dice_Framing_Piezo_3_Comments.toPlainText()
+        data[i][6] = self.Dice_Framing_Piezo_3_Initial.text()
+        self.stackedWidget.setCurrentIndex(4)
+        myWindow.admin.input_data(data)
+        
+    def store_data_to_next_page_PCMS(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        # data[i]= barcode_result[1][i].list_elements()
+        for i in range(len(barcode_result[1])):
+            data[i]= barcode_result[1][i].list_elements()
+            if i == 0:
+                data[i][4]= getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
+                # data[i][4] = self.Mount_Piezo_Wafer_1_Data.text()
+                data[i][5] = self.Premount_Clean_and_Measure_Subwafer_1_Comments.toPlainText()
+                data[i][6] = self.Premount_Clean_and_Measure_Subwafer_1_Initial.text()
+            else:
+                data[i][4] = getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
+                data[i][5] = None
+                data[i][6] = None
+        self.stackedWidget.setCurrentIndex(5)
+        myWindow.admin.input_data(data)
+                
+    def store_data_to_next_page_MSW(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        # data[i]= barcode_result[1][i].list_elements()
+        for i in range(len(barcode_result[1])):
+            data[i]= barcode_result[1][i].list_elements()
+            if i == 0:
+                data[i][4]= getattr(self, f"Mount_Subwafers_Data{i}").text()
+                # data[i][4] = self.Mount_Piezo_Wafer_1_Data.text()
+                data[i][5] = self.Mount_Subwafers_Comments.toPlainText()
+                data[i][6] = self.Mount_Subwafers_Initial.text()
+            else:
+                data[i][4] = getattr(self, f"Mount_Subwafers_Data{i}").text()
+                data[i][5] = None
+                data[i][6] = None
+        self.stackedWidget.setCurrentIndex(6)
+        myWindow.admin.input_data(data)
+                
+    def store_data_to_next_page_DFPR(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        data[0]= barcode_result[1][0].list_elements()
+        data[0][4] = self.Dice_First_Pillars_2_Data.text()
+        data[0][5] = self.Dice_First_Pillars_2_Comments.toPlainText()
+        data[0][6] = self.Dice_First_Pillars_2_Initial2.text()
+        data[1]= barcode_result[1][1].list_elements()
+        data[1][4] = self.Dice_First_Pillars_2_Initial1.text()
+        data[1][5] = None
+        data[1][6] = None
+        self.stackedWidget.setCurrentIndex(7)
+        myWindow.admin.input_data(data)
+        
+    def store_data_to_next_page_LSEF(self):
+        data=[]
+        barcode_result = myWindow.admin.read_barcode(userWindow.barcode)
+        for i in range(len(barcode_result[1])):
+            data[i]= barcode_result[1][i].list_elements()
+            if i == 1:
+                data[i][4]= getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
+                # data[i][4] = self.Mount_Piezo_Wafer_1_Data.text()
+                data[i][5] = None
+                data[i][6] = self.LapSecondEpoxyFill_Initials.text()
+            else:
+                data[i][4] = getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
+                data[i][5] = None
+                data[i][6] = None
+        self.stackedWidget.setCurrentIndex(7)
+        myWindow.admin.input_data(data)
+                
     
     def create_line_edit_mouse_event_handler(self, line_edit):
         def line_edit_mouse_event_handler(event):
@@ -460,10 +566,23 @@ class TableModel(QtCore.QAbstractTableModel):
         # the length (only works if all rows are an equal length)
         return len(self._data[0]) if self._data else 0
     
+    # def handle_cell_click(self, row, column):
+    #     index = self.index(row, column)
+    #     data = index.data()
+    #     if isinstance(data, str):
+    #         virtual_keyboard = VirtualKeyboard.text_edit_clicked(data, self.virtual_keyboard)
+    #         if virtual_keyboard:
+    #             self.virtual_keyboard = virtual_keyboard
+    
     def setData(self, index, value, role=Qt.EditRole):
         if index.isValid() and role == Qt.EditRole:
             row = index.row()
             column = index.column()
+            # if column:
+            #     text_edit = QTextEdit()
+            #     self.tableView.setIndexWidget(index, text_edit)
+            #     text_edit.clicked.connect(lambda: self.text_edit_clicked(text_edit, virtual_keyboard))
+            #     virtual_keyboard = self.text_edit_clicked(text_edit, virtual_keyboard)
             data_row = list(self._data[row])
             data_row[column] = value
             self._data[row] = tuple(data_row)
@@ -472,7 +591,6 @@ class TableModel(QtCore.QAbstractTableModel):
             data_row.insert(0,result[0][0])
             new_result = tuple(data_row)
             myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
-            
             return True
         return False
     
