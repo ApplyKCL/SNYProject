@@ -67,6 +67,7 @@ if __name__ == '__main__':
         if register_result is None:
             sys.exit()
 
+    barcode = "123456"
     while choice != "*":
         # if user is not login
         if not config.login_flag:
@@ -85,7 +86,7 @@ if __name__ == '__main__':
             config.login_flag = 1
         else:
             # Testing Purpose to avoid the repeatedly login
-            admin = user.Admin(user_id=5,
+            admin = user.Admin(user_id=1,
                                user_name="Shaonan Hu",
                                user_email="Do not Care",
                                db_class=mydb)
@@ -98,11 +99,11 @@ if __name__ == '__main__':
                 sys.exit()
         elif choice == '2':
             # Check if the barcode exist
-            barcode = "123456"
+
             # If not, return "NEW"
-            barcode_read = admin.read_barcode(barcode=barcode)
-            print(barcode_read)
-            if barcode_read == "NEW":
+            read_result = admin.barcode_context(barcode=barcode)
+            barcode = "next"
+            if read_result == "NEW":
                 # Try to create the new process
                 rec = admin.create_new_process(barcode=barcode)
                 print(rec)

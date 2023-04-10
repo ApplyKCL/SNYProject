@@ -18,10 +18,15 @@ class User:
 
 # Define the employee class, subclass of User
 class Employee(User):
+    # Inherent the features from the user class
     def __init__(self, user_id: str, user_name: str, user_email: str, db_class: classmethod):
         super().__init__(user_id, user_name, user_email)
         """
         db_class: database connector class
+        sql_class: SQL generator class that has defined in mysql_statement_gen.py
+        dev_context: device context that used in the admin
+        accout_number_status: N/A
+        process_
         """
         # Employee Info
         self.database = db_class
@@ -30,9 +35,11 @@ class Employee(User):
         self.accout_number_status = True
         self.process_context: device_class.ProcessContext = device_class.ProcessContext(user_id=self.user_id)
 
-    def read_barcode(self, barcode: str = None):
+    def barcode_context(self, barcode: str = None):
         if barcode is None:
             return None
+        if barcode == "next":
+            return self.next_step()
         data_result = []
         # read the barcode from the database to check if there has an exist barcode
         self.sql_class.table_name = config.table_name[config.process_position]
@@ -61,8 +68,8 @@ class Employee(User):
         if aso_pro_result is None:
             aso_pro_result = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                               rtn_colm=("id", "data_id"),
-                                              value_type=("pro_id", ),
-                                              value=(pro_result[config.table_exe_result][0][0], ))
+                                              value_type=("pro_id",),
+                                              value=(pro_result[config.table_exe_result][0][0],))
             return self.allocate_workflow_data(value_list=aso_pro_result[config.table_exe_result])
         offset = 0
         # Check which is the latest step and the latest data or where this ID occupied
@@ -97,12 +104,13 @@ class Employee(User):
                                           value_type=("step_id", "id"),
                                           value=(self.process_context.DataClass.StepClass.id,
                                                  aso_pro_result[config.table_exe_result][query_index][1]))
-
+            print(exe_result)
             if exe_result is not None:
-                data_obj.update_elements_list(exe_result[config.table_exe_result][0][:-1])
+                data_obj.update_elements_list(exe_result[config.table_exe_result][0])
                 data_list.append(data_obj)
         return [self.get_page_number(), data_list]
 
+    # Get the latest instruction or steps
     def get_latest_inst_steps(self, id_list: list = None):
         data_list = self.query_multiple_rec(table_name=config.table_name[config.data_position],
                                             query_return=("inst_id", "step_id"),
@@ -115,6 +123,10 @@ class Employee(User):
 
     def find_last_first_rec(self, value_rec_id: list = None, offset: int = config.inst_position,
                             pre_next: str = "next"):
+        if config.debug_flag:
+            print(f"value_id: {value_rec_id},"
+                  f"offset {offset}"
+                  f"position {config.inst_position}")
         if offset == config.step_position:
             rtn_colm = "_step"
         elif offset == config.param_position:
@@ -126,14 +138,22 @@ class Employee(User):
                                        rtn_colm=(rtn_colm,),
                                        value_type=("id",),
                                        value=value_rec_id[0])
+        if config.debug_flag:
+            print(f"query_rec {value_query}")
         if value_query[config.table_exe_result][0][0] == 0 or len(value_rec_id) == 1:
             return [value_rec_id[0]]
         if value_query[config.table_exe_result][0] in value_rec_id:
             value_rec_id.pop(0)
             index = value_rec_id.index(value_query[config.table_exe_result][0])
             value_rec_id = [value_query[config.table_exe_result][0]] + value_rec_id[:index] + value_rec_id[index + 1:]
-            return self.find_last_first_rec(value_rec_id=value_rec_id, offset=offset)
+            return self.find_last_first_rec(value_rec_id=value_rec_id, offset=offset, pre_next=pre_next)
         return [value_rec_id[0]]
+
+    def display_work_flow(self):
+        exist_workflow = self.query_table(table_name=config.table_name[config.aso_pro_position],
+                                          rtn_colm=("emp_id", "data_id"),
+                                          value_type=("pro_id",),
+                                          value=(self.process_context.ProcessClass.id,))
 
     def allocate_workflow_data(self, value_list: list = None):
         data_id_list = value_list
@@ -161,8 +181,10 @@ class Employee(User):
                                                       offset=config.step_position,
                                                       pre_next="previous")[0][0]
             next_step_id = first_step_rec
+        # Update the context information
         self.update_process_context(table_name=config.table_name[config.step_position],
                                     context_id=next_step_id)
+        # Call the workflow distribution function
         return self.workflow_data_distribute()
 
     def workflow_data_distribute(self):
@@ -174,6 +196,11 @@ class Employee(User):
         if data_object_list is None:
             return None
         return [self.get_page_number(), data_object_list]
+
+    # Reorder the Parameter
+    def order_parameter_id(self):
+        self.find_last_first_rec()
+        pass
 
     def data_insert(self):
         insert_result = self.insert_value(table_name=config.table_name[config.data_position],
@@ -210,10 +237,15 @@ class Employee(User):
         return data_object_list
 
     def get_page_number(self):
+        # Create the data pages to indicate which step associated with UI the user are written to
+        # Format: device_id:component_id:inst_id:step_id
+        # Usually 1 step is 1 pages of the UI
+        # Sometimes the 1 instruction could has multiple steps and 1 steps could have multiple data
         page_number = str(self.process_context.ProcessClass.DeviceClass.id) + ":" + \
-                      str(self.process_context.ProcessClass.CompClass.id) + ":" +\
+                      str(self.process_context.ProcessClass.CompClass.id) + ":" + \
                       str(self.process_context.DataClass.InstClass.id) + ":" + \
                       str(self.process_context.DataClass.StepClass.id)
+        # Return the Page Number
         return page_number
 
     def input_data(self, data_list: list = None):
@@ -236,6 +268,7 @@ class Employee(User):
 
     # Function used to go to next step
     def next_step(self):
+        # At the first should
         next_step = self.query_table(table_name=config.table_name[config.step_position],
                                      rtn_colm=("next_step",),
                                      value_type=("id",),
@@ -243,19 +276,24 @@ class Employee(User):
         if next_step is None:
             return None
         next_step_id = next_step[config.table_exe_result][0][0]
+        # This will handle with no next step situation which will query the next instruction
         if next_step[config.table_exe_result][0][0] == 0:
+            # Get the next instruction
             next_inst = self.query_table(table_name=config.table_name[config.inst_position],
                                          rtn_colm=("next_inst",),
                                          value_type=("id",),
                                          value=(self.process_context.DataClass.InstClass.id,))
             if next_inst[config.table_exe_result][0][0] == 0:
-                return None
+                # There is no more instruction could be operated on
+                return [self.get_page_number(), "NO_INST"]
+            # Update the new instruction
             self.update_process_context(table_name=config.table_name[config.inst_position],
                                         context_id=next_inst[config.table_exe_result][0][0])
-            next_step = self.query_table(table_name=config.table_name[config.step_position],
-                                         rtn_colm=("next_step",),
-                                         value_type=("id",),
-                                         value=(self.process_context.DataClass.StepClass.id,))
+            next_step = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                         rtn_colm=("step_id",),
+                                         value_type=("inst_id",),
+                                         value=(self.process_context.DataClass.InstClass.id,))
+
             first_step_rec_id = self.find_last_first_rec(value_rec_id=next_step[config.table_exe_result],
                                                          offset=config.step_position,
                                                          pre_next="previous")[0][0]
@@ -304,18 +342,25 @@ class Employee(User):
         self.process_context.DataClass.list_elements()
         return True
 
+    # Function that used to initial the process context init the process and store it in database
     def initial_process_context(self, dev_id: int = None, comp_id: int = None, barcode: str = None):
+        # Check if the id is exist or not, if not exist return None
         if dev_id is None or comp_id is None or barcode is None:
             return None
+        # Assume that the device Id and the component id has already known
         check = self.update_process_context(table_name=config.table_name[config.device_position], context_id=dev_id)
         if not check:
             return None
         check = self.update_process_context(table_name=config.table_name[config.comp_position], context_id=comp_id)
+        # if the check is false
         if not check:
             return None
+        # Update the barcode
         self.process_context.ProcessClass.barcode = barcode
+        # Change the process status to be false
         self.process_context.ProcessClass.status = False
         self.process_context.ProcessClass.list_elements()
+        # initialize the process
         process_insert_result = self.insert_value(table_name=config.table_name[config.process_position],
                                                   operate_variable=tuple(
                                                       config.table_elements_dict[
@@ -333,6 +378,7 @@ class Employee(User):
                                                           variable_value=value)
         return insert_result
 
+    # Automatically update the table context
     def update_process_context_base_on_previous(self, query_list: list = None, table_offset: int = None):
         for index in range(0, len(query_list)):
             # Query all the value in the list
@@ -341,7 +387,9 @@ class Employee(User):
                                                 "id", config.input_pattern[config.table_name[table_offset]][1][0],),
                                             value_type=("id",),
                                             value=(query_list[index][0],))
+            # Debug information that used to show what is
             print(f"Previous:{query_result[config.table_exe_result][0][1]}")
+            # Check the Query result
             if query_result is None:
                 print("fatal: NO existence query")
                 return None
@@ -351,9 +399,11 @@ class Employee(User):
                 print(f"id {query_result[config.table_exe_result][0][0]}")
                 return query_result[config.table_exe_result][0][0]
 
+    # Initial Data
     def init_data(self, device_id: int = None, comp_id: int = None):
         if device_id is None or comp_id is None:
             return None
+        # Initial the offset
         table_offset = config.step_position
         variable_offset = config.step_comp_offset + 1
         check_value = [device_id, comp_id]
@@ -432,25 +482,6 @@ class Employee(User):
             self.query_table(table_name=table_name, rtn_colm=query_return, value_type=query_list_variable_type,
                              value=query)[config.table_exe_result][0] for query in query_list]
         return record_list
-
-    # def query_multiple_rec(self, table_name: str = None, query_return: tuple = ("*",), query_list: list = None,
-    #                        query_list_variable_type: tuple = ("id",)):
-    #     if table_name is None or query_list is None:
-    #         return None
-    #     print("**Query List**")
-    #     print(query_list)
-    #     record_list = []
-    #     for index in range(0, len(query_list)):
-    #         if query_list[index][0] is None:
-    #             return None
-    #         query_result = self.query_table(table_name=table_name,
-    #                                         rtn_colm=query_return,
-    #                                         value_type=query_list_variable_type,
-    #                                         value=query_list[index])
-    #         print(index)
-    #         record_list.append(query_result[config.table_exe_result][0])
-    #         print(record_list)
-    #     return record_list
 
     def query_table(self, table_name: str = None, rtn_colm: tuple = ("*",), value_type: tuple = None,
                     value: tuple = None):
@@ -656,7 +687,7 @@ class Admin(Employee):
             if (result is None or result[config.table_exe_result][0][0] is None) and state_index != 4:
                 # if missing
                 print("Missing " + config.table_print_name[state_index])
-                choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]")
+                choice = input("Create A new " + config.table_print_name[state_index] + "?[Y/N]\n")
                 if choice != "Y":
                     return None
                 insert_result = self.insert_new_step_aso_values(config.table_name[state_index], state_index + 1)
@@ -690,8 +721,8 @@ class Admin(Employee):
                                     f"1. File a New {config.table_print_name[state_index]}\n"
                                     f"2. Choose Another to Edit\n"
                                     f"3. Choose Exist {config.table_print_name[state_index]}\n"  # unfinished
-                                    f"4. Edit Current {config.table_print_name[state_index]}"  # unfinished
-                                    f"*. Exit")
+                                    f"4. Edit Current {config.table_print_name[state_index]}\n"  # unfinished
+                                    f"*. Exit\n")
             record_list = []
             if choice == '3' and state_index <= config.param_position:
                 if state_index == 0:
@@ -793,7 +824,6 @@ class Admin(Employee):
         return aso_result
 
     def insert_new_step_aso_values(self, table_name, table_offset: int = 1):
-        print(table_offset)
         """
         :param table_name:  Table Name
         :param table_offset: table offset is where the id of the foreign key occupy for the current elements
@@ -827,10 +857,7 @@ class Admin(Employee):
                 # If the types is pre
                 if feature_list[index] == config.previous_symbol:
                     previous_offset: int = len(config.input_pattern[table_name][0]) + index
-                    print("Previous Offset")
-                    print(previous_offset)
                     next_offset: int = previous_offset + 1
-                    print(next_offset)
                     # query table
                     exe_result = self.query_table(table_name=config.table_name[config.aso_step_position],
                                                   rtn_colm=(config.table_elements_dict
@@ -838,9 +865,6 @@ class Admin(Employee):
                                                                 table_offset],),
                                                   value_type=aso_colm[:table_offset - 1],
                                                   value=tuple(context_id_list[:table_offset - 1]))
-                    print(context_id_list)
-                    print("**************")
-                    print(exe_result)
                     query_list = af.remove_repeat_tuple(exe_result[config.table_exe_result])
                     # if there is None, it is means that the start
                     if exe_result is None or query_list == []:

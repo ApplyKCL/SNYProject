@@ -238,7 +238,7 @@ class Data:
         self.elements_list.append(self.data)
         self.elements_list.append(self.comment)
         self.elements_list.append(self.initial)
-        self.elements_list.append(self.finish_date)
+        self.elements_list.append(date.today())
 
     def update_elements_list(self, table_colm):
         if len(table_colm) != self.length + 1:

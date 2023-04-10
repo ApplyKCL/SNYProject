@@ -243,7 +243,7 @@ class User_Window(QMainWindow, Ui_Employee):
         if self.barcode is None or self.barcode == '':
             QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
-            barcode_result = myWindow.admin.read_barcode(barcode=self.barcode)
+            barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
             if barcode_result=="NEW":
                 self.hide()
                 instructionWindow.showFullScreen()
