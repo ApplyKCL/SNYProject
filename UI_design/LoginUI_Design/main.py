@@ -263,17 +263,16 @@ class User_Window(QMainWindow, Ui_Employee):
             QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
             barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
-            orgin_barcode = self.barcode
-            self.barcode = "next"
             if barcode_result=="NEW":
                 self.hide()
                 instructionWindow.showFullScreen()
-                barcode_result = myWindow.admin.create_new_process(barcode=orgin_barcode)
+                barcode_result = myWindow.admin.create_new_process(barcode=self.barcode)
             else:
                 page_number = int(barcode_result[0][2])
                 self.hide()
                 instructionWindow.stackedWidget.setCurrentIndex(page_number)
                 instructionWindow.showFullScreen()
+            self.barcode = "next"
         
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
@@ -580,23 +579,10 @@ class TableModel(QtCore.QAbstractTableModel):
         # the length (only works if all rows are an equal length)
         return len(self._data[0]) if self._data else 0
     
-    # def handle_cell_click(self, row, column):
-    #     index = self.index(row, column)
-    #     data = index.data()
-    #     if isinstance(data, str):
-    #         virtual_keyboard = VirtualKeyboard.text_edit_clicked(data, self.virtual_keyboard)
-    #         if virtual_keyboard:
-    #             self.virtual_keyboard = virtual_keyboard
-    
     def setData(self, index, value, role):
         if  role == Qt.EditRole:
             row = index.row()
             column = index.column()
-            # if column:
-            #     text_edit = QTextEdit()
-            #     self.tableView.setIndexWidget(index, text_edit)
-            #     text_edit.clicked.connect(lambda: self.text_edit_clicked(text_edit, virtual_keyboard))
-            #     virtual_keyboard = self.text_edit_clicked(text_edit, virtual_keyboard)
             data_row = list(self._data[row])
             data_row[column] = value
             self._data[row] = tuple(data_row)
@@ -611,7 +597,6 @@ class TableModel(QtCore.QAbstractTableModel):
     def flags(self,index):
         return Qt.ItemIsSelectable | Qt.ItemIsEditable | Qt.ItemIsEnabled
     
-
 if __name__ == '__main__':
     database_manager = DatabaseManager()
     app = QApplication(sys.argv)
