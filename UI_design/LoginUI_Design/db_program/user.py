@@ -300,7 +300,7 @@ class Employee(User):
             next_step_id = first_step_rec_id
         self.update_process_context(table_name=config.table_name[config.step_position],
                                     context_id=next_step_id)
-        return [self.get_page_number(), self.workflow_data_distribute()]
+        return self.workflow_data_distribute()
 
     # The device id and the component id is actually reserved for the future design since in the future, the system
     # is possible to support the multiple device and multiple component belong to the specific component
