@@ -233,7 +233,8 @@ class Employee(User):
             process_aso_insert_result = self.process_aso()
             if process_aso_insert_result is None:
                 return None
-            data_object_list.append(self.process_context.DataClass)
+            self.process_context.DataClass.list_elements()
+            data_object_list.append(self.process_context.DataClass.elements_list)
         return data_object_list
 
     def get_page_number(self):
@@ -448,7 +449,7 @@ class Employee(User):
         if insert_data is None:
             return None
 
-        return [self.get_page_number(), insert_data]
+        return insert_data
 
     # Could be used in employee if it can be used
     def update_table(self, new_vale_list: list = None, old_value_list: list = None, table_name: str = None):
