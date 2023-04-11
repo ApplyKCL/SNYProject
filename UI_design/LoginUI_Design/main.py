@@ -11,8 +11,8 @@ from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
 from virtual_keyboard import *
 
-# sys.path.append('/home/pi/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+#sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -51,7 +51,7 @@ class MyWindow(QMainWindow, Ui_Login_Window, VirtualKeyboard):
         # print(f'result check: {self.result[-2]}')
 
         if self.result is None:
-            QMessageBox.information(self,"Error Message","Invalid User/Password")
+            QMessageBox.information(self,"ErroNoner Message","Invalid User/Password")
         elif self.result[-2] == False:
             QMessageBox.information(self,"Error Message","User not activated")    
         else:
@@ -571,7 +571,7 @@ class DatabaseManager:
     def __init__(self):
         self.mydb = mysql.connector.connect(
             # Remote Connection Configure
-            host="134.190.203.146",
+            host="192.168.4.30",
             user="dslink",
             password="dstestpass123",
             
