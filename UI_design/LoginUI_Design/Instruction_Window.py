@@ -587,138 +587,11 @@ class Ui_InstructionWindow(object):
 "}")
         self.Dice_First_Pillars_2_Back.setObjectName("Dice_First_Pillars_2_Back")
         self.stackedWidget.addWidget(self.Dice_First_Pillars_2)
-        self.LapSecondEpoxyFill = QtWidgets.QWidget()
-        self.LapSecondEpoxyFill.setStyleSheet("border-image: url(:/images/images/LapSecondEpoxyFill.PNG);")
-        self.LapSecondEpoxyFill.setObjectName("LapSecondEpoxyFill")
-        self.LapSecondEpoxyFill_Data1 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data1.setGeometry(QtCore.QRect(600, 96, 71, 20))
-        self.LapSecondEpoxyFill_Data1.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data1.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data1.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data1.setObjectName("LapSecondEpoxyFill_Data1")
-        self.LapSecondEpoxyFill_Data2 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data2.setGeometry(QtCore.QRect(910, 130, 71, 20))
-        self.LapSecondEpoxyFill_Data2.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data2.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data2.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data2.setObjectName("LapSecondEpoxyFill_Data2")
-        self.LapSecondEpoxyFill_Data3 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data3.setGeometry(QtCore.QRect(910, 316, 71, 20))
-        self.LapSecondEpoxyFill_Data3.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data3.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data3.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data3.setObjectName("LapSecondEpoxyFill_Data3")
-        self.LapSecondEpoxyFill_Data4 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data4.setGeometry(QtCore.QRect(570, 300, 71, 20))
-        self.LapSecondEpoxyFill_Data4.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data4.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data4.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data4.setObjectName("LapSecondEpoxyFill_Data4")
-        self.LapSecondEpoxyFill_Data5 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data5.setGeometry(QtCore.QRect(550, 196, 71, 20))
-        self.LapSecondEpoxyFill_Data5.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data5.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data5.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data5.setObjectName("LapSecondEpoxyFill_Data5")
-        self.LapSecondEpoxyFill_Data6 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data6.setGeometry(QtCore.QRect(220, 230, 45, 15))
-        self.LapSecondEpoxyFill_Data6.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data6.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data6.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data6.setObjectName("LapSecondEpoxyFill_Data6")
-        self.LapSecondEpoxyFill_Data7 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data7.setGeometry(QtCore.QRect(400, 230, 45, 15))
-        self.LapSecondEpoxyFill_Data7.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data7.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data7.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data7.setObjectName("LapSecondEpoxyFill_Data7")
-        self.LapSecondEpoxyFill_Data8 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data8.setGeometry(QtCore.QRect(230, 410, 45, 15))
-        self.LapSecondEpoxyFill_Data8.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data8.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data8.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data8.setObjectName("LapSecondEpoxyFill_Data8")
-        self.LapSecondEpoxyFill_Data9 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data9.setGeometry(QtCore.QRect(390, 410, 45, 15))
-        self.LapSecondEpoxyFill_Data9.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data9.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data9.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data9.setObjectName("LapSecondEpoxyFill_Data9")
-        self.LapSecondEpoxyFill_Back = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Back.setGeometry(QtCore.QRect(770, 570, 100, 30))
-        self.LapSecondEpoxyFill_Back.setStyleSheet("QPushButton{\n"
-"background-color: rgb(255, 255, 255);\n"
-"height: 35px;\n"
-"border-image:None;\n"
-"}\n"
-"QPushButton::hover{\n"
-"background-color: rgb(0, 0, 255);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"padding-top:7px;\n"
-"padding-top:7px;\n"
-"}")
-        self.LapSecondEpoxyFill_Back.setObjectName("LapSecondEpoxyFill_Back")
-        self.LapSecondEpoxyFill_Dates = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Dates.setGeometry(QtCore.QRect(110, 560, 91, 22))
-        self.LapSecondEpoxyFill_Dates.setStyleSheet("QLineEdit{\n"
-"background-color: rgb(240, 240, 240);\n"
-"border: none;\n"
-"border-image:None;\n"
-"}")
-        self.LapSecondEpoxyFill_Dates.setObjectName("LapSecondEpoxyFill_Dates")
-        self.LapSecondEpoxyFill_Initials = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Initials.setGeometry(QtCore.QRect(210, 560, 81, 22))
-        self.LapSecondEpoxyFill_Initials.setStyleSheet("QLineEdit{\n"
-"background-color: rgb(240, 240, 240);\n"
-"border: none;\n"
-"border-image:None;\n"
-"}")
-        self.LapSecondEpoxyFill_Initials.setObjectName("LapSecondEpoxyFill_Initials")
-        self.LapSecondEpoxyFill_Next = QtWidgets.QPushButton(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Next.setGeometry(QtCore.QRect(890, 570, 100, 30))
-        self.LapSecondEpoxyFill_Next.setStyleSheet("QPushButton{\n"
-"background-color: rgb(255, 255, 255);\n"
-"height: 35px;\n"
-"border-image:None;\n"
-"}\n"
-"QPushButton::hover{\n"
-"background-color: rgb(0, 0, 255);\n"
-"}\n"
-"QPushButton:pressed{\n"
-"padding-top:7px;\n"
-"padding-top:7px;\n"
-"}")
-        self.LapSecondEpoxyFill_Next.setObjectName("LapSecondEpoxyFill_Next")
-        self.LapSecondEpoxyFill_Data10 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data10.setGeometry(QtCore.QRect(620, 400, 71, 20))
-        self.LapSecondEpoxyFill_Data10.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data10.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data10.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data10.setObjectName("LapSecondEpoxyFill_Data10")
-        self.LapSecondEpoxyFill_Data11 = QtWidgets.QLineEdit(self.LapSecondEpoxyFill)
-        self.LapSecondEpoxyFill_Data11.setGeometry(QtCore.QRect(620, 440, 71, 20))
-        self.LapSecondEpoxyFill_Data11.setToolTipDuration(-2)
-        self.LapSecondEpoxyFill_Data11.setStyleSheet("border-image:None;\n"
-"border: None;")
-        self.LapSecondEpoxyFill_Data11.setAlignment(QtCore.Qt.AlignCenter)
-        self.LapSecondEpoxyFill_Data11.setObjectName("LapSecondEpoxyFill_Data11")
-        self.stackedWidget.addWidget(self.LapSecondEpoxyFill)
         self.verticalLayout.addWidget(self.stackedWidget)
         InstructionWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(InstructionWindow)
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(6)
         QtCore.QMetaObject.connectSlotsByName(InstructionWindow)
 
     def retranslateUi(self, InstructionWindow):
@@ -748,8 +621,6 @@ class Ui_InstructionWindow(object):
         self.Mount_Subwafers_Data0.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.Dice_First_Pillars_2_Initial1.setPlaceholderText(_translate("InstructionWindow", "Initial Here"))
         self.Dice_First_Pillars_2_Comments.setPlaceholderText(_translate("InstructionWindow", "Please provide detailed descriptions if you feel necessary "))
-        self.Dice_First_Pillars_2_Next.setText(_translate("InstructionWindow", "Next"))
+        self.Dice_First_Pillars_2_Next.setText(_translate("InstructionWindow", "Finish"))
         self.Dice_First_Pillars_2_Back.setText(_translate("InstructionWindow", "Exit"))
-        self.LapSecondEpoxyFill_Back.setText(_translate("InstructionWindow", "Exit"))
-        self.LapSecondEpoxyFill_Next.setText(_translate("InstructionWindow", "Finish"))
 import resource_rc

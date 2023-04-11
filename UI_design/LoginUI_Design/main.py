@@ -298,7 +298,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Premount_Clean_and_Measure_Subwafer_1_Next.clicked.connect(self.store_data_to_next_page_PCMS)
         self.Mount_Subwafers_Next.clicked.connect(self.store_data_to_next_page_MSW)
         self.Dice_First_Pillars_2_Next.clicked.connect(self.store_data_to_next_page_DFPR)
-        self.LapSecondEpoxyFill_Next.clicked.connect(self.store_data_to_next_page_LSEF)
+        # self.LapSecondEpoxyFill_Next.clicked.connect(self.store_data_to_next_page_LSEF)
 
         # Back to UserWIndow
         self.HomePage_Back.clicked.connect(self.returnToUserWindow)
@@ -308,7 +308,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Premount_Clean_and_Measure_Subwafer_1_Back.clicked.connect(self.returnToUserWindow)
         self.Mount_Subwafers_Back.clicked.connect(self.returnToUserWindow)
         self.Dice_First_Pillars_2_Back.clicked.connect(self.returnToUserWindow)
-        self.LapSecondEpoxyFill_Back.clicked.connect(self.returnToUserWindow)
+        # self.LapSecondEpoxyFill_Back.clicked.connect(self.returnToUserWindow)
         
         # Virtual Keyboard
         self.HomePage_Name.mousePressEvent = self.create_text_edit_mouse_event_handler(self.HomePage_Name)
@@ -363,17 +363,17 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         self.Dice_First_Pillars_2_Initial2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Initial2)
         self.Dice_First_Pillars_2_Comments.mousePressEvent = self.create_text_edit_mouse_event_handler(self.Dice_First_Pillars_2_Comments)
         self.Dice_First_Pillars_2_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.Dice_First_Pillars_2_Dates)
-        self.LapSecondEpoxyFill_Data1.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data1)
-        self.LapSecondEpoxyFill_Data2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data2)
-        self.LapSecondEpoxyFill_Data3.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data3)
-        self.LapSecondEpoxyFill_Data4.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data4)
-        self.LapSecondEpoxyFill_Data5.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data5)
-        self.LapSecondEpoxyFill_Data6.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data6)
-        self.LapSecondEpoxyFill_Data7.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data7)
-        self.LapSecondEpoxyFill_Data8.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data8)
-        self.LapSecondEpoxyFill_Data9.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data9)
-        self.LapSecondEpoxyFill_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Dates)
-        self.LapSecondEpoxyFill_Initials.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Initials)
+        # self.LapSecondEpoxyFill_Data1.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data1)
+        # self.LapSecondEpoxyFill_Data2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data2)
+        # self.LapSecondEpoxyFill_Data3.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data3)
+        # self.LapSecondEpoxyFill_Data4.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data4)
+        # self.LapSecondEpoxyFill_Data5.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data5)
+        # self.LapSecondEpoxyFill_Data6.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data6)
+        # self.LapSecondEpoxyFill_Data7.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data7)
+        # self.LapSecondEpoxyFill_Data8.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data8)
+        # self.LapSecondEpoxyFill_Data9.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Data9)
+        # self.LapSecondEpoxyFill_Dates.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Dates)
+        # self.LapSecondEpoxyFill_Initials.mousePressEvent = self.create_line_edit_mouse_event_handler(self.LapSecondEpoxyFill_Initials)
         
         self.virtual_keyboard = None
         
@@ -391,7 +391,6 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
             self.stackedWidget.setCurrentIndex(2)
         else:
              QMessageBox.about(self, "Error", "Input value is not finished")
-             self.store_data_to_next_page_MPW()
                 
     def store_data_to_next_page_DPWIS(self):
         data=[]
@@ -416,15 +415,17 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         data[6] = self.Dice_Framing_Piezo_3_Initial.text()
         myWindow.admin.input_data([data])
         input_check = myWindow.admin.barcode_context(barcode='next')
-        if input_check == 'NF':
-            QMessageBox.about(self, "Error", "Input value is not finished")
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(4)
         else:
-             self.stackedWidget.setCurrentIndex(4)
+             QMessageBox.about(self, "Error", "Input value is not finished")
         
     def store_data_to_next_page_PCMS(self):
         data = []
         barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        for i in range(len(barcode_result[1])-4):
+        print(f'barcode_result length is : {len(barcode_result[1])}')
+        for i in range(len(barcode_result[1])):
+            print(f'i is: {i}')
             data.append(barcode_result[1][i])
             if i == 0:
                 data[i][4]= getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
@@ -435,7 +436,8 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
                 data[i][4] = getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        myWindow.admin.input_data([data])
+        print(f'data: {data}')
+        myWindow.admin.input_data(data)
         input_check = myWindow.admin.barcode_context(barcode='next')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(5)
@@ -445,7 +447,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
     def store_data_to_next_page_MSW(self):
         data=[]
         barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        for i in range(len(barcode_result[1])-4):
+        for i in range(len(barcode_result[1])):
             data.append(barcode_result[1][i])
             if i == 0:
                 data[i][4]= getattr(self, f"Mount_Subwafers_Data{i}").text()
@@ -456,7 +458,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
                 data[i][4] = getattr(self, f"Mount_Subwafers_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        myWindow.admin.input_data([data])
+        myWindow.admin.input_data(data)
         input_check = myWindow.admin.barcode_context(barcode='next')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(6)
@@ -473,32 +475,32 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         data[1][4] = self.Dice_First_Pillars_2_Initial1.text()
         data[1][5] = None
         data[1][6] = None
-        myWindow.admin.input_data([data])
+        myWindow.admin.input_data(data)
         input_check = myWindow.admin.barcode_context(barcode='next')
         if input_check != 'NF':
-            self.stackedWidget.setCurrentIndex(7)
+            self.stackedWidget.setCurrentIndex(6)
         else:
              QMessageBox.about(self, "Error", "Input value is not finished")
         
-    def store_data_to_next_page_LSEF(self):
-        data=[]
-        barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        for i in range(len(barcode_result[1])-4):
-            data[i].append(barcode_result[1][i])
-            if i == 1:
-                data[i][4]= getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
-                data[i][5] = None
-                data[i][6] = self.LapSecondEpoxyFill_Initials.text()
-            else:
-                data[i][4] = getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
-                data[i][5] = None
-                data[i][6] = None
-        myWindow.admin.input_data([data])
-        input_check = myWindow.admin.barcode_context(barcode='next')
-        if input_check != 'NF':
-            self.stackedWidget.setCurrentIndex(7)
-        else:
-             QMessageBox.about(self, "Error", "Input value is not finished")
+    # def store_data_to_next_page_LSEF(self):
+    #     data=[]
+    #     barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
+    #     for i in range(len(barcode_result[1])):
+    #         data[i].append(barcode_result[1][i])
+    #         if i == 1:
+    #             data[i][4]= getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
+    #             data[i][5] = None
+    #             data[i][6] = self.LapSecondEpoxyFill_Initials.text()
+    #         else:
+    #             data[i][4] = getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
+    #             data[i][5] = None
+    #             data[i][6] = None
+    #     myWindow.admin.input_data(data)
+    #     input_check = myWindow.admin.barcode_context(barcode='next')
+    #     if input_check != 'NF':
+    #         self.stackedWidget.setCurrentIndex(7)
+    #     else:
+    #          QMessageBox.about(self, "Error", "Input value is not finished")
                 
     
     def create_line_edit_mouse_event_handler(self, line_edit):

@@ -54,7 +54,7 @@
        <string notr="true">border-image: url(:/images/images/Mount_Piezo_Wafer_2.PNG);</string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <property name="maximumSize">
@@ -930,7 +930,7 @@ border: None;</string>
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="Mount_Subwafers_Data2_Special">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data2">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -969,7 +969,7 @@ border: None;</string>
          <string notr="true">border-image:None;</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="Mount_Subwafers_Data5_Special">
+       <widget class="QLineEdit" name="Mount_Subwafers_Data5">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -1349,7 +1349,7 @@ padding-top:7px;
 }</string>
         </property>
         <property name="text">
-         <string>Next</string>
+         <string>Finish</string>
         </property>
        </widget>
        <widget class="QPushButton" name="Dice_First_Pillars_2_Back">
@@ -1377,319 +1377,6 @@ padding-top:7px;
         </property>
         <property name="text">
          <string>Exit</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="LapSecondEpoxyFill">
-       <property name="styleSheet">
-        <string notr="true">border-image: url(:/images/images/LapSecondEpoxyFill.PNG);</string>
-       </property>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data1">
-        <property name="geometry">
-         <rect>
-          <x>600</x>
-          <y>96</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data2">
-        <property name="geometry">
-         <rect>
-          <x>910</x>
-          <y>130</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data3">
-        <property name="geometry">
-         <rect>
-          <x>910</x>
-          <y>316</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data4">
-        <property name="geometry">
-         <rect>
-          <x>570</x>
-          <y>300</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data5">
-        <property name="geometry">
-         <rect>
-          <x>550</x>
-          <y>196</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data6">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>230</y>
-          <width>45</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data7">
-        <property name="geometry">
-         <rect>
-          <x>400</x>
-          <y>230</y>
-          <width>45</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data8">
-        <property name="geometry">
-         <rect>
-          <x>230</x>
-          <y>410</y>
-          <width>45</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data9">
-        <property name="geometry">
-         <rect>
-          <x>390</x>
-          <y>410</y>
-          <width>45</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="LapSecondEpoxyFill_Back">
-        <property name="geometry">
-         <rect>
-          <x>770</x>
-          <y>570</y>
-          <width>100</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(255, 255, 255);
-height: 35px;
-border-image:None;
-}
-QPushButton::hover{
-background-color: rgb(0, 0, 255);
-}
-QPushButton:pressed{
-padding-top:7px;
-padding-top:7px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Exit</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Dates">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>560</y>
-          <width>91</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit{
-background-color: rgb(240, 240, 240);
-border: none;
-border-image:None;
-}</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Initials">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>560</y>
-          <width>81</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit{
-background-color: rgb(240, 240, 240);
-border: none;
-border-image:None;
-}</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="LapSecondEpoxyFill_Next">
-        <property name="geometry">
-         <rect>
-          <x>890</x>
-          <y>570</y>
-          <width>100</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(255, 255, 255);
-height: 35px;
-border-image:None;
-}
-QPushButton::hover{
-background-color: rgb(0, 0, 255);
-}
-QPushButton:pressed{
-padding-top:7px;
-padding-top:7px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Finish</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data10">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>400</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="LapSecondEpoxyFill_Data11">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>440</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="toolTipDuration">
-         <number>-2</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image:None;
-border: None;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </widget>
