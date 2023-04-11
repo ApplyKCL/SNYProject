@@ -103,9 +103,11 @@ if __name__ == '__main__':
             # If not, return "NEW"
             read_result = admin.barcode_context(barcode=barcode)
             print(read_result)
+
             if read_result == "NEW":
                 # Try to create the new process
                 rec = admin.create_new_process(barcode=barcode)
                 print(rec)
+                print(admin.display_work_flow())
             barcode = "next"
 mydb.close()

@@ -36,6 +36,10 @@ class Employee(User):
         self.process_context: device_class.ProcessContext = device_class.ProcessContext(user_id=self.user_id)
 
     def barcode_context(self, barcode: str = None):
+        """
+        :param barcode: This is the barcode that you should input in
+        :return:
+        """
         if barcode is None:
             return None
         if barcode == "next":
@@ -138,8 +142,8 @@ class Employee(User):
                                        rtn_colm=(rtn_colm,),
                                        value_type=("id",),
                                        value=value_rec_id[0])
-        if config.debug_flag:
-            print(f"query_rec {value_query}")
+        # if config.debug_flag:
+        #     print(f"query_rec {value_query}")
         if value_query[config.table_exe_result][0][0] == 0 or len(value_rec_id) == 1:
             return [value_rec_id[0]]
         if value_query[config.table_exe_result][0] in value_rec_id:
@@ -159,7 +163,7 @@ class Employee(User):
                                            query_list_variable_type=("id", ))
         if data_rec is None:
             return None
-        return data_rec[config.table_exe_result]
+        return data_rec
 
     def allocate_workflow_data(self, value_list: list = None):
         data_id_list = value_list
@@ -435,7 +439,7 @@ class Employee(User):
                                             value_type=("id",),
                                             value=(query_list[index][0],))
             # Debug information that used to show what is
-            print(f"Previous:{query_result[config.table_exe_result][0][1]}")
+            # print(f"Previous:{query_result[config.table_exe_result][0][1]}")
             # Check the Query result
             if query_result is None:
                 print("fatal: NO existence query")
@@ -467,8 +471,8 @@ class Employee(User):
             if aso_step_query_result is None:
                 return None
             query_list = af.remove_repeat_tuple(list(aso_step_query_result[config.table_exe_result]))
-            print("This is My Query list")
-            print(query_list)
+            # print("This is My Query list")
+            # print(query_list)
             new_id = self.update_process_context_base_on_previous(query_list=query_list, table_offset=table_offset - 1)
             check_value.append(new_id)
             table_offset += 1
@@ -532,14 +536,14 @@ class Employee(User):
 
     def query_table(self, table_name: str = None, rtn_colm: tuple = ("*",), value_type: tuple = None,
                     value: tuple = None):
-        if config.debug_flag == 1:
-            print("------__query_table__------")
-            print("---------__DEBUG__---------")
-            print(f"Table Name: {table_name}")
-            print(f"Return Colm: {rtn_colm}")
-            print(f"Value Type: {value_type}")
-            print(f"Value: {value}")
-            print("---------------------------")
+        # if config.debug_flag == 1:
+        #     print("------__query_table__------")
+        #     print("---------__DEBUG__---------")
+        #     print(f"Table Name: {table_name}")
+        #     print(f"Return Colm: {rtn_colm}")
+        #     print(f"Value Type: {value_type}")
+        #     print(f"Value: {value}")
+        #     print("---------------------------")
         # Table Name can not be empty
         if table_name is None:
             print("fatal: missing Table Name")
@@ -610,7 +614,6 @@ class Employee(User):
 
 # Subclass of Employee
 class Admin(Employee):
-    # The adminst
     def register_user(self, user_name, user_job, user_email, account_number, password,
                       enable_status=True, admin_status=False):
         """
@@ -696,21 +699,12 @@ class Admin(Employee):
         choice = ''
         # Define the state index used to toggle the index
         state_index = 0
-        read_id = 0
-        # Get the context id and list
-
         # While loop when the choice is *, break
         while choice != '*':
             context_id_list = self.update_step_context_list()
-            # Check the id context to see if
-            """Three Conditions can be meet whenever create the new elements 
-            1. No Available record (Either the table is empty or has record but no required , GAP for column should
-            be avoid since, the query are in the 
-            order of the colm) - Once the Device Choosed, the record should be implemented and get the record number 
-            from DB - Every Time the Record Updated, the writen should be put, once the rec completed, the new aso 
-            rec should be get if self.dev_context.DeviceClass.id is None: result = self.query_table(
-            config.table_name[state_index], context_id_list[state_index], tuple(config.table_elements_dict[
-            config.table_name[state_index]])) else:"""
+            """
+            This function is not finished since it is used for load the procedure
+            """
             # The first step is always query the device to check which device that user should be work on
             if state_index == 0:
                 value_type = None
@@ -758,7 +752,7 @@ class Admin(Employee):
                     state_index += 1
                 continue
             if state_index == 4:
-                print(state_index)
+                # print(state_index)
                 choice: str = input(f"Please Input the Operation:\n"
                                     f"1. File a New {config.table_print_name[state_index]}\n"
                                     f"2. Choose Another to Edit\n"
@@ -775,7 +769,7 @@ class Admin(Employee):
                 if state_index == 0:
                     for index in range(0, len(result[config.table_exe_result])):
                         record_list.append(result[config.table_exe_result][index])
-                    print(record_list)
+                    # print(record_list)
                 else:
                     query_list = af.remove_repeat_tuple(result[config.table_exe_result])
                     if not query_list:
@@ -785,7 +779,7 @@ class Admin(Employee):
                                                           query_list_variable_type=("id",))
                 selection = af.choose_row(config.table_name[state_index], record_list)
                 aso_result = self.aso_update(types="step", state_index=state_index, table_object_rec=tuple(selection))
-                print(f"StateIndex{state_index}")
+                # print(f"StateIndex{state_index}")
                 if aso_result is None:
                     print("fatal: Error Update Associate Table")
                     return None
@@ -794,13 +788,13 @@ class Admin(Employee):
                 file_result = self.insert_new_step_aso_values(table_name=config.table_name[state_index],
                                                               table_offset=state_index + 1)
                 if file_result is None:
-                    print("Wrong Insert")
+                    print("fatal: Wrong Insert")
                     continue
                 new_rec = self.query_table(table_name=config.table_name[state_index],
                                            value_type=("id",),
                                            value=(file_result[config.table_exe_id],))
                 if new_rec is None:
-                    print("No Rec")
+                    print("fatal: NO new record or Query Error")
                     continue
                 # The zero represent that there is always should be the first rec
                 # Well, there is a fetchone() for the mysql.connector API, can be used conditionally
@@ -808,7 +802,10 @@ class Admin(Employee):
                                              table_object_rec=tuple(new_rec[config.table_exe_result][0]))
                 if aso_result is None:
                     return None
-                # Whenever a successful
+                """ When all of the previous operations are successful, the system will
+                    prompt the user to keep adding the new parameters since the parameters
+                    for one step might be a lot
+                """
                 if state_index == 4:
                     self.dev_context.ParamClass.id = None
                     self.dev_context.id = None
@@ -1017,7 +1014,6 @@ class Admin(Employee):
         db_context = self.update_step_context_list()
         # insert the step table
         if types == "step":
-
             self.sql_class.table_name = config.table_name[config.aso_step_position]
             operate_variable = list(tuple(config.table_elements_dict[config.
                                           table_name[config.aso_step_position]]))
@@ -1042,5 +1038,4 @@ class Admin(Employee):
                                                        constrain_type=("no_tp",),
                                                        constrain_variable=("id",),
                                                        constrain_value=(self.dev_context.id,))
-        print(result)
         return result

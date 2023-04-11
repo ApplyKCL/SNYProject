@@ -1,6 +1,10 @@
-# Author: Shaonan Hu
+"""
+Author: Shaonan Hu
+Last Update Time: April 04 2023
+"""
 import device_class as dc
 import config
+
 
 # Function to remove elements from tuple
 def tuple_remove(target=(), element=""):
@@ -37,11 +41,11 @@ def display_dev(dev_class: dc.Device):
 
 def check_colm(db_check_colm: tuple, db_colm: tuple):
     if not set(db_check_colm).issubset(set(db_colm)):
-        print(db_check_colm)
-        print(db_colm)
-        print("*")
+        # print(db_check_colm)
+        # print(db_colm)
+        # print("*")
         return False
-    print("True")
+    # print("True")
     return True
 
 
@@ -49,7 +53,7 @@ def choose_row(table_name, row_list):
     # Get the Colm
     colm_name = config.table_elements_name_dict[table_name]
     print("Choice ID:\t" + "\t".join(tuple(colm_name)))
-    print(row_list)
+    # print(row_list)
     display_row(row_list)
     choice: int = int(input("Choice: [#/0 to exit]"))
     if choice == 0:
