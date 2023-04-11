@@ -35,6 +35,9 @@ try:
     input_pattern_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
 except:
     input_pattern_file = open("json/input_pattern.json", "r")
+
+input_pattern_file = open("/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
+
 input_pattern = json.loads(input_pattern_file.read())
 previous_symbol = "PRE"
 next_symbol = "NEXT"

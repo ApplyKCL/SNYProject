@@ -272,8 +272,10 @@ class Employee(User):
                                                               constrain_type=("no_tp",),
                                                               constrain_variable=("id",),
                                                               constrain_value=(data[0],))
-            if update_result is None:
-                return False
+            # if update_result is None:
+                # print("******************************Hello******************************")
+            #     continue
+            # print("******************************Success******************************")
         return True
 
     def none_check(self, query_list: dict = None):
