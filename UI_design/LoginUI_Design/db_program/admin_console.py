@@ -67,7 +67,7 @@ if __name__ == '__main__':
         if register_result is None:
             sys.exit()
 
-    barcode = "456321"
+    barcode = "888888"
     while choice != "*":
         # if user is not login
         if not config.login_flag:
