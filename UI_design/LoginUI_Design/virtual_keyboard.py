@@ -36,7 +36,7 @@ class VirtualKeyboard(QDialog):
             ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
             ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'],
             ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'],
-            ['CAPS LOCK', 'DELETE', 'SPACE', 'ENTER', 'CLOSE']
+            ['CAPS LOCK', 'DELETE', 'SPACE', '@', 'CLOSE']
         ]
 
         for i, row in enumerate(buttons):
@@ -74,8 +74,8 @@ class VirtualKeyboard(QDialog):
 
         if key == "SPACE":
             key = " "
-        elif key == "ENTER":
-            key = "\n"
+        elif key == "@":
+            key = "@"
         elif key == "DELETE":
             if self.focused_line_edit:
                 text = self.focused_line_edit.text()

@@ -158,7 +158,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         barcode = self.barcode_number.text()
         print(f'barcode: {barcode}')
         data = myWindow.admin.display_work_flow(barcode)
-        new_data = [(tup[0], *tup[5:]) for tup in data]
+        new_data = [(tup[0], *tup[4:]) for tup in data]
         print(f'data: {new_data}')
         title = ('Data ID', 'Data Value', 'Comment', 'Initial')
         new_data = [title] + new_data
@@ -497,6 +497,7 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         input_check = myWindow.admin.barcode_context(barcode='next')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(6)
+            QMessageBox.about(self, "Warning", "Workflow is done!")
         else:
              QMessageBox.about(self, "Error", "Input value is not finished")
         
