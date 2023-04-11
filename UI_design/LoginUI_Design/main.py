@@ -125,6 +125,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.setupUi(self)
         self.id_list = None
         self.current_input = "" 
+        self.into_workflow = False
         
         self.inactivity_timeout = InactivityTimeout(1, self.logout)
         
@@ -140,8 +141,8 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.tableView_employee.clicked.connect(self.show_virtual_keyboard)
         
         # Product System
-        self.barcode = self.barcode_number.text()
         self.pushButton_enter.clicked.connect(self.generate_workflow)
+        self.pushButton_refresh_workflow.clicked.connect(self.generate_workflow)
         
         # Virtual Keyboard
         self.disable_user_name.mousePressEvent = self.create_line_edit_mouse_event_handler(self.disable_user_name)
@@ -154,10 +155,17 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.virtual_keyboard = None
         
     def generate_workflow(self):
-        data = myWindow.admin.display_work_flow(self.barcode)
-        print(f'data: {data}')
-        self.model = TableModel(data)
+        barcode = self.barcode_number.text()
+        print(f'barcode: {barcode}')
+        data = myWindow.admin.display_work_flow(barcode)
+        new_data = [(tup[0], *tup[5:]) for tup in data]
+        print(f'data: {new_data}')
+        title = ('Data ID', 'Data Value', 'Comment', 'Initial')
+        new_data = [title] + new_data
+        self.model = TableModel(new_data)
         self.tableView_workflow.setModel(self.model)
+        self.into_workflow = True
+        
     
     def create_line_edit_mouse_event_handler(self, line_edit):
         def line_edit_mouse_event_handler(event):
@@ -632,10 +640,11 @@ class TableModel(QtCore.QAbstractTableModel):
             data_row[column] = value
             self._data[row] = tuple(data_row)
             self.dataChanged.emit(index, index)
-            result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row-1],))
-            data_row.insert(0,result[0][0])
-            new_result = tuple(data_row)
-            myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
+            if admin_window.into_workflow == False:
+                result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row],))
+                data_row.insert(0,result[0][0])
+                new_result = tuple(data_row)
+                myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
             return True
         return False
     

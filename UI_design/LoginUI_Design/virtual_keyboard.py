@@ -81,6 +81,10 @@ class VirtualKeyboard(QDialog):
                 text = self.focused_line_edit.text()
                 new_text = text[:-1]
                 self.focused_line_edit.setText(new_text)
+            elif self.focused_widget:
+                text = self.focused_widget.toPlainText()
+                new_text = text[:-1]
+                self.focused_widget.setPlainText(new_text)
             return
         elif key == "CLOSE":
             self.close()
