@@ -244,6 +244,7 @@ class User_Window(QMainWindow, Ui_Employee):
         super().__init__()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setupUi(self)
+        self.barcode_result = None
         self.employee_continue.clicked.connect(self.workflow_event)
         self.employee_close.clicked.connect(self.close_window)
         
@@ -262,17 +263,21 @@ class User_Window(QMainWindow, Ui_Employee):
         if self.barcode is None or self.barcode == '':
             QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
-            barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
-            if barcode_result=="NEW":
+            self.barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
+            print(f'self.barcode_result: {self.barcode_result}')
+            if self.barcode_result=="NEW":
                 self.hide()
                 instructionWindow.showFullScreen()
-                barcode_result = myWindow.admin.create_new_process(barcode=self.barcode)
+                self.barcode_result = myWindow.admin.create_new_process(barcode=self.barcode)
             else:
-                page_number = int(barcode_result[0][2])
+                page_number = int((self.barcode_result[0].split(":"))[2])
+                print(f'-----------------debug page number-----------------')
+                print(f'page_number: {page_number}')
+                print(f'-----------------debug page number-----------------')
                 self.hide()
                 instructionWindow.stackedWidget.setCurrentIndex(page_number)
                 instructionWindow.showFullScreen()
-            self.barcode = "next"
+            # self.barcode = "next"
         
             
 class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
@@ -374,33 +379,47 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
         
     def store_data_to_next_page_MPW(self):
         data=[]
-        barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        data = barcode_result[1][0]
+        data = myWindow.admin.barcode_context(userWindow.barcode)[1][0]
+        print(f'data MPW is {data}')
         data[4] = self.Mount_Piezo_Wafer_1_Data.text()
         data[5] = self.Mount_Piezo_Wafer_1_Comments_3.toPlainText()
         data[6] = self.Mount_Piezo_Wafer_1_Initial.text()
-        self.stackedWidget.setCurrentIndex(2)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        print(f'input_check MPW is {input_check}')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(2)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
+             self.store_data_to_next_page_MPW()
                 
     def store_data_to_next_page_DPWIS(self):
         data=[]
-        barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        data= barcode_result[1][0]
+        data= myWindow.admin.barcode_context(userWindow.barcode)[1][0]
+        print(f'data DPWIS is {data}')
         data[5] = self.DicePiezoWaferintoSubwafers1_comments.toPlainText()
         data[6] = self.DicePiezoWaferintoSubwafers1_Initals.text()
         data[4] = self.DicePiezoWaferintoSubwafers1_Data.text()
-        self.stackedWidget.setCurrentIndex(3)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        print(f'input_check DPWIS is {input_check}')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(3)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
     
     def store_data_to_next_page_DFP(self):
         data=[]
-        barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        data= barcode_result[1][0]
+        data= myWindow.admin.barcode_context(userWindow.barcode)[1][0]
         data[4] = self.Dice_Framing_Piezo_3_Data.text()
         data[5] = self.Dice_Framing_Piezo_3_Comments.toPlainText()
         data[6] = self.Dice_Framing_Piezo_3_Initial.text()
-        self.stackedWidget.setCurrentIndex(4)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        if input_check == 'NF':
+            QMessageBox.about(self, "Error", "Input value is not finished")
+        else:
+             self.stackedWidget.setCurrentIndex(4)
         
     def store_data_to_next_page_PCMS(self):
         data = []
@@ -416,13 +435,16 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
                 data[i][4] = getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        self.stackedWidget.setCurrentIndex(5)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(5)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
                 
     def store_data_to_next_page_MSW(self):
         data=[]
         barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        # data[i]= barcode_result[1][i].list_elements()
         for i in range(len(barcode_result[1])-4):
             data.append(barcode_result[1][i])
             if i == 0:
@@ -434,22 +456,29 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
                 data[i][4] = getattr(self, f"Mount_Subwafers_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        self.stackedWidget.setCurrentIndex(6)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(6)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
                 
     def store_data_to_next_page_DFPR(self):
         data=[[],[]]
-        barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        data[0]= barcode_result[1][0]
+        data[0]= myWindow.admin.barcode_context(userWindow.barcode)[1][0]
         data[0][4] = self.Dice_First_Pillars_2_Data.text()
         data[0][5] = self.Dice_First_Pillars_2_Comments.toPlainText()
         data[0][6] = self.Dice_First_Pillars_2_Initial2.text()
-        data[1]= barcode_result[1][1]
+        data[1]= myWindow.admin.barcode_context(userWindow.barcode)[1][1]
         data[1][4] = self.Dice_First_Pillars_2_Initial1.text()
         data[1][5] = None
         data[1][6] = None
-        self.stackedWidget.setCurrentIndex(7)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(7)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
         
     def store_data_to_next_page_LSEF(self):
         data=[]
@@ -458,15 +487,18 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
             data[i].append(barcode_result[1][i])
             if i == 1:
                 data[i][4]= getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
-                # data[i][4] = self.Mount_Piezo_Wafer_1_Data.text()
                 data[i][5] = None
                 data[i][6] = self.LapSecondEpoxyFill_Initials.text()
             else:
                 data[i][4] = getattr(self, f"LapSecondEpoxyFill_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        self.stackedWidget.setCurrentIndex(7)
         myWindow.admin.input_data([data])
+        input_check = myWindow.admin.barcode_context(barcode='next')
+        if input_check != 'NF':
+            self.stackedWidget.setCurrentIndex(7)
+        else:
+             QMessageBox.about(self, "Error", "Input value is not finished")
                 
     
     def create_line_edit_mouse_event_handler(self, line_edit):

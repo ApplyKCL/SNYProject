@@ -107,7 +107,7 @@ class Employee(User):
             print(exe_result)
             if exe_result is not None:
                 data_obj.update_elements_list(exe_result[config.table_exe_result][0])
-                data_list.append(data_obj)
+                data_list.append(data_obj.elements_list)
         return [self.get_page_number(), data_list]
 
     # Get the latest instruction or steps
@@ -275,13 +275,13 @@ class Employee(User):
                                              query_return=("value", ),
                                              query_list_variable_type=("id", ),
                                              query_list=query_list[config.table_exe_result])
-        for data in null_check[config.table_exe_result]:
+        for data in null_check:
             if data[0] is None:
                 return False
         return True
 
     def check_step_status(self):
-        data_list = self.query_table(table_name=config.table_name[config.aso_step_position],
+        data_list = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                      rtn_colm=("data_id", ),
                                      value_type=("emp_id", "pro_id"),
                                      value=(self.user_id, self.process_context.ProcessClass.id))
@@ -291,7 +291,7 @@ class Employee(User):
         return chk_value
 
     def check_finish_status(self):
-        data_list = self.query_table(table_name=config.table_name[config.aso_step_position],
+        data_list = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                      rtn_colm=("data_id",),
                                      value_type=("pro_id", ),
                                      value=(self.process_context.ProcessClass.id, ))
