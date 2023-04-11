@@ -151,9 +151,15 @@ class Employee(User):
 
     def display_work_flow(self):
         exist_workflow = self.query_table(table_name=config.table_name[config.aso_pro_position],
-                                          rtn_colm=("emp_id", "data_id"),
+                                          rtn_colm=("data_id", ),
                                           value_type=("pro_id",),
                                           value=(self.process_context.ProcessClass.id,))
+        data_rec = self.query_multiple_rec(table_name=config.table_name[config.data_position],
+                                           query_list=exist_workflow[config.table_exe_result],
+                                           query_list_variable_type=("id", ))
+        if data_rec is None:
+            return None
+        return data_rec[config.table_exe_result]
 
     def allocate_workflow_data(self, value_list: list = None):
         data_id_list = value_list
@@ -196,11 +202,6 @@ class Employee(User):
         if data_object_list is None:
             return None
         return [self.get_page_number(), data_object_list]
-
-    # Reorder the Parameter
-    def order_parameter_id(self):
-        self.find_last_first_rec()
-        pass
 
     def data_insert(self):
         insert_result = self.insert_value(table_name=config.table_name[config.data_position],
@@ -267,8 +268,53 @@ class Employee(User):
                 return False
         return True
 
+    def none_check(self, query_list: dict = None):
+        if query_list is None:
+            return None
+        null_check = self.query_multiple_rec(table_name=config.table_name[config.data_position],
+                                             query_return=("value", ),
+                                             query_list_variable_type=("id", ),
+                                             query_list=query_list[config.table_exe_result])
+        for data in null_check[config.table_exe_result]:
+            if data[0] is None:
+                return False
+        return True
+
+    def check_step_status(self):
+        data_list = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                     rtn_colm=("data_id", ),
+                                     value_type=("emp_id", "pro_id"),
+                                     value=(self.user_id, self.process_context.ProcessClass.id))
+        chk_value = self.none_check(data_list)
+        if chk_value is None:
+            return None
+        return chk_value
+
+    def check_finish_status(self):
+        data_list = self.query_table(table_name=config.table_name[config.aso_step_position],
+                                     rtn_colm=("data_id",),
+                                     value_type=("pro_id", ),
+                                     value=(self.process_context.ProcessClass.id, ))
+        chk_value = self.none_check(data_list)
+        if chk_value is None:
+            return None
+        if chk_value:
+            self.sql_class.table_name = config.table_name[config.process_position]
+            update_result = self.sql_class.database_operation(instruction="update",
+                                                              operate_variable=("status", ),
+                                                              variable_value=(True, ),
+                                                              constrain_type=("no_tp", ),
+                                                              constrain_variable=("id", ),
+                                                              constrain_value=(self.process_context.ProcessClass.id,))
+            if update_result is None:
+                return False
+            return True
+        return False
+
     # Function used to go to next step
     def next_step(self):
+        if not self.check_step_status():
+            return "NF"
         # At the first should
         next_step = self.query_table(table_name=config.table_name[config.step_position],
                                      rtn_colm=("next_step",),
@@ -286,7 +332,7 @@ class Employee(User):
                                          value=(self.process_context.DataClass.InstClass.id,))
             if next_inst[config.table_exe_result][0][0] == 0:
                 # There is no more instruction could be operated on
-                return [self.get_page_number(), "NO_INST"]
+                return "END"
             # Update the new instruction
             self.update_process_context(table_name=config.table_name[config.inst_position],
                                         context_id=next_inst[config.table_exe_result][0][0])
