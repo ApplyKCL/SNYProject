@@ -11,8 +11,8 @@ from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
 from virtual_keyboard import *
 
-sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-#sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+# sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
 
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
@@ -140,6 +140,8 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.tableView_employee.clicked.connect(self.show_virtual_keyboard)
         
         # Product System
+        self.barcode = self.barcode_number.text()
+        self.pushButton_enter.clicked.connect(self.generate_workflow)
         
         # Virtual Keyboard
         self.disable_user_name.mousePressEvent = self.create_line_edit_mouse_event_handler(self.disable_user_name)
@@ -150,6 +152,12 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         self.add_useraccount.mousePressEvent = self.create_line_edit_mouse_event_handler(self.add_useraccount)
         self.add_user_of_password_lineEdit_2.mousePressEvent = self.create_line_edit_mouse_event_handler(self.add_user_of_password_lineEdit_2)
         self.virtual_keyboard = None
+        
+    def generate_workflow(self):
+        data = myWindow.admin.display_work_flow(self.barcode)
+        print(f'data: {data}')
+        self.model = TableModel(data)
+        self.tableView_workflow.setModel(self.model)
     
     def create_line_edit_mouse_event_handler(self, line_edit):
         def line_edit_mouse_event_handler(event):
@@ -264,16 +272,16 @@ class User_Window(QMainWindow, Ui_Employee):
             QMessageBox.information(self, "Error Message", "Barcode is not scanned")
         else:
             self.barcode_result = myWindow.admin.barcode_context(barcode=self.barcode)
-            print(f'self.barcode_result: {self.barcode_result}')
+            # print(f'self.barcode_result: {self.barcode_result}')
             if self.barcode_result=="NEW":
                 self.hide()
                 instructionWindow.showFullScreen()
                 self.barcode_result = myWindow.admin.create_new_process(barcode=self.barcode)
             else:
                 page_number = int((self.barcode_result[0].split(":"))[2])
-                print(f'-----------------debug page number-----------------')
-                print(f'page_number: {page_number}')
-                print(f'-----------------debug page number-----------------')
+                # print(f'-----------------debug page number-----------------')
+                # print(f'page_number: {page_number}')
+                # print(f'-----------------debug page number-----------------')
                 self.hide()
                 instructionWindow.stackedWidget.setCurrentIndex(page_number)
                 instructionWindow.showFullScreen()
@@ -380,13 +388,13 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
     def store_data_to_next_page_MPW(self):
         data=[]
         data = myWindow.admin.barcode_context(userWindow.barcode)[1][0]
-        print(f'data MPW is {data}')
+        # print(f'data MPW is {data}')
         data[4] = self.Mount_Piezo_Wafer_1_Data.text()
         data[5] = self.Mount_Piezo_Wafer_1_Comments_3.toPlainText()
         data[6] = self.Mount_Piezo_Wafer_1_Initial.text()
         myWindow.admin.input_data([data])
         input_check = myWindow.admin.barcode_context(barcode='next')
-        print(f'input_check MPW is {input_check}')
+        # print(f'input_check MPW is {input_check}')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(2)
         else:
@@ -395,13 +403,13 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
     def store_data_to_next_page_DPWIS(self):
         data=[]
         data= myWindow.admin.barcode_context(userWindow.barcode)[1][0]
-        print(f'data DPWIS is {data}')
+        # print(f'data DPWIS is {data}')
+        data[4] = self.DicePiezoWaferintoSubwafers1_Data.text()
         data[5] = self.DicePiezoWaferintoSubwafers1_comments.toPlainText()
         data[6] = self.DicePiezoWaferintoSubwafers1_Initals.text()
-        data[4] = self.DicePiezoWaferintoSubwafers1_Data.text()
         myWindow.admin.input_data([data])
         input_check = myWindow.admin.barcode_context(barcode='next')
-        print(f'input_check DPWIS is {input_check}')
+        # print(f'input_check DPWIS is {input_check}')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(3)
         else:
@@ -423,9 +431,10 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
     def store_data_to_next_page_PCMS(self):
         data = []
         barcode_result = myWindow.admin.barcode_context(userWindow.barcode)
-        print(f'barcode_result length is : {len(barcode_result[1])}')
+        # print(f'barcode_result is : {barcode_result}')
+        # print(f'barcode_result length is : {len(barcode_result[1])}')
         for i in range(len(barcode_result[1])):
-            print(f'i is: {i}')
+            # print(f'i is: {i}')
             data.append(barcode_result[1][i])
             if i == 0:
                 data[i][4]= getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
@@ -436,9 +445,10 @@ class Workflow_Window(QMainWindow, Ui_InstructionWindow, VirtualKeyboard):
                 data[i][4] = getattr(self, f"Premount_Clean_and_Measure_Subwafer_1_Data{i}").text()
                 data[i][5] = None
                 data[i][6] = None
-        print(f'data: {data}')
+        # print(f'data: {data}')
         myWindow.admin.input_data(data)
         input_check = myWindow.admin.barcode_context(barcode='next')
+        # print(f'input_check PCMS is {input_check}')
         if input_check != 'NF':
             self.stackedWidget.setCurrentIndex(5)
         else:
@@ -571,6 +581,7 @@ class DatabaseManager:
     def __init__(self):
         self.mydb = mysql.connector.connect(
             # Remote Connection Configure
+            # host="134.190.203.146",
             host="192.168.4.30",
             user="dslink",
             password="dstestpass123",

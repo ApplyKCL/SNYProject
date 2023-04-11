@@ -159,7 +159,7 @@ class Employee(User):
                                            query_list_variable_type=("id", ))
         if data_rec is None:
             return None
-        return data_rec[config.table_exe_result]
+        return data_rec
 
     def allocate_workflow_data(self, value_list: list = None):
         data_id_list = value_list
@@ -264,8 +264,10 @@ class Employee(User):
                                                               constrain_type=("no_tp",),
                                                               constrain_variable=("id",),
                                                               constrain_value=(data[0],))
-            if update_result is None:
-                return False
+            # if update_result is None:
+                # print("******************************Hello******************************")
+            #     continue
+            # print("******************************Success******************************")
         return True
 
     def none_check(self, query_list: dict = None):
