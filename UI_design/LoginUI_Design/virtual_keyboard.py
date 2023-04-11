@@ -21,6 +21,9 @@ class VirtualKeyboard(QDialog):
         
     def set_focused_widget(self, widget):
         self.focused_widget = widget
+        
+    def set_focused_tableview(self, tableview):
+        self.focused_tableview = tableview
 
     def initUI(self):
         self.layout = QVBoxLayout(self)
