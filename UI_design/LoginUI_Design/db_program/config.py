@@ -1,3 +1,6 @@
+"""
+Author
+"""
 import json
 device_position: int = 0
 comp_position: int = 1
@@ -10,22 +13,6 @@ data_position: int = 7
 aso_step_position: int = 8
 aso_pro_position: int = 9
 table_print_name = ["Device", "Component", "Instruction", "Step", "Parameter"]
-# table_tree = """
-# Device
-# \t|
-# \t--> Component
-# \t\t|
-# \t\t-->Instruction
-# \t\t\t|
-# \t\t\t-->Step #1
-# \t\t\t\t|
-# \t\t\t\t-->Parameter #1
-# \t\t\t\t|
-# \t\t\t\t-->Parameter #2
-# \t\t\t\t|
-# \t\t\t\t-->Parameter #3
-# """
-# print(table_tree)
 step_device_offset = 1
 step_comp_offset = 2
 step_inst_offset = 3
@@ -36,12 +23,18 @@ data_step_offset = 2
 data_param_offset = 3
 data_value_offset = 4
 # table_file = open("json/table.json", "r")
-table_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/table.json", "r")
+try:
+    table_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/table.json", "r")
+except:
+    table_file = open("json/table.json", "r")
 aso_step_insert_flag: bool = True
 param_step_insert_flag: bool = False
 # table_file = open("json/table.json", "r")
 # input_pattern_file = open("json/input_pattern.json", "r")
-input_pattern_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
+try:
+    input_pattern_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
+except:
+    input_pattern_file = open("json/input_pattern.json", "r")
 input_pattern = json.loads(input_pattern_file.read())
 previous_symbol = "PRE"
 next_symbol = "NEXT"

@@ -153,11 +153,15 @@ class Employee(User):
             return self.find_last_first_rec(value_rec_id=value_rec_id, offset=offset, pre_next=pre_next)
         return [value_rec_id[0]]
 
-    def display_work_flow(self):
+    def display_work_flow(self, barcode: str = None):
+        get_pro_id = self.query_table(table_name=config.table_name[config.process_position],
+                                      rtn_colm=("id", ),
+                                      value_type=("barcode", ),
+                                      value=(barcode, ))
         exist_workflow = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                           rtn_colm=("data_id", ),
                                           value_type=("pro_id",),
-                                          value=(self.process_context.ProcessClass.id,))
+                                          value=(get_pro_id[config.table_exe_result][0][0],))
         data_rec = self.query_multiple_rec(table_name=config.table_name[config.data_position],
                                            query_list=exist_workflow[config.table_exe_result],
                                            query_list_variable_type=("id", ))

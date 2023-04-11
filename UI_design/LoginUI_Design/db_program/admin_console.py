@@ -67,7 +67,7 @@ if __name__ == '__main__':
         if register_result is None:
             sys.exit()
 
-    barcode = "888888"
+    barcode = "123123"
     while choice != "*":
         # if user is not login
         if not config.login_flag:
@@ -102,12 +102,13 @@ if __name__ == '__main__':
 
             # If not, return "NEW"
             read_result = admin.barcode_context(barcode=barcode)
-            print(read_result)
+            # print(read_result)
 
             if read_result == "NEW":
                 # Try to create the new process
                 rec = admin.create_new_process(barcode=barcode)
-                print(rec)
-                print(admin.display_work_flow())
+                # print(rec)
+            print(admin.display_work_flow(barcode=barcode))
             barcode = "next"
+
 mydb.close()
