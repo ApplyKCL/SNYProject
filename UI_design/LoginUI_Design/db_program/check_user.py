@@ -1,12 +1,18 @@
+"""
+Author: Shaonan Hu
+Description: Used to query the user status
+Last Update: March 31
+"""
 import mysql_statement_gen as sqlgen
 import config
 import sys
 
 
+# Function used to query the admin
 def query_admin(sql_class: sqlgen.databaseAPI):
     """
     :param sql_class:
-    :return:
+    :return: query result
     """
     result = sql_class.database_operation(instruction="select",
                                           operate_variable=("*",),
@@ -24,7 +30,7 @@ def check_user(account_number: str, password: str, sql_class: sqlgen.databaseAPI
     :param account_number: Account Number -> Str
     :param password: Password -> Str
     :param sql_class: databaseAPI class
-    :return:
+    :return: The user exist in the database
     """
     result = sql_class.database_operation(instruction="select",
                                           # Admin Status: True (1) or False (0)
@@ -39,19 +45,25 @@ def check_user(account_number: str, password: str, sql_class: sqlgen.databaseAPI
     return list(result[config.table_exe_result][0])
 
 
+# Function that used to register the admin
 def register_admin(sql_class: sqlgen.databaseAPI):
     """
     :param sql_class:
-    :return:
+    :return: the database insert result
     """
     input_list = []
+    # Display the employee table elements name
     print(config.table_elements_dict[config.table_name[config.employee_position]][1:])
+    # for loop that used to let the user to input the information
     for index in range(1, len(config.table_elements_dict[config.table_name[config.employee_position]]) - 2):
+        # Append the input
         input_list.append(input(f"{config.table_elements_dict[config.table_name[config.employee_position]][index]}: "))
     if len(input_list) != (len(config.table_elements_dict[config.table_name[config.employee_position]][1:]) - 2):
         sys.exit()
+    # Append the status
     input_list.append(True)
     input_list.append(True)
+    # Insert the info to the database
     result = sql_class.database_operation(instruction="insert",
                                           operate_variable=tuple(
                                               config.table_elements_dict[config.table_name[config.employee_position]][
@@ -62,11 +74,15 @@ def register_admin(sql_class: sqlgen.databaseAPI):
     return result
 
 
+# Function used for check the user and Log in
 def admin_console_check_user(db_class):
-    choice = ''
+    # choice = ''
     print("Welcome to Daxsonic Build Tracker Admin Console\nPlease Login")
+    # Input account number
     account_number = input("Account Number: ")
+    # Password
     password = input("Password: ")
+    # Check if the user is exit
     user_chk_result = check_user(account_number=account_number,
                                  password=password,
                                  sql_class=sqlgen.databaseAPI(db_class=db_class,
@@ -76,11 +92,13 @@ def admin_console_check_user(db_class):
     if user_chk_result is None:
         print("fatal: Incorrect Account Number or Password")
         choice = input("Try Again [Y/Other to Exit]")
+        # Let the user to login again
         if choice == "Y":
             return None
         else:
             config.login_flag = 1
             return None
+    # Check is the user is admin or not
     print(user_chk_result)
     if not user_chk_result[len(user_chk_result) - 1] \
             or not user_chk_result[len(user_chk_result) - 2]:

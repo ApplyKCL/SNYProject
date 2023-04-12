@@ -1,7 +1,10 @@
-# Author: Shaonan Hu
+"""
+Author: Shaonan Hu
+Description: File that used to config the database
+Last Update Date: Feb 31st
+"""
 import json
 import mysql_execute
-import os
 
 
 def create_table(db_cursor, mydb):

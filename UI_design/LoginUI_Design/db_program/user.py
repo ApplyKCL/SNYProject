@@ -1,4 +1,9 @@
-# Author Shaonan Hu
+"""
+Author: Shaonan Hu
+Description: This file contains the user class and do the operation based on the user, all the operation is based on
+the operation.
+Last Update Date: April, 11t 2023
+"""
 import mysql_statement_gen as sql_generator
 import device_class
 import config
@@ -35,6 +40,7 @@ class Employee(User):
         self.accout_number_status = True
         self.process_context: device_class.ProcessContext = device_class.ProcessContext(user_id=self.user_id)
 
+    # Function that used to do the operation based on the barcode
     def barcode_context(self, barcode: str = None):
         """
         :param barcode: This is the barcode that you should input in
@@ -56,6 +62,7 @@ class Employee(User):
         # This means that there is no exist barcode in the system
         if pro_result is None:
             return "NEW"
+        # Update the context
         self.update_process_context(table_name=config.table_name[config.device_position],
                                     context_id=pro_result[config.table_exe_result][0][1])
         self.update_process_context(table_name=config.table_name[config.comp_position],
@@ -85,6 +92,7 @@ class Employee(User):
                                                             constrain_type=("no_tp",),
                                                             constrain_value=(
                                                                 aso_pro_result[config.table_exe_result][index][1],))
+            # Make sure the updated data is correct
             if not data_result[config.table_exe_result] \
                     or data_result is None \
                     or data_result[config.table_exe_changed] <= 0:
@@ -93,6 +101,7 @@ class Employee(User):
             # if the data is non, load
             if data_result[config.table_exe_result][0][config.data_value_offset] is None:
                 break
+        # Update the process context
         self.update_process_context(table_name=config.table_name[config.aso_pro_position],
                                     context_id=aso_pro_result[config.table_exe_result][offset][0])
         if data_result is None or data_result == [] or data_result[config.table_exe_changed] <= 0:
@@ -103,34 +112,45 @@ class Employee(User):
                                     context_id=data_result[config.table_exe_result][0][2])
         data_list = []
         data_obj = device_class.Data()
+        # Append the data information
         for query_index in range(0, len(aso_pro_result[config.table_exe_result])):
             exe_result = self.query_table(table_name=config.table_name[config.data_position],
                                           value_type=("step_id", "id"),
                                           value=(self.process_context.DataClass.StepClass.id,
                                                  aso_pro_result[config.table_exe_result][query_index][1]))
-            print(exe_result)
+            # print(exe_result)
+            # append the element list
             if exe_result is not None:
                 data_obj.update_elements_list(exe_result[config.table_exe_result][0])
                 data_list.append(data_obj.elements_list)
+        # Return the page number and the data list
         return [self.get_page_number(), data_list]
 
     # Get the latest instruction or steps
     def get_latest_inst_steps(self, id_list: list = None):
+        # get the data list include the inst id and the step id
         data_list = self.query_multiple_rec(table_name=config.table_name[config.data_position],
                                             query_return=("inst_id", "step_id"),
                                             query_list=id_list)
+        # get the instruction id list
         inst_list = [(inst[0],) for inst in data_list]
+        # Get the last available inst
         latest_inst = self.find_last_first_rec(value_rec_id=inst_list, offset=config.inst_position)[0][0]
+        # Get step list that belong the last available instruction
         step_list = [(step[1],) for step in data_list if latest_inst == step[0]]
+        # Get the last available step
         latest_step = self.find_last_first_rec(value_rec_id=step_list, offset=config.step_position)[0][0]
+        # return the inst id and step id
         return [latest_inst, latest_step]
 
+    # Function that used to find the last or new id for the step and inst
     def find_last_first_rec(self, value_rec_id: list = None, offset: int = config.inst_position,
                             pre_next: str = "next"):
-        if config.debug_flag:
-            print(f"value_id: {value_rec_id},"
-                  f"offset {offset}"
-                  f"position {config.inst_position}")
+        # if config.debug_flag:
+        #     print(f"value_id: {value_rec_id},"
+        #           f"offset {offset}"
+        #           f"position {config.inst_position}")
+        # determine the types
         if offset == config.step_position:
             rtn_colm = "_step"
         elif offset == config.param_position:
@@ -138,30 +158,43 @@ class Employee(User):
         else:
             rtn_colm = "_inst"
         rtn_colm = pre_next + rtn_colm
+        # Based on the condition to find the database record
         value_query = self.query_table(table_name=config.table_name[offset],
                                        rtn_colm=(rtn_colm,),
                                        value_type=("id",),
                                        value=value_rec_id[0])
         # if config.debug_flag:
         #     print(f"query_rec {value_query}")
+        # If satisfy the condition, return the id
         if value_query[config.table_exe_result][0][0] == 0 or len(value_rec_id) == 1:
             return [value_rec_id[0]]
+        # If not, remove the top of the list and call this function again
         if value_query[config.table_exe_result][0] in value_rec_id:
             value_rec_id.pop(0)
             index = value_rec_id.index(value_query[config.table_exe_result][0])
             value_rec_id = [value_query[config.table_exe_result][0]] + value_rec_id[:index] + value_rec_id[index + 1:]
             return self.find_last_first_rec(value_rec_id=value_rec_id, offset=offset, pre_next=pre_next)
+        # Return the id
         return [value_rec_id[0]]
 
+    # Function that used to display the record list
     def display_work_flow(self, barcode: str = None):
+        """
+        :param barcode: Bar code specific which workflow it required to update
+        :return: the full list of the data at the workflow
+        Notice: This may need to be add more function for the future use
+        """
+        # Get the process id based on the barcode
         get_pro_id = self.query_table(table_name=config.table_name[config.process_position],
                                       rtn_colm=("id", ),
                                       value_type=("barcode", ),
                                       value=(barcode, ))
+        # get the data id based on the process id
         exist_workflow = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                           rtn_colm=("data_id", ),
                                           value_type=("pro_id",),
                                           value=(get_pro_id[config.table_exe_result][0][0],))
+        # Get the entire data record list with the stored value in that DB
         data_rec = self.query_multiple_rec(table_name=config.table_name[config.data_position],
                                            query_list=exist_workflow[config.table_exe_result],
                                            query_list_variable_type=("id", ))
@@ -170,27 +203,38 @@ class Employee(User):
         return data_rec
 
     def allocate_workflow_data(self, value_list: list = None):
+        """
+        :param value_list:
+        :return: return the page number and data list
+        """
         data_id_list = value_list
         data_id_list = [(data_id[1],) for data_id in data_id_list]
         latest_list = self.get_latest_inst_steps(id_list=data_id_list)
+        # Query the next step
         next_step = self.query_table(table_name=config.table_name[config.step_position],
                                      rtn_colm=("next_step",),
                                      value_type=("id",),
                                      value=(latest_list[1],))
+        # Get the next step id
         next_step_id = next_step[config.table_exe_result][0][0]
         if next_step[config.table_exe_result][0][0] == 0:
+            # Query the table name
             next_inst = self.query_table(table_name=config.table_name[config.inst_position],
                                          rtn_colm=("next_inst",),
                                          value_type=("id",),
                                          value=(latest_list[0],))
+            # check the next instruction
             if next_inst[config.table_exe_result][0][0] == 0:
                 return None
+            # Check the available steps
             available_step = self.query_table(table_name=config.table_name[config.aso_step_position],
                                               rtn_colm=("step_id",),
                                               value_type=("inst_id",),
                                               value=(next_inst[config.table_exe_result][0][0],))
+            # Update the process context
             self.update_process_context(table_name=config.table_name[config.inst_position],
                                         context_id=next_inst[config.table_exe_result][0][0])
+            # Find the first available list
             first_step_rec = self.find_last_first_rec(value_rec_id=available_step[config.table_exe_result],
                                                       offset=config.step_position,
                                                       pre_next="previous")[0][0]
@@ -201,6 +245,7 @@ class Employee(User):
         # Call the workflow distribution function
         return self.workflow_data_distribute()
 
+    # Insert the data
     def workflow_data_distribute(self):
         param_rec = self.query_table(table_name=config.table_name[config.aso_step_position],
                                      rtn_colm=("param_id",),
@@ -209,8 +254,10 @@ class Employee(User):
         data_object_list = self.workflow_data_insert(param_list=param_rec[config.table_exe_result])
         if data_object_list is None:
             return None
+        # return the page number and the data object list
         return [self.get_page_number(), data_object_list]
 
+    # insert the data based on the current data
     def data_insert(self):
         insert_result = self.insert_value(table_name=config.table_name[config.data_position],
                                           operate_variable=("inst_id", "step_id", "param_id"),
@@ -219,6 +266,7 @@ class Employee(User):
                                                  self.process_context.DataClass.ParamClass.id))
         return insert_result
 
+    # Insert the process to the process aso table based on the current context
     def process_aso(self):
         insert_result = self.insert_value(table_name=config.table_name[config.aso_pro_position],
                                           operate_variable=("emp_id", "pro_id", "data_id"),
@@ -227,13 +275,17 @@ class Employee(User):
                                                  self.process_context.DataClass.id))
         return insert_result
 
+    # Function that used to insert the data
     def workflow_data_insert(self, param_list: list = None):
         if param_list is None:
             return None
         data_object_list = []
+        # for the parameter in the parameter list
         for param_id in param_list:
+            # Update the context
             self.update_process_context(table_name=config.table_name[config.param_position],
                                         context_id=param_id[0])
+            # insert the current context
             data_insert_result = self.data_insert()
             if data_insert_result is None:
                 return None
@@ -263,6 +315,7 @@ class Employee(User):
             return None
         for data in data_list:
             self.sql_class.table_name = config.table_name[config.data_position]
+            # Function that used to update the data
             update_result = self.sql_class.database_operation(instruction="update",
                                                               operate_variable=tuple(config.table_elements_dict[
                                                                                          config.table_name[
@@ -272,25 +325,26 @@ class Employee(User):
                                                               constrain_type=("no_tp",),
                                                               constrain_variable=("id",),
                                                               constrain_value=(data[0],))
-            # if update_result is None:
-                # print("******************************Hello******************************")
-            #     continue
-            # print("******************************Success******************************")
         return True
 
+    # Function that used to check the none
     def none_check(self, query_list: dict = None):
         if query_list is None:
             return None
+        # get the value
         null_check = self.query_multiple_rec(table_name=config.table_name[config.data_position],
                                              query_return=("value", ),
                                              query_list_variable_type=("id", ),
                                              query_list=query_list[config.table_exe_result])
+        # Check if there has null in the data
         for data in null_check:
+            # If the data has none or data is empty return false
             if data[0] is None or data[0] == '':
                 return False
         return True
 
-    def check_step_status(self):
+    # Function that used to check the step statsu for the aso_pro_table
+    def check_pro_status(self):
         data_list = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                      rtn_colm=("data_id", ),
                                      value_type=("emp_id", "pro_id"),
@@ -300,14 +354,18 @@ class Employee(User):
             return None
         return chk_value
 
+    # Function that used to check the finish status
     def check_finish_status(self):
+        # Get all data list
         data_list = self.query_table(table_name=config.table_name[config.aso_pro_position],
                                      rtn_colm=("data_id",),
                                      value_type=("pro_id", ),
                                      value=(self.process_context.ProcessClass.id, ))
+        # Check if the list contains the none
         chk_value = self.none_check(data_list)
         if chk_value is None:
             return None
+        # if the condition satisfied, update the finish status
         if chk_value:
             self.sql_class.table_name = config.table_name[config.process_position]
             update_result = self.sql_class.database_operation(instruction="update",
@@ -323,7 +381,7 @@ class Employee(User):
 
     # Function used to go to next step
     def next_step(self):
-        if not self.check_step_status():
+        if not self.check_pro_status():
             return "NF"
         # At the first should
         next_step = self.query_table(table_name=config.table_name[config.step_position],
@@ -531,10 +589,13 @@ class Employee(User):
             return None
         return result
 
+    # Query the multiple record
     def query_multiple_rec(self, table_name: str = None, query_return: tuple = ("*",), query_list: list = None,
                            query_list_variable_type: tuple = ("id",)):
+        # Check if the table name and the query list is valid
         if table_name is None or query_list is None:
             return None
+        # Get the record list
         record_list = [
             self.query_table(table_name=table_name, rtn_colm=query_return, value_type=query_list_variable_type,
                              value=query)[config.table_exe_result][0] for query in query_list]
@@ -605,10 +666,12 @@ class Employee(User):
                 print("fatal_Debug Here")
                 return None
         if value_type != ():
+            # Used to set the condition set
             cons_cond = ["no_tp"]
             for index in range(0, len(value_type) - 1):
                 cons_cond.append("and")
         cons_cond = tuple(cons_cond)
+        # Read from the database
         self.sql_class.table_name = table_name
         result = self.sql_class.database_operation(instruction="select",
                                                    operate_variable=rtn_colm,
@@ -651,6 +714,7 @@ class Admin(Employee):
         else:
             return True
 
+    # Check the account numbers
     def check_account_number(self, account_number):
         """
         :param account_number: account number for user
@@ -820,6 +884,7 @@ class Admin(Employee):
                 for choice_index in range(0, state_index):
                     print(f"#{choice_index}\t{config.table_name}")
                 state_index: int = int(input("Please Input Which you want to edit: "))
+            # Unfinished function
             elif choice == '4' and state_index != config.param_position:
                 pass
             elif choice == '*':
@@ -830,6 +895,7 @@ class Admin(Employee):
                 state_index += 1
             print(result)
 
+    # Function that used to update the step context
     def update_step_context(self, table_colm: tuple, table_name):
         if table_name == config.table_name[config.device_position]:
             self.dev_context.DeviceClass.update_elements_list(table_colm)
@@ -842,6 +908,7 @@ class Admin(Employee):
         elif table_name == config.table_name[config.param_position]:
             self.dev_context.ParamClass.update_elements_list(table_colm)
 
+    # List the step list
     def update_step_context_list(self):
         context_id_list = [self.dev_context.DeviceClass.id,
                            self.dev_context.CompClass.id,
@@ -850,6 +917,7 @@ class Admin(Employee):
                            self.dev_context.ParamClass.id]
         return context_id_list
 
+    # Function that used to load the context list
     def load_context_list(self, context_id_list):
         self.dev_context.DeviceClass.id = context_id_list[0]
         self.dev_context.CompClass.id = context_id_list[1]
@@ -873,6 +941,7 @@ class Admin(Employee):
             return None
         return aso_result
 
+    # Function used to insert the step aso table
     def insert_new_step_aso_values(self, table_name, table_offset: int = 1):
         """
         :param table_name:  Table Name
@@ -954,6 +1023,7 @@ class Admin(Employee):
                     print(next_rec)
                     config.next_flag = True
                 elif feature_list[index] == config.status_symbol:
+                    # Prompt the user to input the others
                     choice: str = input(f"{config.input_pattern[2][index]} [Y/Others]: ")
                     if choice != "Y":
                         special_value_type.append(0)
@@ -1023,6 +1093,7 @@ class Admin(Employee):
             self.sql_class.table_name = config.table_name[config.aso_step_position]
             operate_variable = list(tuple(config.table_elements_dict[config.
                                           table_name[config.aso_step_position]]))
+        # insert the pro table
         elif types == "pro":
             self.sql_class.table_name = config.table_name[config.aso_pro_position]
             operate_variable = list(tuple(config.table_elements_dict[config.
@@ -1032,11 +1103,13 @@ class Admin(Employee):
             return None
         operate_variable.pop(0)
         operate_variable = tuple(operate_variable)
+        # Check the flag, if the flag is true, the insert should be done
         if config.aso_step_insert_flag:
             result = self.sql_class.database_operation(instruction="insert",
                                                        operate_variable=operate_variable,
                                                        variable_value=tuple(db_context))
             self.dev_context.id = result[config.table_exe_id]
+        # Other wise the rec has already in the db, which require the update
         else:
             result = self.sql_class.database_operation(instruction="update",
                                                        operate_variable=operate_variable,

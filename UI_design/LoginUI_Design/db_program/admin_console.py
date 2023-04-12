@@ -1,6 +1,7 @@
 """
 Author: Shaonan Hu
-Description: Backdoor program for the admin,
+Description: Backdoor program for the admin, or can be used to initial the database
+Make sure run once to create the databases for the server machine
 """
 import mysql.connector
 from datetime import datetime
@@ -11,12 +12,8 @@ import mysql_statement_gen
 import sys
 import user
 import check_user as chk_user
-# No Bug Prey, just ignore it :>
-print("""
--------------------------------NO!-------------------------------------
--------------------------------BUG-------------------------------------
------------------------------PLEASE!-----------------------------------
-""")
+
+
 """
 This is Admin Console that could be used for the Admin, which is also a
 Backdoor function that used for test purpose or the data written purpose.
@@ -67,7 +64,7 @@ if __name__ == '__main__':
         if register_result is None:
             sys.exit()
 
-    barcode = "123123"
+    barcode = "245"
     while choice != "*":
         # if user is not login
         if not config.login_flag:
@@ -85,18 +82,21 @@ if __name__ == '__main__':
                                db_class=mydb)
             config.login_flag = 1
         else:
-            # Testing Purpose to avoid the repeatedly login
-            admin = user.Admin(user_id=1,
+            # Testing Purpose to avoid the repeat login
+            admin = user.Admin(user_id=1, # The user Id is the thing the program care
                                user_name="Shaonan Hu",
                                user_email="Do not Care",
                                db_class=mydb)
+        # The choice that can be do
         choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
         # Choice 1 to create a new procedure
         if choice == '1':
+            # Used to create the new procedure
             create_result = admin.create_new()
             if create_result is None:
                 # Close the system
                 sys.exit()
+        # This is used to debug the
         elif choice == '2':
             # Check if the barcode exist
 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
                 # Try to create the new process
                 rec = admin.create_new_process(barcode=barcode)
                 # print(rec)
-            print(admin.display_work_flow(barcode=barcode))
+            print(admin.display_work_flow(barcode="245"))
             barcode = "next"
 
 mydb.close()

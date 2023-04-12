@@ -1,5 +1,8 @@
-# Author: Shaonan Hu
-# Class that used to define the parameters
+"""
+Author: Shaonan Hu
+Description: This is the file that hold the defined class of the database tables
+Last Update: March 24th
+"""
 from datetime import date
 
 class Device:
@@ -254,6 +257,7 @@ class Data:
         self.list_elements()
 
 
+# The process class that holds the class context
 class ProcessContext:
     def __init__(self, context_id: int = None, user_id: int = None, process_class: Process = Process(),
                  data_class: Data = Data()):
