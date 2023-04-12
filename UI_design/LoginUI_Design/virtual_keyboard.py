@@ -36,7 +36,7 @@ class VirtualKeyboard(QDialog):
             ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
             ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'],
             ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'],
-            ['CAPS LOCK', 'DELETE', 'SPACE', 'ENTER', 'CLOSE']
+            ['CAPS LOCK', 'DELETE', 'SPACE', '@', 'CLOSE']
         ]
 
         for i, row in enumerate(buttons):
@@ -55,7 +55,7 @@ class VirtualKeyboard(QDialog):
                     }
                 """)
 
-                if key in ['CAPS LOCK', 'DELETE', 'SPACE', 'ENTER', 'CLOSE']:
+                if key in ['CAPS LOCK', 'DELETE', 'SPACE', '@', 'CLOSE']:
                     button.setFixedSize(110, 50)
                     self.button_layout.addWidget(button, i, j * 2, 1, 2)
                 else:
@@ -74,13 +74,17 @@ class VirtualKeyboard(QDialog):
 
         if key == "SPACE":
             key = " "
-        elif key == "ENTER":
-            key = "\n"
+        elif key == "@":
+            key = "@"
         elif key == "DELETE":
             if self.focused_line_edit:
                 text = self.focused_line_edit.text()
                 new_text = text[:-1]
                 self.focused_line_edit.setText(new_text)
+            elif self.focused_widget:
+                text = self.focused_widget.toPlainText()
+                new_text = text[:-1]
+                self.focused_widget.setPlainText(new_text)
             return
         elif key == "CLOSE":
             self.close()

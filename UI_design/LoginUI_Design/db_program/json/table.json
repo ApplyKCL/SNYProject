@@ -116,7 +116,7 @@
       "Email",
       "Account Number",
       "Password",
-      "Enable",
+      "Enable Status",
       "Admin"
     ],
     "process_table":[

@@ -27,10 +27,10 @@ debug_flag = 0
 data_step_offset = 2
 data_param_offset = 3
 data_value_offset = 4
-# table_file = open("json/table.json", "r")
-# Open the json file in two different path
+
 try:
-    table_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/table.json", "r")
+    # table_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/table.json", "r")
+    table_file = open("/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/table.json", "r")
 except:
     table_file = open("json/table.json", "r")
 # Control flag that used to control some of the insert operation
@@ -39,11 +39,12 @@ param_step_insert_flag: bool = False
 # table_file = open("json/table.json", "r")
 # input_pattern_file = open("json/input_pattern.json", "r")
 try:
-    input_pattern_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
+    # input_pattern_file = open("/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
+    input_pattern_file = open("/Users/jiahaochen/Desktop/SNYProject/UI_design/LoginUI_Design/db_program/json/input_pattern.json", "r")
 except:
     input_pattern_file = open("json/input_pattern.json", "r")
 
-# Data input pattern for identifiy the input data features and contains some of the print name
+
 input_pattern = json.loads(input_pattern_file.read())
 # The symbol used to identify the previous
 previous_symbol = "PRE"
