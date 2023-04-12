@@ -55,7 +55,7 @@ class VirtualKeyboard(QDialog):
                     }
                 """)
 
-                if key in ['CAPS LOCK', 'DELETE', 'SPACE', 'ENTER', 'CLOSE']:
+                if key in ['CAPS LOCK', 'DELETE', 'SPACE', '@', 'CLOSE']:
                     button.setFixedSize(110, 50)
                     self.button_layout.addWidget(button, i, j * 2, 1, 2)
                 else:
