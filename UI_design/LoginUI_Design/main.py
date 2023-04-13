@@ -639,10 +639,12 @@ class TableModel(QtCore.QAbstractTableModel):
             self._data[row] = tuple(data_row)
             self.dataChanged.emit(index, index)
             if admin_window.into_workflow == False:
-                result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row],))
+                result = myWindow.admin.query_user(constrain=("id",), constrain_value=(admin_window.id_list[row-1],))
                 data_row.insert(0,result[0][0])
                 new_result = tuple(data_row)
                 myWindow.admin.update_table(new_result, result[0], table_name=config.table_name[config.employee_position])
+            else:
+                admin_window.into_workflow = False
             return True
         return False
     
