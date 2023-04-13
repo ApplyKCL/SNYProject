@@ -7,8 +7,6 @@ class VirtualKeyboard(QDialog):
     keyPressed = pyqtSignal(str)
 
     def __init__(self, parent=None):
-        # super(VirtualKeyboard, self).__init__(parent, Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
-        # super().__init__(parent=parent, flags=Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         super().__init__(parent, Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
 
         self.initUI()
@@ -77,14 +75,14 @@ class VirtualKeyboard(QDialog):
         elif key == "@":
             key = "@"
         elif key == "DELETE":
-            if self.focused_line_edit:
-                text = self.focused_line_edit.text()
-                new_text = text[:-1]
-                self.focused_line_edit.setText(new_text)
-            elif self.focused_widget:
-                text = self.focused_widget.toPlainText()
-                new_text = text[:-1]
-                self.focused_widget.setPlainText(new_text)
+            # if self.focused_line_edit:
+            text = self.focused_line_edit.text()
+            new_text = text[:-1]
+            self.focused_line_edit.setText(new_text)
+            # elif self.focused_widget:
+            #     text = self.focused_widget.toPlainText()
+            #     new_text = text[:-1]
+            #     self.focused_widget.setPlainText(new_text)
             return
         elif key == "CLOSE":
             self.close()

@@ -221,7 +221,7 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
             virtual_keyboard.show()
 
     def key_pressed(self, key, index):
-        if key == "\n":
+        if key == " ":
             self.model.setData(index, self.current_input, Qt.EditRole)
             self.current_input = ""
         else:
@@ -287,9 +287,6 @@ class User_Window(QMainWindow, Ui_Employee):
                 self.barcode_result = myWindow.admin.create_new_process(barcode=self.barcode)
             else:
                 page_number = int((self.barcode_result[0].split(":"))[2])
-                # print(f'-----------------debug page number-----------------')
-                # print(f'page_number: {page_number}')
-                # print(f'-----------------debug page number-----------------')
                 self.hide()
                 instructionWindow.stackedWidget.setCurrentIndex(page_number)
                 instructionWindow.showFullScreen()
@@ -590,8 +587,8 @@ class DatabaseManager:
     def __init__(self):
         self.mydb = mysql.connector.connect(
             # Remote Connection Configure
-            # host="134.190.203.146",
-            host="192.168.4.30",
+            host="134.190.203.146",
+            # host="192.168.4.30",
             user="dslink",
             password="dstestpass123",
             
