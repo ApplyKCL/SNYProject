@@ -1,6 +1,4 @@
-import sys
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit, QPushButton, QDialog, QVBoxLayout, QGridLayout
+from PyQt5.QtWidgets import QPushButton, QDialog, QVBoxLayout, QGridLayout
 from PyQt5.QtCore import Qt, pyqtSignal
 
 class VirtualKeyboard(QDialog):
