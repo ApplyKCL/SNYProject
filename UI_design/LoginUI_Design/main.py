@@ -15,7 +15,8 @@ import mysql.connector
 
 # Based on different IDE, the path should be changed
 # All the UI files are loaded here
-sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/UI_files')
+# sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/UI_files')
+sys.path.append('/Users/jiahaochen/Downloads/SNYProject/UI_design/LoginUI_Design/UI_files')
 from Login_Window import Ui_Login_Window
 from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
@@ -24,7 +25,8 @@ from virtual_keyboard import *
 
 # Based on different IDE, the path should be changed
 # All the database files are loaded here
-sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+# sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
+sys.path.append('/Users/jiahaochen/Downloads/SNYProject/UI_design/LoginUI_Design/db_program')
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
 from db_program.user import *
@@ -221,15 +223,17 @@ class Administrator_Window(QMainWindow, Ui_Admin_Window, VirtualKeyboard):
         TableModle() will processing the data and display it by calling setModel().
         """
         barcode = self.barcode_number.text()
-        print(f'barcode: {barcode}')
-        data = myWindow.admin.display_work_flow(barcode)
-        new_data = [(tup[0], *tup[4:]) for tup in data]
-        print(f'data: {new_data}')
-        title = ('Data ID', 'Data Value', 'Comment', 'Initial')
-        new_data = [title] + new_data
-        self.model = TableModel(new_data)
-        self.tableView_workflow.setModel(self.model)
-        self.into_workflow = True
+        barcode_result = myWindow.admin.barcode_context(barcode)
+        if barcode_result=="NEW":
+            QMessageBox.warning(self, "Warning", "The barcode is not in the database, please check again")
+        else:
+            data = myWindow.admin.display_work_flow(barcode)
+            new_data = [(tup[0], *tup[4:]) for tup in data]
+            title = ('Data ID', 'Data Value', 'Comment', 'Initial')
+            new_data = [title] + new_data
+            self.model = TableModel(new_data)
+            self.tableView_workflow.setModel(self.model)
+            self.into_workflow = True
         
     
     def create_line_edit_mouse_event_handler(self, line_edit):
@@ -714,11 +718,11 @@ class DatabaseManager:
             # password="dstestpass123",
             
             # Local Connection Configure
-            # host="localhost",
-            # user="root",
-            # password="369300Ab*",
+            host="localhost",
+            user="root",
+            password="369300Ab*",
             
-            # database="DaxsonicsBuildTrackDB"
+            database="DaxsonicsBuildTrackDB"
         )
         # Check if the connection is successful
         if not self.mydb.is_connected():
