@@ -36,7 +36,7 @@ You are now prepared to initiate the program for the first time.
 And the brief user instruction can be found in the User Manual.
 ```
 $ python main.py
-
+```
 ## Thank you for your reading.
  If you have any further question, welcome to talk to owners.
  Have a wonderful day!
