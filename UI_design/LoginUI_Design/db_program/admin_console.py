@@ -87,7 +87,7 @@ if __name__ == '__main__':
                                user_name="Shaonan Hu",
                                user_email="Do not Care",
                                db_class=mydb)
-        # The choice that can be do
+        # The choice that can be done
         choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
         # Choice 1 to create a new procedure
         if choice == '1':

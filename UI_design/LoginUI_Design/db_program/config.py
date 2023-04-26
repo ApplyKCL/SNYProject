@@ -65,7 +65,6 @@ table_exe_result = "result"
 table_exe_id = "id"
 table_exe_changed = "changed"
 login_flag: bool = True
-print(table_elements_name_dict)
 table_elements_list: list = []
 # Get the table elements name by using the for loop
 for i in range(0, aso_pro_position):

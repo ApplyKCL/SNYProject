@@ -103,7 +103,6 @@ class databaseAPI:
         self.constrain_variable = ()
         self.constrain_value = ()
         self.constrain_type = ()
-        print(result_dirc)
         if result_dirc["changed"] <= 0:
             return None
         # if config.debug_flag == 1:

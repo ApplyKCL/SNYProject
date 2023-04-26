@@ -64,7 +64,7 @@ class Employee(User):
             return "NEW"
         # Update the context
         self.update_process_context(table_name=config.table_name[config.device_position],
-                                    context_id=pro_result[config.table_exe_result][0][1])
+                                    context_id=pro_result[config.table_exe][0][1])
         self.update_process_context(table_name=config.table_name[config.comp_position],
                                     context_id=pro_result[config.table_exe_result][0][2])
         self.update_process_context(table_name=config.table_name[config.process_position],
@@ -808,7 +808,7 @@ class Admin(Employee):
                 # Update the context
                 context_id_list = self.update_step_context_list()
                 context_id_list[state_index] = insert_result[config.table_exe_id]
-                print(context_id_list)
+                # print(context_id_list)
                 self.load_context_list(context_id_list)
                 insert_result = self.query_table(table_name=config.table_name[state_index],
                                                  value_type=("id",),
@@ -872,7 +872,8 @@ class Admin(Employee):
                                              table_object_rec=tuple(new_rec[config.table_exe_result][0]))
                 if aso_result is None:
                     return None
-                """ When all of the previous operations are successful, the system will
+                """ 
+                    When all of the previous operations are successful, the system will
                     prompt the user to keep adding the new parameters since the parameters
                     for one step might be a lot
                 """
@@ -893,7 +894,7 @@ class Admin(Employee):
                 print("Invalid Operation")
             if state_index < 4:
                 state_index += 1
-            print(result)
+            # print(result)
 
     # Function that used to update the step context
     def update_step_context(self, table_colm: tuple, table_name):
@@ -1006,8 +1007,8 @@ class Admin(Employee):
                     special_value_type.append(pre_rec[0])
                 elif feature_list[index] == config.next_symbol:
                     # Next == 0 will be the end
-                    print("Previous Rec")
-                    print(pre_rec)
+                    # print("Previous Rec")
+                    # print(pre_rec)
                     if not pre_rec:
                         special_value_type.append(0)
                         continue
@@ -1019,8 +1020,8 @@ class Admin(Employee):
                     next_rec = self.query_table(table_name=table_name,
                                                 value_type=("id",),
                                                 value=(pre_rec[next_offset],))
-                    print("Next Rec")
-                    print(next_rec)
+                    # print("Next Rec")
+                    # print(next_rec)
                     config.next_flag = True
                 elif feature_list[index] == config.status_symbol:
                     # Prompt the user to input the others
@@ -1063,12 +1064,12 @@ class Admin(Employee):
         if config.next_flag:
             # update the next record
             next_rec = list(next_rec[config.table_exe_result][0])
-            print("NextRec")
-            print(next_rec)
-            print(result)
+            # print("NextRec")
+            # print(next_rec)
+            # print(result)
             next_rec[previous_offset] = result[config.table_exe_id]
             next_rec_id = next_rec.pop(0)
-            print(next_rec)
+            # print(next_rec)
             config.next_flag = False
             self.sql_class.table_name = table_name
             next_result = self.sql_class.database_operation(instruction="update",
