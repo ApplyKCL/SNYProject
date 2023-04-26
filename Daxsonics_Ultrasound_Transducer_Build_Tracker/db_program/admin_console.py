@@ -32,10 +32,15 @@ if __name__ == '__main__':
     print("Date:", (datetime.now()).strftime("%d/%m/%y %H:%M:%S"))
     # database infor, will be considered to be treated as file
     # STEP 1
+    """
+    host: must be the host name of MySQL Database which should be at one of the device or PC or server
+    user: must be root user name for the sever
+    password: database password
+    """
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="369300Ab*"
+        password="215046Aa."
     )
 
     # mycursor the cursor of the mysql connector api func
@@ -44,7 +49,7 @@ if __name__ == '__main__':
         create database if not exists DaxsonicsBuildTrackDB
     """
     mysql_execute.execute_mysql(mydb, cmd_str, 0)
-    # Database Name
+    # Database Name, ! must be specified !
     mydb.database = "DaxsonicsBuildTrackDB"
     config_table.create_table(mycursor, mydb)
     choice: str = "#"
@@ -53,14 +58,30 @@ if __name__ == '__main__':
                                                                       table=config.table_name[
                                                                           config.employee_position])) is None:
         # Not to register the admin
-        admin_create_choice = input("First Use the System. Register Admin ? [Y/other exit]: ")
+        admin_create_choice = input("First Use the System.\n"
+                                    "Register Admin? [Y/other exit]: ")
         if admin_create_choice != "Y":
             print("System Terminate")
             sys.exit()
-        # Check if the admin is exist or not
+        # print("Register the Connection User - Must be remembered which need for other devices connect to database")
+        # connection_user = input("Input the connection user name:")
+        # connection_password = input("Input the connection password:")
+        # cmd_str = f""""
+        # create user '{connection_user}'@'%' identified by '{connection_password}';
+        # """
+        # mysql_execute.execute_mysql(mydb, cmd_str, 0)
+        # cmd_str = f"""
+        # grant all privileges on '%' to '{connection_user}'@'%';
+        # """
+        # mysql_execute.execute_mysql(mydb, cmd_str, 0)
+        # cmd_str = """
+        # flush privileges
+        # """
+        # mysql_execute.execute_mysql(mydb, cmd_str, 0)
         register_result = chk_user.register_admin(sql_class=mysql_statement_gen.databaseAPI(db_class=mydb,
                                                                                             table=config.table_name[
                                                                                                 config.employee_position]))
+        # Check if the admin is exist or not
         if register_result is None:
             sys.exit()
 
@@ -81,14 +102,11 @@ if __name__ == '__main__':
                                user_email=user_chk_result[3],
                                db_class=mydb)
             config.login_flag = 1
-        else:
-            # Testing Purpose to avoid the repeat login
-            admin = user.Admin(user_id=1, # The user Id is the thing the program care
-                               user_name="Shaonan Hu",
-                               user_email="Do not Care",
-                               db_class=mydb)
         # The choice that can be done
-        choice = input("Please Input Your Choice:\n1. Create the New Procedure\n2. Input Barcode and start to write.")
+        choice = input("Please Input Your Choice:\n"
+                       "1. Create the New Procedure\n"
+                       "2. Input Barcode and start to write -- Only Used for Debug --.\n"
+                       "*. Exit\n")
         # Choice 1 to create a new procedure
         if choice == '1':
             # Used to create the new procedure

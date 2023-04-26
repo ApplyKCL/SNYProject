@@ -19,7 +19,7 @@ def query_admin(sql_class: sqlgen.databaseAPI):
                                           constrain_type=("no_tp",),
                                           constrain_variable=("admin_status",),
                                           constrain_value=(1,))
-    print(result)
+    # print(result)
     return result
 
 
@@ -53,7 +53,7 @@ def register_admin(sql_class: sqlgen.databaseAPI):
     """
     input_list = []
     # Display the employee table elements name
-    print(config.table_elements_dict[config.table_name[config.employee_position]][1:])
+    # print(config.table_elements_dict[config.table_name[config.employee_position]][1:])
     # for loop that used to let the user to input the information
     for index in range(1, len(config.table_elements_dict[config.table_name[config.employee_position]]) - 2):
         # Append the input
@@ -99,7 +99,7 @@ def admin_console_check_user(db_class):
             config.login_flag = 1
             return None
     # Check is the user is admin or not
-    print(user_chk_result)
+    # print(user_chk_result)
     if not user_chk_result[len(user_chk_result) - 1] \
             or not user_chk_result[len(user_chk_result) - 2]:
         print("fatal: No Authority")

@@ -64,7 +64,7 @@ table_elements_name_dict: dict = table_json_content["table_elements_name"]
 table_exe_result = "result"
 table_exe_id = "id"
 table_exe_changed = "changed"
-login_flag: bool = True
+login_flag: bool = False
 table_elements_list: list = []
 # Get the table elements name by using the for loop
 for i in range(0, aso_pro_position):

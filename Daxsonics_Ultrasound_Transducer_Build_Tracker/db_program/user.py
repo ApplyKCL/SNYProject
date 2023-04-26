@@ -826,6 +826,7 @@ class Admin(Employee):
                 choice: str = input(f"Please Input the Operation:\n"
                                     f"1. File a New {config.table_print_name[state_index]}\n"
                                     f"2. Choose Another to Edit\n"
+                                    f"*. Exit\n"
                                     )
             else:
                 choice: str = input(f"Please Input the Operation:\n"
@@ -882,8 +883,10 @@ class Admin(Employee):
                     self.dev_context.id = None
                     context_id_list = self.update_step_context_list()
             elif choice == '2':
+                if state_index == 0:
+                    continue
                 for choice_index in range(0, state_index):
-                    print(f"#{choice_index}\t{config.table_name}")
+                    print(f"#{choice_index}\t{config.table_name[choice_index+1]}")
                 state_index: int = int(input("Please Input Which you want to edit: "))
             # Unfinished function
             elif choice == '4' and state_index != config.param_position:
