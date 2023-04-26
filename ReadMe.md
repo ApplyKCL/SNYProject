@@ -19,27 +19,29 @@ $ conda activate UTBT
 $ pip install后面跟啥？？
 ```
 
-```
+
+
+
 ### Initialize DataBase
 
 After completing the environment setup, we now need to initialize the database.
 Once you cd to the folder Daxsonics_Ultrasound_Transducer_Build_Tracker
 $ cd filelocation/Daxsonics_Ultrasound_Transducer_Build_Tracker
+
 ```
 $ bash preprocess.sh
 ```
 
-```
 ### Initiate the application or Launch the software
 
 After the any change you made in software part, please verify with software team member, Shaonan Hu or Jiahao Chen. Otherwise, please following the below steps:
 ```
 $ python main.py
 
-Using `git log` to check the push you made had been finished.
+
 
 ## Reference
-- Git Command [cheat sheet](https://dzone.com/articles/top-20-git-commands-with-examples)
+
 
 ## Thank you for your reading.
  If you have any further question, welcome to talk to owners.
