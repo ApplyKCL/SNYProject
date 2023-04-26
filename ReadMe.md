@@ -3,10 +3,11 @@
 This project has been meticulously crafted for Daxsonics Ultrasound Inc., tailored to meet the client's specific needs. We have developed a sophisticated digital scanning record system to streamline and enhance their operations.
 
 The whole project file belongs to Shaonan Hu, Jiahao Chen, Yilun Peng and Jiawei Yang.
-Arthur: Shaonan Hu(Shaonan.Hu@dal.ca)
-        Jiahao Chen(ch243852@dal.ca)
-        Yilun Peng(yilun.peng@dal.ca)
-        Jiawei Yang(jw673424@dal.ca)
+Arthur: 
+Shaonan Hu(Shaonan.Hu@dal.ca)
+Jiahao Chen(ch243852@dal.ca)
+Yilun Peng(yilun.peng@dal.ca)
+Jiawei Yang(jw673424@dal.ca)
 ## Getting Started
 
 ### Setup Respository
