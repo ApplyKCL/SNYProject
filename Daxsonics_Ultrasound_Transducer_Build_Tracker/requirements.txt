@@ -1,0 +1,2 @@
+PyQt5==5.15.7
+mysql-connector-python==8.0.32
