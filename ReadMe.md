@@ -34,7 +34,7 @@ $ bash preprocess.sh
 
 ### Initiate the application or Launch the software
 
-After the any change you made in software part, please verify with software team member, Shaonan Hu or Jiahao Chen. Otherwise, please following the below steps:
+You are now prepared to initiate the program for the first time.
 ```
 $ python main.py
 
