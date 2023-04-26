@@ -5,9 +5,9 @@ This project has been meticulously crafted for Daxsonics Ultrasound Inc., tailor
 The whole project file belongs to Shaonan Hu, Jiahao Chen, Yilun Peng and Jiawei Yang.<br />
 Arthur: <br />
 Shaonan Hu(Shaonan.Hu@dal.ca)<br />
-Jiahao Chen(ch243852@dal.ca)<br />
+Jiahao Chen(Jiahao.Chen@dal.ca)<br />
 Yilun Peng(yilun.peng@dal.ca)<br />
-Jiawei Yang(jw673424@dal.ca)<br />
+Jiawei Yang(Jiawei.Yang@dal.ca)<br />
 ## Steps
 
 ### Enviroment setup
