@@ -21,10 +21,10 @@ $ conda activate UTBT
 
 
 
-### Initialize Program&DataBase
+### Initialize Program & DataBase
 
-After completing the environment setup, we now need to initialize the program and database.
-Runnuing the following command to initiate the program and database.
+After completing the environment setup, we now need to initiate the program and database.
+Running the following command to initiate the program and database.
 
 ```
 $ bash preprocess.sh
