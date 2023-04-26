@@ -40,7 +40,7 @@ if __name__ == '__main__':
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="215046Aa."
+        password=" "
     )
 
     # mycursor the cursor of the mysql connector api func

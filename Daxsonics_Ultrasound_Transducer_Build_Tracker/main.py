@@ -15,18 +15,16 @@ import mysql.connector
 
 # Based on different IDE, the path should be changed
 # All the UI files are loaded here
-# sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/UI_files')
-sys.path.append('/Users/jiahaochen/Downloads/SNYProject/Daxsonics_Ultrasound_Transducer_Build_Tracker/UI_files')
+sys.path.append('/home/eced4901/Desktop/SNYProject/Daxsonics_Ultrasound_Transducer_Build_Tracker/UI_files')
 from Login_Window import Ui_Login_Window
 from Employee_Window import Ui_Employee
 from Instruction_Window import Ui_InstructionWindow
 from Admin_Window import Ui_Admin_Window
-from virtual_keyboard import *
+from virtual_keyboard import VirtualKeyboard
 
 # Based on different IDE, the path should be changed
 # All the database files are loaded here
-# sys.path.append('/home/eced4901/Desktop/SNYProject/UI_design/LoginUI_Design/db_program')
-sys.path.append('/Users/jiahaochen/Downloads/SNYProject/Daxsonics_Ultrasound_Transducer_Build_Tracker/db_program')
+sys.path.append('/home/eced4901/Desktop/SNYProject/Daxsonics_Ultrasound_Transducer_Build_Tracker/db_program')
 from db_program.check_user import *
 from db_program.mysql_statement_gen import *
 from db_program.user import *
@@ -716,14 +714,14 @@ class DatabaseManager:
             # Remote Connection Configure
             # host="134.190.203.146",
             # user="dslink",
-            # password="dstestpass123",
+            # password=" ",
             
             # Local Connection Configure
-            host="localhost",
-            user="root",
-            password="369300Ab*",
+            # host="localhost",
+            # user="root",
+            # password=" ",
             
-            database="DaxsonicsBuildTrackDB"
+            # database="DaxsonicsBuildTrackDB"
         )
         # Check if the connection is successful
         if not self.mydb.is_connected():
