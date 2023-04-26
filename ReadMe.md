@@ -14,19 +14,17 @@ Jiawei Yang(jw673424@dal.ca)<br />
 
 Within the command prompt of your development environment
 ```
-$ conda create -n UTBT python=3.8 -y
+$ conda create -n UTBT python=3.8
 $ conda activate UTBT
-$ pip install后面跟啥？？
 ```
 
 
 
 
-### Initialize DataBase
+### Initialize Program&DataBase
 
-After completing the environment setup, we now need to initialize the database.
-Once you cd to the folder Daxsonics_Ultrasound_Transducer_Build_Tracker
-$ cd filelocation/Daxsonics_Ultrasound_Transducer_Build_Tracker
+After completing the environment setup, we now need to initialize the program and database.
+Runnuing the following command to initiate the program and database.
 
 ```
 $ bash preprocess.sh
@@ -35,13 +33,9 @@ $ bash preprocess.sh
 ### Initiate the application or Launch the software
 
 You are now prepared to initiate the program for the first time.
+And the brief user instruction can be found in the User Manual.
 ```
 $ python main.py
-
-
-
-## Reference
-
 
 ## Thank you for your reading.
  If you have any further question, welcome to talk to owners.
