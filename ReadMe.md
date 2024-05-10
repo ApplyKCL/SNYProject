@@ -1,11 +1,11 @@
-# ECED4900 & ECED4901 Ultrasound Transducer Build Tracker
+# ECED4900 & ECED4901 Working Process Tracker System
 
-This project has been meticulously crafted for Daxsonics Ultrasound Inc., tailored to meet the client's specific needs. We have developed a sophisticated digital scanning record system to streamline and enhance their operations.
+This project have developed a sophisticated digital scanning record system to streamline and enhance their operations.
 
 The whole project file belongs to Shaonan Hu, Jiahao Chen, Yilun Peng and Jiawei Yang.<br />
 Author: <br />
 Shaonan Hu(Shaonan.Hu@dal.ca)<br />
-Jiahao Chen(Jiahao.Chen@dal.ca)<br />
+Jiahao Chen(jiahaoly.chen@mail.utoronto.ca)<br />
 Yilun Peng(yilun.peng@dal.ca)<br />
 Jiawei Yang(Jiawei.Yang@dal.ca)<br />
 ## Steps
