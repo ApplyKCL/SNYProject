@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="images">
-    <file>images/Daxsonics-Logo-Padded.png</file>
+    <file>images/Logo-Padded.png</file>
     <file>images/DepositFirstElectrode1.PNG</file>
     <file>images/DepositFirstElectrode2.PNG</file>
     <file>images/DepositFirstElectrode3.PNG</file>
@@ -73,7 +73,7 @@
     <file>images/Premount_Clean_and_Measure_Subwafer_2.png</file>
     <file>images/WI_301610.png</file>
     <file>images/invisible_pic.jfif</file>
-    <file>images/Daxsonics-Logo-Padded.png</file>
+    <file>images/Logo-Padded.png</file>
   </qresource>
   <qresource prefix="icons">
     <file>icons/close_button.jpg</file>

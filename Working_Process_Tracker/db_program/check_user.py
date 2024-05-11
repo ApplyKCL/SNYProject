@@ -77,7 +77,7 @@ def register_admin(sql_class: sqlgen.databaseAPI):
 # Function used for check the user and Log in
 def admin_console_check_user(db_class):
     # choice = ''
-    print("Welcome to Daxsonic Build Tracker Admin Console\nPlease Login")
+    print("Welcome to Tracker Admin Console\nPlease Login")
     # Input account number
     account_number = input("Account Number: ")
     # Password

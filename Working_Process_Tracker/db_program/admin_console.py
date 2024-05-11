@@ -46,11 +46,11 @@ if __name__ == '__main__':
     # mycursor the cursor of the mysql connector api func
     mycursor = mydb.cursor()
     cmd_str = """
-        create database if not exists DaxsonicsBuildTrackDB
+        create database if not exists TrackDB
     """
     mysql_execute.execute_mysql(mydb, cmd_str, 0)
     # Database Name, ! must be specified !
-    mydb.database = "DaxsonicsBuildTrackDB"
+    mydb.database = "TrackDB"
     config_table.create_table(mycursor, mydb)
     choice: str = "#"
     # Check if the admin exist or not

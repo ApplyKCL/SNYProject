@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies from requirements.txt file using pip
-cd Daxsonics_Ultrasound_Transducer_Build_Tracker
+cd Working_Process_Tracker
 pip install -r requirements.txt
 echo "Dependencies installation complete."
 

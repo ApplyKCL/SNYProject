@@ -84,7 +84,7 @@ class Ui_Login_Window(object):
         self.horizontalLayout_2.addWidget(self.login_menu)
         self.login_content = QtWidgets.QFrame(self.centralwidget)
         self.login_content.setStyleSheet("QFrame {\n"
-"    border-image: url(:/images/images/Daxsonics-Logo-Padded.png);\n"
+"    border-image: url(:/images/images/Logo-Padded.png);\n"
 "    background-color: rgb(0, 0, 0);\n"
 "}")
         self.login_content.setFrameShape(QtWidgets.QFrame.StyledPanel)

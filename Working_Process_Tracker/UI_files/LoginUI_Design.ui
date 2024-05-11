@@ -193,7 +193,7 @@ QPushButton:pressed{
      <widget class="QFrame" name="login_content">
       <property name="styleSheet">
        <string notr="true">QFrame {
-	border-image: url(:/images/images/Daxsonics-Logo-Padded.png);
+	border-image: url(:/images/images/Logo-Padded.png);
 	background-color: rgb(0, 0, 0);
 }</string>
       </property>
